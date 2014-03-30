@@ -5,24 +5,24 @@ using WebSocketSharp;
 using WebSocketSharp.Net;
 using WebSocketSharp.Server;
 
-class Service : WebSocketService {
-
-  protected override void OnMessage(MessageEventArgs e) {
-    Send(e.Data);
-  }
-}
-
-class Resource {
-  public byte[] content;
-  public string contentType;
-
-  public Resource(byte[] content, string contentType) {
-    this.content = content;
-    this.contentType = contentType;
-  }
-}
-
 public class WebsocketServer : MonoBehaviour {
+
+  class Service : WebSocketService {
+
+    protected override void OnMessage(MessageEventArgs e) {
+      Send(e.Data);
+    }
+  }
+
+  class Resource {
+    public byte[] content;
+    public string contentType;
+
+    public Resource(byte[] content, string contentType) {
+      this.content = content;
+      this.contentType = contentType;
+    }
+  }
 
   private const string APPLICATION_JAVASCRIPT = "application/javascript";
   private const string APPLICATION_TRUE_TYPE_FONT = "application/x-font-ttf";
