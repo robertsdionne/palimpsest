@@ -29,6 +29,14 @@ public class Player : MonoBehaviour {
     MaybeSee();
   }
 
+  void Describe(GameObject item) {
+    if (item.GetComponent<Collider2D>().isTrigger) {
+      item.GetComponent<Area>().Describe();
+    } else {
+      item.GetComponent<Scenery>().Describe();
+    }
+  }
+
   Vector2 GetInput() {
     return new Vector2(Input.GetAxis(HORIZONTAL), Input.GetAxis(VERTICAL));
   }
@@ -41,8 +49,9 @@ public class Player : MonoBehaviour {
     if (Input.GetButtonDown(SEE)) {
       var scenery = GameObject.FindGameObjectsWithTag(SCENERY).OrderBy(
           item => Vector2.Distance(item.transform.position, gameObject.transform.position)).ToList();
+      Debug.Log("");
       for (var i = 0; i < 3; ++i) {
-        Debug.Log(scenery[i]);
+        Describe(scenery[i]);
       }
       Debug.Log("");
     }

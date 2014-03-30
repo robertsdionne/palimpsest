@@ -20,6 +20,18 @@ public class Area : MonoBehaviour {
     "Inside the area."
   };
 
+  public void Describe() {
+    if (describe.Length > 0) {
+      Debug.Log("←" + describe[Random.Range(0, describe.Length)]);
+    }
+  }
+
+  public void Inside() {
+    if (inside.Length > 0) {
+      Debug.Log(inside[Random.Range(0, inside.Length)]);
+    }
+  }
+
   void OnTriggerEnter2D() {
     if (enter.Length > 0) {
       Debug.Log(enter[Random.Range(0, enter.Length)]);
