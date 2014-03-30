@@ -3,15 +3,17 @@ using System.Collections;
 
 public class Player : MonoBehaviour {
 
+  public float cameraPositionAlpha = 0.032f;
+  public GameObject mainCamera;
   public float maximumAngularVelocity = 10.0f;
   public float maximumForce = 50.0f;
   public float maximumRunningSpeed = 5.81f;
   public float maximumTorque = 10.0f;
   public float maximumWalkingSpeed = 1.38f;
 	
-	// Update is called once per frame
 	void FixedUpdate () {
     var input = GetInput();
+    UpdateCameraPosition();
     UpdatePosition(input);
     UpdateRotation(input);
 	}
@@ -22,6 +24,13 @@ public class Player : MonoBehaviour {
 
   float IsRunning() {
     return System.Convert.ToSingle(Input.GetButton("Run"));
+  }
+
+  void UpdateCameraPosition() {
+    Vector2 position = Vector2.Lerp(
+        mainCamera.transform.position, transform.position, cameraPositionAlpha);
+    mainCamera.transform.position = new Vector3(
+        position.x, position.y, mainCamera.transform.position.z);
   }
 
   void UpdatePosition(Vector2 input) {

@@ -3,17 +3,11 @@ using System.Collections;
 
 public class Scenery : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+  private string[] touch = {
+    "Touch the object."
+  };
 
   void OnCollisionEnter2D() {
-    Debug.Log("Test");
+    Debug.Log(touch[Random.Range(0, touch.Length)]);
   }
 }
