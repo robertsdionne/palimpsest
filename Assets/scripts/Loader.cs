@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using System.Linq;
 
 public class Loader : MonoBehaviour {
 
@@ -21,18 +22,30 @@ public class Loader : MonoBehaviour {
     var position = (minimum + maximum) / 2.0f;
     var size = maximum - minimum;
     var aabb = Object.Instantiate(prefab, position, Quaternion.identity) as GameObject;
+    aabb.name = json["name"] as string;
     aabb.transform.localScale = new Vector3(size.x, size.y, 1);
     aabb.GetComponent<CircleCollider2D>().enabled = false;
     aabb.GetComponent<MeshFilter>().sharedMesh = boxMesh;
+    if (areaPrefab == prefab) {
+      ReadAreaMessages(aabb, json["messages"] as Dictionary<string, object>);
+    } else {
+      ReadObjectMessages(aabb, json["messages"] as Dictionary<string, object>);
+    }
   }
 
   void ReadCircle(GameObject prefab, Dictionary<string, object> json) {
     var position = ReadVector2(json["position"]);
     var radius = (float) (double) json["radius"];
     var circle = Object.Instantiate(prefab, position, Quaternion.identity) as GameObject;
+    circle.name = json["name"] as string;
     circle.transform.localScale = new Vector3(radius, radius, 1);
     circle.GetComponent<BoxCollider2D>().enabled = false;
     circle.GetComponent<MeshFilter>().sharedMesh = circleMesh;
+    if (areaPrefab == prefab) {
+      ReadAreaMessages(circle, json["messages"] as Dictionary<string, object>);
+    } else {
+      ReadObjectMessages(circle, json["messages"] as Dictionary<string, object>);
+    }
   }
 
   void ReadItem(GameObject prefab, Dictionary<string, object> item) {
@@ -40,6 +53,33 @@ public class Loader : MonoBehaviour {
       ReadCircle(prefab, item);
     } else {
       ReadAabb(prefab, item);
+    }
+  }
+
+  void ReadAreaMessages(GameObject obj, Dictionary<string, object> json) {
+    if (json.ContainsKey("describe")) {
+      obj.GetComponent<Area>().describe = (
+          json["describe"] as List<object>).Cast<string>().ToArray();
+    }
+    if (json.ContainsKey("enter")) {
+      obj.GetComponent<Area>().enter = (json["enter"] as List<object>).Cast<string>().ToArray();
+    }
+    if (json.ContainsKey("exit")) {
+      obj.GetComponent<Area>().exit = (json["exit"] as List<object>).Cast<string>().ToArray();
+    }
+    if (json.ContainsKey("inside")) {
+      obj.GetComponent<Area>().inside = (json["inside"] as List<object>).Cast<string>().ToArray();
+    }
+  }
+
+  void ReadObjectMessages(GameObject obj, Dictionary<string, object> json) {
+    Debug.Log(obj.name);
+    if (json.ContainsKey("touch")) {
+      obj.GetComponent<Scenery>().touch = (json["touch"] as List<object>).Cast<string>().ToArray();
+    }
+    if (json.ContainsKey("describe")) {
+      obj.GetComponent<Scenery>().describe = (
+          json["describe"] as List<object>).Cast<string>().ToArray();
     }
   }
 
