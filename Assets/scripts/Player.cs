@@ -47,11 +47,17 @@ public class Player : MonoBehaviour {
 
   void MaybeSee() {
     if (Input.GetButtonDown(SEE)) {
-      var scenery = GameObject.FindGameObjectsWithTag(SCENERY).OrderBy(
-          item => Vector2.Distance(item.transform.position, gameObject.transform.position)).ToList();
+      var items = GameObject.FindGameObjectsWithTag(SCENERY);
+      var areas = (GameObject.FindObjectsOfType(typeof(Area)) as Area[]).Where(
+          area => area.IsOccupied()).ToList();
+      var nearestItems = items.OrderBy(item =>
+          Vector2.Distance(item.transform.position, gameObject.transform.position)).ToList();
       Debug.Log("");
+      for (var i = 0; i < areas.Count; ++i) {
+        areas[i].Inside();
+      }
       for (var i = 0; i < 3; ++i) {
-        Describe(scenery[i]);
+        Describe(nearestItems[i]);
       }
       Debug.Log("");
     }
