@@ -5,7 +5,7 @@ using WebSocketSharp;
 using WebSocketSharp.Net;
 using WebSocketSharp.Server;
 
-public class Service : WebSocketService {
+class Service : WebSocketService {
 
   protected override void OnMessage(MessageEventArgs e) {
     Send(e.Data);
@@ -51,7 +51,9 @@ public class WebsocketServer : MonoBehaviour {
       {"/Ubuntu-M.ttf", new Resource(ubuntuMonoTtf.bytes, APPLICATION_TRUE_TYPE_FONT)}
     };
     server = new HttpServer(8888);
-    server.AddWebSocketService<Service>("/");
+    server.AddWebSocketService<Service>("/", () => new Service() {
+      Protocol = "interactive-fiction-protocol"
+    });
     server.OnGet += (sender, e) => {
       if (!resourceMap.ContainsKey(e.Request.RawUrl)) {
         e.Response.StatusCode = (int) HttpStatusCode.NotFound;
