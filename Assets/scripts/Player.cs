@@ -1,7 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Linq;
 
 public class Player : MonoBehaviour {
+
+  private const string HORIZONTAL = "Horizontal";
+  private const string RUN = "Run";
+  private const string SCENERY = "Scenery";
+  private const string SEE = "See";
+  private const string VERTICAL = "Vertical";
 
   public float cameraPositionAlpha = 0.032f;
   public GameObject mainCamera;
@@ -18,12 +25,27 @@ public class Player : MonoBehaviour {
     UpdateRotation(input);
 	}
 
+  void Update() {
+    MaybeSee();
+  }
+
   Vector2 GetInput() {
-    return new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+    return new Vector2(Input.GetAxis(HORIZONTAL), Input.GetAxis(VERTICAL));
   }
 
   float IsRunning() {
-    return System.Convert.ToSingle(Input.GetButton("Run"));
+    return System.Convert.ToSingle(Input.GetButton(RUN));
+  }
+
+  void MaybeSee() {
+    if (Input.GetButtonDown(SEE)) {
+      var scenery = GameObject.FindGameObjectsWithTag(SCENERY).OrderBy(
+          item => Vector2.Distance(item.transform.position, gameObject.transform.position)).ToList();
+      for (var i = 0; i < 3; ++i) {
+        Debug.Log(scenery[i]);
+      }
+      Debug.Log("");
+    }
   }
 
   void UpdateCameraPosition() {

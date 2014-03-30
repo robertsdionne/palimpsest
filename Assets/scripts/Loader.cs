@@ -73,7 +73,6 @@ public class Loader : MonoBehaviour {
   }
 
   void ReadObjectMessages(GameObject obj, Dictionary<string, object> json) {
-    Debug.Log(obj.name);
     if (json.ContainsKey("touch")) {
       obj.GetComponent<Scenery>().touch = (json["touch"] as List<object>).Cast<string>().ToArray();
     }
