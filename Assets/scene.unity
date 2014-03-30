@@ -521,6 +521,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1373983066}
   - 114: {fileID: 1373983065}
+  - 114: {fileID: 1373983067}
   m_Layer: 0
   m_Name: Loader
   m_TagString: Untagged
@@ -555,6 +556,24 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!114 &1373983067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1373983064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7383576126fd4385b30a50f6f30a391, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clientJs: {fileID: 4900000, guid: 5731a0305c49b48f59fb95af472ed9b8, type: 3}
+  eva1Ttf: {fileID: 4900000, guid: 0694a102397c746fa99574c8272ef34f, type: 3}
+  indexHtml: {fileID: 4900000, guid: f033c268b9f0f4a2cb16c6cb975cc30e, type: 3}
+  ps4Cross: {fileID: 4900000, guid: cd6b1eda8ef484feb890bfd2d5b0b56d, type: 3}
+  ps4L1: {fileID: 4900000, guid: 7d51df8c8f1f44027bb14b8353ec2a59, type: 3}
+  ps4LeftStick: {fileID: 4900000, guid: 92ede50811e354305932733b6bebd7f7, type: 3}
+  ubuntuMonoTtf: {fileID: 4900000, guid: 8c0fd96cb2e93475b9d3b014d2676930, type: 3}
 --- !u!1001 &1401579377
 Prefab:
   m_ObjectHideFlags: 0

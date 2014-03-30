@@ -1,0 +1,71 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Palimpsest</title>
+    <script type="application/javascript" src="client.js"></script>
+    <style type="text/css">
+      @font-face {
+        font-family: 'EVA Hand 1';
+        src: url('EVA1.ttf');
+      }
+      @font-face {
+        font-family: 'Stela UT';
+        src: url('Stela_UT.otf');
+      }
+      @font-face {
+        font-family: 'Ubuntu Regular';
+        src: url('Ubuntu-R.ttf');
+      }
+      @font-face {
+        font-family: 'Ubuntu Mono';
+        src: url('Ubuntu-M.ttf');
+      }
+      @font-face {
+        font-family: 'Vetka';
+        src: url('Vetka.otf');
+      }
+      body {
+        background: white;
+        color: black;
+        font-family: 'Ubuntu Mono';
+      }
+      p {
+        margin: 0px 0px 0px 0px;
+      }
+      .command {
+        color: teal;
+      }
+      .report {
+        color: purple;
+      }
+      canvas {
+        margin: 0px 0px 0px 0px;
+        padding: 0px 0px 0px 0px;
+      }
+      .margin {
+        margin-left: 30px;
+      }
+      div#container {
+        margin-left: 30px;
+      }
+      b#commandline {
+        margin-left: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <p>
+        <div><span
+          style="font-family: 'EVA Hand 1'; font-face: bold;">&nbsp;polimpsasd&nbsp;</span>
+        <span style="font-weight: bold;">/ˈpælɪmpsɛst/&nbsp;</span></div>
+      </p>
+      <p>
+        <span><img src="PS4_Left_Stick.png" width="40" height="40" />&nbsp;Walk.&nbsp;&nbsp;</span>
+        <span><img src="PS4_L1.png" width="40" height="40" />&nbsp;Run.&nbsp;&nbsp;</span>
+        <span><img src="PS4_Cross.png" width="40" height="40" />&nbsp;See.&nbsp;&nbsp;</span>
+      </p>
+    </div>
+    <canvas id="arrow" class="margin" width="10" height="10"></canvas>
+  </body>
+</html>

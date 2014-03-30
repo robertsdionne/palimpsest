@@ -12,6 +12,7 @@ public class Loader : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+    Application.runInBackground = true;
     ReadScene(Facebook.MiniJSON.Json.Deserialize(sceneJson.text) as Dictionary<string, object>);
 	}
 
