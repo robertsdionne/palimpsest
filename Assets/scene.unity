@@ -145,7 +145,7 @@ Renderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 183898930}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_LightmapIndex: 255
@@ -243,7 +243,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 360287902}
   - 114: {fileID: 360287903}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Indicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -373,7 +373,7 @@ Renderer:
     type: 2}
   m_PrefabInternal: {fileID: 68713499}
   m_GameObject: {fileID: 540675929}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_LightmapIndex: 255
@@ -446,6 +446,14 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 780e7d004a2964419814033229cd4ce0, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 780e7d004a2964419814033229cd4ce0, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 780e7d004a2964419814033229cd4ce0, type: 2}
   m_RootGameObject: {fileID: 360287901}
@@ -461,7 +469,7 @@ GameObject:
   - 4: {fileID: 627598654}
   - 23: {fileID: 627598653}
   - 102: {fileID: 627598652}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Description
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -533,7 +541,7 @@ GameObject:
   - 4: {fileID: 805875442}
   - 23: {fileID: 805875444}
   - 33: {fileID: 805875443}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -591,7 +599,7 @@ GameObject:
   - 4: {fileID: 903906847}
   - 23: {fileID: 903906846}
   - 33: {fileID: 903906845}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PlayerArrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -649,7 +657,7 @@ GameObject:
   - 4: {fileID: 970953644}
   - 23: {fileID: 970953643}
   - 102: {fileID: 970953642}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Description
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -793,6 +801,10 @@ Prefab:
     - target: {fileID: 100000, guid: f16346b1ff5f54ff48408aed6e0587a3, type: 2}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f16346b1ff5f54ff48408aed6e0587a3, type: 2}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f16346b1ff5f54ff48408aed6e0587a3, type: 2}
@@ -976,7 +988,7 @@ Renderer:
     type: 2}
   m_PrefabInternal: {fileID: 1687165871}
   m_GameObject: {fileID: 2104766850}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_LightmapIndex: 255
