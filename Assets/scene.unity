@@ -230,7 +230,7 @@ CircleCollider2D:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 183898930}
   m_Enabled: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 577c0f82b97fa4462ae7304aad0722e5, type: 2}
   m_IsTrigger: 0
   m_Radius: .25
   m_Center: {x: 0, y: 0}
@@ -334,7 +334,7 @@ CircleCollider2D:
   m_PrefabInternal: {fileID: 68713499}
   m_GameObject: {fileID: 540675929}
   m_Enabled: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 577c0f82b97fa4462ae7304aad0722e5, type: 2}
   m_IsTrigger: 0
   m_Radius: 1
   m_Center: {x: 0, y: 0}
@@ -362,7 +362,7 @@ BoxCollider2D:
   m_PrefabInternal: {fileID: 68713499}
   m_GameObject: {fileID: 540675929}
   m_Enabled: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 577c0f82b97fa4462ae7304aad0722e5, type: 2}
   m_IsTrigger: 0
   m_Size: {x: 1, y: 1}
   m_Center: {x: 0, y: 0}
@@ -945,7 +945,7 @@ CircleCollider2D:
   m_PrefabInternal: {fileID: 1687165871}
   m_GameObject: {fileID: 2104766850}
   m_Enabled: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 577c0f82b97fa4462ae7304aad0722e5, type: 2}
   m_IsTrigger: 1
   m_Radius: 1
   m_Center: {x: 0, y: 0}
@@ -977,7 +977,7 @@ BoxCollider2D:
   m_PrefabInternal: {fileID: 1687165871}
   m_GameObject: {fileID: 2104766850}
   m_Enabled: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 577c0f82b97fa4462ae7304aad0722e5, type: 2}
   m_IsTrigger: 1
   m_Size: {x: 1, y: 1}
   m_Center: {x: 0, y: 0}
