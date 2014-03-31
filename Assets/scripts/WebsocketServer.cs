@@ -41,8 +41,10 @@ public class WebsocketServer : MonoBehaviour {
   private static HttpServer server;
 
   public static void BroadcastText(string text) {
-    server.WebSocketServices.Broadcast(
-        string.Format("{{\"type\":\"text\",\"text\":\"{0}\"}}", text));
+    if (null != server) {
+      server.WebSocketServices.Broadcast(
+          string.Format("{{\"type\":\"text\",\"text\":\"{0}\"}}", text));
+    }
   }
 
   void Start() {
@@ -73,6 +75,8 @@ public class WebsocketServer : MonoBehaviour {
   }
 
   void OnApplicationQuit() {
-    server.Stop();
+    if (null != server) {
+      server.Stop();
+    }
   }
 }
