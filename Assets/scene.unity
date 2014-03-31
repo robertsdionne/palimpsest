@@ -748,7 +748,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   descriptionPrefab: {fileID: 100000, guid: f16346b1ff5f54ff48408aed6e0587a3, type: 2}
   indicatorPrefab: {fileID: 100004, guid: 780e7d004a2964419814033229cd4ce0, type: 2}
-  maximumLines: 30
+  maximumLines: 25
   player: {fileID: 183898930}
   playerArrow: {fileID: 386097770}
 --- !u!4 &1252542225
@@ -1086,7 +1086,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 256
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_HDR: 0

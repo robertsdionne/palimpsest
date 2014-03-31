@@ -57,6 +57,6 @@ public class TextConsole : MonoBehaviour {
   }
 
   Vector2 NextPosition() {
-    return new Vector2(0, -lines.Count / 4.0f);
+    return new Vector2(0, -lines.Count / 3.0f);
   }
 }
