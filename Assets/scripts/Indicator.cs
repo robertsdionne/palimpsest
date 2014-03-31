@@ -22,8 +22,8 @@ public class Indicator : MonoBehaviour {
 	}
 
   Vector2 DirectionFrom(GameObject target, Vector2 position) {
-    var dx = new Vector2(1e-5f, 0.0f);
-    var dy = new Vector2(0.0f, 1e-5f);
+    var dx = 1e-5f * Vector2.right;
+    var dy = 1e-5f * Vector2.up;
     var direction = -new Vector2(
         DistanceTo(target, position + dx) - DistanceTo(target, position - dx),
         DistanceTo(target, position + dy) - DistanceTo(target, position - dy));
