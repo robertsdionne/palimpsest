@@ -24,8 +24,9 @@ public class Area : MonoBehaviour {
 
   public void Describe() {
     if (describe.Length > 0) {
-      var text = "←" + describe[Random.Range(0, describe.Length)];
+      var text = describe[Random.Range(0, describe.Length)];
       WebsocketServer.BroadcastText(text);
+      TextConsole.PushIndicator(gameObject, text);
       Debug.Log(text);
     }
   }
@@ -34,6 +35,7 @@ public class Area : MonoBehaviour {
     if (inside.Length > 0) {
       var text = inside[Random.Range(0, inside.Length)];
       WebsocketServer.BroadcastText(text);
+      TextConsole.PushText(text);
       Debug.Log(text);
     }
   }
@@ -47,6 +49,7 @@ public class Area : MonoBehaviour {
     if (enter.Length > 0) {
       var text = enter[Random.Range(0, enter.Length)];
       WebsocketServer.BroadcastText(text);
+      TextConsole.PushText(text);
       Debug.Log(text);
     }
   }
@@ -56,6 +59,7 @@ public class Area : MonoBehaviour {
     if (exit.Length > 0) {
       var text = exit[Random.Range(0, exit.Length)];
       WebsocketServer.BroadcastText(text);
+      TextConsole.PushText(text);
       Debug.Log(text);
     }
   }

@@ -54,6 +54,7 @@ public class Player : MonoBehaviour {
           Vector2.Distance(item.transform.position, gameObject.transform.position)).ToList();
       Debug.Log("");
       WebsocketServer.BroadcastText("");
+      TextConsole.PushText("");
       for (var i = 0; i < areas.Count; ++i) {
         areas[i].Inside();
       }
@@ -62,6 +63,7 @@ public class Player : MonoBehaviour {
       }
       Debug.Log("");
       WebsocketServer.BroadcastText("");
+      TextConsole.PushText("");
     }
   }
 
