@@ -12,20 +12,18 @@ public class Player : MonoBehaviour {
 
   public GameObject arrow;
   public float cameraPositionAlpha = 0.032f;
-  public Instructions instructions;
+  public GameObject instructions;
   public GameObject mainCamera;
   public float maximumAngularVelocity = 10.0f;
   public float maximumForce = 50.0f;
   public float maximumRunningSpeed = 5.81f;
   public float maximumTorque = 10.0f;
   public float maximumWalkingSpeed = 1.38f;
-  public GameObject textConsole;
 	
 	void FixedUpdate () {
     var input = GetInput();
-    if (input.magnitude > 0.0f && instructions.showGui) {
-      instructions.showGui = false;
-      textConsole.SetActive(true);
+    if (input.magnitude > 0.0f && instructions.activeInHierarchy) {
+      instructions.SetActive(false);
     }
     UpdateArrowRotationAndScale();
     UpdateCameraPosition();
@@ -54,7 +52,7 @@ public class Player : MonoBehaviour {
   }
 
   void MaybeSee() {
-    if (Input.GetButtonDown(SEE)) {
+    if (Input.GetButtonDown(SEE) && !instructions.activeInHierarchy) {
       var items = GameObject.FindGameObjectsWithTag(ENTITY);
       var areas = (GameObject.FindObjectsOfType(typeof(Area)) as Area[]).Where(
           area => area.IsOccupied()).Select(area => area.gameObject).ToList();
