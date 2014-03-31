@@ -173,7 +173,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arrow: {fileID: 903906844}
   cameraPositionAlpha: .0320000015
-  instructions: {fileID: 1484371830}
+  instructions: {fileID: 0}
   mainCamera: {fileID: 2141980579}
   maximumAngularVelocity: 10
   maximumForce: 50
@@ -899,49 +899,6 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1373983064}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
---- !u!1 &1484371830
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1484371832}
-  - 114: {fileID: 1484371831}
-  m_Layer: 0
-  m_Name: Instructions
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1484371831
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1484371830}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a5ad1d6553044b10aeafda5a57494ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fontEva: {fileID: 12800000, guid: 5a7a4d675748a436bbc554cc0dfee2a3, type: 3}
-  fontUbuntu: {fileID: 12800000, guid: b22f10666c4d04cd7a8b370a68841e9a, type: 3}
-  ps4Cross: {fileID: 2800000, guid: 0ee1ee4d17a8a47d5b16e0ff20c15afc, type: 3}
-  ps4L1: {fileID: 2800000, guid: 0ae433b99d7a94cd6b4fe3c353409c9a, type: 3}
-  ps4LeftStick: {fileID: 2800000, guid: 0bc33b7d383014513a0047616dd7fbf6, type: 3}
---- !u!4 &1484371832
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1484371830}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}

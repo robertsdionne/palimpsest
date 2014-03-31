@@ -22,9 +22,6 @@ public class Player : MonoBehaviour {
 	
 	void FixedUpdate () {
     var input = GetInput();
-    if (input.magnitude > 0.0f && instructions.activeInHierarchy) {
-      instructions.SetActive(false);
-    }
     UpdateArrowRotationAndScale();
     UpdateCameraPosition();
     UpdatePosition(input);
@@ -52,7 +49,7 @@ public class Player : MonoBehaviour {
   }
 
   void MaybeSee() {
-    if (Input.GetButtonDown(SEE) && !instructions.activeInHierarchy) {
+    if (Input.GetButtonDown(SEE)) {
       var items = GameObject.FindGameObjectsWithTag(ENTITY);
       var areas = (GameObject.FindObjectsOfType(typeof(Area)) as Area[]).Where(
           area => area.IsOccupied()).Select(area => area.gameObject).ToList();
