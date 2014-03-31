@@ -37,8 +37,13 @@ public class WebsocketServer : MonoBehaviour {
   public TextAsset ps4LeftStick;
   public TextAsset ubuntuMonoTtf;
 
-  private Dictionary<string, Resource> resourceMap;
-  private HttpServer server;
+  private static Dictionary<string, Resource> resourceMap;
+  private static HttpServer server;
+
+  public static void BroadcastText(string text) {
+    server.WebSocketServices.Broadcast(
+        string.Format("{{\"type\":\"text\",\"text\":\"{0}\"}}", text));
+  }
 
   void Start() {
     resourceMap = new Dictionary<string, Resource>() {

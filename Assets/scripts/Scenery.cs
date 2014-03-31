@@ -13,7 +13,9 @@ public class Scenery : MonoBehaviour {
 
   public void Describe() {
     if (describe.Length > 0) {
-      Debug.Log("←" + describe[Random.Range(0, describe.Length)]);
+      var text = "←" + describe[Random.Range(0, describe.Length)];
+      WebsocketServer.BroadcastText(text);
+      Debug.Log(text);
     }
   }
 
@@ -34,7 +36,9 @@ public class Scenery : MonoBehaviour {
           arrow = "↑ ";
         }
       }
-      Debug.Log(arrow + touch[Random.Range(0, touch.Length)]);
+      var text = arrow + touch[Random.Range(0, touch.Length)];
+      WebsocketServer.BroadcastText(text);
+      Debug.Log(text);
     }
   }
 }

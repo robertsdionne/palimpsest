@@ -53,6 +53,7 @@ public class Player : MonoBehaviour {
       var nearestItems = items.OrderBy(item =>
           Vector2.Distance(item.transform.position, gameObject.transform.position)).ToList();
       Debug.Log("");
+      WebsocketServer.BroadcastText("");
       for (var i = 0; i < areas.Count; ++i) {
         areas[i].Inside();
       }
@@ -60,6 +61,7 @@ public class Player : MonoBehaviour {
         Describe(nearestItems[i]);
       }
       Debug.Log("");
+      WebsocketServer.BroadcastText("");
     }
   }
 

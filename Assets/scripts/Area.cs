@@ -24,13 +24,17 @@ public class Area : MonoBehaviour {
 
   public void Describe() {
     if (describe.Length > 0) {
-      Debug.Log("←" + describe[Random.Range(0, describe.Length)]);
+      var text = "←" + describe[Random.Range(0, describe.Length)];
+      WebsocketServer.BroadcastText(text);
+      Debug.Log(text);
     }
   }
 
   public void Inside() {
     if (inside.Length > 0) {
-      Debug.Log(inside[Random.Range(0, inside.Length)]);
+      var text = inside[Random.Range(0, inside.Length)];
+      WebsocketServer.BroadcastText(text);
+      Debug.Log(text);
     }
   }
 
@@ -41,14 +45,18 @@ public class Area : MonoBehaviour {
   void OnTriggerEnter2D() {
     occupied = true;
     if (enter.Length > 0) {
-      Debug.Log(enter[Random.Range(0, enter.Length)]);
+      var text = enter[Random.Range(0, enter.Length)];
+      WebsocketServer.BroadcastText(text);
+      Debug.Log(text);
     }
   }
 
   void OnTriggerExit2D() {
     occupied = false;
     if (exit.Length > 0) {
-      Debug.Log(exit[Random.Range(0, exit.Length)]);
+      var text = exit[Random.Range(0, exit.Length)];
+      WebsocketServer.BroadcastText(text);
+      Debug.Log(text);
     }
   }
 }
