@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class Area : MonoBehaviour {
+public class Area : Entity {
 
   public string[] describe = {
     "See the area."

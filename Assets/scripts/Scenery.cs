@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Scenery : MonoBehaviour {
+public class Scenery : Entity {
 
   public string[] describe = {
     "See the area."
