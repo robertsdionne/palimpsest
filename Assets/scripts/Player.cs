@@ -10,6 +10,7 @@ public class Player : MonoBehaviour {
   private const string SEE = "See";
   private const string VERTICAL = "Vertical";
 
+  public GameObject arrow;
   public float cameraPositionAlpha = 0.032f;
   public GameObject mainCamera;
   public float maximumAngularVelocity = 10.0f;
@@ -20,6 +21,7 @@ public class Player : MonoBehaviour {
 	
 	void FixedUpdate () {
     var input = GetInput();
+    UpdateArrowRotationAndScale();
     UpdateCameraPosition();
     UpdatePosition(input);
     UpdateRotation(input);
@@ -67,6 +69,13 @@ public class Player : MonoBehaviour {
     }
   }
 
+  void UpdateArrowRotationAndScale() {
+    var scale = 0.125f * Mathf.Clamp01(rigidbody2D.velocity.magnitude);
+    arrow.transform.rotation = gameObject.transform.rotation;
+    arrow.transform.localScale = Vector2.Lerp(
+        arrow.transform.localScale, new Vector2(scale, scale), 0.1f);
+  }
+
   void UpdateCameraPosition() {
     Vector2 position = Vector2.Lerp(
         mainCamera.transform.position, transform.position, cameraPositionAlpha);
@@ -84,7 +93,7 @@ public class Player : MonoBehaviour {
     rigidbody2D.angularVelocity = Mathf.Clamp(
         rigidbody2D.angularVelocity, -maximumAngularVelocity, maximumAngularVelocity);
     if (input.magnitude > 0.0f) {
-      var torque = Vector3.Cross(rigidbody2D.transform.up, input.normalized).z;
+      var torque = Vector3.Cross(rigidbody2D.transform.right, input.normalized).z;
       rigidbody2D.AddTorque(maximumTorque * rigidbody2D.mass * torque);
     }
   }

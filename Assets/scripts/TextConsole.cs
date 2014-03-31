@@ -7,6 +7,8 @@ public class TextConsole : MonoBehaviour {
   public GameObject descriptionPrefab;
   public GameObject indicatorPrefab;
   public int maximumLines;
+  public GameObject player;
+  public GameObject playerArrow;
 
   private List<GameObject> lines = new List<GameObject>();
 
@@ -23,6 +25,7 @@ public class TextConsole : MonoBehaviour {
     description.transform.localPosition = textConsole.NextPosition();
     description.GetComponent<TextMesh>().text = text;
     textConsole.lines.Add(description);
+    textConsole.playerArrow.transform.localPosition = textConsole.NextPosition();
   }
 
   public static void PushIndicator(GameObject target, string text) {
@@ -30,9 +33,12 @@ public class TextConsole : MonoBehaviour {
     var indicator = Object.Instantiate(textConsole.indicatorPrefab) as GameObject;
     indicator.transform.parent = textConsole.gameObject.transform;
     indicator.transform.localPosition = textConsole.NextPosition();
+    indicator.GetComponent<Indicator>().arrow.transform.rotation = textConsole.player.transform.rotation;
     indicator.GetComponent<Indicator>().description.GetComponent<TextMesh>().text = text;
+    indicator.GetComponent<Indicator>().player = textConsole.player;
     indicator.GetComponent<Indicator>().target = target;
     textConsole.lines.Add(indicator);
+    textConsole.playerArrow.transform.localPosition = textConsole.NextPosition();
   }
 
   void MaybeClearItems() {
