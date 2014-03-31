@@ -25,7 +25,7 @@ public class Area : MonoBehaviour {
   public void Describe() {
     if (describe.Length > 0) {
       var text = describe[Random.Range(0, describe.Length)];
-      WebsocketServer.BroadcastText(text);
+      WebsocketServer.BroadcastIndicator(gameObject, text);
       TextConsole.PushIndicator(gameObject, text);
       Debug.Log(text);
     }
