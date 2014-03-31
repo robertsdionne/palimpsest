@@ -12,15 +12,21 @@ public class Player : MonoBehaviour {
 
   public GameObject arrow;
   public float cameraPositionAlpha = 0.032f;
+  public Instructions instructions;
   public GameObject mainCamera;
   public float maximumAngularVelocity = 10.0f;
   public float maximumForce = 50.0f;
   public float maximumRunningSpeed = 5.81f;
   public float maximumTorque = 10.0f;
   public float maximumWalkingSpeed = 1.38f;
+  public GameObject textConsole;
 	
 	void FixedUpdate () {
     var input = GetInput();
+    if (input.magnitude > 0.0f && instructions.showGui) {
+      instructions.showGui = false;
+      textConsole.SetActive(true);
+    }
     UpdateArrowRotationAndScale();
     UpdateCameraPosition();
     UpdatePosition(input);
