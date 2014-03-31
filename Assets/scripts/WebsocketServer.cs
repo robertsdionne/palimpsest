@@ -42,8 +42,11 @@ public class WebsocketServer : MonoBehaviour {
 
   public static void BroadcastText(string text) {
     if (null != server) {
-      server.WebSocketServices.Broadcast(
-          string.Format("{{\"type\":\"text\",\"text\":\"{0}\"}}", text));
+      server.WebSocketServices.Broadcast(Facebook.MiniJSON.Json.Serialize(
+          new Dictionary<string, string> {
+            {"type", "text"},
+            {"text", text}
+          }));
     }
   }
 
