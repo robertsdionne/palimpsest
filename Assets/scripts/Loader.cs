@@ -74,10 +74,10 @@ public class Loader : MonoBehaviour {
 
   void ReadObjectMessages(GameObject obj, Dictionary<string, object> json) {
     if (json.ContainsKey("touch")) {
-      obj.GetComponent<Scenery>().touch = (json["touch"] as List<object>).Cast<string>().ToArray();
+      obj.GetComponent<Obstacle>().touch = (json["touch"] as List<object>).Cast<string>().ToArray();
     }
     if (json.ContainsKey("describe")) {
-      obj.GetComponent<Scenery>().describe = (
+      obj.GetComponent<Obstacle>().describe = (
           json["describe"] as List<object>).Cast<string>().ToArray();
     }
   }

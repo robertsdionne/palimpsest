@@ -110,7 +110,7 @@ public class WebsocketServer : MonoBehaviour {
 
   void Update() {
     var player = GameObject.FindWithTag("Player");
-    var items = GameObject.FindGameObjectsWithTag("Scenery");
+    var items = GameObject.FindGameObjectsWithTag("Entity");
     var directions = new Dictionary<int, object>();
     foreach (var item in items) {
       directions[item.GetInstanceID()] = WriteVector2(

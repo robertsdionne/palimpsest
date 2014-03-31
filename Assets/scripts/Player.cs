@@ -4,9 +4,9 @@ using System.Linq;
 
 public class Player : MonoBehaviour {
 
+  private const string ENTITY = "Entity";
   private const string HORIZONTAL = "Horizontal";
   private const string RUN = "Run";
-  private const string SCENERY = "Scenery";
   private const string SEE = "See";
   private const string VERTICAL = "Vertical";
 
@@ -35,7 +35,7 @@ public class Player : MonoBehaviour {
     if (item.GetComponent<Collider2D>().isTrigger) {
       item.GetComponent<Area>().Describe();
     } else {
-      item.GetComponent<Scenery>().Describe();
+      item.GetComponent<Obstacle>().Describe();
     }
   }
 
@@ -49,7 +49,7 @@ public class Player : MonoBehaviour {
 
   void MaybeSee() {
     if (Input.GetButtonDown(SEE)) {
-      var items = GameObject.FindGameObjectsWithTag(SCENERY);
+      var items = GameObject.FindGameObjectsWithTag(ENTITY);
       var areas = (GameObject.FindObjectsOfType(typeof(Area)) as Area[]).Where(
           area => area.IsOccupied()).Select(area => area.gameObject).ToList();
       var nearestItems = items.Where(item => !areas.Contains(item)).OrderBy(item =>
