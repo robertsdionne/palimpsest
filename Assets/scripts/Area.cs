@@ -24,19 +24,13 @@ public class Area : Entity {
 
   public void Describe() {
     if (describe.Length > 0) {
-      var text = describe[Random.Range(0, describe.Length)];
-      WebsocketServer.BroadcastIndicator(gameObject, text);
-      TextConsole.PushIndicator(gameObject, text);
-      Debug.Log(text);
+      TextConsole.PushIndicator(gameObject, Choose(describe));
     }
   }
 
   public void Inside() {
     if (inside.Length > 0) {
-      var text = inside[Random.Range(0, inside.Length)];
-      WebsocketServer.BroadcastText(text);
-      TextConsole.PushText(text);
-      Debug.Log(text);
+      TextConsole.PushText(Choose(inside));
     }
   }
 
@@ -47,20 +41,14 @@ public class Area : Entity {
   void OnTriggerEnter2D() {
     occupied = true;
     if (enter.Length > 0) {
-      var text = enter[Random.Range(0, enter.Length)];
-      WebsocketServer.BroadcastText(text);
-      TextConsole.PushText(text);
-      Debug.Log(text);
+      TextConsole.PushText(Choose(enter));
     }
   }
 
   void OnTriggerExit2D() {
     occupied = false;
     if (exit.Length > 0) {
-      var text = exit[Random.Range(0, exit.Length)];
-      WebsocketServer.BroadcastText(text);
-      TextConsole.PushText(text);
-      Debug.Log(text);
+      TextConsole.PushText(Choose(exit));
     }
   }
 }

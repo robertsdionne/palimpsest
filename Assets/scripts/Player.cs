@@ -60,8 +60,6 @@ public class Player : MonoBehaviour {
           area => area.IsOccupied()).Select(area => area.gameObject).ToList();
       var nearestItems = items.Where(item => !areas.Contains(item)).OrderBy(item =>
           DistanceFields.DistanceTo(item, gameObject.transform.position)).ToList();
-      Debug.Log("");
-      WebsocketServer.BroadcastText("");
       TextConsole.PushText("");
       for (var i = 0; i < areas.Count; ++i) {
         areas[i].GetComponent<Area>().Inside();
@@ -69,8 +67,6 @@ public class Player : MonoBehaviour {
       for (var i = 0; i < 3; ++i) {
         Describe(nearestItems[i]);
       }
-      Debug.Log("");
-      WebsocketServer.BroadcastText("");
       TextConsole.PushText("");
     }
   }

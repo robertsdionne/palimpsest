@@ -19,6 +19,7 @@ public class TextConsole : MonoBehaviour {
   }
 
   public static void PushText(string text) {
+    WebsocketServer.BroadcastText(text);
     if (null != textConsole) {
       textConsole.MaybeClearItems();
       var description = Object.Instantiate(textConsole.descriptionPrefab) as GameObject;
@@ -31,6 +32,7 @@ public class TextConsole : MonoBehaviour {
   }
 
   public static void PushIndicator(GameObject target, string text) {
+    WebsocketServer.BroadcastIndicator(target, text);
     if (null != textConsole) {
       textConsole.MaybeClearItems();
       var indicator = Object.Instantiate(textConsole.indicatorPrefab) as GameObject;
