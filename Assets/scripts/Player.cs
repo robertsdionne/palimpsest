@@ -86,6 +86,10 @@ public class Player : MonoBehaviour {
 
   void UpdateArrowRotationAndScale() {
     var scale = 0.125f * Mathf.Clamp01(rigidbody2D.velocity.magnitude);
+    var frequency = 4.0f + 4.0f * IsRunning();
+    arrow.transform.localPosition = 0.01f * (
+        Mathf.Sin(frequency * Time.fixedTime) * Vector2.right +
+        Mathf.Sin(2.0f * frequency * Time.fixedTime) * Vector2.up);
     arrow.transform.rotation = gameObject.transform.rotation;
     arrow.transform.localScale = Vector2.Lerp(
         arrow.transform.localScale, new Vector2(scale, scale), 0.1f);
