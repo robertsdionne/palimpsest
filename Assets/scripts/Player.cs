@@ -31,26 +31,11 @@ public class Player : MonoBehaviour {
     MaybeSee();
   }
 
-  Vector2 Abs(Vector2 input) {
-    return new Vector2(Mathf.Abs(input.x), Mathf.Abs(input.y));
-  }
-
   void Describe(GameObject item) {
     if (item.GetComponent<Collider2D>().isTrigger) {
       item.GetComponent<Area>().Describe();
     } else {
       item.GetComponent<Scenery>().Describe();
-    }
-  }
-
-  float DistanceTo(GameObject target, Vector2 position) {
-    Vector2 center = target.transform.position;
-    if (target.GetComponent<BoxCollider2D>().enabled) {
-      Vector2 halfExtent = target.transform.localScale / 2.0f;
-      return (Vector2.Max(Abs(center - position) - halfExtent, new Vector2())).magnitude;
-    } else {
-      float radius = target.transform.localScale.x;
-      return (center - position).magnitude - radius;
     }
   }
 
@@ -68,7 +53,7 @@ public class Player : MonoBehaviour {
       var areas = (GameObject.FindObjectsOfType(typeof(Area)) as Area[]).Where(
           area => area.IsOccupied()).Select(area => area.gameObject).ToList();
       var nearestItems = items.Where(item => !areas.Contains(item)).OrderBy(item =>
-          DistanceTo(item, gameObject.transform.position)).ToList();
+          DistanceFields.DistanceTo(item, gameObject.transform.position)).ToList();
       Debug.Log("");
       WebsocketServer.BroadcastText("");
       TextConsole.PushText("");
