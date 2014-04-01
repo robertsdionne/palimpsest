@@ -46,7 +46,8 @@ public class TextConsole : MonoBehaviour {
       indicator.transform.parent = textConsole.gameObject.transform;
       indicator.transform.localPosition = textConsole.NextPosition(
           indicator.GetComponent<Line>());
-      indicator.GetComponent<Indicator>().arrow.transform.rotation = textConsole.player.transform.rotation;
+      indicator.GetComponent<Indicator>().arrow.transform.rotation =
+          textConsole.player.transform.rotation;
       indicator.GetComponent<Indicator>().description.GetComponent<TextMesh>().text = text;
       indicator.GetComponent<Indicator>().player = textConsole.player;
       indicator.GetComponent<Indicator>().target = target;
