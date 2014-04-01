@@ -7,7 +7,7 @@ public class Entity : MonoBehaviour {
     "See the entity."
   };
 
-  public void Describe() {
+  public virtual void Describe() {
     if (describe.Length > 0) {
       TextConsole.PushIndicator(gameObject, Choose(describe));
     }

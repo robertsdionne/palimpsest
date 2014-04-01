@@ -16,9 +16,9 @@ public class Area : Entity {
     "Inside the area."
   };
 
-  private bool occupied = false;
+  protected bool occupied = false;
 
-  public void Inside() {
+  public virtual void Inside() {
     if (inside.Length > 0) {
       TextConsole.PushText(Choose(inside));
     }

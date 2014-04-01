@@ -38,7 +38,41 @@ public class TextConsole : MonoBehaviour {
     }
   }
 
+  public static void PushPathText(GameObject target, string text) {
+    WebsocketServer.BroadcastText(text);
+    if (null != textConsole) {
+      textConsole.MaybeClearLines();
+      var description = Object.Instantiate(textConsole.descriptionPrefab) as GameObject;
+      var line = description.GetComponent<Line>();
+      description.transform.parent = textConsole.gameObject.transform;
+      description.transform.localPosition = textConsole.NextPosition(line);
+      description.GetComponent<TextMesh>().text = text;
+      textConsole.lines.Add(line);
+      textConsole.playerArrowLine.gameObject.transform.localPosition =
+          textConsole.NextPosition(textConsole.playerArrowLine);
+    }
+  }
+
   public static void PushIndicator(GameObject target, string text) {
+    WebsocketServer.BroadcastIndicator(target, text);
+    if (null != textConsole) {
+      textConsole.MaybeClearLines();
+      var indicator = Object.Instantiate(textConsole.indicatorPrefab) as GameObject;
+      var line = indicator.GetComponent<Line>();
+      var indicatorComponent = indicator.GetComponent<Indicator>();
+      indicator.transform.parent = textConsole.gameObject.transform;
+      indicator.transform.localPosition = textConsole.NextPosition(line);
+      indicatorComponent.arrow.transform.rotation = textConsole.player.transform.rotation;
+      indicatorComponent.description.GetComponent<TextMesh>().text = text;
+      indicatorComponent.player = textConsole.player;
+      indicatorComponent.target = target;
+      textConsole.lines.Add(line);
+      textConsole.playerArrowLine.gameObject.transform.localPosition =
+          textConsole.NextPosition(textConsole.playerArrowLine);
+    }
+  }
+
+  public static void PushPathIndicator(GameObject target, string text) {
     WebsocketServer.BroadcastIndicator(target, text);
     if (null != textConsole) {
       textConsole.MaybeClearLines();
