@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7ff45b10049124850b41b9f8f45bf1d4
+guid: 85fe3e8c7cc4040aa8de3cb48167a3eb
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
@@ -8,7 +8,7 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: Plane
-    4300002: Arrow
+    4300002: PathArrow
     7400000: Default Take
     9500000: //RootNode
   materials:

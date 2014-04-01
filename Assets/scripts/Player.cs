@@ -6,7 +6,7 @@ public class Player : MonoBehaviour {
 
   private const string ENTITY = "Entity";
   private const string HORIZONTAL = "Horizontal";
-  // private const string RUN = "Run";
+  private const string RUN = "Run";
   private const string SEE = "See";
   private const string VERTICAL = "Vertical";
 
@@ -41,8 +41,7 @@ public class Player : MonoBehaviour {
   }
 
   float IsRunning() {
-    // return System.Convert.ToSingle(Input.GetButton(RUN));
-    return 0.0f;
+    return System.Convert.ToSingle(Input.GetButton(RUN));
   }
 
   void MaybeSee() {
