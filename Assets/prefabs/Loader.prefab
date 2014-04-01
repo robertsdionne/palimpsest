@@ -41,7 +41,7 @@ MonoBehaviour:
   areaPrefab: {fileID: 100000, guid: dd6a22393fd11440ea2c1079ece9a083, type: 2}
   boxMesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
   circleMesh: {fileID: 4300000, guid: b4d81dc7e24e24a749c374b17d8f1827, type: 3}
-  objectPrefab: {fileID: 100000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+  obstaclePrefab: {fileID: 100000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
   sceneJson: {fileID: 4900000, guid: fc9f68acd11b9445798cd91f317e6ab0, type: 3}
 --- !u!1001 &100100000
 Prefab:

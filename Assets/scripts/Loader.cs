@@ -7,7 +7,7 @@ public class Loader : MonoBehaviour {
   public GameObject areaPrefab;
   public Mesh boxMesh;
   public Mesh circleMesh;
-  public GameObject objectPrefab;
+  public GameObject obstaclePrefab;
   public TextAsset sceneJson;
 
 	// Use this for initialization
@@ -28,9 +28,10 @@ public class Loader : MonoBehaviour {
     aabb.GetComponent<CircleCollider2D>().enabled = false;
     aabb.GetComponent<MeshFilter>().sharedMesh = boxMesh;
     if (areaPrefab == prefab) {
-      ReadAreaMessages(aabb, json["messages"] as Dictionary<string, object>);
+      ReadAreaMessages(aabb.GetComponent<Area>(), json["messages"] as Dictionary<string, object>);
     } else {
-      ReadObjectMessages(aabb, json["messages"] as Dictionary<string, object>);
+      ReadObstacleMessages(
+          aabb.GetComponent<Obstacle>(), json["messages"] as Dictionary<string, object>);
     }
   }
 
@@ -44,9 +45,10 @@ public class Loader : MonoBehaviour {
     circle.GetComponent<CircleCollider2D>().enabled = true;
     circle.GetComponent<MeshFilter>().sharedMesh = circleMesh;
     if (areaPrefab == prefab) {
-      ReadAreaMessages(circle, json["messages"] as Dictionary<string, object>);
+      ReadAreaMessages(circle.GetComponent<Area>(), json["messages"] as Dictionary<string, object>);
     } else {
-      ReadObjectMessages(circle, json["messages"] as Dictionary<string, object>);
+      ReadObstacleMessages(
+          circle.GetComponent<Obstacle>(), json["messages"] as Dictionary<string, object>);
     }
   }
 
@@ -58,29 +60,27 @@ public class Loader : MonoBehaviour {
     }
   }
 
-  void ReadAreaMessages(GameObject obj, Dictionary<string, object> json) {
+  void ReadAreaMessages(Area area, Dictionary<string, object> json) {
     if (json.ContainsKey("describe")) {
-      obj.GetComponent<Area>().describe = (
-          json["describe"] as List<object>).Cast<string>().ToArray();
+      area.describe = (json["describe"] as List<object>).Cast<string>().ToArray();
     }
     if (json.ContainsKey("enter")) {
-      obj.GetComponent<Area>().enter = (json["enter"] as List<object>).Cast<string>().ToArray();
+      area.enter = (json["enter"] as List<object>).Cast<string>().ToArray();
     }
     if (json.ContainsKey("exit")) {
-      obj.GetComponent<Area>().exit = (json["exit"] as List<object>).Cast<string>().ToArray();
+      area.exit = (json["exit"] as List<object>).Cast<string>().ToArray();
     }
     if (json.ContainsKey("inside")) {
-      obj.GetComponent<Area>().inside = (json["inside"] as List<object>).Cast<string>().ToArray();
+      area.inside = (json["inside"] as List<object>).Cast<string>().ToArray();
     }
   }
 
-  void ReadObjectMessages(GameObject obj, Dictionary<string, object> json) {
+  void ReadObstacleMessages(Obstacle obstacle, Dictionary<string, object> json) {
     if (json.ContainsKey("touch")) {
-      obj.GetComponent<Obstacle>().touch = (json["touch"] as List<object>).Cast<string>().ToArray();
+      obstacle.touch = (json["touch"] as List<object>).Cast<string>().ToArray();
     }
     if (json.ContainsKey("describe")) {
-      obj.GetComponent<Obstacle>().describe = (
-          json["describe"] as List<object>).Cast<string>().ToArray();
+      obstacle.describe = (json["describe"] as List<object>).Cast<string>().ToArray();
     }
   }
 
@@ -89,9 +89,9 @@ public class Loader : MonoBehaviour {
     foreach (var area in areas) {
       ReadItem(areaPrefab, area as Dictionary<string, object>);
     }
-    var objects = scene["objects"] as List<object>;
-    foreach (var obj in objects) {
-      ReadItem(objectPrefab, obj as Dictionary<string, object>);
+    var obstacles = scene["objects"] as List<object>;
+    foreach (var obstacle in obstacles) {
+      ReadItem(obstaclePrefab, obstacle as Dictionary<string, object>);
     }
   }
 
