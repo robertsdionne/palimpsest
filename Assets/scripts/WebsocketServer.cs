@@ -110,11 +110,11 @@ public class WebsocketServer : MonoBehaviour {
 
   void Update() {
     var player = GameObject.FindWithTag("Player");
-    var items = GameObject.FindGameObjectsWithTag("Entity");
+    var entities = GameObject.FindGameObjectsWithTag("Entity");
     var directions = new Dictionary<int, object>();
-    foreach (var item in items) {
-      directions[item.GetInstanceID()] = WriteVector2(
-          DistanceFields.DirectionFrom(item, player.transform.position));
+    foreach (var entity in entities) {
+      directions[entity.GetInstanceID()] = WriteVector2(
+          DistanceFields.DirectionFrom(entity, player.transform.position));
     }
     BroadcastTelemetry(WriteVector2(player.transform.position),
         WriteVector2(player.rigidbody2D.velocity.normalized), directions);

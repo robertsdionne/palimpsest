@@ -24,6 +24,7 @@ public class Loader : MonoBehaviour {
     var aabb = Object.Instantiate(prefab, position, Quaternion.identity) as GameObject;
     aabb.name = json["name"] as string;
     aabb.transform.localScale = new Vector3(size.x, size.y, 1);
+    aabb.GetComponent<BoxCollider2D>().enabled = true;
     aabb.GetComponent<CircleCollider2D>().enabled = false;
     aabb.GetComponent<MeshFilter>().sharedMesh = boxMesh;
     if (areaPrefab == prefab) {
@@ -40,6 +41,7 @@ public class Loader : MonoBehaviour {
     circle.name = json["name"] as string;
     circle.transform.localScale = new Vector3(radius, radius, 1);
     circle.GetComponent<BoxCollider2D>().enabled = false;
+    circle.GetComponent<CircleCollider2D>().enabled = true;
     circle.GetComponent<MeshFilter>().sharedMesh = circleMesh;
     if (areaPrefab == prefab) {
       ReadAreaMessages(circle, json["messages"] as Dictionary<string, object>);

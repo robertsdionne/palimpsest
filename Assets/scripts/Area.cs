@@ -4,10 +4,6 @@ using System.Collections.Generic;
 
 public class Area : Entity {
 
-  public string[] describe = {
-    "See the area."
-  };
-
   public string[] enter = {
     "Enter the area."
   };
@@ -21,12 +17,6 @@ public class Area : Entity {
   };
 
   private bool occupied = false;
-
-  public void Describe() {
-    if (describe.Length > 0) {
-      TextConsole.PushIndicator(gameObject, Choose(describe));
-    }
-  }
 
   public void Inside() {
     if (inside.Length > 0) {

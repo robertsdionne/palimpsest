@@ -32,12 +32,8 @@ public class Player : MonoBehaviour {
     MaybeSee();
   }
 
-  void Describe(GameObject item) {
-    if (item.GetComponent<Collider2D>().isTrigger) {
-      item.GetComponent<Area>().Describe();
-    } else {
-      item.GetComponent<Obstacle>().Describe();
-    }
+  void Describe(GameObject entity) {
+    entity.GetComponent<Entity>().Describe();
   }
 
   Vector2 GetInput() {
@@ -50,17 +46,17 @@ public class Player : MonoBehaviour {
 
   void MaybeSee() {
     if (Input.GetButtonDown(SEE)) {
-      var items = GameObject.FindGameObjectsWithTag(ENTITY);
+      var entities = GameObject.FindGameObjectsWithTag(ENTITY);
       var areas = (GameObject.FindObjectsOfType(typeof(Area)) as Area[]).Where(
           area => area.IsOccupied()).Select(area => area.gameObject).ToList();
-      var nearestItems = items.Where(item => !areas.Contains(item)).OrderBy(item =>
-          DistanceFields.DistanceTo(item, gameObject.transform.position)).ToList();
+      var nearestEntities = entities.Where(entity => !areas.Contains(entity)).OrderBy(entity =>
+          DistanceFields.DistanceTo(entity, gameObject.transform.position)).ToList();
       TextConsole.PushText("");
       for (var i = 0; i < areas.Count; ++i) {
         areas[i].GetComponent<Area>().Inside();
       }
-      for (var i = 0; i < items.Length && i < 3; ++i) {
-        Describe(nearestItems[i]);
+      for (var i = 0; i < entities.Length && i < 3; ++i) {
+        Describe(nearestEntities[i]);
       }
       TextConsole.PushText("");
     }
