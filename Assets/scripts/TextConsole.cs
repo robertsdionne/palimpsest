@@ -11,7 +11,7 @@ public class TextConsole : MonoBehaviour {
   public GameObject indicatorPrefab;
   public int maximumLines;
   public GameObject player;
-  public GameObject playerArrow;
+  public Line playerArrowLine;
 
   private List<Line> lines = new List<Line>();
 
@@ -28,13 +28,13 @@ public class TextConsole : MonoBehaviour {
     if (null != textConsole) {
       textConsole.MaybeClearLines();
       var description = Object.Instantiate(textConsole.descriptionPrefab) as GameObject;
+      var line = description.GetComponent<Line>();
       description.transform.parent = textConsole.gameObject.transform;
-      description.transform.localPosition = textConsole.NextPosition(
-          description.GetComponent<Line>());
+      description.transform.localPosition = textConsole.NextPosition(line);
       description.GetComponent<TextMesh>().text = text;
-      textConsole.lines.Add(description.GetComponent<Line>());
-      textConsole.playerArrow.transform.localPosition = textConsole.NextPosition(
-          textConsole.playerArrow.GetComponent<Line>());
+      textConsole.lines.Add(line);
+      textConsole.playerArrowLine.gameObject.transform.localPosition =
+          textConsole.NextPosition(textConsole.playerArrowLine);
     }
   }
 
@@ -43,17 +43,17 @@ public class TextConsole : MonoBehaviour {
     if (null != textConsole) {
       textConsole.MaybeClearLines();
       var indicator = Object.Instantiate(textConsole.indicatorPrefab) as GameObject;
+      var line = indicator.GetComponent<Line>();
+      var indicatorComponent = indicator.GetComponent<Indicator>();
       indicator.transform.parent = textConsole.gameObject.transform;
-      indicator.transform.localPosition = textConsole.NextPosition(
-          indicator.GetComponent<Line>());
-      indicator.GetComponent<Indicator>().arrow.transform.rotation =
-          textConsole.player.transform.rotation;
-      indicator.GetComponent<Indicator>().description.GetComponent<TextMesh>().text = text;
-      indicator.GetComponent<Indicator>().player = textConsole.player;
-      indicator.GetComponent<Indicator>().target = target;
-      textConsole.lines.Add(indicator.GetComponent<Line>());
-      textConsole.playerArrow.transform.localPosition = textConsole.NextPosition(
-          textConsole.playerArrow.GetComponent<Line>());
+      indicator.transform.localPosition = textConsole.NextPosition(line);
+      indicatorComponent.arrow.transform.rotation = textConsole.player.transform.rotation;
+      indicatorComponent.description.GetComponent<TextMesh>().text = text;
+      indicatorComponent.player = textConsole.player;
+      indicatorComponent.target = target;
+      textConsole.lines.Add(line);
+      textConsole.playerArrowLine.gameObject.transform.localPosition =
+          textConsole.NextPosition(textConsole.playerArrowLine);
     }
   }
 

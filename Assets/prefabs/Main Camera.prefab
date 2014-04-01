@@ -27,7 +27,7 @@ GameObject:
   - 4: {fileID: 400002}
   - 114: {fileID: 11400000}
   m_Layer: 8
-  m_Name: PlayerArrowHolder
+  m_Name: PlayerArrowLine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -457,7 +457,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_HDR: 0
@@ -878,7 +878,7 @@ MonoBehaviour:
   indicatorPrefab: {fileID: 100004, guid: 780e7d004a2964419814033229cd4ce0, type: 2}
   maximumLines: 24
   player: {fileID: 0}
-  playerArrow: {fileID: 100002}
+  playerArrowLine: {fileID: 11400000}
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
