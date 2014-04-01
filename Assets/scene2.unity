@@ -1659,6 +1659,62 @@ Transform:
   m_LocalScale: {x: 13.2153521, y: 1.03108406, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!1001 &518940839
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -.257429391
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 8.23614311
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: .130526215
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: .991444886
+      objectReference: {fileID: 0}
+    - target: {fileID: 5800000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: describe.Array.data[0]
+      value: See the wagon.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: touch.Array.data[0]
+      value: Touch the wagon.
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: m_Name
+      value: wagon
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+  m_RootGameObject: {fileID: 1767796171}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
 --- !u!1 &554431976
 GameObject:
   m_ObjectHideFlags: 0
@@ -4110,6 +4166,108 @@ Transform:
   m_GameObject: {fileID: 1730186811}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.2998848, y: 2.98073769, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+--- !u!1 &1767796171
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+  m_PrefabInternal: {fileID: 518940839}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1767796177}
+  - 33: {fileID: 1767796176}
+  - 23: {fileID: 1767796175}
+  - 61: {fileID: 1767796174}
+  - 114: {fileID: 1767796173}
+  - 58: {fileID: 1767796172}
+  m_Layer: 0
+  m_Name: wagon
+  m_TagString: Entity
+  m_Icon: {fileID: -1003283189, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!58 &1767796172
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5800000, guid: 53dcfd257267446b2aeed41fb6708dca,
+    type: 2}
+  m_PrefabInternal: {fileID: 518940839}
+  m_GameObject: {fileID: 1767796171}
+  m_Enabled: 0
+  m_Material: {fileID: 6200000, guid: 577c0f82b97fa4462ae7304aad0722e5, type: 2}
+  m_IsTrigger: 0
+  m_Radius: 1
+  m_Center: {x: 0, y: 0}
+--- !u!114 &1767796173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: 53dcfd257267446b2aeed41fb6708dca,
+    type: 2}
+  m_PrefabInternal: {fileID: 518940839}
+  m_GameObject: {fileID: 1767796171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16caddc1c82db44e7a67a93ca1d7d3f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  describe:
+  - See the wagon.
+  touch:
+  - Touch the wagon.
+  touchDelay: 1
+--- !u!61 &1767796174
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6100000, guid: 53dcfd257267446b2aeed41fb6708dca,
+    type: 2}
+  m_PrefabInternal: {fileID: 518940839}
+  m_GameObject: {fileID: 1767796171}
+  m_Enabled: 1
+  m_Material: {fileID: 6200000, guid: 577c0f82b97fa4462ae7304aad0722e5, type: 2}
+  m_IsTrigger: 0
+  m_Size: {x: 1, y: 1}
+  m_Center: {x: 0, y: 0}
+--- !u!23 &1767796175
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300000, guid: 53dcfd257267446b2aeed41fb6708dca,
+    type: 2}
+  m_PrefabInternal: {fileID: 518940839}
+  m_GameObject: {fileID: 1767796171}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 9d774d7870d6f4883bfdd1e68123614d, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &1767796176
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300000, guid: 53dcfd257267446b2aeed41fb6708dca,
+    type: 2}
+  m_PrefabInternal: {fileID: 518940839}
+  m_GameObject: {fileID: 1767796171}
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1767796177
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+  m_PrefabInternal: {fileID: 518940839}
+  m_GameObject: {fileID: 1767796171}
+  m_LocalRotation: {x: 0, y: 0, z: .130526215, w: .991444886}
+  m_LocalPosition: {x: -.257429391, y: 8.23614311, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
