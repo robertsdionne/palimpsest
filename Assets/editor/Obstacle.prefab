@@ -93,9 +93,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   describe:
-  - See the area.
+  - See the obstacle.
   touch:
-  - Touch the object.
+  - Touch the obstacle.
   touchDelay: 1
 --- !u!1001 &100100000
 Prefab:

@@ -14,12 +14,14 @@ public class DistanceFields {
 
   public static float DistanceTo(GameObject target, Vector2 position) {
     Vector2 center = target.transform.position;
+    var p = center - position;
     if (target.GetComponent<BoxCollider2D>().enabled) {
+      var q = Quaternion.Inverse(target.transform.rotation) * p;
       Vector2 halfExtent = target.transform.localScale / 2.0f;
-      return (Vector2.Max(Abs(center - position) - halfExtent, new Vector2())).magnitude;
+      return (Vector2.Max(Abs(q) - halfExtent, new Vector2())).magnitude;
     } else {
       float radius = target.transform.localScale.x;
-      return (center - position).magnitude - radius;
+      return p.magnitude - radius; // p rather than q for rotational symmetry
     }
   }
 
