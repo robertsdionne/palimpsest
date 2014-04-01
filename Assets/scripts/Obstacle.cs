@@ -11,6 +11,10 @@ public class Obstacle : Entity {
     "Touch the object."
   };
 
+  public float touchDelay;
+
+  private float lastTouchTime = 0.0f;
+
   public void Describe() {
     if (describe.Length > 0) {
       TextConsole.PushIndicator(gameObject, Choose(describe));
@@ -18,8 +22,9 @@ public class Obstacle : Entity {
   }
 
   void OnCollisionEnter2D(Collision2D collision) {
-    if (touch.Length > 0) {
+    if (touch.Length > 0 && Time.fixedTime - lastTouchTime > touchDelay) {
       TextConsole.PushIndicator(gameObject, Choose(touch));
+      lastTouchTime = Time.fixedTime;
     }
   }
 }

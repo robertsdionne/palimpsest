@@ -59,7 +59,7 @@ public class Player : MonoBehaviour {
       for (var i = 0; i < areas.Count; ++i) {
         areas[i].GetComponent<Area>().Inside();
       }
-      for (var i = 0; i < 3; ++i) {
+      for (var i = 0; i < items.Length && i < 3; ++i) {
         Describe(nearestItems[i]);
       }
       TextConsole.PushText("");
