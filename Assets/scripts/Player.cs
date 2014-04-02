@@ -20,9 +20,15 @@ public class Player : MonoBehaviour {
   public float maximumRunningSpeed = 5.81f;
   public float maximumTorque = 10.0f;
   public float maximumWalkingSpeed = 1.38f;
+  public float seeDelay = 4.0f;
 
   private List<GameObject> occupiedAreas = new List<GameObject>();
   private List<GameObject> nearestEntities = new List<GameObject>();
+  private float lastSeeTime;
+
+  void Start() {
+    lastSeeTime = Time.fixedTime - seeDelay;
+  }
 	
 	void FixedUpdate () {
     UpdateAreasAndEntities();
@@ -53,12 +59,17 @@ public class Player : MonoBehaviour {
         DistanceFields.DistanceTo(entity, gameObject.transform.position)).Take(3).ToList();
   }
 
+  bool IsMoreToSee() {
+    return nearestEntities.Any(entity => !entity.GetComponent<Entity>().IsSeen());
+  }
+
   float IsRunning() {
     return System.Convert.ToSingle(Input.GetButton(RUN));
   }
 
   void MaybeSee() {
-    if (Input.GetButtonDown(SEE)) {
+    if (Input.GetButtonDown(SEE) && (Time.fixedTime - lastSeeTime > seeDelay || IsMoreToSee())) {
+      lastSeeTime = Time.fixedTime;
       TextConsole.PushText("");
       for (var i = 0; i < occupiedAreas.Count; ++i) {
         occupiedAreas[i].GetComponent<Area>().Inside();
@@ -87,8 +98,7 @@ public class Player : MonoBehaviour {
   }
 
   void UpdateEyeScale() {
-    var scale = 0.125f * System.Convert.ToSingle(
-        nearestEntities.Any(entity => !entity.GetComponent<Entity>().IsSeen()));
+    var scale = 0.125f * System.Convert.ToSingle(IsMoreToSee());
     eye.transform.localScale = Vector2.Lerp(
         eye.transform.localScale, new Vector2(0.125f, scale), 0.1f);
   }
