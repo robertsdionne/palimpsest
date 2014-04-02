@@ -25,11 +25,7 @@ public class Player : MonoBehaviour {
 
   private List<GameObject> occupiedAreas = new List<GameObject>();
   private List<GameObject> nearestEntities = new List<GameObject>();
-  private float lastSeeTime;
-
-  void Start() {
-    lastSeeTime = Time.fixedTime - seeDelay;
-  }
+  private float lastSeeTime = float.NegativeInfinity;
 	
 	void FixedUpdate () {
     UpdateAreasAndEntities();
@@ -84,8 +80,15 @@ public class Player : MonoBehaviour {
   }
 
   void UpdateAreasAndEntities() {
-    occupiedAreas = GetOccupiedAreas();
-    nearestEntities = GetNearestEntities(occupiedAreas);
+    var newlyOccupiedAreas = GetOccupiedAreas();
+    var newlyNearestEntities = GetNearestEntities(occupiedAreas);
+    foreach (var entity in newlyNearestEntities) {
+      if (!occupiedAreas.Contains(entity) && !nearestEntities.Contains(entity)) {
+        lastSeeTime = float.NegativeInfinity;
+      }
+    }
+    occupiedAreas = newlyOccupiedAreas;
+    nearestEntities = newlyNearestEntities;
   }
 
   void UpdateArrowRotationAndScale(Vector2 input) {
