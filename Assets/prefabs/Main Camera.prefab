@@ -892,7 +892,9 @@ MonoBehaviour:
   indicatorPrefab: {fileID: 100004, guid: 780e7d004a2964419814033229cd4ce0, type: 2}
   pathDescriptionPrefab: {fileID: 100004, guid: 96035fa0ed1d140a9b6f43cd5a52803f,
     type: 2}
-  maximumLines: 24
+  signDescriptionPrefab: {fileID: 100004, guid: af2d2a46f5c7044d6a1e1d918a77aa77,
+    type: 2}
+  maximumLines: 23
   player: {fileID: 0}
   playerArrowLine: {fileID: 11400000}
 --- !u!114 &11400006
