@@ -21,11 +21,10 @@ public class Player : MonoBehaviour {
   public float maximumTorque = 10.0f;
   public float maximumWalkingSpeed = 1.38f;
   public int numberToSee = 3;
-  public float seeDelay = 4.0f;
 
   private List<GameObject> occupiedAreas = new List<GameObject>();
   private List<GameObject> nearestEntities = new List<GameObject>();
-  private float lastSeeTime = float.NegativeInfinity;
+  private bool ableToSee = true;
 	
 	void FixedUpdate () {
     UpdateAreasAndEntities();
@@ -66,8 +65,8 @@ public class Player : MonoBehaviour {
   }
 
   void MaybeSee() {
-    if (Input.GetButtonDown(SEE) && (Time.fixedTime - lastSeeTime > seeDelay || IsMoreToSee())) {
-      lastSeeTime = Time.fixedTime;
+    if (Input.GetButtonDown(SEE) && (ableToSee || IsMoreToSee())) {
+      ableToSee = false;
       TextConsole.PushText("");
       for (var i = 0; i < occupiedAreas.Count; ++i) {
         occupiedAreas[i].GetComponent<Area>().Inside();
@@ -84,7 +83,7 @@ public class Player : MonoBehaviour {
     var newlyNearestEntities = GetNearestEntities(occupiedAreas);
     foreach (var entity in newlyNearestEntities) {
       if (!occupiedAreas.Contains(entity) && !nearestEntities.Contains(entity)) {
-        lastSeeTime = float.NegativeInfinity;
+        ableToSee = true;
       }
     }
     occupiedAreas = newlyOccupiedAreas;
