@@ -19,6 +19,7 @@ public class Area : Entity {
   protected bool occupied = false;
 
   public virtual void Inside() {
+    seen = true;
     if (inside.Length > 0) {
       TextConsole.PushText(Choose(inside));
     }
@@ -30,6 +31,7 @@ public class Area : Entity {
 
   void OnTriggerEnter2D() {
     occupied = true;
+    seen = true;
     if (enter.Length > 0) {
       TextConsole.PushText(Choose(enter));
     }
@@ -37,6 +39,7 @@ public class Area : Entity {
 
   void OnTriggerExit2D() {
     occupied = false;
+    seen = true;
     if (exit.Length > 0) {
       TextConsole.PushText(Choose(exit));
     }

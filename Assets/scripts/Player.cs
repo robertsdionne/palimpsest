@@ -13,17 +13,22 @@ public class Player : MonoBehaviour {
 
   public GameObject arrow;
   public float cameraPositionAlpha = 0.032f;
-  public GameObject instructions;
+  public GameObject eye;
   public GameObject mainCamera;
   public float maximumAngularVelocity = 10.0f;
   public float maximumForce = 50.0f;
   public float maximumRunningSpeed = 5.81f;
   public float maximumTorque = 10.0f;
   public float maximumWalkingSpeed = 1.38f;
+
+  private List<GameObject> occupiedAreas = new List<GameObject>();
+  private List<GameObject> nearestEntities = new List<GameObject>();
 	
 	void FixedUpdate () {
+    UpdateAreasAndEntities();
     var input = GetInput();
     UpdateArrowRotationAndScale();
+    UpdateEyeScale();
     UpdateCameraPosition();
     UpdatePosition(input);
     UpdateRotation(input);
@@ -53,8 +58,6 @@ public class Player : MonoBehaviour {
   }
 
   void MaybeSee() {
-    var occupiedAreas = GetOccupiedAreas();
-    var nearestEntities = GetNearestEntities(occupiedAreas);
     if (Input.GetButtonDown(SEE)) {
       TextConsole.PushText("");
       for (var i = 0; i < occupiedAreas.Count; ++i) {
@@ -67,6 +70,11 @@ public class Player : MonoBehaviour {
     }
   }
 
+  void UpdateAreasAndEntities() {
+    occupiedAreas = GetOccupiedAreas();
+    nearestEntities = GetNearestEntities(occupiedAreas);
+  }
+
   void UpdateArrowRotationAndScale() {
     var scale = 0.125f * Mathf.Clamp01(rigidbody2D.velocity.magnitude);
     var frequency = 4.0f + 4.0f * IsRunning();
@@ -76,6 +84,13 @@ public class Player : MonoBehaviour {
     arrow.transform.rotation = gameObject.transform.rotation;
     arrow.transform.localScale = Vector2.Lerp(
         arrow.transform.localScale, new Vector2(scale, scale), 0.1f);
+  }
+
+  void UpdateEyeScale() {
+    var scale = 0.125f * System.Convert.ToSingle(
+        nearestEntities.Any(entity => !entity.GetComponent<Entity>().seen));
+    eye.transform.localScale = Vector2.Lerp(
+        eye.transform.localScale, new Vector2(0.125f, scale), 0.1f);
   }
 
   void UpdateCameraPosition() {

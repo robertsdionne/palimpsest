@@ -12,6 +12,7 @@ public class Obstacle : Entity {
   private float lastTouchTime = 0.0f;
 
   void OnCollisionEnter2D(Collision2D collision) {
+    seen = true;
     if (touch.Length > 0 && Time.fixedTime - lastTouchTime > touchDelay) {
       TextConsole.PushIndicator(gameObject, Choose(touch));
       lastTouchTime = Time.fixedTime;

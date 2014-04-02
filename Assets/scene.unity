@@ -118,6 +118,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   describe:
   - The pig pen.
+  seen: 0
   touch:
   - Brush against the walls of the pig pen.
   touchDelay: 1
@@ -215,6 +216,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   describe:
   - A key glimmering on a stone in the field.
+  seen: 0
   touch:
   - Try to take the key but it slips out of hand.
   touchDelay: 1
@@ -312,6 +314,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   describe:
   - The last stone of the path.
+  seen: 0
   enter:
   - Step on the last stone
   exit: []
@@ -411,6 +414,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   describe:
   - A copse of trees.
+  seen: 0
   enter:
   - Approach the copse of trees.
   exit:
@@ -511,6 +515,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   describe:
   - A locked chest shaded by the trees.
+  seen: 0
   touch:
   - Touch the locked chest but unable to open it.
   touchDelay: 1
@@ -668,7 +673,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arrow: {fileID: 903906844}
   cameraPositionAlpha: .0320000015
-  instructions: {fileID: 0}
+  eye: {fileID: 379956543}
   mainCamera: {fileID: 2141980579}
   maximumAngularVelocity: 10
   maximumForce: 50
@@ -731,6 +736,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   describe:
   - A fence enclosing the pasture.
+  seen: 0
   touch:
   - A fence blocks my path.
   touchDelay: 1
@@ -828,6 +834,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   describe:
   - An elaborate fountain decorated with statues.
+  seen: 0
   touch:
   - Step up to the large bowl of the fountain.
   touchDelay: 1
@@ -925,6 +932,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   describe:
   - The western tree shades its surroundings.
+  seen: 0
   enter:
   - Enter the western tree's shade.
   exit:
@@ -1124,6 +1132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   describe:
   - A mud puddle.
+  seen: 0
   enter:
   - Step in a mud puddle.
   exit:
@@ -1292,6 +1301,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   describe:
   - A fence enclosing the pasture.
+  seen: 0
   touch:
   - A fence blocks my path.
   touchDelay: 1
@@ -1389,6 +1399,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   describe:
   - An open field neighboring the pasture.
+  seen: 0
   enter:
   - Enter the field.
   exit:
@@ -1562,6 +1573,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   describe:
   - The first stone of the path.
+  seen: 0
   enter:
   - Step on the first stone.
   exit: []
@@ -1705,6 +1717,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   describe:
   - A field decorated with a fountain.
+  seen: 0
   enter:
   - Enter the field.
   exit:
@@ -1805,6 +1818,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   describe:
   - Charging station juts out from the wall of the sleeping quarters.
+  seen: 0
   touch:
   - Plug self briefly into charging station.
   touchDelay: 1
@@ -1902,6 +1916,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   describe:
   - The third stone of the path.
+  seen: 0
   enter:
   - Step on the third stone.
   exit: []
@@ -2001,6 +2016,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   describe:
   - A tree.
+  seen: 0
   touch:
   - Touch the bark of the tree.
   touchDelay: 1
@@ -2098,6 +2114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   describe:
   - The wolf kennel.
+  seen: 0
   touch:
   - Brush against the walls of the kennel.
   touchDelay: 1
@@ -2325,6 +2342,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   describe:
   - The tree shades its surroundings.
+  seen: 0
   enter:
   - Enter the tree's shade.
   exit:
@@ -2425,6 +2443,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   describe:
   - The eastern tree shades its surroundings.
+  seen: 0
   enter:
   - Enter the eastern tree's shade.
   exit:
@@ -2597,6 +2616,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   describe:
   - The tree shades its surroundings.
+  seen: 0
   enter:
   - Enter the tree's shade.
   exit:
@@ -2697,6 +2717,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   describe:
   - A fence enclosing the pasture.
+  seen: 0
   touch:
   - A fence blocks my path.
   touchDelay: 1
@@ -2796,6 +2817,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   describe:
   - A dirt path leading out from the pasture.
+  seen: 0
   enter:
   - Follow the dirt path.
   exit:
@@ -2899,6 +2921,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   describe:
   - The western tree.
+  seen: 0
   touch:
   - Touch the bark of the western tree.
   touchDelay: 1
@@ -2996,6 +3019,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   describe:
   - The second stone of the path.
+  seen: 0
   enter:
   - Step on the second stone.
   exit: []
@@ -3146,6 +3170,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   describe:
   - An enclosed pasture with an open gate.
+  seen: 0
   enter:
   - Enter the pasture.
   exit:
@@ -3246,6 +3271,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   describe:
   - The fourth stone of the path.
+  seen: 0
   enter:
   - Step on the fourth stone.
   exit: []
@@ -3345,6 +3371,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   describe:
   - The eastern tree.
+  seen: 0
   touch:
   - Touch the bark of the eastern tree.
   touchDelay: 1
@@ -3515,6 +3542,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   describe:
   - A pool of water surrounds the fountain.
+  seen: 0
   enter:
   - Wade into the pool.
   exit:
@@ -3615,6 +3643,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   describe:
   - Robotic sleeping quarters nearby.
+  seen: 0
   touch:
   - Beside sleeping quarters.
   touchDelay: 1
@@ -3798,6 +3827,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   describe:
   - The big-cat abode.
+  seen: 0
   touch:
   - Brush against the walls of the big-cat abode.
   touchDelay: 1
@@ -3995,6 +4025,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   describe:
   - The giant-tortoise pen.
+  seen: 0
   touch:
   - Brush against the giant-tortoise pen's walls.
   touchDelay: 1
@@ -4091,6 +4122,10 @@ Prefab:
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 2141980579}
+    - target: {fileID: 11400000, guid: 8083a83bf8c1641e798af82cc8c687f5, type: 2}
+      propertyPath: eye
+      value: 
+      objectReference: {fileID: 379956543}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8083a83bf8c1641e798af82cc8c687f5, type: 2}
   m_RootGameObject: {fileID: 183898930}
@@ -4212,6 +4247,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   describe:
   - A tree.
+  seen: 0
   touch:
   - Touch the bark of the tree.
   touchDelay: 1
