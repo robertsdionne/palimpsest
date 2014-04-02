@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 
 public class Player : MonoBehaviour {
@@ -32,12 +33,19 @@ public class Player : MonoBehaviour {
     MaybeSee();
   }
 
-  void Describe(GameObject entity) {
-    entity.GetComponent<Entity>().Describe();
-  }
-
   Vector2 GetInput() {
     return new Vector2(Input.GetAxis(HORIZONTAL), Input.GetAxis(VERTICAL));
+  }
+
+  List<GameObject> GetOccupiedAreas() {
+    return (GameObject.FindObjectsOfType(typeof(Area)) as Area[]).Where(
+          area => area.IsOccupied()).Select(area => area.gameObject).ToList();
+  }
+
+  List<GameObject> GetNearestEntities(List<GameObject> occupiedAreas) {
+    var entities = GameObject.FindGameObjectsWithTag(ENTITY);
+    return entities.Where(entity => !occupiedAreas.Contains(entity)).OrderBy(entity =>
+        DistanceFields.DistanceTo(entity, gameObject.transform.position)).Take(3).ToList();
   }
 
   float IsRunning() {
@@ -45,18 +53,15 @@ public class Player : MonoBehaviour {
   }
 
   void MaybeSee() {
+    var occupiedAreas = GetOccupiedAreas();
+    var nearestEntities = GetNearestEntities(occupiedAreas);
     if (Input.GetButtonDown(SEE)) {
-      var entities = GameObject.FindGameObjectsWithTag(ENTITY);
-      var areas = (GameObject.FindObjectsOfType(typeof(Area)) as Area[]).Where(
-          area => area.IsOccupied()).Select(area => area.gameObject).ToList();
-      var nearestEntities = entities.Where(entity => !areas.Contains(entity)).OrderBy(entity =>
-          DistanceFields.DistanceTo(entity, gameObject.transform.position)).ToList();
       TextConsole.PushText("");
-      for (var i = 0; i < areas.Count; ++i) {
-        areas[i].GetComponent<Area>().Inside();
+      for (var i = 0; i < occupiedAreas.Count; ++i) {
+        occupiedAreas[i].GetComponent<Area>().Inside();
       }
-      for (var i = 0; i < entities.Length && i < 3; ++i) {
-        Describe(nearestEntities[i]);
+      for (var i = 0; i < nearestEntities.Count; ++i) {
+        nearestEntities[i].GetComponent<Entity>().Describe();
       }
       TextConsole.PushText("");
     }
