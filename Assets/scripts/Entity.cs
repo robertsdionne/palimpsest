@@ -7,13 +7,17 @@ public class Entity : MonoBehaviour {
     "See the entity."
   };
 
-  public bool seen = false;
+  protected bool seen = false;
 
   public virtual void Describe() {
-      seen = true;
+    seen = true;
     if (describe.Length > 0) {
       TextConsole.PushIndicator(gameObject, Choose(describe));
     }
+  }
+
+  public bool IsSeen() {
+    return seen;
   }
 
   protected string Choose(string[] choices) {

@@ -88,7 +88,7 @@ public class Player : MonoBehaviour {
 
   void UpdateEyeScale() {
     var scale = 0.125f * System.Convert.ToSingle(
-        nearestEntities.Any(entity => !entity.GetComponent<Entity>().seen));
+        nearestEntities.Any(entity => !entity.GetComponent<Entity>().IsSeen()));
     eye.transform.localScale = Vector2.Lerp(
         eye.transform.localScale, new Vector2(0.125f, scale), 0.1f);
   }
