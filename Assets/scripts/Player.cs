@@ -20,6 +20,7 @@ public class Player : MonoBehaviour {
   public float maximumRunningSpeed = 5.81f;
   public float maximumTorque = 10.0f;
   public float maximumWalkingSpeed = 1.38f;
+  public int numberToSee = 3;
   public float seeDelay = 4.0f;
 
   private List<GameObject> occupiedAreas = new List<GameObject>();
@@ -33,7 +34,7 @@ public class Player : MonoBehaviour {
 	void FixedUpdate () {
     UpdateAreasAndEntities();
     var input = GetInput();
-    UpdateArrowRotationAndScale();
+    UpdateArrowRotationAndScale(input);
     UpdateEyeScale();
     UpdateCameraPosition();
     UpdatePosition(input);
@@ -56,7 +57,8 @@ public class Player : MonoBehaviour {
   List<GameObject> GetNearestEntities(List<GameObject> occupiedAreas) {
     var entities = GameObject.FindGameObjectsWithTag(ENTITY);
     return entities.Where(entity => !occupiedAreas.Contains(entity)).OrderBy(entity =>
-        DistanceFields.DistanceTo(entity, gameObject.transform.position)).Take(3).ToList();
+        DistanceFields.DistanceTo(
+            entity, gameObject.transform.position)).Take(numberToSee).ToList();
   }
 
   bool IsMoreToSee() {
@@ -86,10 +88,11 @@ public class Player : MonoBehaviour {
     nearestEntities = GetNearestEntities(occupiedAreas);
   }
 
-  void UpdateArrowRotationAndScale() {
-    var scale = 0.125f * Mathf.Clamp01(rigidbody2D.velocity.magnitude);
+  void UpdateArrowRotationAndScale(Vector2 input) {
+    var moving = Mathf.Clamp01(rigidbody2D.velocity.magnitude);
+    var scale = 0.125f * Mathf.Clamp01(5.0f * input.magnitude);
     var frequency = 4.0f + 4.0f * IsRunning();
-    arrow.transform.localPosition = 0.01f * (
+    arrow.transform.localPosition = (0.01f + 0.01f * IsRunning()) * moving * (
         Mathf.Sin(frequency * Time.fixedTime) * Vector2.right +
         Mathf.Sin(2.0f * frequency * Time.fixedTime) * Vector2.up);
     arrow.transform.rotation = gameObject.transform.rotation;
