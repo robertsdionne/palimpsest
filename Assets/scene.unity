@@ -707,7 +707,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   describe:
-  - A fence enclosing the pasture.
+  - A fence enclosing the pasture's eastern edge.
   touch:
   - A fence blocks my path.
   touchDelay: 1
@@ -1268,7 +1268,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   describe:
-  - A fence enclosing the pasture.
+  - A fence enclosing the pasture's southern edge.
   touch:
   - A fence blocks my path.
   touchDelay: 1
@@ -1422,6 +1422,74 @@ Transform:
   m_LocalScale: {x: 11.5582275, y: 11.6292124, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!1001 &567614689
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400000, guid: 9f31627f166d643808b4e8d10191d722, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 1.59750068
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9f31627f166d643808b4e8d10191d722, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 51.1616592
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9f31627f166d643808b4e8d10191d722, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9f31627f166d643808b4e8d10191d722, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9f31627f166d643808b4e8d10191d722, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9f31627f166d643808b4e8d10191d722, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: .376694947
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9f31627f166d643808b4e8d10191d722, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: .926337421
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9f31627f166d643808b4e8d10191d722, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9f31627f166d643808b4e8d10191d722, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 9f31627f166d643808b4e8d10191d722, type: 2}
+      propertyPath: m_Name
+      value: dirt path
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 9f31627f166d643808b4e8d10191d722, type: 2}
+      propertyPath: describe.Array.data[0]
+      value: A dirt path leading to a fountain.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 9f31627f166d643808b4e8d10191d722, type: 2}
+      propertyPath: enter.Array.data[0]
+      value: Follow the dirt path.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 9f31627f166d643808b4e8d10191d722, type: 2}
+      propertyPath: exit.Array.data[0]
+      value: Stray from the dirt path.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 9f31627f166d643808b4e8d10191d722, type: 2}
+      propertyPath: inside.Array.data[0]
+      value: On the dirt path.
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 9f31627f166d643808b4e8d10191d722, type: 2}
+  m_RootGameObject: {fileID: 947909065}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
 --- !u!1001 &659890793
 Prefab:
   m_ObjectHideFlags: 0
@@ -2232,6 +2300,111 @@ Transform:
   m_LocalScale: {x: .125, y: .125, z: 1}
   m_Children: []
   m_Father: {fileID: 1782710034}
+--- !u!1 &947909065
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100000, guid: 9f31627f166d643808b4e8d10191d722, type: 2}
+  m_PrefabInternal: {fileID: 567614689}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 947909071}
+  - 33: {fileID: 947909070}
+  - 23: {fileID: 947909069}
+  - 61: {fileID: 947909068}
+  - 114: {fileID: 947909067}
+  - 58: {fileID: 947909066}
+  m_Layer: 0
+  m_Name: dirt path
+  m_TagString: Entity
+  m_Icon: {fileID: 266726316, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!58 &947909066
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5800000, guid: 9f31627f166d643808b4e8d10191d722,
+    type: 2}
+  m_PrefabInternal: {fileID: 567614689}
+  m_GameObject: {fileID: 947909065}
+  m_Enabled: 0
+  m_Material: {fileID: 6200000, guid: 577c0f82b97fa4462ae7304aad0722e5, type: 2}
+  m_IsTrigger: 1
+  m_Radius: 1
+  m_Center: {x: 0, y: 0}
+--- !u!114 &947909067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: 9f31627f166d643808b4e8d10191d722,
+    type: 2}
+  m_PrefabInternal: {fileID: 567614689}
+  m_GameObject: {fileID: 947909065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5640bb8e27459423ea49bf632fb07950, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  describe:
+  - A dirt path leading to a fountain.
+  enter:
+  - Follow the dirt path.
+  exit:
+  - Stray from the dirt path.
+  inside:
+  - On the dirt path.
+--- !u!61 &947909068
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6100000, guid: 9f31627f166d643808b4e8d10191d722,
+    type: 2}
+  m_PrefabInternal: {fileID: 567614689}
+  m_GameObject: {fileID: 947909065}
+  m_Enabled: 1
+  m_Material: {fileID: 6200000, guid: 577c0f82b97fa4462ae7304aad0722e5, type: 2}
+  m_IsTrigger: 1
+  m_Size: {x: 1, y: 1}
+  m_Center: {x: 0, y: 0}
+--- !u!23 &947909069
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300000, guid: 9f31627f166d643808b4e8d10191d722,
+    type: 2}
+  m_PrefabInternal: {fileID: 567614689}
+  m_GameObject: {fileID: 947909065}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 583a4a0b90e264b87a08e9952308ca05, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &947909070
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300000, guid: 9f31627f166d643808b4e8d10191d722,
+    type: 2}
+  m_PrefabInternal: {fileID: 567614689}
+  m_GameObject: {fileID: 947909065}
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &947909071
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400000, guid: 9f31627f166d643808b4e8d10191d722, type: 2}
+  m_PrefabInternal: {fileID: 567614689}
+  m_GameObject: {fileID: 947909065}
+  m_LocalRotation: {x: 0, y: 0, z: .376694947, w: .926337421}
+  m_LocalPosition: {x: 1.59750068, y: 51.1616592, z: 0}
+  m_LocalScale: {x: 16, y: 2.5, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
 --- !u!1 &958062028
 GameObject:
   m_ObjectHideFlags: 0
@@ -2719,7 +2892,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   describe:
-  - A fence enclosing the pasture.
+  - A fence enclosing the pasture's western edge.
   touch:
   - A fence blocks my path.
   touchDelay: 1
