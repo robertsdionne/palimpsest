@@ -18,7 +18,9 @@ public class ScreenShake : MonoBehaviour {
   }
 	
 	void Update() {
-    gameObject.transform.localPosition = shake * Random.insideUnitCircle;
-    shake = Mathf.Lerp(shake, 0.0f, 0.2f);
+    if (shake > 0.001f) {
+      gameObject.transform.localPosition = shake * Random.insideUnitCircle;
+      shake = Mathf.Lerp(shake, 0.0f, 0.2f);
+    }
 	}
 }
