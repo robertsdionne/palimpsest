@@ -10,6 +10,7 @@ public class TextConsole : MonoBehaviour {
   public GameObject descriptionPrefab;
   public GameObject indicatorPrefab;
   public GameObject pathDescriptionPrefab;
+  public GameObject signDescriptionPrefab;
   public int maximumLines;
   public GameObject player;
   public Line playerArrowLine;
@@ -93,6 +94,36 @@ public class TextConsole : MonoBehaviour {
               (2.0f * description.GetComponent<PathDescription>().description.renderer.bounds.extents.x + 0.25f) * Vector3.right;
       description.GetComponent<PathDescription>().player = textConsole.player;
       description.GetComponent<PathDescription>().target = target;
+      var indicator = Object.Instantiate(textConsole.indicatorPrefab) as GameObject;
+      var line = indicator.GetComponent<Line>();
+      var indicatorComponent = indicator.GetComponent<Indicator>();
+      indicator.transform.parent = textConsole.gameObject.transform;
+      indicator.transform.localPosition = textConsole.NextPosition(line);
+      indicatorComponent.arrow.transform.rotation = textConsole.player.transform.rotation;
+      description.transform.parent = indicator.transform;
+      description.transform.localPosition = indicatorComponent.description.transform.localPosition;
+      GameObject.Destroy(indicatorComponent.description);
+      indicatorComponent.player = textConsole.player;
+      indicatorComponent.target = target;
+      textConsole.lines.Add(line);
+      textConsole.playerArrowLine.gameObject.transform.localPosition =
+          textConsole.NextPosition(textConsole.playerArrowLine);
+    }
+  }
+
+  public static void PushSignIndicator(GameObject target, GameObject signTarget, string text) {
+    WebsocketServer.BroadcastIndicator(target, text);
+    if (null != textConsole) {
+      textConsole.MaybeClearLines();
+      var description = Object.Instantiate(textConsole.signDescriptionPrefab) as GameObject;
+      description.GetComponent<Indicator>().arrow.transform.rotation =
+          textConsole.player.transform.rotation;
+      description.GetComponent<Indicator>().description.GetComponent<TextMesh>().text = text;
+      description.GetComponent<Indicator>().arrow.transform.localPosition =
+          description.GetComponent<Indicator>().description.transform.localPosition + 
+              (2.0f * description.GetComponent<Indicator>().description.renderer.bounds.extents.x + 0.25f) * Vector3.right;
+      description.GetComponent<Indicator>().player = textConsole.player;
+      description.GetComponent<Indicator>().target = signTarget;
       var indicator = Object.Instantiate(textConsole.indicatorPrefab) as GameObject;
       var line = indicator.GetComponent<Line>();
       var indicatorComponent = indicator.GetComponent<Indicator>();

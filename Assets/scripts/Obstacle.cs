@@ -9,7 +9,7 @@ public class Obstacle : Entity {
 
   public float touchDelay;
 
-  private float lastTouchTime = 0.0f;
+  protected float lastTouchTime = 0.0f;
 
   void OnCollisionEnter2D(Collision2D collision) {
     seen = true;
