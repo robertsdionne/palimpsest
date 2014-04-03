@@ -74,6 +74,12 @@ public class Player : MonoBehaviour {
       for (var i = 0; i < nearestEntities.Count; ++i) {
         nearestEntities[i].GetComponent<Entity>().Describe();
       }
+      if (Inventory.Items().Count > 0) {
+        TextConsole.PushText("You carry:");
+        foreach (var item in Inventory.Items()) {
+          item.DescribeInventory();
+        }
+      }
       TextConsole.PushText("");
     }
   }

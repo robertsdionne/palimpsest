@@ -89,14 +89,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16caddc1c82db44e7a67a93ca1d7d3f8, type: 3}
+  m_Script: {fileID: 11500000, guid: 2b051b95f47004d7e8ec0ffc8d547b41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   describe:
-  - See the obstacle.
+  - See the item.
   touch:
-  - Touch the obstacle.
+  - Touch the item.
   touchDelay: 1
+  describeInventory:
+  - An item.
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

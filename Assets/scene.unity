@@ -435,8 +435,8 @@ Prefab:
 --- !u!1 &144977678
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 100004, guid: ac5ba769ed77a45d0a4caab8a09757c6, type: 2}
+  m_PrefabInternal: {fileID: 1786520258}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 144977684}
@@ -448,15 +448,16 @@ GameObject:
   m_Layer: 0
   m_Name: locked chest
   m_TagString: Entity
-  m_Icon: {fileID: -1003283189, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: -1203168336, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!58 &144977679
 CircleCollider2D:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 5800004, guid: ac5ba769ed77a45d0a4caab8a09757c6,
+    type: 2}
+  m_PrefabInternal: {fileID: 1786520258}
   m_GameObject: {fileID: 144977678}
   m_Enabled: 0
   m_Material: {fileID: 6200000, guid: 577c0f82b97fa4462ae7304aad0722e5, type: 2}
@@ -466,12 +467,13 @@ CircleCollider2D:
 --- !u!114 &144977680
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 11400004, guid: ac5ba769ed77a45d0a4caab8a09757c6,
+    type: 2}
+  m_PrefabInternal: {fileID: 1786520258}
   m_GameObject: {fileID: 144977678}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16caddc1c82db44e7a67a93ca1d7d3f8, type: 3}
+  m_Script: {fileID: 11500000, guid: c4bbd38e2200c413a81c3c59bb976464, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   describe:
@@ -479,11 +481,17 @@ MonoBehaviour:
   touch:
   - Touch the locked chest but unable to open it.
   touchDelay: 1
+  opened:
+  - You opened the locked chest, spilling its treasure.
+  key: {fileID: 1435103925}
+  contents: {fileID: 1230649907}
+  replacement: {fileID: 1570388672}
 --- !u!61 &144977681
 BoxCollider2D:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 6100004, guid: ac5ba769ed77a45d0a4caab8a09757c6,
+    type: 2}
+  m_PrefabInternal: {fileID: 1786520258}
   m_GameObject: {fileID: 144977678}
   m_Enabled: 1
   m_Material: {fileID: 6200000, guid: 577c0f82b97fa4462ae7304aad0722e5, type: 2}
@@ -493,8 +501,9 @@ BoxCollider2D:
 --- !u!23 &144977682
 Renderer:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 2300004, guid: ac5ba769ed77a45d0a4caab8a09757c6,
+    type: 2}
+  m_PrefabInternal: {fileID: 1786520258}
   m_GameObject: {fileID: 144977678}
   m_Enabled: 1
   m_CastShadows: 1
@@ -502,7 +511,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 9d774d7870d6f4883bfdd1e68123614d, type: 2}
+  - {fileID: 2100000, guid: 08c3584e280ec4d74806cdbc4b5121f0, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -514,20 +523,23 @@ Renderer:
 --- !u!33 &144977683
 MeshFilter:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 3300004, guid: ac5ba769ed77a45d0a4caab8a09757c6,
+    type: 2}
+  m_PrefabInternal: {fileID: 1786520258}
   m_GameObject: {fileID: 144977678}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &144977684
 Transform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 400004, guid: ac5ba769ed77a45d0a4caab8a09757c6, type: 2}
+  m_PrefabInternal: {fileID: 1786520258}
   m_GameObject: {fileID: 144977678}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -11.8609009, y: 41.8261719, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1230649912}
+  - {fileID: 1570388676}
   m_Father: {fileID: 0}
 --- !u!1 &183898930
 GameObject:
@@ -543,6 +555,7 @@ GameObject:
   - 61: {fileID: 183898932}
   - 58: {fileID: 183898937}
   - 114: {fileID: 183898936}
+  - 114: {fileID: 183898938}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -653,6 +666,17 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_Radius: .25
   m_Center: {x: 0, y: 0}
+--- !u!114 &183898938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 183898930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d17559bb967e49d18361bd4769444b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &201748035
 GameObject:
   m_ObjectHideFlags: 0
@@ -1701,6 +1725,10 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 183898930}
+    - target: {fileID: 2000000, guid: 660c38ee3f1a242efa30d65490be8ea4, type: 2}
+      propertyPath: m_CullingMask.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 660c38ee3f1a242efa30d65490be8ea4, type: 2}
   m_RootGameObject: {fileID: 2141980579}
@@ -2908,58 +2936,6 @@ Transform:
   m_LocalScale: {x: 1.3350563, y: 1.3350563, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
---- !u!1001 &981803197
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 400000, guid: 157a310aa03534935b7317e9b575e9d4, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 12.6933832
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 157a310aa03534935b7317e9b575e9d4, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 65.6435623
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 157a310aa03534935b7317e9b575e9d4, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 157a310aa03534935b7317e9b575e9d4, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 157a310aa03534935b7317e9b575e9d4, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 157a310aa03534935b7317e9b575e9d4, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 157a310aa03534935b7317e9b575e9d4, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 157a310aa03534935b7317e9b575e9d4, type: 2}
-      propertyPath: m_Name
-      value: key
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400000, guid: 157a310aa03534935b7317e9b575e9d4, type: 2}
-      propertyPath: describe.Array.data[0]
-      value: A key glimmering on a stone in the field.
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400000, guid: 157a310aa03534935b7317e9b575e9d4, type: 2}
-      propertyPath: touch.Array.data[0]
-      value: Try to take the key but it slips out of hand.
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 157a310aa03534935b7317e9b575e9d4, type: 2}
-  m_RootGameObject: {fileID: 1435103924}
-  m_IsPrefabParent: 0
-  m_IsExploded: 1
 --- !u!1 &996744240
 GameObject:
   m_ObjectHideFlags: 0
@@ -3587,6 +3563,110 @@ Transform:
   m_LocalScale: {x: .5, y: .5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!1 &1230649906
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100000, guid: ac5ba769ed77a45d0a4caab8a09757c6, type: 2}
+  m_PrefabInternal: {fileID: 1786520258}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1230649912}
+  - 33: {fileID: 1230649911}
+  - 23: {fileID: 1230649910}
+  - 61: {fileID: 1230649909}
+  - 58: {fileID: 1230649908}
+  - 114: {fileID: 1230649907}
+  m_Layer: 0
+  m_Name: treasure
+  m_TagString: Entity
+  m_Icon: {fileID: 1319202362, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1230649907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: ac5ba769ed77a45d0a4caab8a09757c6,
+    type: 2}
+  m_PrefabInternal: {fileID: 1786520258}
+  m_GameObject: {fileID: 1230649906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b051b95f47004d7e8ec0ffc8d547b41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  describe:
+  - Treasure.
+  touch:
+  - You took the treasure.
+  touchDelay: 1
+  describeInventory:
+  - Treasure.
+--- !u!58 &1230649908
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5800000, guid: ac5ba769ed77a45d0a4caab8a09757c6,
+    type: 2}
+  m_PrefabInternal: {fileID: 1786520258}
+  m_GameObject: {fileID: 1230649906}
+  m_Enabled: 1
+  m_Material: {fileID: 6200000, guid: 577c0f82b97fa4462ae7304aad0722e5, type: 2}
+  m_IsTrigger: 0
+  m_Radius: 1
+  m_Center: {x: 0, y: 0}
+--- !u!61 &1230649909
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6100000, guid: ac5ba769ed77a45d0a4caab8a09757c6,
+    type: 2}
+  m_PrefabInternal: {fileID: 1786520258}
+  m_GameObject: {fileID: 1230649906}
+  m_Enabled: 0
+  m_Material: {fileID: 6200000, guid: 577c0f82b97fa4462ae7304aad0722e5, type: 2}
+  m_IsTrigger: 0
+  m_Size: {x: 1, y: 1}
+  m_Center: {x: 0, y: 0}
+--- !u!23 &1230649910
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300000, guid: ac5ba769ed77a45d0a4caab8a09757c6,
+    type: 2}
+  m_PrefabInternal: {fileID: 1786520258}
+  m_GameObject: {fileID: 1230649906}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: d3242debb7ce243c0aa00700977ceeed, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &1230649911
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300000, guid: ac5ba769ed77a45d0a4caab8a09757c6,
+    type: 2}
+  m_PrefabInternal: {fileID: 1786520258}
+  m_GameObject: {fileID: 1230649906}
+  m_Mesh: {fileID: 4300000, guid: b4d81dc7e24e24a749c374b17d8f1827, type: 3}
+--- !u!4 &1230649912
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400000, guid: ac5ba769ed77a45d0a4caab8a09757c6, type: 2}
+  m_PrefabInternal: {fileID: 1786520258}
+  m_GameObject: {fileID: 1230649906}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: .75, z: 0}
+  m_LocalScale: {x: .25, y: .25, z: 1}
+  m_Children: []
+  m_Father: {fileID: 144977684}
 --- !u!1 &1233332416
 GameObject:
   m_ObjectHideFlags: 0
@@ -4115,7 +4195,7 @@ MeshFilter:
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 100000, guid: 157a310aa03534935b7317e9b575e9d4, type: 2}
-  m_PrefabInternal: {fileID: 981803197}
+  m_PrefabInternal: {fileID: 0}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1435103930}
@@ -4136,24 +4216,26 @@ MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 11400000, guid: 157a310aa03534935b7317e9b575e9d4,
     type: 2}
-  m_PrefabInternal: {fileID: 981803197}
+  m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1435103924}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16caddc1c82db44e7a67a93ca1d7d3f8, type: 3}
+  m_Script: {fileID: 11500000, guid: 2b051b95f47004d7e8ec0ffc8d547b41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   describe:
   - A key glimmering on a stone in the field.
   touch:
-  - Try to take the key but it slips out of hand.
+  - You took the key.
   touchDelay: 1
+  describeInventory:
+  - A key.
 --- !u!58 &1435103926
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 5800000, guid: 157a310aa03534935b7317e9b575e9d4,
     type: 2}
-  m_PrefabInternal: {fileID: 981803197}
+  m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1435103924}
   m_Enabled: 1
   m_Material: {fileID: 6200000, guid: 577c0f82b97fa4462ae7304aad0722e5, type: 2}
@@ -4165,7 +4247,7 @@ BoxCollider2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6100000, guid: 157a310aa03534935b7317e9b575e9d4,
     type: 2}
-  m_PrefabInternal: {fileID: 981803197}
+  m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1435103924}
   m_Enabled: 0
   m_Material: {fileID: 6200000, guid: 577c0f82b97fa4462ae7304aad0722e5, type: 2}
@@ -4177,7 +4259,7 @@ Renderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 2300000, guid: 157a310aa03534935b7317e9b575e9d4,
     type: 2}
-  m_PrefabInternal: {fileID: 981803197}
+  m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1435103924}
   m_Enabled: 1
   m_CastShadows: 1
@@ -4199,14 +4281,14 @@ MeshFilter:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 3300000, guid: 157a310aa03534935b7317e9b575e9d4,
     type: 2}
-  m_PrefabInternal: {fileID: 981803197}
+  m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1435103924}
   m_Mesh: {fileID: 4300000, guid: b4d81dc7e24e24a749c374b17d8f1827, type: 3}
 --- !u!4 &1435103930
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 400000, guid: 157a310aa03534935b7317e9b575e9d4, type: 2}
-  m_PrefabInternal: {fileID: 981803197}
+  m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1435103924}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 12.6933832, y: 65.6435623, z: 0}
@@ -4580,6 +4662,108 @@ Transform:
   m_LocalScale: {x: 3.34470749, y: 1.51311302, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!1 &1570388670
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100002, guid: ac5ba769ed77a45d0a4caab8a09757c6, type: 2}
+  m_PrefabInternal: {fileID: 1786520258}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1570388676}
+  - 33: {fileID: 1570388675}
+  - 23: {fileID: 1570388674}
+  - 61: {fileID: 1570388673}
+  - 114: {fileID: 1570388672}
+  - 58: {fileID: 1570388671}
+  m_Layer: 0
+  m_Name: unlocked chest
+  m_TagString: Entity
+  m_Icon: {fileID: -1003283189, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 0
+--- !u!58 &1570388671
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5800002, guid: ac5ba769ed77a45d0a4caab8a09757c6,
+    type: 2}
+  m_PrefabInternal: {fileID: 1786520258}
+  m_GameObject: {fileID: 1570388670}
+  m_Enabled: 0
+  m_Material: {fileID: 6200000, guid: 577c0f82b97fa4462ae7304aad0722e5, type: 2}
+  m_IsTrigger: 0
+  m_Radius: 1
+  m_Center: {x: 0, y: 0}
+--- !u!114 &1570388672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: ac5ba769ed77a45d0a4caab8a09757c6,
+    type: 2}
+  m_PrefabInternal: {fileID: 1786520258}
+  m_GameObject: {fileID: 1570388670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16caddc1c82db44e7a67a93ca1d7d3f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  describe:
+  - An open chest.
+  touch:
+  - Touch the open chest.
+  touchDelay: 1
+--- !u!61 &1570388673
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6100002, guid: ac5ba769ed77a45d0a4caab8a09757c6,
+    type: 2}
+  m_PrefabInternal: {fileID: 1786520258}
+  m_GameObject: {fileID: 1570388670}
+  m_Enabled: 1
+  m_Material: {fileID: 6200000, guid: 577c0f82b97fa4462ae7304aad0722e5, type: 2}
+  m_IsTrigger: 0
+  m_Size: {x: 1, y: 1}
+  m_Center: {x: 0, y: 0}
+--- !u!23 &1570388674
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300002, guid: ac5ba769ed77a45d0a4caab8a09757c6,
+    type: 2}
+  m_PrefabInternal: {fileID: 1786520258}
+  m_GameObject: {fileID: 1570388670}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 9d774d7870d6f4883bfdd1e68123614d, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &1570388675
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300002, guid: ac5ba769ed77a45d0a4caab8a09757c6,
+    type: 2}
+  m_PrefabInternal: {fileID: 1786520258}
+  m_GameObject: {fileID: 1570388670}
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1570388676
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400002, guid: ac5ba769ed77a45d0a4caab8a09757c6, type: 2}
+  m_PrefabInternal: {fileID: 1786520258}
+  m_GameObject: {fileID: 1570388670}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 144977684}
 --- !u!1 &1661576712
 GameObject:
   m_ObjectHideFlags: 0
@@ -4649,6 +4833,94 @@ Transform:
   - {fileID: 903906847}
   - {fileID: 379956544}
   m_Father: {fileID: 386097771}
+--- !u!1001 &1786520258
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400004, guid: ac5ba769ed77a45d0a4caab8a09757c6, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -11.8609009
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: ac5ba769ed77a45d0a4caab8a09757c6, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 41.8261719
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: ac5ba769ed77a45d0a4caab8a09757c6, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: ac5ba769ed77a45d0a4caab8a09757c6, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: ac5ba769ed77a45d0a4caab8a09757c6, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: ac5ba769ed77a45d0a4caab8a09757c6, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: ac5ba769ed77a45d0a4caab8a09757c6, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: ac5ba769ed77a45d0a4caab8a09757c6, type: 2}
+      propertyPath: key
+      value: 
+      objectReference: {fileID: 1435103925}
+    - target: {fileID: 100004, guid: ac5ba769ed77a45d0a4caab8a09757c6, type: 2}
+      propertyPath: m_Name
+      value: locked chest
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: ac5ba769ed77a45d0a4caab8a09757c6, type: 2}
+      propertyPath: describe.Array.data[0]
+      value: A locked chest shaded by the trees.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: ac5ba769ed77a45d0a4caab8a09757c6, type: 2}
+      propertyPath: touch.Array.data[0]
+      value: Touch the locked chest but unable to open it.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: ac5ba769ed77a45d0a4caab8a09757c6, type: 2}
+      propertyPath: opened.Array.data[0]
+      value: You opened the locked chest, spilling its treasure.
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ac5ba769ed77a45d0a4caab8a09757c6, type: 2}
+      propertyPath: m_Name
+      value: treasure
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: ac5ba769ed77a45d0a4caab8a09757c6, type: 2}
+      propertyPath: describeInventory.Array.data[0]
+      value: Treasure.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: ac5ba769ed77a45d0a4caab8a09757c6, type: 2}
+      propertyPath: touch.Array.data[0]
+      value: You took the treasure.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: ac5ba769ed77a45d0a4caab8a09757c6, type: 2}
+      propertyPath: describe.Array.data[0]
+      value: Treasure.
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: ac5ba769ed77a45d0a4caab8a09757c6, type: 2}
+      propertyPath: m_Name
+      value: unlocked chest
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: ac5ba769ed77a45d0a4caab8a09757c6, type: 2}
+      propertyPath: describe.Array.data[0]
+      value: An open chest.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: ac5ba769ed77a45d0a4caab8a09757c6, type: 2}
+      propertyPath: touch.Array.data[0]
+      value: Touch the open chest.
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: ac5ba769ed77a45d0a4caab8a09757c6, type: 2}
+  m_RootGameObject: {fileID: 144977678}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
 --- !u!1 &2091406724
 GameObject:
   m_ObjectHideFlags: 0
