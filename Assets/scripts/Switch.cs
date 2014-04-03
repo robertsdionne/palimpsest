@@ -14,6 +14,7 @@ public class Switch : Area {
     occupied = true;
     seen = true;
     if (Time.fixedTime - lastToggleTime > toggleDelay) {
+      lastToggleTime = Time.fixedTime;
       state = !state;
       if (null != doorway) {
         doorway.gameObject.SetActive(state);
@@ -21,8 +22,11 @@ public class Switch : Area {
       if (null != door) {
         door.gameObject.SetActive(!state);
       }
-      if (enter.Length > 0) {
+      if (state && enter.Length > 0) {
         TextConsole.PushText(Choose(enter));
+      }
+      if (!state && exit.Length > 0) {
+        TextConsole.PushText(Choose(exit));
       }
     }
   }
@@ -30,8 +34,5 @@ public class Switch : Area {
   void OnTriggerExit2D() {
     occupied = false;
     seen = true;
-    if (exit.Length > 0) {
-      TextConsole.PushText(Choose(exit));
-    }
   }
 }

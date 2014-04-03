@@ -705,62 +705,6 @@ Transform:
   m_LocalScale: {x: 3.5, y: 3.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
---- !u!1001 &129232541
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 400000, guid: c4c2f6d7c45544f28938a36415f46559, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 1.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: c4c2f6d7c45544f28938a36415f46559, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 20.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: c4c2f6d7c45544f28938a36415f46559, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: c4c2f6d7c45544f28938a36415f46559, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: c4c2f6d7c45544f28938a36415f46559, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: c4c2f6d7c45544f28938a36415f46559, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: c4c2f6d7c45544f28938a36415f46559, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: c4c2f6d7c45544f28938a36415f46559, type: 2}
-      propertyPath: m_Name
-      value: sign to fountain
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400000, guid: c4c2f6d7c45544f28938a36415f46559, type: 2}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 349269763}
-    - target: {fileID: 11400000, guid: c4c2f6d7c45544f28938a36415f46559, type: 2}
-      propertyPath: describe.Array.data[0]
-      value: See the sign.
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400000, guid: c4c2f6d7c45544f28938a36415f46559, type: 2}
-      propertyPath: touch.Array.data[0]
-      value: Touch the sign.
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: c4c2f6d7c45544f28938a36415f46559, type: 2}
-  m_RootGameObject: {fileID: 764482311}
-  m_IsPrefabParent: 0
-  m_IsExploded: 1
 --- !u!1 &144977678
 GameObject:
   m_ObjectHideFlags: 0
@@ -1180,6 +1124,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11400000, guid: 5a90d25165a79405c9b4c4e9b387dc18, type: 2}
+      propertyPath: exit.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5a90d25165a79405c9b4c4e9b387dc18, type: 2}
       propertyPath: m_LocalPosition.x
       value: 19.2643661
@@ -1216,6 +1164,18 @@ Prefab:
       propertyPath: doorway
       value: 
       objectReference: {fileID: 5920467}
+    - target: {fileID: 11400000, guid: 5a90d25165a79405c9b4c4e9b387dc18, type: 2}
+      propertyPath: toggleDelay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 5a90d25165a79405c9b4c4e9b387dc18, type: 2}
+      propertyPath: enter.Array.data[0]
+      value: Turn on the switch.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 5a90d25165a79405c9b4c4e9b387dc18, type: 2}
+      propertyPath: exit.Array.data[0]
+      value: Turn off the switch.
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5a90d25165a79405c9b4c4e9b387dc18, type: 2}
   m_RootGameObject: {fileID: 991249973}
@@ -1716,7 +1676,7 @@ Transform:
   m_PrefabInternal: {fileID: 1178877455}
   m_GameObject: {fileID: 427745938}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.25, y: 21, z: 0}
+  m_LocalPosition: {x: -3.42823601, y: 20.9756336, z: 0}
   m_LocalScale: {x: .5, y: .5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2408,7 +2368,7 @@ Prefab:
       objectReference: {fileID: 183898930}
     - target: {fileID: 2000000, guid: 660c38ee3f1a242efa30d65490be8ea4, type: 2}
       propertyPath: m_CullingMask.m_Bits
-      value: 256
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 660c38ee3f1a242efa30d65490be8ea4, type: 2}
@@ -2599,11 +2559,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: c4c2f6d7c45544f28938a36415f46559, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -5.38507175
+      value: 1.69431376
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c4c2f6d7c45544f28938a36415f46559, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 39.8050499
+      value: 7.01399326
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c4c2f6d7c45544f28938a36415f46559, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2743,109 +2703,6 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -.200000212, y: 5.06532621, z: 0}
   m_LocalScale: {x: 2, y: 1.11932373, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
---- !u!1 &764482311
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100000, guid: c4c2f6d7c45544f28938a36415f46559, type: 2}
-  m_PrefabInternal: {fileID: 129232541}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 764482317}
-  - 33: {fileID: 764482316}
-  - 23: {fileID: 764482315}
-  - 61: {fileID: 764482314}
-  - 58: {fileID: 764482313}
-  - 114: {fileID: 764482312}
-  m_Layer: 0
-  m_Name: sign to fountain
-  m_TagString: Entity
-  m_Icon: {fileID: -2065832391, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
---- !u!114 &764482312
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400000, guid: c4c2f6d7c45544f28938a36415f46559,
-    type: 2}
-  m_PrefabInternal: {fileID: 129232541}
-  m_GameObject: {fileID: 764482311}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0d31d0a806534ba79029ea4ee3fc316, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  describe:
-  - See the sign.
-  touch:
-  - Touch the sign.
-  touchDelay: 1
-  target: {fileID: 349269763}
---- !u!58 &764482313
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 5800000, guid: c4c2f6d7c45544f28938a36415f46559,
-    type: 2}
-  m_PrefabInternal: {fileID: 129232541}
-  m_GameObject: {fileID: 764482311}
-  m_Enabled: 0
-  m_Material: {fileID: 6200000, guid: 577c0f82b97fa4462ae7304aad0722e5, type: 2}
-  m_IsTrigger: 0
-  m_Radius: 1
-  m_Center: {x: 0, y: 0}
---- !u!61 &764482314
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6100000, guid: c4c2f6d7c45544f28938a36415f46559,
-    type: 2}
-  m_PrefabInternal: {fileID: 129232541}
-  m_GameObject: {fileID: 764482311}
-  m_Enabled: 1
-  m_Material: {fileID: 6200000, guid: 577c0f82b97fa4462ae7304aad0722e5, type: 2}
-  m_IsTrigger: 0
-  m_Size: {x: 1, y: 1}
-  m_Center: {x: 0, y: 0}
---- !u!23 &764482315
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300000, guid: c4c2f6d7c45544f28938a36415f46559,
-    type: 2}
-  m_PrefabInternal: {fileID: 129232541}
-  m_GameObject: {fileID: 764482311}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 0f6b4bf63031c478eb8c7c26b483df35, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_SortingLayerID: 0
---- !u!33 &764482316
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300000, guid: c4c2f6d7c45544f28938a36415f46559,
-    type: 2}
-  m_PrefabInternal: {fileID: 129232541}
-  m_GameObject: {fileID: 764482311}
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &764482317
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400000, guid: c4c2f6d7c45544f28938a36415f46559, type: 2}
-  m_PrefabInternal: {fileID: 129232541}
-  m_GameObject: {fileID: 764482311}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.25, y: 20.25, z: 0}
-  m_LocalScale: {x: .5, y: .5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
 --- !u!1 &778468261
@@ -3912,8 +3769,9 @@ MonoBehaviour:
   describe:
   - A switch.
   enter:
-  - Toggle the switch.
-  exit: []
+  - Turn on the switch.
+  exit:
+  - Turn off the switch.
   inside:
   - Touching the switch.
   door: {fileID: 721787760}
@@ -4362,11 +4220,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: c4c2f6d7c45544f28938a36415f46559, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1.25
+      value: -3.42823601
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c4c2f6d7c45544f28938a36415f46559, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 21
+      value: 20.9756336
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c4c2f6d7c45544f28938a36415f46559, type: 2}
       propertyPath: m_LocalPosition.z
@@ -5744,7 +5602,7 @@ Transform:
   m_PrefabInternal: {fileID: 743510561}
   m_GameObject: {fileID: 1478091564}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.38507175, y: 39.8050499, z: 0}
+  m_LocalPosition: {x: 1.69431376, y: 7.01399326, z: 0}
   m_LocalScale: {x: .5, y: .5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -6764,7 +6622,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_HDR: 0
