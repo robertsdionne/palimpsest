@@ -29,7 +29,7 @@ GameObject:
   - 58: {fileID: 5800000}
   - 114: {fileID: 11400000}
   m_Layer: 0
-  m_Name: treasure
+  m_Name: contents
   m_TagString: Entity
   m_Icon: {fileID: 1319202362, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -49,7 +49,7 @@ GameObject:
   - 114: {fileID: 11400002}
   - 58: {fileID: 5800002}
   m_Layer: 0
-  m_Name: unlocked chest
+  m_Name: unlocked container
   m_TagString: Entity
   m_Icon: {fileID: -1003283189, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -69,7 +69,7 @@ GameObject:
   - 114: {fileID: 11400004}
   - 58: {fileID: 5800004}
   m_Layer: 0
-  m_Name: locked chest
+  m_Name: locked container
   m_TagString: Entity
   m_Icon: {fileID: -1203168336, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -284,12 +284,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   describe:
-  - Treasure.
+  - Contents.
   touch:
-  - You took the treasure.
+  - You took the contents.
   touchDelay: 1
   describeInventory:
-  - Treasure.
+  - Contents.
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -302,9 +302,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   describe:
-  - An open chest.
+  - An open container.
   touch:
-  - Touch the open chest.
+  - Touch the open container.
   touchDelay: 1
 --- !u!114 &11400004
 MonoBehaviour:
@@ -318,12 +318,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   describe:
-  - A locked chest shaded by the trees.
+  - A locked container.
   touch:
-  - Touch the locked chest but unable to open it.
+  - Touch the locked container but unable to open it.
   touchDelay: 1
   opened:
-  - You opened the locked chest, spilling its treasure.
+  - You opened the locked container, spilling its contents.
   key: {fileID: 0}
   contents: {fileID: 11400000}
   replacement: {fileID: 11400002}

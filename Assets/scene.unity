@@ -482,7 +482,7 @@ MonoBehaviour:
   - Touch the locked chest but unable to open it.
   touchDelay: 1
   opened:
-  - You opened the locked chest, spilling its treasure.
+  - You opened the locked chest, spilling its contents.
   key: {fileID: 1435103925}
   contents: {fileID: 1230649907}
   replacement: {fileID: 1570388672}
@@ -3596,7 +3596,7 @@ MonoBehaviour:
   describe:
   - Treasure.
   touch:
-  - You took the treasure.
+  - You took the treasure. You win!
   touchDelay: 1
   describeInventory:
   - Treasure.
@@ -4870,6 +4870,54 @@ Prefab:
       propertyPath: key
       value: 
       objectReference: {fileID: 1435103925}
+    - target: {fileID: 100000, guid: ac5ba769ed77a45d0a4caab8a09757c6, type: 2}
+      propertyPath: m_Name
+      value: locked chest
+      objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: ac5ba769ed77a45d0a4caab8a09757c6, type: 2}
+      propertyPath: m_Name
+      value: locked chest
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: ac5ba769ed77a45d0a4caab8a09757c6, type: 2}
+      propertyPath: describe.Array.data[0]
+      value: A locked chest shaded by the trees.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: ac5ba769ed77a45d0a4caab8a09757c6, type: 2}
+      propertyPath: touch.Array.data[0]
+      value: Touch the locked chest but unable to open it.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: ac5ba769ed77a45d0a4caab8a09757c6, type: 2}
+      propertyPath: opened.Array.data[0]
+      value: You opened the locked chest, spilling its contents.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: ac5ba769ed77a45d0a4caab8a09757c6, type: 2}
+      propertyPath: describe.Array.data[0]
+      value: Treasure.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: ac5ba769ed77a45d0a4caab8a09757c6, type: 2}
+      propertyPath: touch.Array.data[0]
+      value: You took the treasure. You win!
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: ac5ba769ed77a45d0a4caab8a09757c6, type: 2}
+      propertyPath: describeInventory.Array.data[0]
+      value: Treasure.
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: ac5ba769ed77a45d0a4caab8a09757c6, type: 2}
+      propertyPath: m_Name
+      value: unlocked chest
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: ac5ba769ed77a45d0a4caab8a09757c6, type: 2}
+      propertyPath: describe.Array.data[0]
+      value: An open chest.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: ac5ba769ed77a45d0a4caab8a09757c6, type: 2}
+      propertyPath: touch.Array.data[0]
+      value: Touch the open chest.
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: ac5ba769ed77a45d0a4caab8a09757c6, type: 2}
+      propertyPath: m_Name
+      value: treasure
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ac5ba769ed77a45d0a4caab8a09757c6, type: 2}
   m_RootGameObject: {fileID: 1861877166}
@@ -4884,7 +4932,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1861877167}
   m_Layer: 0
-  m_Name: locked container
+  m_Name: locked chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
