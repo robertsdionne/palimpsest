@@ -14,9 +14,9 @@ GameObject:
   - 58: {fileID: 5800000}
   - 114: {fileID: 11400000}
   m_Layer: 0
-  m_Name: Door
+  m_Name: switch
   m_TagString: Entity
-  m_Icon: {fileID: -1203168336, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: -1376725286, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
@@ -27,8 +27,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20, y: 30, z: 0}
-  m_LocalScale: {x: .5, y: 1.5, z: 1}
+  m_LocalPosition: {x: 19.2643661, y: 31.0250587, z: 0}
+  m_LocalScale: {x: .25, y: .25, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
 --- !u!23 &2300000
@@ -43,7 +43,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 47cabb4d9115744bea797435652aa926, type: 2}
+  - {fileID: 2100000, guid: d9378b1981e4741c6b24b8c2c2d7e509, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -58,16 +58,16 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 4300000, guid: b4d81dc7e24e24a749c374b17d8f1827, type: 3}
 --- !u!58 &5800000
 CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Material: {fileID: 6200000, guid: 577c0f82b97fa4462ae7304aad0722e5, type: 2}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Radius: 1
   m_Center: {x: 0, y: 0}
 --- !u!61 &6100000
@@ -76,9 +76,9 @@ BoxCollider2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Material: {fileID: 6200000, guid: 577c0f82b97fa4462ae7304aad0722e5, type: 2}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Size: {x: 1, y: 1}
   m_Center: {x: 0, y: 0}
 --- !u!114 &11400000
@@ -89,14 +89,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16caddc1c82db44e7a67a93ca1d7d3f8, type: 3}
+  m_Script: {fileID: 11500000, guid: 7de17a9d7eb744949b742a3218f2d848, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   describe:
-  - See the obstacle.
-  touch:
-  - Touch the obstacle.
-  touchDelay: 1
+  - A switch.
+  enter:
+  - Toggle the switch.
+  exit: []
+  inside:
+  - Touching the switch.
+  door: {fileID: 0}
+  doorway: {fileID: 0}
+  toggleDelay: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

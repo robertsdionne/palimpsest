@@ -5,21 +5,25 @@ public class Switch : Area {
 
   public Obstacle door;
   public Area doorway;
+  public float toggleDelay = 1.0f;
 
   private bool state = false;
+  private float lastToggleTime = float.NegativeInfinity;
 
   void OnTriggerEnter2D() {
     occupied = true;
     seen = true;
-    state = !state;
-    if (null != doorway) {
-      doorway.gameObject.SetActive(state);
-    }
-    if (null != door) {
-      door.gameObject.SetActive(!state);
-    }
-    if (enter.Length > 0) {
-      TextConsole.PushText(Choose(enter));
+    if (Time.fixedTime - lastToggleTime > toggleDelay) {
+      state = !state;
+      if (null != doorway) {
+        doorway.gameObject.SetActive(state);
+      }
+      if (null != door) {
+        door.gameObject.SetActive(!state);
+      }
+      if (enter.Length > 0) {
+        TextConsole.PushText(Choose(enter));
+      }
     }
   }
 
