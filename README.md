@@ -1,3 +1,3 @@
 palimpsest
 ==========
-[Play](//robertsdionne.github.io/palimpsest/)
+[Play](//goo.gl/Zx71c2)
