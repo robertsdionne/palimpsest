@@ -5,8 +5,6 @@ using System.Linq;
 
 public class TextConsole : MonoBehaviour {
 
-  public Line title;
-  public Line controls;
   public GameObject descriptionPrefab;
   public GameObject indicatorPrefab;
   public GameObject pathDescriptionPrefab;
@@ -21,8 +19,6 @@ public class TextConsole : MonoBehaviour {
 
   void Start() {
     textConsole = this;
-    lines.Add(title);
-    lines.Add(controls);
   }
 
   public static void PushText(string text) {
