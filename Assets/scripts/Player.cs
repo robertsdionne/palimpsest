@@ -100,7 +100,7 @@ public class Player : MonoBehaviour {
     var moving = Mathf.Clamp01(rigidbody2D.velocity.magnitude);
     var scale = 0.25f * Mathf.Clamp01(5.0f * input.magnitude);
     var frequency = 4.0f + 4.0f * IsRunning();
-    arrow.transform.localPosition = (0.01f + 0.01f * IsRunning()) * moving * (
+    arrow.transform.localPosition = (0.02f + 0.01f * IsRunning()) * moving * (
         Mathf.Sin(frequency * Time.fixedTime) * Vector2.right +
         Mathf.Sin(2.0f * frequency * Time.fixedTime) * Vector2.up);
     arrow.transform.rotation = gameObject.transform.rotation;
