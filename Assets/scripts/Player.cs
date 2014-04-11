@@ -98,7 +98,7 @@ public class Player : MonoBehaviour {
 
   void UpdateArrowRotationAndScale(Vector2 input) {
     var moving = Mathf.Clamp01(rigidbody2D.velocity.magnitude);
-    var scale = 0.125f * Mathf.Clamp01(5.0f * input.magnitude);
+    var scale = 0.25f * Mathf.Clamp01(5.0f * input.magnitude);
     var frequency = 4.0f + 4.0f * IsRunning();
     arrow.transform.localPosition = (0.01f + 0.01f * IsRunning()) * moving * (
         Mathf.Sin(frequency * Time.fixedTime) * Vector2.right +
@@ -109,9 +109,9 @@ public class Player : MonoBehaviour {
   }
 
   void UpdateEyeScale() {
-    var scale = 0.125f * System.Convert.ToSingle(IsMoreToSee());
+    var scale = 0.25f * System.Convert.ToSingle(IsMoreToSee());
     eye.transform.localScale = Vector2.Lerp(
-        eye.transform.localScale, new Vector2(0.125f, scale), 0.1f);
+        eye.transform.localScale, new Vector2(0.25f, scale), 0.1f);
   }
 
   void UpdateCameraPosition() {
