@@ -22,7 +22,6 @@ public class TextConsole : MonoBehaviour {
   }
 
   public static void PushText(string text) {
-    WebsocketServer.BroadcastText(text);
     if (null != textConsole) {
       textConsole.MaybeClearLines();
       var description = Object.Instantiate(textConsole.descriptionPrefab) as GameObject;
@@ -37,7 +36,6 @@ public class TextConsole : MonoBehaviour {
   }
 
   public static void PushPathText(GameObject target, string text) {
-    WebsocketServer.BroadcastText(text);
     if (null != textConsole) {
       textConsole.MaybeClearLines();
       var description = Object.Instantiate(textConsole.pathDescriptionPrefab) as GameObject;
@@ -59,7 +57,6 @@ public class TextConsole : MonoBehaviour {
   }
 
   public static void PushIndicator(GameObject target, string text) {
-    WebsocketServer.BroadcastIndicator(target, text);
     if (null != textConsole) {
       textConsole.MaybeClearLines();
       var indicator = Object.Instantiate(textConsole.indicatorPrefab) as GameObject;
@@ -78,7 +75,6 @@ public class TextConsole : MonoBehaviour {
   }
 
   public static void PushPathIndicator(GameObject target, string text) {
-    WebsocketServer.BroadcastIndicator(target, text);
     if (null != textConsole) {
       textConsole.MaybeClearLines();
       var description = Object.Instantiate(textConsole.pathDescriptionPrefab) as GameObject;
@@ -108,7 +104,6 @@ public class TextConsole : MonoBehaviour {
   }
 
   public static void PushSignIndicator(GameObject target, GameObject signTarget, string text) {
-    WebsocketServer.BroadcastIndicator(target, text);
     if (null != textConsole) {
       textConsole.MaybeClearLines();
       var description = Object.Instantiate(textConsole.signDescriptionPrefab) as GameObject;
