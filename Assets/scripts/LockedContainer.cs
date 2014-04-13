@@ -23,7 +23,7 @@ public class LockedContainer : Entity {
         contents.gameObject.SetActive(true);
         open.gameObject.SetActive(true);
       } else {
-        TextConsole.PushIndicator(gameObject, Choose(touch));
+        TextConsole.PushIndicator(this, Choose(touch));
       }
       lastTouchTime = Time.fixedTime;
     }

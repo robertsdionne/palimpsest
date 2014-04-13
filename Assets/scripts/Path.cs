@@ -11,14 +11,14 @@ public class Path : Entity {
   public override void Describe() {
     seen = true;
     if (describe.Length > 0) {
-      TextConsole.PushPathIndicator(gameObject, Choose(describe));
+      TextConsole.PushPathIndicator(this, Choose(describe));
     }
   }
 
   public override void Inside() {
     seen = true;
     if (inside.Length > 0) {
-      TextConsole.PushPathText(gameObject, Choose(inside));
+      TextConsole.PushPathText(this, Choose(inside));
     }
   }
 
@@ -72,14 +72,14 @@ public class Path : Entity {
   public override void OnEnter(string text) {
     if (!IsOccupied()) {
       seen = true;
-      TextConsole.PushPathText(gameObject, Choose(enter));
+      TextConsole.PushPathText(this, Choose(enter));
     }
   }
 
   public override void OnExit(string text) {
     if (!IsOccupied()) {
       seen = true;
-      TextConsole.PushPathText(gameObject, Choose(exit));
+      TextConsole.PushPathText(this, Choose(exit));
     }
   }
 

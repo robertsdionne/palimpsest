@@ -103,8 +103,8 @@ MonoBehaviour:
   - Exit the area.
   inside:
   - Inside the area.
-  touch:
-  - Touch the obstacle.
+  shake: 1
+  touch: []
   touchDelay: 1
 --- !u!1001 &100100000
 Prefab:

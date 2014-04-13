@@ -97,12 +97,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   describe:
   - See the entity.
-  enter:
-  - Enter the area.
-  exit:
-  - Exit the area.
+  enter: []
+  exit: []
   inside:
   - Inside the area.
+  shake: 1
   touch:
   - Touch the obstacle.
   touchDelay: 1

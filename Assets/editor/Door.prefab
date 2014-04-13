@@ -64,7 +64,7 @@ Transform:
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .5, y: 1.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400004}
 --- !u!4 &400002
@@ -75,7 +75,7 @@ Transform:
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .5, y: 1.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400004}
 --- !u!4 &400004
@@ -203,15 +203,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   describe:
-  - See the entity.
+  - A door.
   enter:
-  - Enter the area.
+  - Standing in the doorway.
   exit:
-  - Exit the area.
+  - Leaving the doorway.
   inside:
-  - Inside the area.
+  - Inside the doorway.
+  shake: 1
   touch:
-  - Touch the obstacle.
+  - Opening the door.
   touchDelay: 1
   door: {fileID: 11400004}
   doorway: {fileID: 11400002}

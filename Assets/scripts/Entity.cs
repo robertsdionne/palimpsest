@@ -4,20 +4,21 @@ using System.Collections;
 public class Entity : MonoBehaviour {
 
   public string[] describe = {
-    "See the entity."
+    "Seeing the entity."
   };
+  public GameObject[] describers;
   public string[] enter = {
-    "Enter the area."
+    "Entering the area."
   };
   public string[] exit = {
-    "Exit the area."
+    "Exiting the area."
   };
   public string[] inside = {
     "Inside the area."
   };
   public bool shake = true;
   public string[] touch = {
-    "Touch the obstacle."
+    "Touching the obstacle."
   };
   public float touchDelay = 1.0f;
 
@@ -27,7 +28,7 @@ public class Entity : MonoBehaviour {
   public virtual void Describe() {
     seen = true;
     if (describe.Length > 0) {
-      TextConsole.PushIndicator(gameObject, Choose(describe));
+      TextConsole.PushIndicator(this, Choose(describe));
     }
   }
 

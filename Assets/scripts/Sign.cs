@@ -3,12 +3,12 @@ using System.Collections;
 
 public class Sign : Entity {
 
-  public GameObject target;
+  public Entity target;
 
   public override void Describe() {
     seen = true;
     if (describe.Length > 0) {
-      TextConsole.PushSignIndicator(gameObject, target,
+      TextConsole.PushSignIndicator(this, target,
           Choose(describe) + "   \"" + Choose(target.GetComponent<Entity>().describe) + "\"");
     }
   }
@@ -18,7 +18,7 @@ public class Sign : Entity {
     if (Time.fixedTime - lastTouchTime > touchDelay) {
       lastTouchTime = Time.fixedTime;
       ScreenShake.Shake();
-      TextConsole.PushSignIndicator(gameObject, target,
+      TextConsole.PushSignIndicator(this, target,
           null != text ? text : Choose(touch) +
               "   \"" + Choose(target.GetComponent<Entity>().describe) + "\"");
     }

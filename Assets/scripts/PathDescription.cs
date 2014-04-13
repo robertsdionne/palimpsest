@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Linq;
 
 public class PathDescription : MonoBehaviour {
 
@@ -18,7 +19,8 @@ public class PathDescription : MonoBehaviour {
     var rotation = DetermineArrowRotation();
     arrow.transform.rotation = Quaternion.Slerp(arrow.transform.rotation, rotation, 0.1f);
     var distance = target.GetComponent<Entity>().DistanceTo(player.transform.position);
-    var scale = 0.125f * System.Convert.ToSingle(distance <= target.width / 2.0f);
+    var scale = 0.125f * System.Convert.ToSingle(
+        distance <= target.width / 2.0f && target.describers.Contains(gameObject));
     arrow.transform.localScale = Vector2.Lerp(
         arrow.transform.localScale, new Vector2(scale, scale), 0.1f);
 	}

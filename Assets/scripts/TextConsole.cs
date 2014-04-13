@@ -35,7 +35,7 @@ public class TextConsole : MonoBehaviour {
     }
   }
 
-  public static void PushPathText(GameObject target, string text) {
+  public static void PushPathText(Entity target, string text) {
     if (null != textConsole && null != text) {
       textConsole.MaybeClearLines();
       var description = Object.Instantiate(textConsole.pathDescriptionPrefab) as GameObject;
@@ -50,13 +50,14 @@ public class TextConsole : MonoBehaviour {
               (2.0f * description.GetComponent<PathDescription>().description.renderer.bounds.extents.x + 0.25f) * Vector3.right;
       description.GetComponent<PathDescription>().player = textConsole.player;
       description.GetComponent<PathDescription>().target = target.GetComponent<Path>();
+      target.GetComponent<Entity>().describers = new GameObject[] {description};
       textConsole.lines.Add(line);
       textConsole.playerArrowLine.gameObject.transform.localPosition =
           textConsole.NextPosition(textConsole.playerArrowLine);
     }
   }
 
-  public static void PushIndicator(GameObject target, string text) {
+  public static void PushIndicator(Entity target, string text) {
     if (null != textConsole && null != text) {
       textConsole.MaybeClearLines();
       var indicator = Object.Instantiate(textConsole.indicatorPrefab) as GameObject;
@@ -68,13 +69,14 @@ public class TextConsole : MonoBehaviour {
       indicatorComponent.description.GetComponent<TextMesh>().text = text;
       indicatorComponent.player = textConsole.player;
       indicatorComponent.target = target;
+      target.GetComponent<Entity>().describers = new GameObject[] {indicator};
       textConsole.lines.Add(line);
       textConsole.playerArrowLine.gameObject.transform.localPosition =
           textConsole.NextPosition(textConsole.playerArrowLine);
     }
   }
 
-  public static void PushPathIndicator(GameObject target, string text) {
+  public static void PushPathIndicator(Entity target, string text) {
     if (null != textConsole && null != text) {
       textConsole.MaybeClearLines();
       var description = Object.Instantiate(textConsole.pathDescriptionPrefab) as GameObject;
@@ -97,13 +99,14 @@ public class TextConsole : MonoBehaviour {
       GameObject.Destroy(indicatorComponent.description);
       indicatorComponent.player = textConsole.player;
       indicatorComponent.target = target;
+      target.GetComponent<Entity>().describers = new GameObject[] {description, indicator};
       textConsole.lines.Add(line);
       textConsole.playerArrowLine.gameObject.transform.localPosition =
           textConsole.NextPosition(textConsole.playerArrowLine);
     }
   }
 
-  public static void PushSignIndicator(GameObject target, GameObject signTarget, string text) {
+  public static void PushSignIndicator(Entity target, Entity signTarget, string text) {
     if (null != textConsole && null != text) {
       textConsole.MaybeClearLines();
       var description = Object.Instantiate(textConsole.signDescriptionPrefab) as GameObject;
@@ -126,6 +129,8 @@ public class TextConsole : MonoBehaviour {
       GameObject.Destroy(indicatorComponent.description);
       indicatorComponent.player = textConsole.player;
       indicatorComponent.target = target;
+      target.describers = new GameObject[] {indicator};
+      signTarget.describers = new GameObject[] {description};
       textConsole.lines.Add(line);
       textConsole.playerArrowLine.gameObject.transform.localPosition =
           textConsole.NextPosition(textConsole.playerArrowLine);
