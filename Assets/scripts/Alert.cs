@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Alert : MonoBehaviour {
+public class Ambience : MonoBehaviour {
 
   public string[] alerts;
   public float period;

@@ -3,8 +3,8 @@ using System.Collections;
 
 public class Switch : Entity {
 
-  public Collidable door;
-  public Collidable doorway;
+  public GameObject door;
+  public GameObject doorway;
   public float toggleDelay = 1.0f;
 
   private bool state = false;
@@ -16,10 +16,10 @@ public class Switch : Entity {
       lastToggleTime = Time.fixedTime;
       state = !state;
       if (null != doorway) {
-        doorway.gameObject.SetActive(state);
+        doorway.SetActive(state);
       }
       if (null != door) {
-        door.gameObject.SetActive(!state);
+        door.SetActive(!state);
       }
       if (state && enter.Length > 0) {
         TextConsole.PushText(Choose(enter));
