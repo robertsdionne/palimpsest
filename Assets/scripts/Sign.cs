@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Sign : Obstacle {
+public class Sign : Entity {
 
   public GameObject target;
 
@@ -13,13 +13,14 @@ public class Sign : Obstacle {
     }
   }
 
-  void OnCollisionEnter2D(Collision2D collision) {
+  public override void OnTouch(string text) {
     seen = true;
-    if (touch.Length > 0 && Time.fixedTime - lastTouchTime > touchDelay) {
+    if (Time.fixedTime - lastTouchTime > touchDelay) {
+      lastTouchTime = Time.fixedTime;
       ScreenShake.Shake();
       TextConsole.PushSignIndicator(gameObject, target,
-          Choose(touch) + "   \"" + Choose(target.GetComponent<Entity>().describe) + "\"");
-      lastTouchTime = Time.fixedTime;
+          null != text ? text : Choose(touch) +
+              "   \"" + Choose(target.GetComponent<Entity>().describe) + "\"");
     }
   }
 }

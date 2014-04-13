@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Item : Obstacle {
+public class Item : Entity {
 
   public string[] describeInventory = {
     "An item."
@@ -13,13 +13,8 @@ public class Item : Obstacle {
     }
   }
 
-  void OnCollisionEnter2D(Collision2D collision) {
-    seen = true;
-    if (touch.Length > 0 && Time.fixedTime - lastTouchTime > touchDelay) {
-      ScreenShake.Shake();
-      TextConsole.PushText(Choose(touch));
-      lastTouchTime = Time.fixedTime;
-      Inventory.Add(this);
-    }
+  public override void OnTouch(string text) {
+    base.OnTouch(text);
+    Inventory.Add(this);
   }
 }

@@ -5,13 +5,14 @@ using System.Linq;
 
 public class Player : MonoBehaviour {
 
-  private const string ENTITY = "Entity";
   private const string HORIZONTAL = "Horizontal";
   private const string RUN = "Run";
   private const string SEE = "See";
   private const string VERTICAL = "Vertical";
 
   public GameObject arrow;
+  public GameObject fieldArrow;
+  public GameObject nearArrow;
   public float cameraPositionAlpha = 0.032f;
   public GameObject eye;
   public GameObject mainCamera;
@@ -22,14 +23,16 @@ public class Player : MonoBehaviour {
   public float maximumWalkingSpeed = 1.38f;
   public int numberToSee = 3;
 
-  private List<GameObject> occupiedAreas = new List<GameObject>();
-  private List<GameObject> nearestEntities = new List<GameObject>();
+  private List<Entity> occupiedAreas = new List<Entity>();
+  private List<Entity> nearestEntities = new List<Entity>();
   private bool ableToSee = true;
+  private bool orientation = false;
 	
 	void FixedUpdate () {
     UpdateAreasAndEntities();
     var input = GetInput();
     UpdateArrowRotationAndScale(input);
+    UpdateFieldArrowRotationAndScale();
     UpdateEyeScale();
     UpdateCameraPosition();
     UpdatePosition(input);
@@ -44,20 +47,41 @@ public class Player : MonoBehaviour {
     return new Vector2(Input.GetAxis(HORIZONTAL), Input.GetAxis(VERTICAL));
   }
 
-  List<GameObject> GetOccupiedAreas() {
-    return (GameObject.FindObjectsOfType(typeof(Area)) as Area[]).Where(
-          area => area.IsOccupied()).Select(area => area.gameObject).ToList();
+  List<Entity> GetOccupiedAreas() {
+    return (GameObject.FindObjectsOfType(typeof(Entity)) as Entity[]).Where(
+          entity => entity.IsOccupied()).ToList();
   }
 
-  List<GameObject> GetNearestEntities(List<GameObject> occupiedAreas) {
-    var entities = GameObject.FindGameObjectsWithTag(ENTITY);
+  List<Entity> GetNearestEntities(List<Entity> occupiedAreas) {
+    var entities = GameObject.FindObjectsOfType(typeof(Entity)) as Entity[];
     return entities.Where(entity => !occupiedAreas.Contains(entity)).OrderBy(entity =>
-        DistanceFields.DistanceTo(
-            entity, gameObject.transform.position)).Take(numberToSee).ToList();
+        entity.DistanceTo(gameObject.transform.position)).Take(numberToSee).ToList();
+  }
+
+  Vector2 DirectionToEverythingFrom(Vector2 playerPosition) {
+    var dx = 1e-5f * Vector2.right;
+    var dy = 1e-5f * Vector2.up;
+    var direction = -new Vector2(
+        DistanceToEverything(playerPosition + dx) - DistanceToEverything(playerPosition - dx),
+        DistanceToEverything(playerPosition + dy) - DistanceToEverything(playerPosition - dy));
+    return direction.magnitude > 0.0f ? direction.normalized : new Vector2();
+  }
+
+  float DistanceToEverything(Vector2 playerPosition) {
+    var entities = (GameObject.FindObjectsOfType(typeof(Entity)) as Entity[]).Where(
+        entity => !occupiedAreas.Contains(entity)).ToList();
+    var minimum = float.PositiveInfinity;
+    foreach (var entity in entities) {
+      var distance = entity.DistanceTo(playerPosition);
+      if (distance < minimum) {
+        minimum = distance;
+      }
+    }
+    return minimum;
   }
 
   bool IsMoreToSee() {
-    return nearestEntities.Any(entity => !entity.GetComponent<Entity>().IsSeen());
+    return nearestEntities.Any(entity => !entity.IsSeen());
   }
 
   float IsRunning() {
@@ -69,7 +93,7 @@ public class Player : MonoBehaviour {
       ableToSee = false;
       TextConsole.PushText("");
       for (var i = 0; i < occupiedAreas.Count; ++i) {
-        occupiedAreas[i].GetComponent<Area>().Inside();
+        occupiedAreas[i].GetComponent<Entity>().Inside();
       }
       for (var i = 0; i < nearestEntities.Count; ++i) {
         nearestEntities[i].GetComponent<Entity>().Describe();
@@ -106,6 +130,30 @@ public class Player : MonoBehaviour {
     arrow.transform.rotation = gameObject.transform.rotation;
     arrow.transform.localScale = Vector2.Lerp(
         arrow.transform.localScale, new Vector2(scale, scale), 0.1f);
+  }
+
+  void UpdateFieldArrowRotationAndScale() {
+    var input = DirectionToEverythingFrom(transform.position);
+    var perpendicular = new Vector2(-input.y, input.x);
+    var dot = Vector2.Dot(transform.right, perpendicular);
+    if (orientation && dot < -0.25f) {
+      orientation = false;
+    }
+    if (!orientation && dot > 0.25f) {
+      orientation = true;
+    }
+    var direction = (orientation ? 1.0f : -1.0f) * perpendicular;
+    var scale = 0.25f * Mathf.Clamp01(5.0f * direction.magnitude);
+    var angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+    var rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+    fieldArrow.transform.rotation = Quaternion.Slerp(fieldArrow.transform.rotation, rotation, 0.1f);
+    fieldArrow.transform.localScale = Vector2.Lerp(
+        fieldArrow.transform.localScale, new Vector2(scale, scale), 0.1f);
+    var angle2 = Mathf.Atan2(input.y, input.x) * Mathf.Rad2Deg;
+    var rotation2 = Quaternion.AngleAxis(angle2, Vector3.forward);
+    nearArrow.transform.rotation = Quaternion.Slerp(nearArrow.transform.rotation, rotation2, 0.1f);
+    nearArrow.transform.localScale = Vector2.Lerp(
+        nearArrow.transform.localScale, new Vector2(scale, scale), 0.1f);
   }
 
   void UpdateEyeScale() {

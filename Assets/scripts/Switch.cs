@@ -1,17 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Switch : Area {
+public class Switch : Entity {
 
-  public Obstacle door;
-  public Area doorway;
+  public Collidable door;
+  public Collidable doorway;
   public float toggleDelay = 1.0f;
 
   private bool state = false;
   private float lastToggleTime = float.NegativeInfinity;
 
-  void OnTriggerEnter2D() {
-    occupied = true;
+  public override void OnEnter(string text) {
     seen = true;
     if (Time.fixedTime - lastToggleTime > toggleDelay) {
       lastToggleTime = Time.fixedTime;
@@ -31,8 +30,7 @@ public class Switch : Area {
     }
   }
 
-  void OnTriggerExit2D() {
-    occupied = false;
+  public override void OnExit(string text) {
     seen = true;
   }
 }

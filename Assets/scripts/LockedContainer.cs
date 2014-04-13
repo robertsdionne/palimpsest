@@ -1,26 +1,27 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class LockedContainer : Obstacle {
+public class LockedContainer : Entity {
 
   public string[] opened = {
     "You opened the locked container."
   };
 
   public Item key;
-  public Obstacle contents;
-  public Obstacle replacement;
+  public Entity contents;
+  public Collidable closed;
+  public Collidable open;
 
-  void OnCollisionEnter2D(Collision2D collision) {
+  public override void OnTouch(string text) {
     seen = true;
     if (touch.Length > 0 && Time.fixedTime - lastTouchTime > touchDelay) {
       ScreenShake.Shake();
-      if (gameObject.activeInHierarchy && Inventory.Contains(key)) {
+      if (closed.gameObject.activeInHierarchy && Inventory.Contains(key)) {
         Inventory.Remove(key);
         TextConsole.PushText(Choose(opened));
-        gameObject.SetActive(false);
+        closed.gameObject.SetActive(false);
         contents.gameObject.SetActive(true);
-        replacement.gameObject.SetActive(true);
+        open.gameObject.SetActive(true);
       } else {
         TextConsole.PushIndicator(gameObject, Choose(touch));
       }

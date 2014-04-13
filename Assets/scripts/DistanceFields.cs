@@ -1,28 +1,38 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class DistanceFields {
+public static class DistanceFields {
 
-  public static Vector2 DirectionFrom(GameObject target, Vector2 position) {
-    var dx = 1e-5f * Vector2.right;
-    var dy = 1e-5f * Vector2.up;
-    var direction = -new Vector2(
-        DistanceTo(target, position + dx) - DistanceTo(target, position - dx),
-        DistanceTo(target, position + dy) - DistanceTo(target, position - dy));
-    return direction.magnitude > 0.0f ? direction.normalized : new Vector2();
+  public static float DistanceToLine(GameObject first, GameObject second, Vector2 position) {
+    Vector2 a = first.transform.position;
+    Vector2 b = second.transform.position;
+    var pa = position - a;
+    var ba = b - a;
+    var h = Mathf.Clamp01(Vector2.Dot(pa, ba) / Vector2.Dot(ba, ba));
+    return (pa - h * ba).magnitude;
   }
 
-  public static float DistanceTo(GameObject target, Vector2 position) {
+  public static float DistanceTo(this Collider2D target, Vector2 position) {
+    if (target is BoxCollider2D) {
+      return ((BoxCollider2D) target).DistanceTo(position);
+    } else {
+      return ((CircleCollider2D) target).DistanceTo(position);
+    }
+  }
+
+  public static float DistanceTo(this BoxCollider2D target, Vector2 position) {
     Vector2 center = target.transform.position;
     var p = center - position;
-    if (target.GetComponent<BoxCollider2D>().enabled) {
-      var q = Quaternion.Inverse(target.transform.rotation) * p;
-      Vector2 halfExtent = target.transform.localScale / 2.0f;
-      return (Vector2.Max(Abs(q) - halfExtent, new Vector2())).magnitude;
-    } else {
-      float radius = target.transform.localScale.x;
-      return p.magnitude - radius; // p rather than q for rotational symmetry
-    }
+    var q = Quaternion.Inverse(target.transform.rotation) * p;
+    Vector2 halfExtent = target.transform.lossyScale / 2.0f;
+    return (Vector2.Max(Abs(q) - halfExtent, new Vector2())).magnitude;
+  }
+
+  public static float DistanceTo(this CircleCollider2D target, Vector2 position) {
+    Vector2 center = target.transform.position;
+    var p = center - position;
+    float radius = Mathf.Max(target.transform.lossyScale.x, target.transform.lossyScale.y);
+    return p.magnitude - radius;
   }
 
   private static Vector2 Abs(Vector2 input) {

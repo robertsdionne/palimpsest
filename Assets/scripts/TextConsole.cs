@@ -22,7 +22,7 @@ public class TextConsole : MonoBehaviour {
   }
 
   public static void PushText(string text) {
-    if (null != textConsole) {
+    if (null != textConsole && null != text) {
       textConsole.MaybeClearLines();
       var description = Object.Instantiate(textConsole.descriptionPrefab) as GameObject;
       var line = description.GetComponent<Line>();
@@ -36,7 +36,7 @@ public class TextConsole : MonoBehaviour {
   }
 
   public static void PushPathText(GameObject target, string text) {
-    if (null != textConsole) {
+    if (null != textConsole && null != text) {
       textConsole.MaybeClearLines();
       var description = Object.Instantiate(textConsole.pathDescriptionPrefab) as GameObject;
       var line = description.GetComponent<Line>();
@@ -49,7 +49,7 @@ public class TextConsole : MonoBehaviour {
           description.GetComponent<PathDescription>().description.transform.localPosition + 
               (2.0f * description.GetComponent<PathDescription>().description.renderer.bounds.extents.x + 0.25f) * Vector3.right;
       description.GetComponent<PathDescription>().player = textConsole.player;
-      description.GetComponent<PathDescription>().target = target;
+      description.GetComponent<PathDescription>().target = target.GetComponent<Path>();
       textConsole.lines.Add(line);
       textConsole.playerArrowLine.gameObject.transform.localPosition =
           textConsole.NextPosition(textConsole.playerArrowLine);
@@ -57,7 +57,7 @@ public class TextConsole : MonoBehaviour {
   }
 
   public static void PushIndicator(GameObject target, string text) {
-    if (null != textConsole) {
+    if (null != textConsole && null != text) {
       textConsole.MaybeClearLines();
       var indicator = Object.Instantiate(textConsole.indicatorPrefab) as GameObject;
       var line = indicator.GetComponent<Line>();
@@ -75,7 +75,7 @@ public class TextConsole : MonoBehaviour {
   }
 
   public static void PushPathIndicator(GameObject target, string text) {
-    if (null != textConsole) {
+    if (null != textConsole && null != text) {
       textConsole.MaybeClearLines();
       var description = Object.Instantiate(textConsole.pathDescriptionPrefab) as GameObject;
       description.GetComponent<PathDescription>().arrow.transform.rotation =
@@ -85,7 +85,7 @@ public class TextConsole : MonoBehaviour {
           description.GetComponent<PathDescription>().description.transform.localPosition + 
               (2.0f * description.GetComponent<PathDescription>().description.renderer.bounds.extents.x + 0.25f) * Vector3.right;
       description.GetComponent<PathDescription>().player = textConsole.player;
-      description.GetComponent<PathDescription>().target = target;
+      description.GetComponent<PathDescription>().target = target.GetComponent<Path>();
       var indicator = Object.Instantiate(textConsole.indicatorPrefab) as GameObject;
       var line = indicator.GetComponent<Line>();
       var indicatorComponent = indicator.GetComponent<Indicator>();
@@ -104,7 +104,7 @@ public class TextConsole : MonoBehaviour {
   }
 
   public static void PushSignIndicator(GameObject target, GameObject signTarget, string text) {
-    if (null != textConsole) {
+    if (null != textConsole && null != text) {
       textConsole.MaybeClearLines();
       var description = Object.Instantiate(textConsole.signDescriptionPrefab) as GameObject;
       description.GetComponent<Indicator>().arrow.transform.rotation =
