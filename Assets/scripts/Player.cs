@@ -68,8 +68,9 @@ public class Player : MonoBehaviour {
   }
 
   float DistanceToEverything(Vector2 playerPosition) {
+    var paths = (GameObject.FindObjectsOfType(typeof(Path)) as Path[]);
     var entities = (GameObject.FindObjectsOfType(typeof(Entity)) as Entity[]).Where(
-        entity => !occupiedAreas.Contains(entity)).ToList();
+        entity => !occupiedAreas.Contains(entity) || paths.Contains(entity)).ToList();
     var minimum = float.PositiveInfinity;
     foreach (var entity in entities) {
       var distance = entity.DistanceTo(playerPosition);
