@@ -15,6 +15,7 @@ public class Entity : MonoBehaviour {
   public string[] inside = {
     "Inside the area."
   };
+  public bool shake = true;
   public string[] touch = {
     "Touch the obstacle."
   };
@@ -89,7 +90,9 @@ public class Entity : MonoBehaviour {
     seen = true;
     if (Time.fixedTime - lastTouchTime > touchDelay) {
       lastTouchTime = Time.fixedTime;
-      ScreenShake.Shake();
+      if (shake) {
+        ScreenShake.Shake();
+      }
       TextConsole.PushText(null != text ? text : Choose(touch));
     }
   }
