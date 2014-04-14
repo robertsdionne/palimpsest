@@ -14,7 +14,6 @@ public class LockedContainer : Entity {
 
   public override void OnTouch(string text) {
     seen = true;
-    visited = true;
     if (Time.fixedTime - lastTouchTime > touchDelay) {
       if (shake) {
         ScreenShake.Shake();

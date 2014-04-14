@@ -25,15 +25,10 @@ public class Entity : MonoBehaviour {
 
   protected float lastTouchTime = 0.0f;
   protected bool seen = false;
-  protected bool visited = false;
 
   public virtual void Describe() {
     seen = true;
-    if (visited) {
-      TextConsole.PushIndicator(this, Choose(describe));
-    } else {
-      TextConsole.PushIndicator(this, "Something.");
-    }
+    TextConsole.PushIndicator(this, Choose(describe));
   }
 
   public Vector2 DirectionFrom(Vector2 playerPosition) {
@@ -78,7 +73,6 @@ public class Entity : MonoBehaviour {
   public virtual void OnEnter(string text) {
     if (!IsOccupied()) {
       seen = true;
-      visited = true;
       TextConsole.PushText(null != text ? text : Choose(enter));
     }
   }
@@ -86,14 +80,12 @@ public class Entity : MonoBehaviour {
   public virtual void OnExit(string text) {
     if (!IsOccupied()) {
       seen = true;
-      visited = true;
       TextConsole.PushText(null != text ? text : Choose(exit));
     }
   }
 
   public virtual void OnTouch(string text) {
     seen = true;
-    visited = true;
     if (Time.fixedTime - lastTouchTime > touchDelay) {
       lastTouchTime = Time.fixedTime;
       if (shake) {
