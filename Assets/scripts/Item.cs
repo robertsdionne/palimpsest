@@ -3,12 +3,12 @@ using System.Collections;
 
 public class Item : Entity {
 
-  public string[] describeInventory = {
+  public string[] inventoryListing = {
     "An item."
   };
 
-  public void DescribeInventory() {
-    TextConsole.PushText(Choose(describeInventory));
+  public void ListInventory() {
+    TextConsole.PushText(Choose(inventoryListing));
   }
 
   public override void OnTouch(string text) {

@@ -8,9 +8,9 @@ public class Path : Entity {
 
   public float width = 1.0f;
 
-  public override void Describe() {
+  public override void See() {
     seen = true;
-    TextConsole.PushPathIndicator(this, Choose(describe));
+    TextConsole.PushPathIndicator(this, Choose(see));
   }
 
   public override void Inside() {

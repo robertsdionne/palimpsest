@@ -105,12 +105,12 @@ public class Player : MonoBehaviour {
         occupiedAreas[i].GetComponent<Entity>().Inside();
       }
       for (var i = 0; i < nearestEntities.Count; ++i) {
-        nearestEntities[i].GetComponent<Entity>().Describe();
+        nearestEntities[i].GetComponent<Entity>().See();
       }
       if (Inventory.Items().Count > 0) {
         TextConsole.PushText("You carry:");
         foreach (var item in Inventory.Items()) {
-          item.DescribeInventory();
+          item.ListInventory();
         }
       }
       TextConsole.PushText("");

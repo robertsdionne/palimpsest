@@ -3,9 +3,10 @@ using System.Collections;
 
 public class Entity : MonoBehaviour {
 
-  public string[] describe = {
+  public string[] see = {
     "Seeing the entity."
   };
+  [HideInInspector]
   public GameObject[] indicators;
   public string[] enter = {
     "Entering the area."
@@ -26,9 +27,9 @@ public class Entity : MonoBehaviour {
   protected float lastTouchTime = 0.0f;
   protected bool seen = false;
 
-  public virtual void Describe() {
+  public virtual void See() {
     seen = true;
-    TextConsole.PushIndicator(this, Choose(describe));
+    TextConsole.PushIndicator(this, Choose(see));
   }
 
   public Vector2 DirectionFrom(Vector2 playerPosition) {

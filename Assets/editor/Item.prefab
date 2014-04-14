@@ -81,9 +81,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b051b95f47004d7e8ec0ffc8d547b41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  describe:
-  - See the item.
-  describers: []
+  see:
+  - Seeing the item.
+  indicators: []
   enter: []
   exit: []
   inside: []
@@ -92,7 +92,7 @@ MonoBehaviour:
   - Take the item.
   touchDelay: 1
   visible: 1
-  describeInventory:
+  inventoryListing:
   - An item.
 --- !u!114 &11400002
 MonoBehaviour:

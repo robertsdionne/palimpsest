@@ -95,8 +95,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42ca7664be71d496aaac8416f50ba12a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  describe:
-  - See the entity.
+  see:
+  - Seeing the area.
+  indicators: []
   enter:
   - Enter the area.
   exit:
@@ -106,6 +107,7 @@ MonoBehaviour:
   shake: 1
   touch: []
   touchDelay: 1
+  visible: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

@@ -468,6 +468,10 @@ Prefab:
       propertyPath: m_Name
       value: Cobblestone Path
       objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 9f31627f166d643808b4e8d10191d722, type: 2}
+      propertyPath: see.Array.data[0]
+      value: A cobblestone path.
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9f31627f166d643808b4e8d10191d722, type: 2}
   m_RootGameObject: {fileID: 1042149936}
@@ -550,6 +554,10 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 11400000, guid: 157a310aa03534935b7317e9b575e9d4, type: 2}
+      propertyPath: see.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 157a310aa03534935b7317e9b575e9d4, type: 2}
       propertyPath: enter.Array.size
       value: 0
       objectReference: {fileID: 0}
@@ -608,6 +616,10 @@ Prefab:
     - target: {fileID: 11400000, guid: 157a310aa03534935b7317e9b575e9d4, type: 2}
       propertyPath: touch.Array.data[0]
       value: Scooping up a tulip.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 157a310aa03534935b7317e9b575e9d4, type: 2}
+      propertyPath: inventoryListing.Array.data[0]
+      value: A tulip.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 157a310aa03534935b7317e9b575e9d4, type: 2}
@@ -1029,93 +1041,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 242885090}
   m_GameObject: {fileID: 379956543}
   m_Mesh: {fileID: 4300004, guid: d336d91ef2c4346618c159af166fbd87, type: 3}
---- !u!1 &384136748
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
-  m_PrefabInternal: {fileID: 1644207031}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 384136753}
-  - 33: {fileID: 384136752}
-  - 23: {fileID: 384136751}
-  - 61: {fileID: 384136750}
-  - 114: {fileID: 384136749}
-  m_Layer: 0
-  m_Name: Obstacle
-  m_TagString: Entity
-  m_Icon: {fileID: -1003283189, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
---- !u!114 &384136749
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400000, guid: 53dcfd257267446b2aeed41fb6708dca,
-    type: 2}
-  m_PrefabInternal: {fileID: 1644207031}
-  m_GameObject: {fileID: 384136748}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3adcb2e4624224e468c8694993db02d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enter: []
-  exit: []
-  touch: []
---- !u!61 &384136750
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6100000, guid: 53dcfd257267446b2aeed41fb6708dca,
-    type: 2}
-  m_PrefabInternal: {fileID: 1644207031}
-  m_GameObject: {fileID: 384136748}
-  m_Enabled: 1
-  m_Material: {fileID: 6200000, guid: 577c0f82b97fa4462ae7304aad0722e5, type: 2}
-  m_IsTrigger: 0
-  m_Size: {x: 1, y: 1}
-  m_Center: {x: 0, y: 0}
---- !u!23 &384136751
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300000, guid: 53dcfd257267446b2aeed41fb6708dca,
-    type: 2}
-  m_PrefabInternal: {fileID: 1644207031}
-  m_GameObject: {fileID: 384136748}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 9d774d7870d6f4883bfdd1e68123614d, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_SortingLayerID: 0
---- !u!33 &384136752
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300000, guid: 53dcfd257267446b2aeed41fb6708dca,
-    type: 2}
-  m_PrefabInternal: {fileID: 1644207031}
-  m_GameObject: {fileID: 384136748}
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &384136753
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
-  m_PrefabInternal: {fileID: 1644207031}
-  m_GameObject: {fileID: 384136748}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.5, y: -.5, z: 0}
-  m_LocalScale: {x: 1, y: 2, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1394356095}
 --- !u!1 &384644750
 GameObject:
   m_ObjectHideFlags: 0
@@ -1144,7 +1069,6 @@ Transform:
   m_Children:
   - {fileID: 445606984}
   - {fileID: 957221032}
-  - {fileID: 2049021243}
   - {fileID: 587505984}
   m_Father: {fileID: 0}
 --- !u!114 &384644752
@@ -1158,7 +1082,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42ca7664be71d496aaac8416f50ba12a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  describe:
+  see:
   - The southern wall.
   indicators: []
   enter: []
@@ -1567,7 +1491,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76bc5052ea78a4000b7d14772a686193, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  describe:
+  see:
   - The gate to the garden.
   indicators: []
   enter: []
@@ -1637,74 +1561,6 @@ MonoBehaviour:
   enter: []
   exit: []
   touch: []
---- !u!1001 &646879884
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 11400000, guid: cfbc27454bc0540f0ab98f147f335c8c, type: 2}
-      propertyPath: enter.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: cfbc27454bc0540f0ab98f147f335c8c, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -8
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: cfbc27454bc0540f0ab98f147f335c8c, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: cfbc27454bc0540f0ab98f147f335c8c, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: cfbc27454bc0540f0ab98f147f335c8c, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: cfbc27454bc0540f0ab98f147f335c8c, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: cfbc27454bc0540f0ab98f147f335c8c, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: cfbc27454bc0540f0ab98f147f335c8c, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400000, guid: cfbc27454bc0540f0ab98f147f335c8c, type: 2}
-      propertyPath: describe.Array.data[0]
-      value: The gate to the garden.
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400000, guid: cfbc27454bc0540f0ab98f147f335c8c, type: 2}
-      propertyPath: enter.Array.data[0]
-      value: Standing in the gate.
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400000, guid: cfbc27454bc0540f0ab98f147f335c8c, type: 2}
-      propertyPath: exit.Array.data[0]
-      value: Leaving the gate.
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400000, guid: cfbc27454bc0540f0ab98f147f335c8c, type: 2}
-      propertyPath: inside.Array.data[0]
-      value: Standing inside the gate.
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400000, guid: cfbc27454bc0540f0ab98f147f335c8c, type: 2}
-      propertyPath: touch.Array.data[0]
-      value: Opening the gate.
-      objectReference: {fileID: 0}
-    - target: {fileID: 100004, guid: cfbc27454bc0540f0ab98f147f335c8c, type: 2}
-      propertyPath: m_Name
-      value: Gate
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: cfbc27454bc0540f0ab98f147f335c8c, type: 2}
-  m_RootGameObject: {fileID: 963278573}
-  m_IsPrefabParent: 0
-  m_IsExploded: 1
 --- !u!1 &690904296
 GameObject:
   m_ObjectHideFlags: 0
@@ -2521,62 +2377,6 @@ MonoBehaviour:
   enter: []
   exit: []
   touch: []
---- !u!1 &963278573
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100004, guid: cfbc27454bc0540f0ab98f147f335c8c, type: 2}
-  m_PrefabInternal: {fileID: 646879884}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 963278574}
-  - 114: {fileID: 963278575}
-  m_Layer: 0
-  m_Name: Gate
-  m_TagString: Untagged
-  m_Icon: {fileID: -1203168336, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &963278574
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400004, guid: cfbc27454bc0540f0ab98f147f335c8c, type: 2}
-  m_PrefabInternal: {fileID: 646879884}
-  m_GameObject: {fileID: 963278573}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 2090435818}
-  - {fileID: 1573836432}
-  m_Father: {fileID: 0}
---- !u!114 &963278575
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400000, guid: cfbc27454bc0540f0ab98f147f335c8c,
-    type: 2}
-  m_PrefabInternal: {fileID: 646879884}
-  m_GameObject: {fileID: 963278573}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76bc5052ea78a4000b7d14772a686193, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  describe:
-  - The gate to the garden.
-  indicators: []
-  enter: []
-  exit:
-  - Leaving the gate.
-  inside:
-  - Standing inside the gate.
-  shake: 1
-  touch:
-  - Opening the gate.
-  touchDelay: 1
-  visible: 1
-  door: {fileID: 2090435819}
-  doorway: {fileID: 1573836427}
 --- !u!1 &971000932
 GameObject:
   m_ObjectHideFlags: 0
@@ -2609,7 +2409,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42ca7664be71d496aaac8416f50ba12a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  describe:
+  see:
   - Rows of daffodils.
   indicators: []
   enter:
@@ -2748,6 +2548,10 @@ Prefab:
       propertyPath: describe.Array.data[0]
       value: Rows of tulips.
       objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: dd6a22393fd11440ea2c1079ece9a083, type: 2}
+      propertyPath: see.Array.data[0]
+      value: Rows of tulips.
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dd6a22393fd11440ea2c1079ece9a083, type: 2}
   m_RootGameObject: {fileID: 1744302142}
@@ -2815,6 +2619,10 @@ Prefab:
     - target: {fileID: 11400002, guid: dd6a22393fd11440ea2c1079ece9a083, type: 2}
       propertyPath: inside.Array.data[0]
       value: Inside the rows of daffodils.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: dd6a22393fd11440ea2c1079ece9a083, type: 2}
+      propertyPath: see.Array.data[0]
+      value: Rows of daffodils.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dd6a22393fd11440ea2c1079ece9a083, type: 2}
@@ -3048,7 +2856,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3a643caddb674e07ba84c8742037234, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  describe:
+  see:
   - A cobblestone path.
   indicators: []
   enter:
@@ -3139,6 +2947,10 @@ Prefab:
     - target: {fileID: 11400002, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
       propertyPath: touch.Array.data[0]
       value: At the edge of the moat.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: see.Array.data[0]
+      value: The moat.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
@@ -3371,78 +3183,13 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 9f31627f166d643808b4e8d10191d722, type: 2}
+      propertyPath: see.Array.data[0]
+      value: A winding dirt path.
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9f31627f166d643808b4e8d10191d722, type: 2}
   m_RootGameObject: {fileID: 1228770159}
-  m_IsPrefabParent: 0
-  m_IsExploded: 1
---- !u!1001 &1143122316
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 384644751}
-    m_Modifications:
-    - target: {fileID: 11400002, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
-      propertyPath: exit.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400002, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
-      propertyPath: enter.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400002, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
-      propertyPath: inside.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -7.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: .5
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400002, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
-      propertyPath: describe.Array.data[0]
-      value: The southern wall.
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400002, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
-      propertyPath: touch.Array.data[0]
-      value: The southern wall stops me.
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 11400002, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
-  m_ParentPrefab: {fileID: 100100000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
-  m_RootGameObject: {fileID: 2049021238}
   m_IsPrefabParent: 0
   m_IsExploded: 1
 --- !u!1 &1174781909
@@ -3528,7 +3275,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3a643caddb674e07ba84c8742037234, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  describe:
+  see:
   - A winding dirt path.
   indicators: []
   enter:
@@ -3738,7 +3485,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b051b95f47004d7e8ec0ffc8d547b41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  describe: []
+  see: []
   indicators: []
   enter: []
   exit: []
@@ -3748,7 +3495,7 @@ MonoBehaviour:
   - Scooping up a daffodil.
   touchDelay: 1
   visible: 0
-  describeInventory:
+  inventoryListing:
   - A daffodil.
 --- !u!58 &1285154308
 CircleCollider2D:
@@ -4105,7 +3852,6 @@ Transform:
   m_Children:
   - {fileID: 2084616268}
   - {fileID: 1874397046}
-  - {fileID: 384136753}
   - {fileID: 693124652}
   m_Father: {fileID: 0}
 --- !u!114 &1394356096
@@ -4119,7 +3865,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42ca7664be71d496aaac8416f50ba12a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  describe:
+  see:
   - The northern wall.
   indicators: []
   enter: []
@@ -4385,8 +4131,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42ca7664be71d496aaac8416f50ba12a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  describe:
-  - The cherry blossom tree.
+  see:
+  - A cherry blossom tree.
   indicators: []
   enter:
   - Entering the shade of the tree.
@@ -4431,7 +4177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42ca7664be71d496aaac8416f50ba12a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  describe:
+  see:
   - The moat.
   indicators: []
   enter: []
@@ -4774,7 +4520,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b051b95f47004d7e8ec0ffc8d547b41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  describe: []
+  see: []
   indicators: []
   enter: []
   exit: []
@@ -4784,7 +4530,7 @@ MonoBehaviour:
   - Scooping up a tulip.
   touchDelay: 1
   visible: 0
-  describeInventory:
+  inventoryListing:
   - A tulip.
 --- !u!58 &1510917054
 CircleCollider2D:
@@ -4839,175 +4585,6 @@ Transform:
   m_LocalScale: {x: .25, y: .25, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
---- !u!1 &1573836426
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100000, guid: cfbc27454bc0540f0ab98f147f335c8c, type: 2}
-  m_PrefabInternal: {fileID: 646879884}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1573836432}
-  - 33: {fileID: 1573836431}
-  - 23: {fileID: 1573836430}
-  - 61: {fileID: 1573836429}
-  - 58: {fileID: 1573836428}
-  - 114: {fileID: 1573836427}
-  m_Layer: 0
-  m_Name: doorway
-  m_TagString: Entity
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
-  m_IsActive: 0
---- !u!114 &1573836427
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400002, guid: cfbc27454bc0540f0ab98f147f335c8c,
-    type: 2}
-  m_PrefabInternal: {fileID: 646879884}
-  m_GameObject: {fileID: 1573836426}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3adcb2e4624224e468c8694993db02d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enter: []
-  exit: []
-  touch: []
---- !u!58 &1573836428
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 5800000, guid: cfbc27454bc0540f0ab98f147f335c8c,
-    type: 2}
-  m_PrefabInternal: {fileID: 646879884}
-  m_GameObject: {fileID: 1573836426}
-  m_Enabled: 0
-  m_Material: {fileID: 6200000, guid: 577c0f82b97fa4462ae7304aad0722e5, type: 2}
-  m_IsTrigger: 1
-  m_Radius: 1
-  m_Center: {x: 0, y: 0}
---- !u!61 &1573836429
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6100000, guid: cfbc27454bc0540f0ab98f147f335c8c,
-    type: 2}
-  m_PrefabInternal: {fileID: 646879884}
-  m_GameObject: {fileID: 1573836426}
-  m_Enabled: 1
-  m_Material: {fileID: 6200000, guid: 577c0f82b97fa4462ae7304aad0722e5, type: 2}
-  m_IsTrigger: 1
-  m_Size: {x: 1, y: 1}
-  m_Center: {x: 0, y: 0}
---- !u!23 &1573836430
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300000, guid: cfbc27454bc0540f0ab98f147f335c8c,
-    type: 2}
-  m_PrefabInternal: {fileID: 646879884}
-  m_GameObject: {fileID: 1573836426}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 2f5c4c9d86b3e46468e7b18f160c765a, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_SortingLayerID: 0
---- !u!33 &1573836431
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300000, guid: cfbc27454bc0540f0ab98f147f335c8c,
-    type: 2}
-  m_PrefabInternal: {fileID: 646879884}
-  m_GameObject: {fileID: 1573836426}
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &1573836432
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400000, guid: cfbc27454bc0540f0ab98f147f335c8c, type: 2}
-  m_PrefabInternal: {fileID: 646879884}
-  m_GameObject: {fileID: 1573836426}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 963278574}
---- !u!1001 &1644207031
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1394356095}
-    m_Modifications:
-    - target: {fileID: 11400002, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
-      propertyPath: exit.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400002, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
-      propertyPath: enter.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400002, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
-      propertyPath: inside.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -7.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400002, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
-      propertyPath: describe.Array.data[0]
-      value: The northern wall.
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400002, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
-      propertyPath: touch.Array.data[0]
-      value: The northern wall stops me.
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 11400002, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
-  m_ParentPrefab: {fileID: 100100000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
-  m_RootGameObject: {fileID: 384136748}
-  m_IsPrefabParent: 0
-  m_IsExploded: 1
 --- !u!1 &1708518673
 GameObject:
   m_ObjectHideFlags: 0
@@ -5150,7 +4727,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42ca7664be71d496aaac8416f50ba12a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  describe:
+  see:
   - Rows of tulips.
   indicators: []
   enter:
@@ -5866,6 +5443,10 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 11400000, guid: 157a310aa03534935b7317e9b575e9d4, type: 2}
+      propertyPath: see.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 157a310aa03534935b7317e9b575e9d4, type: 2}
       propertyPath: inside.Array.size
       value: 0
       objectReference: {fileID: 0}
@@ -5920,6 +5501,14 @@ Prefab:
     - target: {fileID: 11400000, guid: 157a310aa03534935b7317e9b575e9d4, type: 2}
       propertyPath: touch.Array.data[0]
       value: Scooping up a daffodil.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 157a310aa03534935b7317e9b575e9d4, type: 2}
+      propertyPath: inventoryListing.Array.data[0]
+      value: A daffodil.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 157a310aa03534935b7317e9b575e9d4, type: 2}
+      propertyPath: see.Array.data[0]
+      value: Rows of daffodils.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 157a310aa03534935b7317e9b575e9d4, type: 2}
@@ -5986,93 +5575,6 @@ Prefab:
   m_RootGameObject: {fileID: 1380093897}
   m_IsPrefabParent: 0
   m_IsExploded: 1
---- !u!1 &2049021238
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
-  m_PrefabInternal: {fileID: 1143122316}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 2049021243}
-  - 33: {fileID: 2049021242}
-  - 23: {fileID: 2049021241}
-  - 61: {fileID: 2049021240}
-  - 114: {fileID: 2049021239}
-  m_Layer: 0
-  m_Name: Obstacle
-  m_TagString: Entity
-  m_Icon: {fileID: -1003283189, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
---- !u!114 &2049021239
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400000, guid: 53dcfd257267446b2aeed41fb6708dca,
-    type: 2}
-  m_PrefabInternal: {fileID: 1143122316}
-  m_GameObject: {fileID: 2049021238}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3adcb2e4624224e468c8694993db02d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enter: []
-  exit: []
-  touch: []
---- !u!61 &2049021240
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6100000, guid: 53dcfd257267446b2aeed41fb6708dca,
-    type: 2}
-  m_PrefabInternal: {fileID: 1143122316}
-  m_GameObject: {fileID: 2049021238}
-  m_Enabled: 1
-  m_Material: {fileID: 6200000, guid: 577c0f82b97fa4462ae7304aad0722e5, type: 2}
-  m_IsTrigger: 0
-  m_Size: {x: 1, y: 1}
-  m_Center: {x: 0, y: 0}
---- !u!23 &2049021241
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300000, guid: 53dcfd257267446b2aeed41fb6708dca,
-    type: 2}
-  m_PrefabInternal: {fileID: 1143122316}
-  m_GameObject: {fileID: 2049021238}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 9d774d7870d6f4883bfdd1e68123614d, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_SortingLayerID: 0
---- !u!33 &2049021242
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300000, guid: 53dcfd257267446b2aeed41fb6708dca,
-    type: 2}
-  m_PrefabInternal: {fileID: 1143122316}
-  m_GameObject: {fileID: 2049021238}
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &2049021243
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
-  m_PrefabInternal: {fileID: 1143122316}
-  m_GameObject: {fileID: 2049021238}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.5, y: .5, z: 0}
-  m_LocalScale: {x: 1, y: 2, z: 1}
-  m_Children: []
-  m_Father: {fileID: 384644751}
 --- !u!1001 &2051244885
 Prefab:
   m_ObjectHideFlags: 0
@@ -6205,6 +5707,10 @@ Prefab:
       propertyPath: m_Name
       value: Gate
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: cfbc27454bc0540f0ab98f147f335c8c, type: 2}
+      propertyPath: see.Array.data[0]
+      value: The gate to the garden.
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cfbc27454bc0540f0ab98f147f335c8c, type: 2}
   m_RootGameObject: {fileID: 601137677}
@@ -6297,106 +5803,6 @@ Transform:
   m_LocalScale: {x: 13, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1394356095}
---- !u!1 &2090435817
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100002, guid: cfbc27454bc0540f0ab98f147f335c8c, type: 2}
-  m_PrefabInternal: {fileID: 646879884}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 2090435818}
-  - 33: {fileID: 2090435823}
-  - 23: {fileID: 2090435822}
-  - 61: {fileID: 2090435821}
-  - 58: {fileID: 2090435820}
-  - 114: {fileID: 2090435819}
-  m_Layer: 0
-  m_Name: door
-  m_TagString: Entity
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
---- !u!4 &2090435818
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400002, guid: cfbc27454bc0540f0ab98f147f335c8c, type: 2}
-  m_PrefabInternal: {fileID: 646879884}
-  m_GameObject: {fileID: 2090435817}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 963278574}
---- !u!114 &2090435819
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400004, guid: cfbc27454bc0540f0ab98f147f335c8c,
-    type: 2}
-  m_PrefabInternal: {fileID: 646879884}
-  m_GameObject: {fileID: 2090435817}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3adcb2e4624224e468c8694993db02d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enter: []
-  exit: []
-  touch: []
---- !u!58 &2090435820
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 5800002, guid: cfbc27454bc0540f0ab98f147f335c8c,
-    type: 2}
-  m_PrefabInternal: {fileID: 646879884}
-  m_GameObject: {fileID: 2090435817}
-  m_Enabled: 0
-  m_Material: {fileID: 6200000, guid: 577c0f82b97fa4462ae7304aad0722e5, type: 2}
-  m_IsTrigger: 0
-  m_Radius: 1
-  m_Center: {x: 0, y: 0}
---- !u!61 &2090435821
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6100002, guid: cfbc27454bc0540f0ab98f147f335c8c,
-    type: 2}
-  m_PrefabInternal: {fileID: 646879884}
-  m_GameObject: {fileID: 2090435817}
-  m_Enabled: 1
-  m_Material: {fileID: 6200000, guid: 577c0f82b97fa4462ae7304aad0722e5, type: 2}
-  m_IsTrigger: 0
-  m_Size: {x: 1, y: 1}
-  m_Center: {x: 0, y: 0}
---- !u!23 &2090435822
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300002, guid: cfbc27454bc0540f0ab98f147f335c8c,
-    type: 2}
-  m_PrefabInternal: {fileID: 646879884}
-  m_GameObject: {fileID: 2090435817}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 47cabb4d9115744bea797435652aa926, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_SortingLayerID: 0
---- !u!33 &2090435823
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300002, guid: cfbc27454bc0540f0ab98f147f335c8c,
-    type: 2}
-  m_PrefabInternal: {fileID: 646879884}
-  m_GameObject: {fileID: 2090435817}
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &2091406724
 GameObject:
   m_ObjectHideFlags: 0

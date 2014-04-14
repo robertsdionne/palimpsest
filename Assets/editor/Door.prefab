@@ -202,8 +202,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76bc5052ea78a4000b7d14772a686193, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  describe:
-  - A door.
+  see:
+  - Seeing the door.
+  indicators: []
   enter:
   - Standing in the doorway.
   exit:
@@ -214,6 +215,7 @@ MonoBehaviour:
   touch:
   - Opening the door.
   touchDelay: 1
+  visible: 1
   door: {fileID: 11400004}
   doorway: {fileID: 11400002}
 --- !u!114 &11400002

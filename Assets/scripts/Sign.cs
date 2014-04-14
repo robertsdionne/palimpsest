@@ -5,10 +5,10 @@ public class Sign : Entity {
 
   public Entity target;
 
-  public override void Describe() {
+  public override void See() {
     seen = true;
     TextConsole.PushSignIndicator(this, target,
-        Choose(describe) + "   \"" + Choose(target.GetComponent<Entity>().describe) + "\"");
+        Choose(see) + "   \"" + Choose(target.GetComponent<Entity>().see) + "\"");
   }
 
   public override void OnTouch(string text) {
@@ -20,7 +20,7 @@ public class Sign : Entity {
       }
       TextConsole.PushSignIndicator(this, target,
           null != text ? text : Choose(touch) +
-              "   \"" + Choose(target.GetComponent<Entity>().describe) + "\"");
+              "   \"" + Choose(target.GetComponent<Entity>().see) + "\"");
     }
   }
 }
