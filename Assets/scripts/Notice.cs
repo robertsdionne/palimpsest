@@ -13,6 +13,6 @@ public class Notice : MonoBehaviour {
     foreach (var next in nexts) {
       next.SetActive(true);
     }
-    Destroy(gameObject);
+    gameObject.SetActive(false);
   }
 }

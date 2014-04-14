@@ -1,18 +1,27 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Ambience : MonoBehaviour {
+public class Alert : MonoBehaviour {
 
   public string[] alerts;
-  public float period;
+  public GameObject[] nexts;
+  public float time;
 
-  void OnTriggerStay2D(Collider2D other) {
-    if (Random.value < 1.0f / 60.0f / period) {
-      TextConsole.PushText(Choose(alerts));
-    }
+  private float startTime;
+
+  void Start() {
+    startTime = Time.time;
   }
 
-  protected string Choose(string[] choices) {
-    return choices.Length > 0 ? choices[Random.Range(0, choices.Length)] : null;
+  void Update() {
+    if (Time.time - startTime > time) {
+      foreach (var alert in alerts) {
+        TextConsole.PushText(alert);
+      }
+      foreach (var next in nexts) {
+        next.SetActive(true);
+      }
+      Destroy(gameObject);
+    }
   }
 }

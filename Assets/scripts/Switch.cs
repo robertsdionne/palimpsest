@@ -12,6 +12,7 @@ public class Switch : Entity {
 
   public override void OnEnter(string text) {
     seen = true;
+    visited = true;
     if (Time.fixedTime - lastToggleTime > toggleDelay) {
       lastToggleTime = Time.fixedTime;
       state = !state;
@@ -36,5 +37,6 @@ public class Switch : Entity {
 
   public override void OnExit(string text) {
     seen = true;
+    visited = true;
   }
 }

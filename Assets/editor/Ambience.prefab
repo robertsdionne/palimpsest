@@ -77,12 +77,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54d2b5cc913ba498ebcded6ac7cc1c48, type: 3}
+  m_Script: {fileID: 11500000, guid: 5847893efc96b42319076fbec2494575, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   alerts:
   - Alert 1.
-  period: 10
+  nexts: []
+  period: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

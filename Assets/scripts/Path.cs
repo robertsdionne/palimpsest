@@ -10,7 +10,11 @@ public class Path : Entity {
 
   public override void Describe() {
     seen = true;
-    TextConsole.PushPathIndicator(this, Choose(describe));
+    if (visited) {
+      TextConsole.PushPathIndicator(this, Choose(describe));
+    } else {
+      TextConsole.PushIndicator(this, "Something.");
+    }
   }
 
   public override void Inside() {
@@ -68,6 +72,7 @@ public class Path : Entity {
   public override void OnEnter(string text) {
     if (!IsOccupied()) {
       seen = true;
+      visited = true;
       TextConsole.PushPathText(this, Choose(enter));
     }
   }
@@ -75,6 +80,7 @@ public class Path : Entity {
   public override void OnExit(string text) {
     if (!IsOccupied()) {
       seen = true;
+      visited = true;
       TextConsole.PushPathText(this, Choose(exit));
     }
   }
