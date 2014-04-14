@@ -83,15 +83,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   describe:
   - See the item.
-  enter:
-  - Enter the area.
-  exit:
-  - Exit the area.
-  inside:
-  - Inside the area.
+  describers: []
+  enter: []
+  exit: []
+  inside: []
+  shake: 1
   touch:
-  - Touch the item.
+  - Take the item.
   touchDelay: 1
+  visible: 1
   describeInventory:
   - An item.
 --- !u!114 &11400002

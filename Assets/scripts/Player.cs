@@ -11,8 +11,10 @@ public class Player : MonoBehaviour {
   private const string VERTICAL = "Vertical";
 
   public GameObject arrow;
+  public GameObject blockedArrow;
   public GameObject fieldArrow;
   public GameObject nearArrow;
+  public GameObject playerArrow;
   public float cameraPositionAlpha = 0.032f;
   public GameObject eye;
   public GameObject mainCamera;
@@ -49,13 +51,13 @@ public class Player : MonoBehaviour {
 
   List<Entity> GetOccupiedAreas() {
     return (GameObject.FindObjectsOfType(typeof(Entity)) as Entity[]).Where(
-          entity => entity.IsOccupied()).ToList();
+          entity => entity.IsOccupied() && entity.visible).ToList();
   }
 
   List<Entity> GetNearestEntities(List<Entity> occupiedAreas) {
     var entities = GameObject.FindObjectsOfType(typeof(Entity)) as Entity[];
-    return entities.Where(entity => !occupiedAreas.Contains(entity)).OrderBy(entity =>
-        entity.DistanceTo(gameObject.transform.position)).Take(numberToSee).ToList();
+    return entities.Where(entity => !occupiedAreas.Contains(entity) && entity.visible).OrderBy(
+        entity => entity.DistanceTo(gameObject.transform.position)).Take(numberToSee).ToList();
   }
 
   Vector2 DirectionToEverythingFrom(Vector2 playerPosition) {
@@ -122,6 +124,8 @@ public class Player : MonoBehaviour {
   }
 
   void UpdateArrowRotationAndScale(Vector2 input) {
+    playerArrow.SetActive(true);
+    blockedArrow.SetActive(false);
     var moving = Mathf.Clamp01(rigidbody2D.velocity.magnitude);
     var scale = 0.25f * Mathf.Clamp01(5.0f * input.magnitude);
     var frequency = 4.0f + 4.0f * IsRunning();
@@ -155,6 +159,11 @@ public class Player : MonoBehaviour {
     nearArrow.transform.rotation = Quaternion.Slerp(nearArrow.transform.rotation, rotation2, 0.1f);
     nearArrow.transform.localScale = Vector2.Lerp(
         nearArrow.transform.localScale, new Vector2(scale, scale), 0.1f);
+  }
+
+  void OnCollisionStay2D() {
+    playerArrow.SetActive(false);
+    blockedArrow.SetActive(true);
   }
 
   void UpdateEyeScale() {

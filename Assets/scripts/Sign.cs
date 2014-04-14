@@ -7,10 +7,8 @@ public class Sign : Entity {
 
   public override void Describe() {
     seen = true;
-    if (describe.Length > 0) {
-      TextConsole.PushSignIndicator(this, target,
-          Choose(describe) + "   \"" + Choose(target.GetComponent<Entity>().describe) + "\"");
-    }
+    TextConsole.PushSignIndicator(this, target,
+        Choose(describe) + "   \"" + Choose(target.GetComponent<Entity>().describe) + "\"");
   }
 
   public override void OnTouch(string text) {

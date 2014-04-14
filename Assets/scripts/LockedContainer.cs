@@ -14,8 +14,10 @@ public class LockedContainer : Entity {
 
   public override void OnTouch(string text) {
     seen = true;
-    if (touch.Length > 0 && Time.fixedTime - lastTouchTime > touchDelay) {
-      ScreenShake.Shake();
+    if (Time.fixedTime - lastTouchTime > touchDelay) {
+      if (shake) {
+        ScreenShake.Shake();
+      }
       if (closed.gameObject.activeInHierarchy && Inventory.Contains(key)) {
         Inventory.Remove(key);
         TextConsole.PushText(Choose(opened));

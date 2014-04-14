@@ -21,15 +21,14 @@ public class Entity : MonoBehaviour {
     "Touching the obstacle."
   };
   public float touchDelay = 1.0f;
+  public bool visible = true;
 
   protected float lastTouchTime = 0.0f;
   protected bool seen = false;
 
   public virtual void Describe() {
     seen = true;
-    if (describe.Length > 0) {
-      TextConsole.PushIndicator(this, Choose(describe));
-    }
+    TextConsole.PushIndicator(this, Choose(describe));
   }
 
   public Vector2 DirectionFrom(Vector2 playerPosition) {
@@ -55,9 +54,7 @@ public class Entity : MonoBehaviour {
 
   public virtual void Inside() {
     seen = true;
-    if (inside.Length > 0) {
-      TextConsole.PushText(Choose(inside));
-    }
+    TextConsole.PushText(Choose(inside));
   }
 
   public virtual bool IsOccupied() {

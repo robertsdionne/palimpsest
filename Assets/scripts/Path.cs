@@ -10,16 +10,12 @@ public class Path : Entity {
 
   public override void Describe() {
     seen = true;
-    if (describe.Length > 0) {
-      TextConsole.PushPathIndicator(this, Choose(describe));
-    }
+    TextConsole.PushPathIndicator(this, Choose(describe));
   }
 
   public override void Inside() {
     seen = true;
-    if (inside.Length > 0) {
-      TextConsole.PushPathText(this, Choose(inside));
-    }
+    TextConsole.PushPathText(this, Choose(inside));
   }
 
   public Vector2 PerpendicularTo(Vector2 playerPosition) {

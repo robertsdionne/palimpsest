@@ -8,9 +8,7 @@ public class Item : Entity {
   };
 
   public void DescribeInventory() {
-    if (describe.Length > 0) {
-      TextConsole.PushText(Choose(describeInventory));
-    }
+    TextConsole.PushText(Choose(describeInventory));
   }
 
   public override void OnTouch(string text) {
