@@ -6,7 +6,7 @@ public class Entity : MonoBehaviour {
   public string[] describe = {
     "Seeing the entity."
   };
-  public GameObject[] describers;
+  public GameObject[] indicators;
   public string[] enter = {
     "Entering the area."
   };

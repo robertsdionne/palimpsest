@@ -50,7 +50,7 @@ public class TextConsole : MonoBehaviour {
               (2.0f * description.GetComponent<PathDescription>().description.renderer.bounds.extents.x + 0.25f) * Vector3.right;
       description.GetComponent<PathDescription>().player = textConsole.player;
       description.GetComponent<PathDescription>().target = target;
-      target.describers = new GameObject[] {description};
+      target.indicators = new GameObject[] {description};
       textConsole.lines.Add(line);
       textConsole.playerArrowLine.gameObject.transform.localPosition =
           textConsole.NextPosition(textConsole.playerArrowLine);
@@ -69,7 +69,7 @@ public class TextConsole : MonoBehaviour {
       indicatorComponent.description.GetComponent<TextMesh>().text = text;
       indicatorComponent.player = textConsole.player;
       indicatorComponent.target = target;
-      target.describers = new GameObject[] {indicator};
+      target.indicators = new GameObject[] {indicator};
       textConsole.lines.Add(line);
       textConsole.playerArrowLine.gameObject.transform.localPosition =
           textConsole.NextPosition(textConsole.playerArrowLine);
@@ -99,7 +99,7 @@ public class TextConsole : MonoBehaviour {
       GameObject.Destroy(indicatorComponent.description);
       indicatorComponent.player = textConsole.player;
       indicatorComponent.target = target;
-      target.describers = new GameObject[] {description, indicator};
+      target.indicators = new GameObject[] {description, indicator};
       textConsole.lines.Add(line);
       textConsole.playerArrowLine.gameObject.transform.localPosition =
           textConsole.NextPosition(textConsole.playerArrowLine);
@@ -129,8 +129,8 @@ public class TextConsole : MonoBehaviour {
       GameObject.Destroy(indicatorComponent.description);
       indicatorComponent.player = textConsole.player;
       indicatorComponent.target = target;
-      target.describers = new GameObject[] {indicator};
-      signTarget.describers = new GameObject[] {description};
+      target.indicators = new GameObject[] {indicator};
+      signTarget.indicators = new GameObject[] {description};
       textConsole.lines.Add(line);
       textConsole.playerArrowLine.gameObject.transform.localPosition =
           textConsole.NextPosition(textConsole.playerArrowLine);

@@ -18,7 +18,7 @@ public class Indicator : MonoBehaviour {
       arrow.transform.rotation = Quaternion.Slerp(arrow.transform.rotation, rotation, 0.1f);
     }
     var scale = 0.125f * System.Convert.ToSingle(
-        distance > 0.25f && target.describers.Contains(gameObject));
+        distance > 0.25f && target.indicators.Contains(gameObject));
     arrow.transform.localScale = Vector2.Lerp(
         arrow.transform.localScale, new Vector2(scale, scale), 0.1f);
 	}
