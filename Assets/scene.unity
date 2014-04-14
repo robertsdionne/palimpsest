@@ -164,11 +164,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -3.5
+      value: -14.2426395
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 5.44974709
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
       propertyPath: m_LocalPosition.z
@@ -184,11 +184,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -.382683456
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: .923879504
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
       propertyPath: m_LocalScale.x
@@ -325,6 +325,75 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9f31627f166d643808b4e8d10191d722, type: 2}
   m_RootGameObject: {fileID: 1042149936}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
+--- !u!1001 &112697845
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 384644751}
+    m_Modifications:
+    - target: {fileID: 11400002, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: exit.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: enter.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: inside.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -14.2426395
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -5.44974709
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: .382683456
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: .923879504
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: touch.Array.data[0]
+      value: The southern wall stops me.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: describe.Array.data[0]
+      value: The southern wall.
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 11400002, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+  m_ParentPrefab: {fileID: 100100000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+  m_RootGameObject: {fileID: 957221031}
   m_IsPrefabParent: 0
   m_IsExploded: 1
 --- !u!1001 &159879945
@@ -811,6 +880,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 445606984}
+  - {fileID: 957221032}
   - {fileID: 2049021243}
   - {fileID: 587505984}
   m_Father: {fileID: 0}
@@ -827,7 +897,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   describe:
   - The southern wall.
-  describers: []
+  indicators: []
   enter: []
   exit: []
   inside: []
@@ -1284,7 +1354,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   describe:
   - The gate to the garden.
-  describers: []
+  indicators: []
   enter: []
   exit:
   - Leaving the gate.
@@ -1492,6 +1562,93 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 566914894}
   m_GameObject: {fileID: 690904296}
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &693124651
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+  m_PrefabInternal: {fileID: 2051244885}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 693124652}
+  - 33: {fileID: 693124656}
+  - 23: {fileID: 693124655}
+  - 61: {fileID: 693124654}
+  - 114: {fileID: 693124653}
+  m_Layer: 0
+  m_Name: Obstacle
+  m_TagString: Entity
+  m_Icon: {fileID: -1003283189, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &693124652
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+  m_PrefabInternal: {fileID: 2051244885}
+  m_GameObject: {fileID: 693124651}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.5, y: 1, z: 0}
+  m_LocalScale: {x: 13, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1394356095}
+--- !u!114 &693124653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: 53dcfd257267446b2aeed41fb6708dca,
+    type: 2}
+  m_PrefabInternal: {fileID: 2051244885}
+  m_GameObject: {fileID: 693124651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3adcb2e4624224e468c8694993db02d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enter: []
+  exit: []
+  touch: []
+--- !u!61 &693124654
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6100000, guid: 53dcfd257267446b2aeed41fb6708dca,
+    type: 2}
+  m_PrefabInternal: {fileID: 2051244885}
+  m_GameObject: {fileID: 693124651}
+  m_Enabled: 1
+  m_Material: {fileID: 6200000, guid: 577c0f82b97fa4462ae7304aad0722e5, type: 2}
+  m_IsTrigger: 0
+  m_Size: {x: 1, y: 1}
+  m_Center: {x: 0, y: 0}
+--- !u!23 &693124655
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300000, guid: 53dcfd257267446b2aeed41fb6708dca,
+    type: 2}
+  m_PrefabInternal: {fileID: 2051244885}
+  m_GameObject: {fileID: 693124651}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 9d774d7870d6f4883bfdd1e68123614d, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &693124656
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300000, guid: 53dcfd257267446b2aeed41fb6708dca,
+    type: 2}
+  m_PrefabInternal: {fileID: 2051244885}
+  m_GameObject: {fileID: 693124651}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &705042999
 Prefab:
@@ -1999,6 +2156,93 @@ MonoBehaviour:
   enter: []
   exit: []
   touch: []
+--- !u!1 &957221031
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+  m_PrefabInternal: {fileID: 112697845}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 957221032}
+  - 33: {fileID: 957221036}
+  - 23: {fileID: 957221035}
+  - 61: {fileID: 957221034}
+  - 114: {fileID: 957221033}
+  m_Layer: 0
+  m_Name: Obstacle
+  m_TagString: Entity
+  m_Icon: {fileID: -1003283189, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &957221032
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+  m_PrefabInternal: {fileID: 112697845}
+  m_GameObject: {fileID: 957221031}
+  m_LocalRotation: {x: 0, y: 0, z: .382683456, w: .923879504}
+  m_LocalPosition: {x: -14.2426395, y: -5.44974709, z: 0}
+  m_LocalScale: {x: 13, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 384644751}
+--- !u!114 &957221033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: 53dcfd257267446b2aeed41fb6708dca,
+    type: 2}
+  m_PrefabInternal: {fileID: 112697845}
+  m_GameObject: {fileID: 957221031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3adcb2e4624224e468c8694993db02d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enter: []
+  exit: []
+  touch: []
+--- !u!61 &957221034
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6100000, guid: 53dcfd257267446b2aeed41fb6708dca,
+    type: 2}
+  m_PrefabInternal: {fileID: 112697845}
+  m_GameObject: {fileID: 957221031}
+  m_Enabled: 1
+  m_Material: {fileID: 6200000, guid: 577c0f82b97fa4462ae7304aad0722e5, type: 2}
+  m_IsTrigger: 0
+  m_Size: {x: 1, y: 1}
+  m_Center: {x: 0, y: 0}
+--- !u!23 &957221035
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300000, guid: 53dcfd257267446b2aeed41fb6708dca,
+    type: 2}
+  m_PrefabInternal: {fileID: 112697845}
+  m_GameObject: {fileID: 957221031}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 9d774d7870d6f4883bfdd1e68123614d, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &957221036
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300000, guid: 53dcfd257267446b2aeed41fb6708dca,
+    type: 2}
+  m_PrefabInternal: {fileID: 112697845}
+  m_GameObject: {fileID: 957221031}
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &959720869
 GameObject:
   m_ObjectHideFlags: 0
@@ -2097,7 +2341,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   describe:
   - The gate to the garden.
-  describers: []
+  indicators: []
   enter: []
   exit:
   - Leaving the gate.
@@ -2144,7 +2388,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   describe:
   - Rows of daffodils.
-  describers: []
+  indicators: []
   enter:
   - Trampling the poor daffodils.
   exit: []
@@ -2583,7 +2827,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   describe:
   - A cobblestone path.
-  describers: []
+  indicators: []
   enter:
   - Entering the path.
   exit:
@@ -2983,7 +3227,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   describe:
   - A winding dirt path.
-  describers: []
+  indicators: []
   enter:
   - Entering the dirt path.
   exit:
@@ -3119,7 +3363,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   describe: []
-  describers: []
+  indicators: []
   enter: []
   exit: []
   inside: []
@@ -3486,6 +3730,7 @@ Transform:
   - {fileID: 2084616268}
   - {fileID: 1874397046}
   - {fileID: 384136753}
+  - {fileID: 693124652}
   m_Father: {fileID: 0}
 --- !u!114 &1394356096
 MonoBehaviour:
@@ -3500,7 +3745,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   describe:
   - The northern wall.
-  describers: []
+  indicators: []
   enter: []
   exit: []
   inside: []
@@ -3766,7 +4011,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   describe:
   - The cherry blossom tree.
-  describers: []
+  indicators: []
   enter:
   - Entering the shade of the tree.
   exit:
@@ -3812,7 +4057,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   describe:
   - The moat.
-  describers: []
+  indicators: []
   enter: []
   exit: []
   inside: []
@@ -4082,7 +4327,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   describe: []
-  describers: []
+  indicators: []
   enter: []
   exit: []
   inside: []
@@ -4459,7 +4704,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   describe:
   - Rows of tulips.
-  describers: []
+  indicators: []
   enter:
   - Trampling the poor tulips.
   exit: []
@@ -5234,6 +5479,75 @@ Transform:
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 384644751}
+--- !u!1001 &2051244885
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1394356095}
+    m_Modifications:
+    - target: {fileID: 11400002, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: exit.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: enter.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: inside.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: describe.Array.data[0]
+      value: The northern wall.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: touch.Array.data[0]
+      value: The northern wall stops me.
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 11400002, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+  m_ParentPrefab: {fileID: 100100000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+  m_RootGameObject: {fileID: 693124651}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
 --- !u!1001 &2081185460
 Prefab:
   m_ObjectHideFlags: 0
@@ -5384,8 +5698,8 @@ Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
   m_PrefabInternal: {fileID: 46424751}
   m_GameObject: {fileID: 2084616262}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.5, y: 1, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: -.382683456, w: .923879504}
+  m_LocalPosition: {x: -14.2426395, y: 5.44974709, z: 0}
   m_LocalScale: {x: 13, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1394356095}
