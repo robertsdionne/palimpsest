@@ -470,7 +470,7 @@ Transform:
   m_PrefabInternal: {fileID: 1289704928}
   m_GameObject: {fileID: 183898930}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.22600269, y: 2.11281562, z: -1}
+  m_LocalPosition: {x: -.0110917091, y: -2.09551501, z: -1}
   m_LocalScale: {x: .25, y: .5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3045,11 +3045,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 8083a83bf8c1641e798af82cc8c687f5, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -2.22600269
+      value: -.0110917091
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8083a83bf8c1641e798af82cc8c687f5, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 2.11281562
+      value: -2.09551501
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8083a83bf8c1641e798af82cc8c687f5, type: 2}
       propertyPath: m_LocalPosition.z
@@ -3223,6 +3223,161 @@ Renderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortingLayerID: 0
+--- !u!1 &1380093897
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100000, guid: 577be55d3d75443a19c8e5d708939d6a, type: 2}
+  m_PrefabInternal: {fileID: 2003855387}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1380093902}
+  - 33: {fileID: 1380093901}
+  - 23: {fileID: 1380093900}
+  - 61: {fileID: 1380093899}
+  - 114: {fileID: 1380093898}
+  m_Layer: 0
+  m_Name: Bees Buzzing
+  m_TagString: Entity
+  m_Icon: {fileID: 266726316, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!114 &1380093898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: 577be55d3d75443a19c8e5d708939d6a,
+    type: 2}
+  m_PrefabInternal: {fileID: 2003855387}
+  m_GameObject: {fileID: 1380093897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54d2b5cc913ba498ebcded6ac7cc1c48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alerts:
+  - Bees buzz around the flowers.
+  period: 10
+--- !u!61 &1380093899
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6100000, guid: 577be55d3d75443a19c8e5d708939d6a,
+    type: 2}
+  m_PrefabInternal: {fileID: 2003855387}
+  m_GameObject: {fileID: 1380093897}
+  m_Enabled: 1
+  m_Material: {fileID: 6200000, guid: 577c0f82b97fa4462ae7304aad0722e5, type: 2}
+  m_IsTrigger: 1
+  m_Size: {x: 1, y: 1}
+  m_Center: {x: 0, y: 0}
+--- !u!23 &1380093900
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300000, guid: 577be55d3d75443a19c8e5d708939d6a,
+    type: 2}
+  m_PrefabInternal: {fileID: 2003855387}
+  m_GameObject: {fileID: 1380093897}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 583a4a0b90e264b87a08e9952308ca05, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &1380093901
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300000, guid: 577be55d3d75443a19c8e5d708939d6a,
+    type: 2}
+  m_PrefabInternal: {fileID: 2003855387}
+  m_GameObject: {fileID: 1380093897}
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1380093902
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400000, guid: 577be55d3d75443a19c8e5d708939d6a, type: 2}
+  m_PrefabInternal: {fileID: 2003855387}
+  m_GameObject: {fileID: 1380093897}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.5, y: 0, z: 0}
+  m_LocalScale: {x: 3, y: 5, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+--- !u!1001 &1384100578
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400000, guid: fc893f69fe86849fba3015be01113339, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -14.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: fc893f69fe86849fba3015be01113339, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: fc893f69fe86849fba3015be01113339, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: fc893f69fe86849fba3015be01113339, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: fc893f69fe86849fba3015be01113339, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: fc893f69fe86849fba3015be01113339, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: fc893f69fe86849fba3015be01113339, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: fc893f69fe86849fba3015be01113339, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: fc893f69fe86849fba3015be01113339, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5800000, guid: fc893f69fe86849fba3015be01113339, type: 2}
+      propertyPath: m_Radius
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5800000, guid: fc893f69fe86849fba3015be01113339, type: 2}
+      propertyPath: m_Center.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5800000, guid: fc893f69fe86849fba3015be01113339, type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: fc893f69fe86849fba3015be01113339, type: 2}
+      propertyPath: period
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: fc893f69fe86849fba3015be01113339, type: 2}
+      propertyPath: m_Name
+      value: Birds Singing
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: fc893f69fe86849fba3015be01113339, type: 2}
+  m_RootGameObject: {fileID: 1682393010}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
 --- !u!1 &1394356094
 GameObject:
   m_ObjectHideFlags: 0
@@ -4081,6 +4236,93 @@ Prefab:
   m_RootGameObject: {fileID: 384136748}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &1682393010
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100000, guid: fc893f69fe86849fba3015be01113339, type: 2}
+  m_PrefabInternal: {fileID: 1384100578}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1682393015}
+  - 33: {fileID: 1682393014}
+  - 23: {fileID: 1682393013}
+  - 58: {fileID: 1682393011}
+  - 114: {fileID: 1682393012}
+  m_Layer: 0
+  m_Name: Birds Singing
+  m_TagString: Entity
+  m_Icon: {fileID: 266726316, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!58 &1682393011
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5800000, guid: fc893f69fe86849fba3015be01113339,
+    type: 2}
+  m_PrefabInternal: {fileID: 1384100578}
+  m_GameObject: {fileID: 1682393010}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Radius: 1
+  m_Center: {x: 0, y: 0}
+--- !u!114 &1682393012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: fc893f69fe86849fba3015be01113339,
+    type: 2}
+  m_PrefabInternal: {fileID: 1384100578}
+  m_GameObject: {fileID: 1682393010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54d2b5cc913ba498ebcded6ac7cc1c48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alerts:
+  - Birds sing in the tree.
+  period: 10
+--- !u!23 &1682393013
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300000, guid: fc893f69fe86849fba3015be01113339,
+    type: 2}
+  m_PrefabInternal: {fileID: 1384100578}
+  m_GameObject: {fileID: 1682393010}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 583a4a0b90e264b87a08e9952308ca05, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &1682393014
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300000, guid: fc893f69fe86849fba3015be01113339,
+    type: 2}
+  m_PrefabInternal: {fileID: 1384100578}
+  m_GameObject: {fileID: 1682393010}
+  m_Mesh: {fileID: 4300000, guid: b4d81dc7e24e24a749c374b17d8f1827, type: 3}
+--- !u!4 &1682393015
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400000, guid: fc893f69fe86849fba3015be01113339, type: 2}
+  m_PrefabInternal: {fileID: 1384100578}
+  m_GameObject: {fileID: 1682393010}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -14.5, y: 0, z: 0}
+  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
 --- !u!1 &1708518673
 GameObject:
   m_ObjectHideFlags: 0
@@ -4851,6 +5093,66 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 157a310aa03534935b7317e9b575e9d4, type: 2}
   m_RootGameObject: {fileID: 1285154305}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
+--- !u!1001 &2003855387
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400000, guid: 577be55d3d75443a19c8e5d708939d6a, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -5.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 577be55d3d75443a19c8e5d708939d6a, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 577be55d3d75443a19c8e5d708939d6a, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 577be55d3d75443a19c8e5d708939d6a, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 577be55d3d75443a19c8e5d708939d6a, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 577be55d3d75443a19c8e5d708939d6a, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 577be55d3d75443a19c8e5d708939d6a, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 577be55d3d75443a19c8e5d708939d6a, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 577be55d3d75443a19c8e5d708939d6a, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 577be55d3d75443a19c8e5d708939d6a, type: 2}
+      propertyPath: m_Name
+      value: Bees Buzzing
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 577be55d3d75443a19c8e5d708939d6a, type: 2}
+      propertyPath: alerts.Array.data[0]
+      value: Bees buzz around the flowers.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 577be55d3d75443a19c8e5d708939d6a, type: 2}
+      propertyPath: period
+      value: 10
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 577be55d3d75443a19c8e5d708939d6a, type: 2}
+  m_RootGameObject: {fileID: 1380093897}
   m_IsPrefabParent: 0
   m_IsExploded: 1
 --- !u!1 &2049021238

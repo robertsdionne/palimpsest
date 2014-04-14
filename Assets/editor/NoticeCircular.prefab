@@ -10,10 +10,10 @@ GameObject:
   - 4: {fileID: 400000}
   - 33: {fileID: 3300000}
   - 23: {fileID: 2300000}
-  - 61: {fileID: 6100000}
+  - 58: {fileID: 5800000}
   - 114: {fileID: 11400000}
   m_Layer: 0
-  m_Name: Ambience
+  m_Name: NoticeCircular
   m_TagString: Entity
   m_Icon: {fileID: 266726316, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -57,17 +57,17 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!61 &6100000
-BoxCollider2D:
+  m_Mesh: {fileID: 4300000, guid: b4d81dc7e24e24a749c374b17d8f1827, type: 3}
+--- !u!58 &5800000
+CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
-  m_Material: {fileID: 6200000, guid: 577c0f82b97fa4462ae7304aad0722e5, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Size: {x: 1, y: 1}
+  m_Radius: 1
   m_Center: {x: 0, y: 0}
 --- !u!114 &11400000
 MonoBehaviour:
@@ -77,12 +77,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54d2b5cc913ba498ebcded6ac7cc1c48, type: 3}
+  m_Script: {fileID: 11500000, guid: 255edd4ef8aa8409197a7a5af2a0e787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alerts:
-  - Alert 1.
-  period: 10
+  notices:
+  - Notice 1.
+  - Notice 2.
+  - Notice 3.
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
