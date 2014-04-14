@@ -92,6 +92,12 @@ public class Player : MonoBehaviour {
   }
 
   void MaybeSee() {
+    if (Input.GetButtonDown("Interact")) {
+    }
+    if (Input.GetButtonDown("Examine")) {
+    }
+    if (Input.GetButtonDown("See")) {
+    }
     if (Input.GetButtonDown(SEE) && (ableToSee || IsMoreToSee())) {
       ableToSee = false;
       TextConsole.PushText("");
