@@ -3,6 +3,9 @@ using System.Collections;
 
 public class Entity : MonoBehaviour {
 
+  public enum Mode {Union, Intersection};
+
+  public Mode mode = Mode.Union;
   public string[] see = {
     "Seeing the entity."
   };
@@ -26,6 +29,7 @@ public class Entity : MonoBehaviour {
 
   protected float lastTouchTime = 0.0f;
   protected bool seen = false;
+  protected bool wasOccupied = false;
 
   public virtual void See() {
     seen = true;
@@ -43,14 +47,20 @@ public class Entity : MonoBehaviour {
 
   public virtual float DistanceTo(Vector2 playerPosition) {
     var colliders = GetComponentsInChildren<Collider2D>();
-    var minimum = float.PositiveInfinity;
+    var extremum = Mode.Union == mode ? float.PositiveInfinity : float.NegativeInfinity;
     foreach (var collider in colliders) {
       var distance = collider.DistanceTo(playerPosition);
-      if (distance < minimum) {
-        minimum = distance;
+      if (Mode.Union == mode) {
+        if (distance < extremum) {
+          extremum = distance;
+        }
+      } else {
+        if (distance > extremum) {
+          extremum = distance;
+        }
       }
     }
-    return minimum;
+    return extremum;
   }
 
   public virtual void Inside() {
@@ -59,10 +69,14 @@ public class Entity : MonoBehaviour {
   }
 
   public virtual bool IsOccupied() {
-    var occupied = false;
+    var occupied = Mode.Intersection == mode;
     var collidables = GetComponentsInChildren<Collidable>();
     foreach (var collidable in collidables) {
-      occupied |= collidable.IsOccupied();
+      if (Mode.Union == mode) {
+        occupied |= collidable.IsOccupied();
+      } else {
+        occupied &= collidable.IsOccupied();
+      }
     }
     return occupied;
   }
@@ -72,15 +86,17 @@ public class Entity : MonoBehaviour {
   }
 
   public virtual void OnEnter(string text) {
-    if (!IsOccupied()) {
+    if (IsOccupied() && !wasOccupied) {
       seen = true;
+      wasOccupied = true;
       TextConsole.PushText(null != text ? text : Choose(enter));
     }
   }
 
   public virtual void OnExit(string text) {
-    if (!IsOccupied()) {
+    if (!IsOccupied() && wasOccupied) {
       seen = true;
+      wasOccupied = false;
       TextConsole.PushText(null != text ? text : Choose(exit));
     }
   }

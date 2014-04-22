@@ -18,13 +18,13 @@ public class Collidable : MonoBehaviour {
   }
 
   void OnTriggerEnter2D() {
+    occupied = true;
     var choice = Choose(enter);
     if (null != choice) {
       TextConsole.PushText(choice);
     } else {
       transform.root.GetComponent<Entity>().OnEnter(choice);
     }
-    occupied = true;
   }
 
   void OnTriggerExit2D() {
