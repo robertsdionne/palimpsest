@@ -18,12 +18,12 @@ public class Path : Entity {
     TextConsole.PushPathText(this, Choose(inside));
   }
 
-  public Vector2 PerpendicularTo(Vector2 playerPosition) {
+  public virtual Vector2 PerpendicularTo(Vector2 playerPosition) {
     var dx = 1e-5f * Vector2.right;
     var dy = 1e-5f * Vector2.up;
     var direction = -new Vector2(
-        DistanceToPath(playerPosition + dx) - DistanceToPath(playerPosition - dx),
-        DistanceToPath(playerPosition + dy) - DistanceToPath(playerPosition - dy));
+        DistanceTo(playerPosition + dx) - DistanceTo(playerPosition - dx),
+        DistanceTo(playerPosition + dy) - DistanceTo(playerPosition - dy));
     var dir = direction.magnitude > 0.0f ? direction.normalized : new Vector2();
     var perpendicular = new Vector2(-dir.y, dir.x);
     return perpendicular;

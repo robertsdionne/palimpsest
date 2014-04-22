@@ -95,13 +95,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42ca7664be71d496aaac8416f50ba12a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mode: 0
   see:
   - Seeing the area.
   indicators: []
   enter:
-  - Enter the area.
+  - Entering the area.
   exit:
-  - Exit the area.
+  - Exiting the area.
   inside:
   - Inside the area.
   shake: 1

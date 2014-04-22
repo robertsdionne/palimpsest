@@ -60,7 +60,7 @@ public class Player : MonoBehaviour {
         entity => entity.DistanceTo(gameObject.transform.position)).Take(numberToSee).ToList();
   }
 
-  Vector2 DirectionToEverythingFrom(Vector2 playerPosition) {
+  public Vector2 DirectionToEverythingFrom(Vector2 playerPosition) {
     var dx = 1e-5f * Vector2.right;
     var dy = 1e-5f * Vector2.up;
     var direction = -new Vector2(
