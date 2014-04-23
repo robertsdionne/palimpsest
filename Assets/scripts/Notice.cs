@@ -6,8 +6,12 @@ public class Notice : MonoBehaviour {
   public string[] notices;
   public GameObject[] nexts = { null };
   public GameObject[] disables = { null };
+  public bool screenShake = false;
 
   void OnTriggerEnter2D(Collider2D other) {
+    if (screenShake) {
+      ScreenShake.Shake();
+    }
     foreach (var notice in notices) {
       TextConsole.PushText(notice);
     }

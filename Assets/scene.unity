@@ -1004,7 +1004,9 @@ MonoBehaviour:
   - '|'
   nexts:
   - {fileID: 1363971221}
-  disables: []
+  disables:
+  - {fileID: 0}
+  screenShake: 0
   time: .400000006
 --- !u!61 &104629555
 BoxCollider2D:
@@ -1934,7 +1936,9 @@ MonoBehaviour:
   - Boot complete.
   nexts:
   - {fileID: 1172061635}
-  disables: []
+  disables:
+  - {fileID: 0}
+  screenShake: 0
   time: 2
 --- !u!61 &218293044
 BoxCollider2D:
@@ -2074,7 +2078,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 2000000, guid: 660c38ee3f1a242efa30d65490be8ea4, type: 2}
       propertyPath: m_CullingMask.m_Bits
-      value: 4294967295
+      value: 256
       objectReference: {fileID: 0}
     - target: {fileID: 100020, guid: 660c38ee3f1a242efa30d65490be8ea4, type: 2}
       propertyPath: m_IsActive
@@ -3178,7 +3182,9 @@ MonoBehaviour:
   - '"'
   nexts:
   - {fileID: 218293042}
-  disables: []
+  disables:
+  - {fileID: 0}
+  screenShake: 0
   time: .400000006
 --- !u!61 &413660335
 BoxCollider2D:
@@ -3731,6 +3737,7 @@ MonoBehaviour:
   - {fileID: 1891374520}
   disables:
   - {fileID: 0}
+  screenShake: 0
 --- !u!61 &513562428
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4251,7 +4258,9 @@ MonoBehaviour:
   - 'verbal command; STEVE: "Is this thing on?"'
   nexts:
   - {fileID: 1140916806}
-  disables: []
+  disables:
+  - {fileID: 0}
+  screenShake: 0
   time: 2
 --- !u!61 &567927341
 BoxCollider2D:
@@ -4737,6 +4746,7 @@ MonoBehaviour:
   - {fileID: 1759406183}
   disables:
   - {fileID: 0}
+  screenShake: 0
 --- !u!61 &661753689
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4894,7 +4904,9 @@ MonoBehaviour:
   - 
   nexts:
   - {fileID: 1671725059}
-  disables: []
+  disables:
+  - {fileID: 0}
+  screenShake: 1
   time: .699999988
 --- !u!61 &689234424
 BoxCollider2D:
@@ -5118,7 +5130,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 697378489}
   m_Layer: 0
-  m_Name: Introduction
+  m_Name: 00 Introduction
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6355,7 +6367,9 @@ MonoBehaviour:
   - Actuators active.
   nexts:
   - {fileID: 104629553}
-  disables: []
+  disables:
+  - {fileID: 0}
+  screenShake: 0
   time: .200000003
 --- !u!61 &887687902
 BoxCollider2D:
@@ -6552,7 +6566,9 @@ MonoBehaviour:
   - '|'
   nexts:
   - {fileID: 1630136138}
-  disables: []
+  disables:
+  - {fileID: 0}
+  screenShake: 0
   time: 2
 --- !u!61 &902559069
 BoxCollider2D:
@@ -6922,6 +6938,7 @@ MonoBehaviour:
   - {fileID: 1659517540}
   disables:
   - {fileID: 0}
+  screenShake: 0
 --- !u!61 &938274396
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7066,7 +7083,9 @@ MonoBehaviour:
   - Booting up...
   nexts:
   - {fileID: 902559067}
-  disables: []
+  disables:
+  - {fileID: 0}
+  screenShake: 0
   time: 0
 --- !u!61 &954542102
 BoxCollider2D:
@@ -8519,7 +8538,9 @@ MonoBehaviour:
   - '|'
   nexts:
   - {fileID: 887687900}
-  disables: []
+  disables:
+  - {fileID: 0}
+  screenShake: 0
   time: .400000006
 --- !u!61 &1090948032
 BoxCollider2D:
@@ -8793,7 +8814,9 @@ MonoBehaviour:
   - sound; *thunk*
   nexts:
   - {fileID: 689234422}
-  disables: []
+  disables:
+  - {fileID: 0}
+  screenShake: 1
   time: 1
 --- !u!61 &1140916808
 BoxCollider2D:
@@ -8883,7 +8906,9 @@ MonoBehaviour:
   - 'STATUS: online'
   nexts:
   - {fileID: 0}
-  disables: []
+  disables:
+  - {fileID: 0}
+  screenShake: 0
   time: 1
 --- !u!61 &1172061637
 BoxCollider2D:
@@ -9416,7 +9441,9 @@ MonoBehaviour:
   - '"to go outside the outpost and repair a leak."'
   nexts:
   - {fileID: 413660333}
-  disables: []
+  disables:
+  - {fileID: 0}
+  screenShake: 0
   time: .200000003
 --- !u!61 &1242841187
 BoxCollider2D:
@@ -10050,7 +10077,9 @@ MonoBehaviour:
   - Boot complete.
   nexts:
   - {fileID: 1926330908}
-  disables: []
+  disables:
+  - {fileID: 0}
+  screenShake: 0
   time: 2
 --- !u!61 &1363971223
 BoxCollider2D:
@@ -10605,7 +10634,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
       propertyPath: alerts.Array.data[0]
-      value: 'verbal command; STEVE: "It looks online. Listen. We need you"'
+      value: 'verbal command; JANICE: "It looks online. Listen. We need you'
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
       propertyPath: m_Name
@@ -10625,11 +10654,11 @@ Prefab:
       objectReference: {fileID: 183898930}
     - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
       propertyPath: alerts.Array.data[1]
-      value: '"to go outside the outpost and repair a leak."'
+      value: '    to go outside the outpost and repair a leak.'
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
       propertyPath: alerts.Array.data[2]
-      value: '"Our suits don''t carry enough oxygen."'
+      value: '    Our suits don''t carry enough oxygen."'
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
       propertyPath: nexts.Array.data[1]
@@ -12622,7 +12651,9 @@ MonoBehaviour:
   - 8 TB RAM
   nexts:
   - {fileID: 1090948030}
-  disables: []
+  disables:
+  - {fileID: 0}
+  screenShake: 0
   time: .200000003
 --- !u!61 &1630136140
 BoxCollider2D:
@@ -12822,6 +12853,7 @@ MonoBehaviour:
   - {fileID: 1759406183}
   disables:
   - {fileID: 0}
+  screenShake: 0
 --- !u!61 &1659517542
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12907,14 +12939,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alerts:
-  - 'verbal command; STEVE: "It looks online. Listen. We need you"'
-  - '"to go outside the outpost and repair a leak."'
-  - '"Our suits don''t carry enough oxygen."'
+  - 'verbal command; JANICE: "It looks online. Listen. We need you'
+  - '    to go outside the outpost and repair a leak.'
+  - '    Our suits don''t carry enough oxygen."'
   nexts:
   - {fileID: 183898930}
   - {fileID: 1851447798}
   - {fileID: 778468261}
-  disables: []
+  disables:
+  - {fileID: 0}
+  screenShake: 0
   time: .5
 --- !u!61 &1671725061
 BoxCollider2D:
@@ -13401,6 +13435,7 @@ MonoBehaviour:
   - {fileID: 661753687}
   disables:
   - {fileID: 0}
+  screenShake: 0
 --- !u!61 &1759406185
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14401,6 +14436,10 @@ Prefab:
       propertyPath: alerts.Array.data[1]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: screenShake
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
   m_RootGameObject: {fileID: 689234422}
@@ -14443,6 +14482,7 @@ MonoBehaviour:
   - {fileID: 661753687}
   disables:
   - {fileID: 0}
+  screenShake: 0
 --- !u!61 &1891374522
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14532,7 +14572,9 @@ MonoBehaviour:
   - 
   nexts:
   - {fileID: 567927339}
-  disables: []
+  disables:
+  - {fileID: 0}
+  screenShake: 0
   time: 1
 --- !u!61 &1926330910
 BoxCollider2D:
@@ -15602,6 +15644,10 @@ Prefab:
       propertyPath: nexts.Array.data[0]
       value: 
       objectReference: {fileID: 689234422}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: screenShake
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
   m_RootGameObject: {fileID: 1140916806}
@@ -15945,6 +15991,7 @@ GameObject:
   - 92: {fileID: 2141980582}
   - 124: {fileID: 2141980581}
   - 81: {fileID: 2141980580}
+  - 114: {fileID: 2141980585}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -16001,7 +16048,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 256
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_HDR: 0
@@ -16018,3 +16065,15 @@ Transform:
   m_Children:
   - {fileID: 1328224990}
   m_Father: {fileID: 0}
+--- !u!114 &2141980585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2141980579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26570544a49974de1b88a6dc2f94c752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
