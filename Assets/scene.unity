@@ -690,11 +690,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: dd6a22393fd11440ea2c1079ece9a083, type: 2}
       propertyPath: m_LocalPosition.x
-      value: .00480079651
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: dd6a22393fd11440ea2c1079ece9a083, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -.00839418173
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: dd6a22393fd11440ea2c1079ece9a083, type: 2}
       propertyPath: m_LocalPosition.z
@@ -718,7 +718,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: dd6a22393fd11440ea2c1079ece9a083, type: 2}
       propertyPath: m_LocalScale.x
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: dd6a22393fd11440ea2c1079ece9a083, type: 2}
       propertyPath: m_LocalScale.y
@@ -726,11 +726,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: dd6a22393fd11440ea2c1079ece9a083, type: 2}
       propertyPath: see.Array.data[0]
-      value: The airlock.
+      value: The outpost foyer.
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: dd6a22393fd11440ea2c1079ece9a083, type: 2}
       propertyPath: enter.Array.data[0]
-      value: Entering the airlock.
+      value: Entering the outpost foyer.
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: dd6a22393fd11440ea2c1079ece9a083, type: 2}
       propertyPath: exit.Array.data[0]
@@ -742,7 +742,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: dd6a22393fd11440ea2c1079ece9a083, type: 2}
       propertyPath: inside.Array.data[0]
-      value: Inside the airlock.
+      value: Inside the outpost foyer.
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: dd6a22393fd11440ea2c1079ece9a083, type: 2}
+      propertyPath: m_Name
+      value: Airlock
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dd6a22393fd11440ea2c1079ece9a083, type: 2}
@@ -1200,6 +1204,82 @@ Prefab:
     - {fileID: 11400002, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
   m_RootGameObject: {fileID: 516993060}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
+--- !u!1001 &132988841
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 11400002, guid: dd6a22393fd11440ea2c1079ece9a083, type: 2}
+      propertyPath: exit.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: dd6a22393fd11440ea2c1079ece9a083, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: .00480079651
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: dd6a22393fd11440ea2c1079ece9a083, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -.00839418173
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: dd6a22393fd11440ea2c1079ece9a083, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: dd6a22393fd11440ea2c1079ece9a083, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: dd6a22393fd11440ea2c1079ece9a083, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: dd6a22393fd11440ea2c1079ece9a083, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: dd6a22393fd11440ea2c1079ece9a083, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: dd6a22393fd11440ea2c1079ece9a083, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: dd6a22393fd11440ea2c1079ece9a083, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: dd6a22393fd11440ea2c1079ece9a083, type: 2}
+      propertyPath: see.Array.data[0]
+      value: The airlock.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: dd6a22393fd11440ea2c1079ece9a083, type: 2}
+      propertyPath: enter.Array.data[0]
+      value: Entering the airlock.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: dd6a22393fd11440ea2c1079ece9a083, type: 2}
+      propertyPath: exit.Array.data[0]
+      value: Exiting the airlock.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: dd6a22393fd11440ea2c1079ece9a083, type: 2}
+      propertyPath: shake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: dd6a22393fd11440ea2c1079ece9a083, type: 2}
+      propertyPath: inside.Array.data[0]
+      value: Inside the airlock.
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: dd6a22393fd11440ea2c1079ece9a083, type: 2}
+      propertyPath: m_Name
+      value: Airlock
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: dd6a22393fd11440ea2c1079ece9a083, type: 2}
+  m_RootGameObject: {fileID: 433743813}
   m_IsPrefabParent: 0
   m_IsExploded: 1
 --- !u!1 &154639813
@@ -3239,6 +3319,119 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 697378489}
+--- !u!1 &433743813
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100000, guid: dd6a22393fd11440ea2c1079ece9a083, type: 2}
+  m_PrefabInternal: {fileID: 132988841}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 433743819}
+  - 33: {fileID: 433743818}
+  - 23: {fileID: 433743817}
+  - 61: {fileID: 433743816}
+  - 114: {fileID: 433743815}
+  - 114: {fileID: 433743814}
+  m_Layer: 0
+  m_Name: Airlock
+  m_TagString: Entity
+  m_Icon: {fileID: 120240766, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!114 &433743814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: dd6a22393fd11440ea2c1079ece9a083,
+    type: 2}
+  m_PrefabInternal: {fileID: 132988841}
+  m_GameObject: {fileID: 433743813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42ca7664be71d496aaac8416f50ba12a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mode: 0
+  see:
+  - The airlock.
+  indicators: []
+  enter:
+  - Entering the airlock.
+  exit: []
+  inside:
+  - Inside the airlock.
+  shake: 1
+  touch: []
+  touchDelay: 1
+  visible: 1
+--- !u!114 &433743815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: dd6a22393fd11440ea2c1079ece9a083,
+    type: 2}
+  m_PrefabInternal: {fileID: 132988841}
+  m_GameObject: {fileID: 433743813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3adcb2e4624224e468c8694993db02d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enter: []
+  exit: []
+  touch: []
+--- !u!61 &433743816
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6100000, guid: dd6a22393fd11440ea2c1079ece9a083,
+    type: 2}
+  m_PrefabInternal: {fileID: 132988841}
+  m_GameObject: {fileID: 433743813}
+  m_Enabled: 1
+  m_Material: {fileID: 6200000, guid: 577c0f82b97fa4462ae7304aad0722e5, type: 2}
+  m_IsTrigger: 1
+  m_Size: {x: 1, y: 1}
+  m_Center: {x: 0, y: 0}
+--- !u!23 &433743817
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300000, guid: dd6a22393fd11440ea2c1079ece9a083,
+    type: 2}
+  m_PrefabInternal: {fileID: 132988841}
+  m_GameObject: {fileID: 433743813}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 2f5c4c9d86b3e46468e7b18f160c765a, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &433743818
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300000, guid: dd6a22393fd11440ea2c1079ece9a083,
+    type: 2}
+  m_PrefabInternal: {fileID: 132988841}
+  m_GameObject: {fileID: 433743813}
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &433743819
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400000, guid: dd6a22393fd11440ea2c1079ece9a083, type: 2}
+  m_PrefabInternal: {fileID: 132988841}
+  m_GameObject: {fileID: 433743813}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .00480079651, y: -.00839418173, z: 0}
+  m_LocalScale: {x: 7, y: 5, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
 --- !u!1 &445606978
 GameObject:
   m_ObjectHideFlags: 0
@@ -4609,7 +4802,7 @@ GameObject:
   - 114: {fileID: 625445329}
   - 114: {fileID: 625445328}
   m_Layer: 0
-  m_Name: Area
+  m_Name: Airlock
   m_TagString: Entity
   m_Icon: {fileID: 120240766, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -4629,13 +4822,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mode: 0
   see:
-  - The airlock.
+  - The outpost foyer.
   indicators: []
   enter:
-  - Entering the airlock.
+  - Entering the outpost foyer.
   exit: []
   inside:
-  - Inside the airlock.
+  - Inside the outpost foyer.
   shake: 1
   touch: []
   touchDelay: 1
@@ -4704,8 +4897,8 @@ Transform:
   m_PrefabInternal: {fileID: 51127571}
   m_GameObject: {fileID: 625445327}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .00480079651, y: -.00839418173, z: 0}
-  m_LocalScale: {x: 7, y: 5, z: 1}
+  m_LocalPosition: {x: 7, y: 0, z: 0}
+  m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
 --- !u!1 &661753687
@@ -8356,11 +8549,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
       propertyPath: touch.Array.data[0]
-      value: At the edge of the moat.
+      value: Touching the western wall.
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
       propertyPath: see.Array.data[0]
-      value: The moat.
+      value: The eastern wall.
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: m_Name
+      value: Eastern Wall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
@@ -11400,7 +11597,7 @@ GameObject:
   - 114: {fileID: 1474966727}
   - 114: {fileID: 1474966726}
   m_Layer: 0
-  m_Name: Obstacle
+  m_Name: Eastern Wall
   m_TagString: Entity
   m_Icon: {fileID: -1003283189, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -11420,14 +11617,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mode: 0
   see:
-  - The moat.
+  - The eastern wall.
   indicators: []
   enter: []
   exit: []
   inside: []
   shake: 0
   touch:
-  - At the edge of the moat.
+  - Touching the western wall.
   touchDelay: 1
   visible: 1
 --- !u!114 &1474966727
@@ -16076,4 +16273,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26570544a49974de1b88a6dc2f94c752, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debug: 0
+  debug: 1

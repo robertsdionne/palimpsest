@@ -9,17 +9,25 @@ public class Collidable : MonoBehaviour {
 
   protected bool occupied = false;
 
+  private bool IsPlayer(GameObject other) {
+    return "Player" == other.tag && other.activeInHierarchy;
+  }
+
   public bool IsOccupied() {
     return occupied;
   }
 
   void OnCollisionEnter2D(Collision2D collision) {
-    if ("Player" == collision.gameObject.tag) {
-      transform.root.GetComponent<Entity>().OnTouch(Choose(touch));
+    if (!IsPlayer(collision.gameObject)) {
+      return;
     }
+    transform.root.GetComponent<Entity>().OnTouch(Choose(touch));
   }
 
-  void OnTriggerEnter2D() {
+  void OnTriggerEnter2D(Collider2D other) {
+    if (!IsPlayer(other.gameObject)) {
+      return;
+    }
     occupied = true;
     var choice = Choose(enter);
     if (null != choice) {
@@ -29,7 +37,10 @@ public class Collidable : MonoBehaviour {
     }
   }
 
-  void OnTriggerExit2D() {
+  void OnTriggerExit2D(Collider2D other) {
+    if (!IsPlayer(other.gameObject)) {
+      return;
+    }
     occupied = false;
     var choice = Choose(exit);
     if (null != choice) {
