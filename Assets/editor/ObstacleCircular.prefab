@@ -101,8 +101,7 @@ MonoBehaviour:
   indicators: []
   enter: []
   exit: []
-  inside:
-  - Inside the area.
+  inside: []
   shake: 1
   touch:
   - Touching the obstacle.

@@ -14,7 +14,9 @@ public class Collidable : MonoBehaviour {
   }
 
   void OnCollisionEnter2D(Collision2D collision) {
-    transform.root.GetComponent<Entity>().OnTouch(Choose(touch));
+    if ("Player" == collision.gameObject.tag) {
+      transform.root.GetComponent<Entity>().OnTouch(Choose(touch));
+    }
   }
 
   void OnTriggerEnter2D() {

@@ -10,6 +10,7 @@ public class Player : MonoBehaviour {
   private const string SEE = "See";
   private const string VERTICAL = "Vertical";
 
+  public float arrowScale = 0.25f;
   public GameObject arrow;
   public GameObject blockedArrow;
   public GameObject fieldArrow;
@@ -133,7 +134,7 @@ public class Player : MonoBehaviour {
     playerArrow.SetActive(true);
     blockedArrow.SetActive(false);
     var moving = Mathf.Clamp01(rigidbody2D.velocity.magnitude);
-    var scale = 0.25f * Mathf.Clamp01(5.0f * input.magnitude);
+    var scale = arrowScale * Mathf.Clamp01(5.0f * input.magnitude);
     var frequency = 4.0f + 4.0f * IsRunning();
     arrow.transform.localPosition = (0.02f + 0.01f * IsRunning()) * moving * (
         Mathf.Sin(frequency * Time.fixedTime) * Vector2.right +
@@ -154,7 +155,7 @@ public class Player : MonoBehaviour {
       orientation = true;
     }
     var direction = (orientation ? 1.0f : -1.0f) * perpendicular;
-    var scale = 0.25f * Mathf.Clamp01(5.0f * direction.magnitude);
+    var scale = arrowScale * Mathf.Clamp01(5.0f * direction.magnitude);
     var angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
     var rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     fieldArrow.transform.rotation = Quaternion.Slerp(fieldArrow.transform.rotation, rotation, 0.1f);
@@ -173,9 +174,9 @@ public class Player : MonoBehaviour {
   }
 
   void UpdateEyeScale() {
-    var scale = 0.25f * System.Convert.ToSingle(IsMoreToSee());
+    var scale = arrowScale * System.Convert.ToSingle(IsMoreToSee());
     eye.transform.localScale = Vector2.Lerp(
-        eye.transform.localScale, new Vector2(0.25f, scale), 0.1f);
+        eye.transform.localScale, new Vector2(arrowScale, scale), 0.1f);
   }
 
   void UpdateCameraPosition() {

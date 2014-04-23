@@ -66,7 +66,7 @@ public class TextConsole : MonoBehaviour {
       indicator.transform.parent = textConsole.gameObject.transform;
       indicator.transform.localPosition = textConsole.NextPosition(line);
       indicatorComponent.arrow.transform.rotation = textConsole.player.transform.rotation;
-      indicatorComponent.description.GetComponent<TextMesh>().text = text;
+      indicatorComponent.text = text;
       indicatorComponent.player = textConsole.player;
       indicatorComponent.target = target;
       target.indicators = new GameObject[] {indicator};

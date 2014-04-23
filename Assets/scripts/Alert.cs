@@ -4,7 +4,8 @@ using System.Collections;
 public class Alert : MonoBehaviour {
 
   public string[] alerts;
-  public GameObject[] nexts;
+  public GameObject[] nexts = { null };
+  public GameObject[] disables = { null };
   public float time;
 
   private float startTime;
@@ -19,7 +20,14 @@ public class Alert : MonoBehaviour {
         TextConsole.PushText(alert);
       }
       foreach (var next in nexts) {
-        next.SetActive(true);
+        if (null != next) {
+          next.SetActive(true);
+        }
+      }
+      foreach (var disable in disables) {
+        if (null != disable) {
+          disable.SetActive(true);
+        }
       }
       Destroy(gameObject);
     }
