@@ -19,8 +19,8 @@ public class MakeCircle : MonoBehaviour {
       var x = (radius + thickness / 2.0f - overlap) * Mathf.Cos(angle);
       var y = (radius + thickness / 2.0f - overlap) * Mathf.Sin(angle);
       var wall = Instantiate(obstacle) as GameObject;
-      wall.transform.localScale = new Vector2(
-          thickness, (radius + thickness - overlap) * step);
+      wall.transform.localScale = new Vector3(
+          thickness, (radius + thickness - overlap) * step, 1.0f);
       wall.transform.rotation = Quaternion.Euler(0.0f, 0.0f, angle * Mathf.Rad2Deg);
       wall.transform.parent = transform;
       wall.transform.position = transform.position + new Vector3(x, y, 0.0f);
