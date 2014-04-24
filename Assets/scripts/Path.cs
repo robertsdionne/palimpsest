@@ -10,12 +10,12 @@ public class Path : Entity {
 
   public override void See() {
     seen = true;
-    TextConsole.PushPathIndicator(this, Choose(see));
+    TextConsole.PushPathIndicator(this, Utilities.Choose(see));
   }
 
   public override void Inside() {
     seen = true;
-    TextConsole.PushPathText(this, Choose(inside));
+    TextConsole.PushPathText(this, Utilities.Choose(inside));
   }
 
   public virtual Vector2 PerpendicularTo(Vector2 playerPosition) {
@@ -68,14 +68,14 @@ public class Path : Entity {
   public override void OnEnter(string text) {
     if (!IsOccupied()) {
       seen = true;
-      TextConsole.PushPathText(this, Choose(enter));
+      TextConsole.PushPathText(this, Utilities.Choose(enter));
     }
   }
 
   public override void OnExit(string text) {
     if (!IsOccupied()) {
       seen = true;
-      TextConsole.PushPathText(this, Choose(exit));
+      TextConsole.PushPathText(this, Utilities.Choose(exit));
     }
   }
 

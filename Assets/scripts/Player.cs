@@ -11,9 +11,11 @@ public class Player : MonoBehaviour {
   private const string VERTICAL = "Vertical";
 
   public float arrowScale = 0.25f;
+  public float eyeScale = 0.25f;
   public GameObject arrow;
   public GameObject blockedArrow;
   public GameObject fieldArrow;
+  public Entity fieldArrowTarget;
   public GameObject nearArrow;
   public GameObject playerArrow;
   public float cameraPositionAlpha = 0.032f;
@@ -145,7 +147,10 @@ public class Player : MonoBehaviour {
   }
 
   void UpdateFieldArrowRotationAndScale() {
-    var input = DirectionToEverythingFrom(transform.position);
+    var input = new Vector2();
+    if (null != fieldArrowTarget) {
+      input = fieldArrowTarget.DirectionFrom(transform.position);
+    }
     var perpendicular = new Vector2(-input.y, input.x);
     var dot = Vector2.Dot(transform.right, perpendicular);
     if (orientation && dot < -0.25f) {
@@ -174,9 +179,9 @@ public class Player : MonoBehaviour {
   }
 
   void UpdateEyeScale() {
-    var scale = arrowScale * System.Convert.ToSingle(IsMoreToSee());
+    var scale = eyeScale * System.Convert.ToSingle(IsMoreToSee());
     eye.transform.localScale = Vector2.Lerp(
-        eye.transform.localScale, new Vector2(arrowScale, scale), 0.1f);
+        eye.transform.localScale, new Vector2(eyeScale, scale), 0.1f);
   }
 
   void UpdateCameraPosition() {

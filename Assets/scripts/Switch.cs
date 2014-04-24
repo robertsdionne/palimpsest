@@ -26,10 +26,10 @@ public class Switch : Entity {
         }
       }
       if (state) {
-        TextConsole.PushText(Choose(enter));
+        TextConsole.PushText(Utilities.Choose(enter));
       }
       if (!state) {
-        TextConsole.PushText(Choose(exit));
+        TextConsole.PushText(Utilities.Choose(exit));
       }
     }
   }

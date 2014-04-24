@@ -33,7 +33,7 @@ public class Entity : MonoBehaviour {
 
   public virtual void See() {
     seen = true;
-    TextConsole.PushIndicator(this, Choose(see));
+    TextConsole.PushIndicator(this, Utilities.Choose(see));
   }
 
   public Vector2 DirectionFrom(Vector2 playerPosition) {
@@ -65,7 +65,7 @@ public class Entity : MonoBehaviour {
 
   public virtual void Inside() {
     seen = true;
-    TextConsole.PushText(Choose(inside));
+    TextConsole.PushText(Utilities.Choose(inside));
   }
 
   public virtual bool IsOccupied() {
@@ -89,7 +89,7 @@ public class Entity : MonoBehaviour {
     if (IsOccupied() && !wasOccupied) {
       seen = true;
       wasOccupied = true;
-      TextConsole.PushText(null != text ? text : Choose(enter));
+      TextConsole.PushText(null != text ? text : Utilities.Choose(enter));
     }
   }
 
@@ -97,7 +97,7 @@ public class Entity : MonoBehaviour {
     if (!IsOccupied() && wasOccupied) {
       seen = true;
       wasOccupied = false;
-      TextConsole.PushText(null != text ? text : Choose(exit));
+      TextConsole.PushText(null != text ? text : Utilities.Choose(exit));
     }
   }
 
@@ -108,11 +108,7 @@ public class Entity : MonoBehaviour {
       if (shake) {
         ScreenShake.Shake();
       }
-      TextConsole.PushText(null != text ? text : Choose(touch));
+      TextConsole.PushText(null != text ? text : Utilities.Choose(touch));
     }
-  }
-
-  protected string Choose(string[] choices) {
-    return choices.Length > 0 ? choices[Random.Range(0, choices.Length)] : null;
   }
 }

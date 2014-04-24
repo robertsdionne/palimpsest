@@ -7,12 +7,11 @@ public class Ambience : MonoBehaviour {
   public float period;
 
   void OnTriggerStay2D(Collider2D other) {
-    if (Random.value < 1.0f / 60.0f / period) {
-      TextConsole.PushText(Choose(alerts));
+    if (!Utilities.IsPlayer(other.gameObject)) {
+      return;
     }
-  }
-
-  protected string Choose(string[] choices) {
-    return choices.Length > 0 ? choices[Random.Range(0, choices.Length)] : null;
+    if (Random.value < 1.0f / 60.0f / period) {
+      TextConsole.PushText(Utilities.Choose(alerts));
+    }
   }
 }

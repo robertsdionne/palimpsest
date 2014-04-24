@@ -9,6 +9,9 @@ public class Notice : MonoBehaviour {
   public bool screenShake = false;
 
   void OnTriggerEnter2D(Collider2D other) {
+    if (!Utilities.IsPlayer(other.gameObject)) {
+      return;
+    }
     if (screenShake) {
       ScreenShake.Shake();
     }

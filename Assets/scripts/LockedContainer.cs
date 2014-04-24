@@ -20,12 +20,12 @@ public class LockedContainer : Entity {
       }
       if (closed.gameObject.activeInHierarchy && Inventory.Contains(key)) {
         Inventory.Remove(key);
-        TextConsole.PushText(Choose(opened));
+        TextConsole.PushText(Utilities.Choose(opened));
         closed.gameObject.SetActive(false);
         contents.gameObject.SetActive(true);
         open.gameObject.SetActive(true);
       } else {
-        TextConsole.PushIndicator(this, Choose(touch));
+        TextConsole.PushIndicator(this, Utilities.Choose(touch));
       }
       lastTouchTime = Time.fixedTime;
     }

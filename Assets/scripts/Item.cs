@@ -8,7 +8,7 @@ public class Item : Entity {
   };
 
   public void ListInventory() {
-    TextConsole.PushText(Choose(inventoryListing));
+    TextConsole.PushText(Utilities.Choose(inventoryListing));
   }
 
   public override void OnTouch(string text) {

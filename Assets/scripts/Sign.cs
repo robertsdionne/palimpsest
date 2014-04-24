@@ -8,7 +8,8 @@ public class Sign : Entity {
   public override void See() {
     seen = true;
     TextConsole.PushSignIndicator(this, target,
-        Choose(see) + "   \"" + Choose(target.GetComponent<Entity>().see) + "\"");
+        Utilities.Choose(see) + "   \"" +
+        Utilities.Choose(target.GetComponent<Entity>().see) + "\"");
   }
 
   public override void OnTouch(string text) {
@@ -19,8 +20,8 @@ public class Sign : Entity {
         ScreenShake.Shake();
       }
       TextConsole.PushSignIndicator(this, target,
-          null != text ? text : Choose(touch) +
-              "   \"" + Choose(target.GetComponent<Entity>().see) + "\"");
+          null != text ? text : Utilities.Choose(touch) +
+              "   \"" + Utilities.Choose(target.GetComponent<Entity>().see) + "\"");
     }
   }
 }
