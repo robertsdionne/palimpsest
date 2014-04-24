@@ -258,7 +258,7 @@ Transform:
   m_PrefabInternal: {fileID: 1590774608}
   m_GameObject: {fileID: 24155603}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.986751497, y: .36424762, z: 0}
+  m_LocalPosition: {x: .363716424, y: .36424762, z: 0}
   m_LocalScale: {x: .25, y: .25, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -450,7 +450,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: dd6a22393fd11440ea2c1079ece9a083, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: dd6a22393fd11440ea2c1079ece9a083, type: 2}
       propertyPath: m_LocalPosition.y
@@ -478,7 +478,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: dd6a22393fd11440ea2c1079ece9a083, type: 2}
       propertyPath: m_LocalScale.x
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: dd6a22393fd11440ea2c1079ece9a083, type: 2}
       propertyPath: m_LocalScale.y
@@ -506,7 +506,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: dd6a22393fd11440ea2c1079ece9a083, type: 2}
       propertyPath: m_Name
-      value: Airlock
+      value: Outpost Foyer
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dd6a22393fd11440ea2c1079ece9a083, type: 2}
@@ -759,7 +759,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: dd6a22393fd11440ea2c1079ece9a083, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: dd6a22393fd11440ea2c1079ece9a083, type: 2}
       propertyPath: m_LocalPosition.y
@@ -787,7 +787,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: dd6a22393fd11440ea2c1079ece9a083, type: 2}
       propertyPath: m_LocalScale.x
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: dd6a22393fd11440ea2c1079ece9a083, type: 2}
       propertyPath: m_LocalScale.y
@@ -957,7 +957,7 @@ Transform:
   m_PrefabInternal: {fileID: 1289704928}
   m_GameObject: {fileID: 183898930}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalPosition: {x: 1, y: 0, z: -1}
   m_LocalScale: {x: .25, y: .5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2242,8 +2242,8 @@ Transform:
   m_PrefabInternal: {fileID: 132988841}
   m_GameObject: {fileID: 433743813}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_LocalPosition: {x: 7, y: 0, z: 0}
+  m_LocalScale: {x: 7, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
 --- !u!1 &445606978
@@ -3059,7 +3059,7 @@ GameObject:
   - 114: {fileID: 625445329}
   - 114: {fileID: 625445328}
   m_Layer: 0
-  m_Name: Airlock
+  m_Name: Outpost Foyer
   m_TagString: Entity
   m_Icon: {fileID: 120240766, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -3154,8 +3154,8 @@ Transform:
   m_PrefabInternal: {fileID: 51127571}
   m_GameObject: {fileID: 625445327}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7, y: 0, z: 0}
-  m_LocalScale: {x: 7, y: 5, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
 --- !u!1 &661753687
@@ -3357,7 +3357,7 @@ MonoBehaviour:
   disables:
   - {fileID: 0}
   screenShake: 1
-  time: .699999988
+  time: .400000006
 --- !u!61 &689234424
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3735,7 +3735,7 @@ GameObject:
   - 114: {fileID: 759375943}
   - 114: {fileID: 759375942}
   m_Layer: 0
-  m_Name: Botanical Garden
+  m_Name: Crater
   m_TagString: Entity
   m_Icon: {fileID: 120240766, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -3747,7 +3747,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 759375941}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fd718dbf2619941189295fb3ffc67acd, type: 3}
   m_Name: 
@@ -3772,15 +3772,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mode: 0
   see:
-  - Botanical garden.
+  - Crater.
   indicators: []
   enter:
-  - Entering the area.
+  - Entering the crater.
   exit:
-  - Exiting the area.
+  - Exiting the crater.
   inside:
-  - Inside the botanical garden.
-  shake: 1
+  - Inside the crater.
+  shake: 0
   touch: []
   touchDelay: 1
   visible: 1
@@ -4539,19 +4539,27 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 209f679e2cbce4f4f91bc656e36ce7e8, type: 2}
       propertyPath: m_Name
-      value: Botanical Garden
+      value: Crater
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: 209f679e2cbce4f4f91bc656e36ce7e8, type: 2}
       propertyPath: see.Array.data[0]
-      value: Botanical garden.
+      value: Crater.
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: 209f679e2cbce4f4f91bc656e36ce7e8, type: 2}
       propertyPath: inside.Array.data[0]
-      value: Inside the botanical garden.
+      value: Inside the crater.
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 209f679e2cbce4f4f91bc656e36ce7e8, type: 2}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 209f679e2cbce4f4f91bc656e36ce7e8, type: 2}
+      propertyPath: enter.Array.data[0]
+      value: Entering the crater.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 209f679e2cbce4f4f91bc656e36ce7e8, type: 2}
+      propertyPath: exit.Array.data[0]
+      value: Exiting the crater.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 209f679e2cbce4f4f91bc656e36ce7e8, type: 2}
@@ -5855,7 +5863,7 @@ Transform:
   m_PrefabInternal: {fileID: 1236824695}
   m_GameObject: {fileID: 997239053}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.51115751, y: -.899624586, z: 0}
+  m_LocalPosition: {x: -.160689667, y: -.899624586, z: 0}
   m_LocalScale: {x: .25, y: .25, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -6915,19 +6923,31 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 209f679e2cbce4f4f91bc656e36ce7e8, type: 2}
       propertyPath: m_Name
-      value: Botanical Garden
+      value: Crater
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: 209f679e2cbce4f4f91bc656e36ce7e8, type: 2}
       propertyPath: see.Array.data[0]
-      value: Botanical garden.
+      value: Crater.
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: 209f679e2cbce4f4f91bc656e36ce7e8, type: 2}
       propertyPath: inside.Array.data[0]
-      value: Inside the botanical garden.
+      value: Inside the crater.
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 209f679e2cbce4f4f91bc656e36ce7e8, type: 2}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 209f679e2cbce4f4f91bc656e36ce7e8, type: 2}
+      propertyPath: enter.Array.data[0]
+      value: Entering the crater.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 209f679e2cbce4f4f91bc656e36ce7e8, type: 2}
+      propertyPath: exit.Array.data[0]
+      value: Exiting the crater.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 209f679e2cbce4f4f91bc656e36ce7e8, type: 2}
+      propertyPath: shake
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 209f679e2cbce4f4f91bc656e36ce7e8, type: 2}
@@ -7122,7 +7142,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e4128d5fd262b4a01b6771a3d5da1e96, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -1.51115751
+      value: -.160689667
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e4128d5fd262b4a01b6771a3d5da1e96, type: 2}
       propertyPath: m_LocalPosition.y
@@ -7408,7 +7428,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 8083a83bf8c1641e798af82cc8c687f5, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8083a83bf8c1641e798af82cc8c687f5, type: 2}
       propertyPath: m_LocalPosition.y
@@ -10117,7 +10137,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e4128d5fd262b4a01b6771a3d5da1e96, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -.986751497
+      value: .363716424
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e4128d5fd262b4a01b6771a3d5da1e96, type: 2}
       propertyPath: m_LocalPosition.y
@@ -11714,7 +11734,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
       propertyPath: time
-      value: .699999988
+      value: .400000006
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
       propertyPath: nexts.Array.data[0]
@@ -13411,7 +13431,7 @@ GameObject:
   - 114: {fileID: 2112367501}
   - 114: {fileID: 2112367500}
   m_Layer: 0
-  m_Name: Botanical Garden
+  m_Name: Crater
   m_TagString: Entity
   m_Icon: {fileID: 120240766, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -13448,14 +13468,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mode: 0
   see:
-  - Botanical garden.
+  - Crater.
   indicators: []
   enter:
-  - Entering the area.
+  - Entering the crater.
   exit:
-  - Exiting the area.
+  - Exiting the crater.
   inside:
-  - Inside the botanical garden.
+  - Inside the crater.
   shake: 1
   touch: []
   touchDelay: 1
