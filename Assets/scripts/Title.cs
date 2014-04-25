@@ -3,12 +3,12 @@ using System.Collections;
 
 public class Title : MonoBehaviour {
 
-  private const string SEE = "See";
+  private const string EXAMINE = "Examine";
 
   public string nextScene;
 	
 	void Update() {
-    if (Input.GetButtonDown(SEE)) {
+    if (Input.GetButtonDown(EXAMINE)) {
       Application.LoadLevel(nextScene);
     }
 	}
