@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
-public class TextConsole : MonoBehaviour {
+public class ViewConsole : MonoBehaviour {
 
   public GameObject descriptionPrefab;
   public GameObject indicatorPrefab;
@@ -11,12 +11,10 @@ public class TextConsole : MonoBehaviour {
   public GameObject signDescriptionPrefab;
   public int maximumLines;
   public GameObject player;
-  public Line viewConsoleLine;
-  public Line playerArrowLine;
 
   private List<Line> lines = new List<Line>();
 
-  private static TextConsole textConsole;
+  private static ViewConsole textConsole;
 
   void Start() {
     textConsole = this;
@@ -31,10 +29,6 @@ public class TextConsole : MonoBehaviour {
       description.transform.localPosition = textConsole.NextPosition(line);
       description.GetComponent<TextMesh>().text = text;
       textConsole.lines.Add(line);
-      textConsole.viewConsoleLine.gameObject.transform.localPosition =
-          textConsole.NextPosition(textConsole.viewConsoleLine);
-      textConsole.playerArrowLine.gameObject.transform.localPosition =
-          textConsole.NextPosition(textConsole.playerArrowLine);
     }
   }
 
@@ -55,10 +49,6 @@ public class TextConsole : MonoBehaviour {
       description.GetComponent<PathDescription>().target = target;
       target.indicators = new GameObject[] {description};
       textConsole.lines.Add(line);
-      textConsole.viewConsoleLine.gameObject.transform.localPosition =
-          textConsole.NextPosition(textConsole.viewConsoleLine);
-      textConsole.playerArrowLine.gameObject.transform.localPosition =
-          textConsole.NextPosition(textConsole.playerArrowLine);
     }
   }
 
@@ -74,12 +64,9 @@ public class TextConsole : MonoBehaviour {
       indicatorComponent.text = text;
       indicatorComponent.player = textConsole.player;
       indicatorComponent.target = target;
+      indicatorComponent.Render();
       target.indicators = new GameObject[] {indicator};
       textConsole.lines.Add(line);
-      textConsole.viewConsoleLine.gameObject.transform.localPosition =
-          textConsole.NextPosition(textConsole.viewConsoleLine);
-      textConsole.playerArrowLine.gameObject.transform.localPosition =
-          textConsole.NextPosition(textConsole.playerArrowLine);
     }
   }
 
@@ -108,10 +95,6 @@ public class TextConsole : MonoBehaviour {
       indicatorComponent.target = target;
       target.indicators = new GameObject[] {description, indicator};
       textConsole.lines.Add(line);
-      textConsole.viewConsoleLine.gameObject.transform.localPosition =
-          textConsole.NextPosition(textConsole.viewConsoleLine);
-      textConsole.playerArrowLine.gameObject.transform.localPosition =
-          textConsole.NextPosition(textConsole.playerArrowLine);
     }
   }
 
@@ -141,11 +124,14 @@ public class TextConsole : MonoBehaviour {
       target.indicators = new GameObject[] {indicator};
       signTarget.indicators = new GameObject[] {description};
       textConsole.lines.Add(line);
-      textConsole.viewConsoleLine.gameObject.transform.localPosition =
-          textConsole.NextPosition(textConsole.viewConsoleLine);
-      textConsole.playerArrowLine.gameObject.transform.localPosition =
-          textConsole.NextPosition(textConsole.playerArrowLine);
     }
+  }
+
+  public static void Clear() {
+    foreach (var line in textConsole.lines) {
+      Object.Destroy(line.gameObject);
+    }
+    textConsole.lines.Clear();
   }
 
   void MaybeClearLines() {

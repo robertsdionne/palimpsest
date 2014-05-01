@@ -123,7 +123,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
       propertyPath: m_LocalScale.x
-      value: 8
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
       propertyPath: m_LocalScale.y
@@ -413,11 +413,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: dd6a22393fd11440ea2c1079ece9a083, type: 2}
       propertyPath: see.Array.data[0]
-      value: The outpost foyer.
+      value: The equipment room.
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: dd6a22393fd11440ea2c1079ece9a083, type: 2}
       propertyPath: enter.Array.data[0]
-      value: Entering the outpost foyer.
+      value: Entering the outpost equipment room.
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: dd6a22393fd11440ea2c1079ece9a083, type: 2}
       propertyPath: exit.Array.data[0]
@@ -429,7 +429,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: dd6a22393fd11440ea2c1079ece9a083, type: 2}
       propertyPath: inside.Array.data[0]
-      value: Inside the outpost foyer.
+      value: Inside the outpost equipment room.
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: dd6a22393fd11440ea2c1079ece9a083, type: 2}
       propertyPath: m_Name
@@ -605,6 +605,14 @@ Prefab:
       propertyPath: m_Name
       value: Comms Array
       objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: e4128d5fd262b4a01b6771a3d5da1e96, type: 2}
+      propertyPath: see.Array.data[0]
+      value: The communications array.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: e4128d5fd262b4a01b6771a3d5da1e96, type: 2}
+      propertyPath: touch.Array.data[0]
+      value: Touching the communications array.
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e4128d5fd262b4a01b6771a3d5da1e96, type: 2}
   m_RootGameObject: {fileID: 1801754178}
@@ -689,14 +697,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mode: 0
   see:
-  - Seeing the entity.
+  - The rover.
   indicators: []
   enter: []
   exit: []
   inside: []
   shake: 1
   touch:
-  - Touching the obstacle.
+  - Bumping into the rover.
   touchDelay: 1
   visible: 1
 --- !u!114 &100528259
@@ -1054,17 +1062,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mode: 0
   see:
-  - Seeing the entity.
+  - The oxygen tank.
   indicators: []
-  enter:
-  - Entering the area.
-  exit:
-  - Exiting the area.
-  inside:
-  - Inside the area.
+  enter: []
+  exit: []
+  inside: []
   shake: 1
   touch:
-  - Touching the obstacle.
+  - Touching the oxygen tank.
   touchDelay: 1
   visible: 1
 --- !u!1001 &166426287
@@ -1249,7 +1254,7 @@ MonoBehaviour:
   maximumForce: 50
   maximumRunningSpeed: 5.80999994
   maximumTorque: 10
-  maximumWalkingSpeed: 1.38
+  maximumWalkingSpeed: .75
   numberToSee: 3
 --- !u!58 &183898937
 CircleCollider2D:
@@ -1560,14 +1565,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mode: 0
   see:
-  - Seeing the entity.
+  - The launch vehicle.
   indicators: []
   enter: []
   exit: []
   inside: []
   shake: 1
   touch:
-  - Touching the obstacle.
+  - Touching the launch vehicle.
   touchDelay: 1
   visible: 1
 --- !u!114 &312612259
@@ -1844,7 +1849,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &379956544
 Transform:
   m_ObjectHideFlags: 0
@@ -1909,7 +1914,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 384644750}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.5, y: -2, z: 0}
+  m_LocalPosition: {x: 4, y: -2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 445606984}
@@ -1927,14 +1932,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mode: 0
   see:
-  - The southern wall.
+  - The southern airlock wall.
   indicators: []
   enter: []
   exit: []
   inside: []
   shake: 1
   touch:
-  - The southern wall stops me.
+  - The southern airlock wall stops me.
   touchDelay: 1
   visible: 1
 --- !u!1 &386097770
@@ -2331,7 +2336,7 @@ Transform:
   m_GameObject: {fileID: 445606978}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 8, y: 1, z: 1}
+  m_LocalScale: {x: 5, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 384644751}
 --- !u!1001 &457635560
@@ -2395,10 +2400,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 502268556}
-  - 33: {fileID: 502268555}
-  - 23: {fileID: 502268554}
-  - 61: {fileID: 502268553}
-  - 114: {fileID: 502268552}
   - 114: {fileID: 502268551}
   m_Layer: 0
   m_Name: Command
@@ -2421,73 +2422,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mode: 0
   see:
-  - Seeing the entity.
+  - Command.
   indicators: []
   enter: []
   exit: []
   inside: []
   shake: 1
   touch:
-  - Touching the obstacle.
+  - Command is not accessible.
   touchDelay: 1
   visible: 1
---- !u!114 &502268552
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400000, guid: 53dcfd257267446b2aeed41fb6708dca,
-    type: 2}
-  m_PrefabInternal: {fileID: 1870523862}
-  m_GameObject: {fileID: 502268550}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3adcb2e4624224e468c8694993db02d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enter: []
-  exit: []
-  touch: []
---- !u!61 &502268553
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6100000, guid: 53dcfd257267446b2aeed41fb6708dca,
-    type: 2}
-  m_PrefabInternal: {fileID: 1870523862}
-  m_GameObject: {fileID: 502268550}
-  m_Enabled: 1
-  m_Material: {fileID: 6200000, guid: 577c0f82b97fa4462ae7304aad0722e5, type: 2}
-  m_IsTrigger: 0
-  m_Size: {x: 1, y: 1}
-  m_Center: {x: 0, y: 0}
---- !u!23 &502268554
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300000, guid: 53dcfd257267446b2aeed41fb6708dca,
-    type: 2}
-  m_PrefabInternal: {fileID: 1870523862}
-  m_GameObject: {fileID: 502268550}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 9d774d7870d6f4883bfdd1e68123614d, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_SortingLayerID: 0
---- !u!33 &502268555
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300000, guid: 53dcfd257267446b2aeed41fb6708dca,
-    type: 2}
-  m_PrefabInternal: {fileID: 1870523862}
-  m_GameObject: {fileID: 502268550}
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &502268556
 Transform:
   m_ObjectHideFlags: 0
@@ -2496,8 +2440,10 @@ Transform:
   m_GameObject: {fileID: 502268550}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1, y: -4.5, z: 0}
-  m_LocalScale: {x: 7, y: 4, z: 1}
-  m_Children: []
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1209239033}
+  - {fileID: 1193318186}
   m_Father: {fileID: 0}
 --- !u!1 &513562426
 GameObject:
@@ -2746,6 +2692,93 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 697378489}
+--- !u!1 &575227067
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+  m_PrefabInternal: {fileID: 686813172}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 575227072}
+  - 33: {fileID: 575227071}
+  - 23: {fileID: 575227070}
+  - 61: {fileID: 575227069}
+  - 114: {fileID: 575227068}
+  m_Layer: 0
+  m_Name: Obstacle
+  m_TagString: Entity
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!114 &575227068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: 53dcfd257267446b2aeed41fb6708dca,
+    type: 2}
+  m_PrefabInternal: {fileID: 686813172}
+  m_GameObject: {fileID: 575227067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3adcb2e4624224e468c8694993db02d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enter: []
+  exit: []
+  touch: []
+--- !u!61 &575227069
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6100000, guid: 53dcfd257267446b2aeed41fb6708dca,
+    type: 2}
+  m_PrefabInternal: {fileID: 686813172}
+  m_GameObject: {fileID: 575227067}
+  m_Enabled: 1
+  m_Material: {fileID: 6200000, guid: 577c0f82b97fa4462ae7304aad0722e5, type: 2}
+  m_IsTrigger: 0
+  m_Size: {x: 1, y: 1}
+  m_Center: {x: 0, y: 0}
+--- !u!23 &575227070
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300000, guid: 53dcfd257267446b2aeed41fb6708dca,
+    type: 2}
+  m_PrefabInternal: {fileID: 686813172}
+  m_GameObject: {fileID: 575227067}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 9d774d7870d6f4883bfdd1e68123614d, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &575227071
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300000, guid: 53dcfd257267446b2aeed41fb6708dca,
+    type: 2}
+  m_PrefabInternal: {fileID: 686813172}
+  m_GameObject: {fileID: 575227067}
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &575227072
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+  m_PrefabInternal: {fileID: 686813172}
+  m_GameObject: {fileID: 575227067}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 7, y: 4, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1482559380}
 --- !u!1 &601137677
 GameObject:
   m_ObjectHideFlags: 0
@@ -2933,17 +2966,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mode: 0
   see:
-  - Seeing the entity.
+  - The propellant tank.
   indicators: []
-  enter:
-  - Entering the area.
-  exit:
-  - Exiting the area.
-  inside:
-  - Inside the area.
+  enter: []
+  exit: []
+  inside: []
   shake: 1
   touch:
-  - Touching the obstacle.
+  - Touching the propellant tank.
   touchDelay: 1
   visible: 1
 --- !u!1 &625445327
@@ -2980,13 +3010,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mode: 0
   see:
-  - The outpost foyer.
+  - The equipment room.
   indicators: []
   enter:
-  - Entering the outpost foyer.
+  - Entering the outpost equipment room.
   exit: []
   inside:
-  - Inside the outpost foyer.
+  - Inside the outpost equipment room.
   shake: 1
   touch: []
   touchDelay: 1
@@ -3223,6 +3253,67 @@ Prefab:
   m_RootGameObject: {fileID: 1759406183}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1001 &686813172
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1482559380}
+    m_Modifications:
+    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: m_Name
+      value: Obstacle
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: see.Array.data[0]
+      value: Crew Quarters.
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 11400002, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+  m_ParentPrefab: {fileID: 100100000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+  m_RootGameObject: {fileID: 575227067}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
 --- !u!1 &689234422
 GameObject:
   m_ObjectHideFlags: 0
@@ -3416,7 +3507,7 @@ Transform:
   m_GameObject: {fileID: 693124651}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 8, y: 1, z: 1}
+  m_LocalScale: {x: 5, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1394356095}
 --- !u!114 &693124653
@@ -3881,6 +3972,67 @@ Transform:
   m_LocalScale: {x: .200000003, y: 6.6758852, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!1001 &855692913
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 502268556}
+    m_Modifications:
+    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: m_Name
+      value: Obstacle
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: see.Array.data[0]
+      value: Command.
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 11400002, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+  m_ParentPrefab: {fileID: 100100000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+  m_RootGameObject: {fileID: 1209239032}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
 --- !u!1 &887687900
 GameObject:
   m_ObjectHideFlags: 0
@@ -5060,7 +5212,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: e4128d5fd262b4a01b6771a3d5da1e96, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -7
+      value: -6.25
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e4128d5fd262b4a01b6771a3d5da1e96, type: 2}
       propertyPath: m_LocalPosition.y
@@ -5098,85 +5250,17 @@ Prefab:
       propertyPath: m_Name
       value: Greenhouse Experiments
       objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: e4128d5fd262b4a01b6771a3d5da1e96, type: 2}
+      propertyPath: see.Array.data[0]
+      value: The greenhouse experiments.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: e4128d5fd262b4a01b6771a3d5da1e96, type: 2}
+      propertyPath: touch.Array.data[0]
+      value: The greenhouse is shut.
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e4128d5fd262b4a01b6771a3d5da1e96, type: 2}
   m_RootGameObject: {fileID: 1497649144}
-  m_IsPrefabParent: 0
-  m_IsExploded: 1
---- !u!1001 &1056346561
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 11400002, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
-      propertyPath: exit.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400002, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
-      propertyPath: inside.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -2
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400002, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
-      propertyPath: describe.Array.data[0]
-      value: The moat.
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400002, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
-      propertyPath: shake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400002, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
-      propertyPath: touch.Array.data[0]
-      value: Touching the western wall.
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400002, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
-      propertyPath: see.Array.data[0]
-      value: The western wall.
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
-      propertyPath: m_Name
-      value: Eastern Wall
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
-  m_RootGameObject: {fileID: 1474966725}
   m_IsPrefabParent: 0
   m_IsExploded: 1
 --- !u!1 &1060250145
@@ -5195,7 +5279,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1060250146
 Transform:
   m_ObjectHideFlags: 0
@@ -5358,17 +5442,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mode: 0
   see:
-  - Seeing the entity.
+  - The water tank.
   indicators: []
-  enter:
-  - Entering the area.
-  exit:
-  - Exiting the area.
-  inside:
-  - Inside the area.
+  enter: []
+  exit: []
+  inside: []
   shake: 1
   touch:
-  - Touching the obstacle.
+  - Touching the water tank.
   touchDelay: 1
   visible: 1
 --- !u!1 &1090948030
@@ -5510,6 +5591,22 @@ Prefab:
       propertyPath: m_Name
       value: Landing Pad
       objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: dd6a22393fd11440ea2c1079ece9a083, type: 2}
+      propertyPath: enter.Array.data[0]
+      value: Entering the landing pad.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: dd6a22393fd11440ea2c1079ece9a083, type: 2}
+      propertyPath: exit.Array.data[0]
+      value: Exiting the landing pad.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: dd6a22393fd11440ea2c1079ece9a083, type: 2}
+      propertyPath: inside.Array.data[0]
+      value: Upon the landing pad.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: dd6a22393fd11440ea2c1079ece9a083, type: 2}
+      propertyPath: see.Array.data[0]
+      value: The landing pad.
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dd6a22393fd11440ea2c1079ece9a083, type: 2}
   m_RootGameObject: {fileID: 2135357263}
@@ -5646,6 +5743,34 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 183898930}
+    - target: {fileID: 11400004, guid: 660c38ee3f1a242efa30d65490be8ea4, type: 2}
+      propertyPath: maximumLines
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 400016, guid: 660c38ee3f1a242efa30d65490be8ea4, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: 660c38ee3f1a242efa30d65490be8ea4, type: 2}
+      propertyPath: viewConsoleLine
+      value: 
+      objectReference: {fileID: 1395619087}
+    - target: {fileID: 100000, guid: 660c38ee3f1a242efa30d65490be8ea4, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 660c38ee3f1a242efa30d65490be8ea4, type: 2}
+      propertyPath: debug
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100040, guid: 660c38ee3f1a242efa30d65490be8ea4, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: 660c38ee3f1a242efa30d65490be8ea4, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 660c38ee3f1a242efa30d65490be8ea4, type: 2}
   m_RootGameObject: {fileID: 2141980579}
@@ -5788,6 +5913,180 @@ Prefab:
   m_RootGameObject: {fileID: 1747417582}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &1193318185
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+  m_PrefabInternal: {fileID: 1337370889}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1193318186}
+  - 33: {fileID: 1193318190}
+  - 23: {fileID: 1193318189}
+  - 61: {fileID: 1193318188}
+  - 114: {fileID: 1193318187}
+  m_Layer: 0
+  m_Name: Obstacle
+  m_TagString: Entity
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &1193318186
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+  m_PrefabInternal: {fileID: 1337370889}
+  m_GameObject: {fileID: 1193318185}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.5, y: 2.5, z: 0}
+  m_LocalScale: {x: 4, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 502268556}
+--- !u!114 &1193318187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: 53dcfd257267446b2aeed41fb6708dca,
+    type: 2}
+  m_PrefabInternal: {fileID: 1337370889}
+  m_GameObject: {fileID: 1193318185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3adcb2e4624224e468c8694993db02d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enter: []
+  exit: []
+  touch: []
+--- !u!61 &1193318188
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6100000, guid: 53dcfd257267446b2aeed41fb6708dca,
+    type: 2}
+  m_PrefabInternal: {fileID: 1337370889}
+  m_GameObject: {fileID: 1193318185}
+  m_Enabled: 1
+  m_Material: {fileID: 6200000, guid: 577c0f82b97fa4462ae7304aad0722e5, type: 2}
+  m_IsTrigger: 0
+  m_Size: {x: 1, y: 1}
+  m_Center: {x: 0, y: 0}
+--- !u!23 &1193318189
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300000, guid: 53dcfd257267446b2aeed41fb6708dca,
+    type: 2}
+  m_PrefabInternal: {fileID: 1337370889}
+  m_GameObject: {fileID: 1193318185}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 9d774d7870d6f4883bfdd1e68123614d, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &1193318190
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300000, guid: 53dcfd257267446b2aeed41fb6708dca,
+    type: 2}
+  m_PrefabInternal: {fileID: 1337370889}
+  m_GameObject: {fileID: 1193318185}
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1209239032
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+  m_PrefabInternal: {fileID: 855692913}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1209239033}
+  - 33: {fileID: 1209239037}
+  - 23: {fileID: 1209239036}
+  - 61: {fileID: 1209239035}
+  - 114: {fileID: 1209239034}
+  m_Layer: 0
+  m_Name: Obstacle
+  m_TagString: Entity
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &1209239033
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+  m_PrefabInternal: {fileID: 855692913}
+  m_GameObject: {fileID: 1209239032}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 7, y: 4, z: 1}
+  m_Children: []
+  m_Father: {fileID: 502268556}
+--- !u!114 &1209239034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: 53dcfd257267446b2aeed41fb6708dca,
+    type: 2}
+  m_PrefabInternal: {fileID: 855692913}
+  m_GameObject: {fileID: 1209239032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3adcb2e4624224e468c8694993db02d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enter: []
+  exit: []
+  touch: []
+--- !u!61 &1209239035
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6100000, guid: 53dcfd257267446b2aeed41fb6708dca,
+    type: 2}
+  m_PrefabInternal: {fileID: 855692913}
+  m_GameObject: {fileID: 1209239032}
+  m_Enabled: 1
+  m_Material: {fileID: 6200000, guid: 577c0f82b97fa4462ae7304aad0722e5, type: 2}
+  m_IsTrigger: 0
+  m_Size: {x: 1, y: 1}
+  m_Center: {x: 0, y: 0}
+--- !u!23 &1209239036
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300000, guid: 53dcfd257267446b2aeed41fb6708dca,
+    type: 2}
+  m_PrefabInternal: {fileID: 855692913}
+  m_GameObject: {fileID: 1209239032}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 9d774d7870d6f4883bfdd1e68123614d, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &1209239037
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300000, guid: 53dcfd257267446b2aeed41fb6708dca,
+    type: 2}
+  m_PrefabInternal: {fileID: 855692913}
+  m_GameObject: {fileID: 1209239032}
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &1213072901
 Prefab:
   m_ObjectHideFlags: 0
@@ -6245,8 +6544,9 @@ MonoBehaviour:
     type: 2}
   signDescriptionPrefab: {fileID: 100004, guid: af2d2a46f5c7044d6a1e1d918a77aa77,
     type: 2}
-  maximumLines: 23
+  maximumLines: 16
   player: {fileID: 183898930}
+  viewConsoleLine: {fileID: 1395619087}
   playerArrowLine: {fileID: 386097772}
 --- !u!4 &1252542225
 Transform:
@@ -6259,6 +6559,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 386097771}
+  - {fileID: 1395619085}
   m_Father: {fileID: 1328224990}
 --- !u!1 &1257071914
 GameObject:
@@ -6423,6 +6724,10 @@ Prefab:
     - target: {fileID: 11400000, guid: 8083a83bf8c1641e798af82cc8c687f5, type: 2}
       propertyPath: arrowScale
       value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 8083a83bf8c1641e798af82cc8c687f5, type: 2}
+      propertyPath: maximumWalkingSpeed
+      value: .75
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8083a83bf8c1641e798af82cc8c687f5, type: 2}
@@ -6615,6 +6920,79 @@ Renderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortingLayerID: 0
+--- !u!1001 &1337370889
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 502268556}
+    m_Modifications:
+    - target: {fileID: 11400002, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: exit.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: enter.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: inside.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: describe.Array.data[0]
+      value: The northern wall.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: touch.Array.data[0]
+      value: The northern wall stops me.
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 11400002, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+  m_ParentPrefab: {fileID: 100100000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+  m_RootGameObject: {fileID: 1193318185}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
 --- !u!1001 &1348708144
 Prefab:
   m_ObjectHideFlags: 0
@@ -6771,6 +7149,79 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 697378489}
+--- !u!1001 &1372783651
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1482559380}
+    m_Modifications:
+    - target: {fileID: 11400002, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: exit.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: enter.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: inside.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: describe.Array.data[0]
+      value: The northern wall.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: touch.Array.data[0]
+      value: The northern wall stops me.
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 11400002, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+  m_ParentPrefab: {fileID: 100100000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+  m_RootGameObject: {fileID: 1554769606}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
 --- !u!1001 &1385235581
 Prefab:
   m_ObjectHideFlags: 0
@@ -6817,6 +7268,14 @@ Prefab:
     - target: {fileID: 100000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
       propertyPath: m_Name
       value: Storage
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: see.Array.data[0]
+      value: The storage warehouse.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: touch.Array.data[0]
+      value: Touching the storage warehouse
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
@@ -6910,7 +7369,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1394356094}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.5, y: 2, z: 0}
+  m_LocalPosition: {x: 4, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 693124652}
@@ -6928,16 +7387,75 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mode: 0
   see:
-  - The northern wall.
+  - The northern airlock wall.
   indicators: []
   enter: []
   exit: []
   inside: []
   shake: 1
   touch:
-  - The northern wall stops me.
+  - The northern airlock wall stops me.
   touchDelay: 1
   visible: 1
+--- !u!1 &1395619084
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1395619085}
+  - 114: {fileID: 1395619086}
+  - 114: {fileID: 1395619087}
+  m_Layer: 0
+  m_Name: ViewConsole
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1395619085
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1395619084}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1252542225}
+--- !u!114 &1395619086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1395619084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76134762a9a3242d4aab9314d98ef570, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  descriptionPrefab: {fileID: 100000, guid: f16346b1ff5f54ff48408aed6e0587a3, type: 2}
+  indicatorPrefab: {fileID: 100004, guid: 780e7d004a2964419814033229cd4ce0, type: 2}
+  pathDescriptionPrefab: {fileID: 100004, guid: 96035fa0ed1d140a9b6f43cd5a52803f,
+    type: 2}
+  signDescriptionPrefab: {fileID: 100004, guid: af2d2a46f5c7044d6a1e1d918a77aa77,
+    type: 2}
+  maximumLines: 23
+  player: {fileID: 183898930}
+--- !u!114 &1395619087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1395619084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56e13ddf1885c4ffaba605b0d5e85984, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  height: 2
 --- !u!1001 &1410661219
 Prefab:
   m_ObjectHideFlags: 0
@@ -7075,7 +7593,7 @@ Prefab:
       objectReference: {fileID: 183898930}
     - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
       propertyPath: alerts.Array.data[1]
-      value: '    to go outside the outpost and repair a leak.'
+      value: '    to go outside the outpost and repair a leaking water tank.'
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
       propertyPath: alerts.Array.data[2]
@@ -7212,6 +7730,14 @@ Prefab:
     - target: {fileID: 100000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
       propertyPath: m_Name
       value: Lauch Vehicle
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: see.Array.data[0]
+      value: The launch vehicle.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: touch.Array.data[0]
+      value: Touching the launch vehicle.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
@@ -7485,118 +8011,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1466434789}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1474966725
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
-  m_PrefabInternal: {fileID: 1056346561}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1474966731}
-  - 33: {fileID: 1474966730}
-  - 23: {fileID: 1474966729}
-  - 61: {fileID: 1474966728}
-  - 114: {fileID: 1474966727}
-  - 114: {fileID: 1474966726}
-  m_Layer: 0
-  m_Name: Eastern Wall
-  m_TagString: Entity
-  m_Icon: {fileID: -1003283189, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
---- !u!114 &1474966726
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400002, guid: 53dcfd257267446b2aeed41fb6708dca,
-    type: 2}
-  m_PrefabInternal: {fileID: 1056346561}
-  m_GameObject: {fileID: 1474966725}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42ca7664be71d496aaac8416f50ba12a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mode: 0
-  see:
-  - The western wall.
-  indicators: []
-  enter: []
-  exit: []
-  inside: []
-  shake: 0
-  touch:
-  - Touching the western wall.
-  touchDelay: 1
-  visible: 1
---- !u!114 &1474966727
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400000, guid: 53dcfd257267446b2aeed41fb6708dca,
-    type: 2}
-  m_PrefabInternal: {fileID: 1056346561}
-  m_GameObject: {fileID: 1474966725}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3adcb2e4624224e468c8694993db02d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enter: []
-  exit: []
-  touch: []
---- !u!61 &1474966728
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6100000, guid: 53dcfd257267446b2aeed41fb6708dca,
-    type: 2}
-  m_PrefabInternal: {fileID: 1056346561}
-  m_GameObject: {fileID: 1474966725}
-  m_Enabled: 1
-  m_Material: {fileID: 6200000, guid: 577c0f82b97fa4462ae7304aad0722e5, type: 2}
-  m_IsTrigger: 0
-  m_Size: {x: 1, y: 1}
-  m_Center: {x: 0, y: 0}
---- !u!23 &1474966729
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300000, guid: 53dcfd257267446b2aeed41fb6708dca,
-    type: 2}
-  m_PrefabInternal: {fileID: 1056346561}
-  m_GameObject: {fileID: 1474966725}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 9d774d7870d6f4883bfdd1e68123614d, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_SortingLayerID: 0
---- !u!33 &1474966730
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300000, guid: 53dcfd257267446b2aeed41fb6708dca,
-    type: 2}
-  m_PrefabInternal: {fileID: 1056346561}
-  m_GameObject: {fileID: 1474966725}
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &1474966731
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
-  m_PrefabInternal: {fileID: 1056346561}
-  m_GameObject: {fileID: 1474966725}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 5, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
 --- !u!1 &1475886719
 GameObject:
   m_ObjectHideFlags: 0
@@ -7692,10 +8106,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1482559380}
-  - 33: {fileID: 1482559379}
-  - 23: {fileID: 1482559378}
-  - 61: {fileID: 1482559377}
-  - 114: {fileID: 1482559376}
   - 114: {fileID: 1482559375}
   m_Layer: 0
   m_Name: Crew Quarters
@@ -7718,73 +8128,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mode: 0
   see:
-  - Seeing the entity.
+  - The crew quarters.
   indicators: []
   enter: []
   exit: []
   inside: []
   shake: 1
   touch:
-  - Touching the obstacle.
+  - The crew quarters are currently sealed.
   touchDelay: 1
   visible: 1
---- !u!114 &1482559376
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400000, guid: 53dcfd257267446b2aeed41fb6708dca,
-    type: 2}
-  m_PrefabInternal: {fileID: 2033542765}
-  m_GameObject: {fileID: 1482559374}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3adcb2e4624224e468c8694993db02d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enter: []
-  exit: []
-  touch: []
---- !u!61 &1482559377
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6100000, guid: 53dcfd257267446b2aeed41fb6708dca,
-    type: 2}
-  m_PrefabInternal: {fileID: 2033542765}
-  m_GameObject: {fileID: 1482559374}
-  m_Enabled: 1
-  m_Material: {fileID: 6200000, guid: 577c0f82b97fa4462ae7304aad0722e5, type: 2}
-  m_IsTrigger: 0
-  m_Size: {x: 1, y: 1}
-  m_Center: {x: 0, y: 0}
---- !u!23 &1482559378
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300000, guid: 53dcfd257267446b2aeed41fb6708dca,
-    type: 2}
-  m_PrefabInternal: {fileID: 2033542765}
-  m_GameObject: {fileID: 1482559374}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 9d774d7870d6f4883bfdd1e68123614d, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_SortingLayerID: 0
---- !u!33 &1482559379
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300000, guid: 53dcfd257267446b2aeed41fb6708dca,
-    type: 2}
-  m_PrefabInternal: {fileID: 2033542765}
-  m_GameObject: {fileID: 1482559374}
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &1482559380
 Transform:
   m_ObjectHideFlags: 0
@@ -7793,8 +8146,10 @@ Transform:
   m_GameObject: {fileID: 1482559374}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1, y: 4.5, z: 0}
-  m_LocalScale: {x: 7, y: 4, z: 1}
-  m_Children: []
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 575227072}
+  - {fileID: 1554769611}
   m_Father: {fileID: 0}
 --- !u!1001 &1490786673
 Prefab:
@@ -8072,14 +8427,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mode: 0
   see:
-  - Seeing the entity.
+  - The greenhouse experiments.
   indicators: []
   enter: []
   exit: []
   inside: []
   shake: 1
   touch:
-  - Touching the obstacle.
+  - The greenhouse is shut.
   touchDelay: 1
   visible: 1
 --- !u!114 &1497649146
@@ -8146,7 +8501,7 @@ Transform:
   m_PrefabInternal: {fileID: 1007337656}
   m_GameObject: {fileID: 1497649144}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7, y: 0, z: 0}
+  m_LocalPosition: {x: -6.25, y: 0, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -8248,14 +8603,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mode: 0
   see:
-  - Seeing the entity.
+  - The storage warehouse.
   indicators: []
   enter: []
   exit: []
   inside: []
   shake: 1
   touch:
-  - Touching the obstacle.
+  - Touching the storage warehouse
   touchDelay: 1
   visible: 1
 --- !u!114 &1517405734
@@ -8371,6 +8726,93 @@ Prefab:
   m_RootGameObject: {fileID: 1633138270}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &1554769606
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+  m_PrefabInternal: {fileID: 1372783651}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1554769611}
+  - 33: {fileID: 1554769610}
+  - 23: {fileID: 1554769609}
+  - 61: {fileID: 1554769608}
+  - 114: {fileID: 1554769607}
+  m_Layer: 0
+  m_Name: Obstacle
+  m_TagString: Entity
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!114 &1554769607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: 53dcfd257267446b2aeed41fb6708dca,
+    type: 2}
+  m_PrefabInternal: {fileID: 1372783651}
+  m_GameObject: {fileID: 1554769606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3adcb2e4624224e468c8694993db02d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enter: []
+  exit: []
+  touch: []
+--- !u!61 &1554769608
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6100000, guid: 53dcfd257267446b2aeed41fb6708dca,
+    type: 2}
+  m_PrefabInternal: {fileID: 1372783651}
+  m_GameObject: {fileID: 1554769606}
+  m_Enabled: 1
+  m_Material: {fileID: 6200000, guid: 577c0f82b97fa4462ae7304aad0722e5, type: 2}
+  m_IsTrigger: 0
+  m_Size: {x: 1, y: 1}
+  m_Center: {x: 0, y: 0}
+--- !u!23 &1554769609
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300000, guid: 53dcfd257267446b2aeed41fb6708dca,
+    type: 2}
+  m_PrefabInternal: {fileID: 1372783651}
+  m_GameObject: {fileID: 1554769606}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 9d774d7870d6f4883bfdd1e68123614d, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &1554769610
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300000, guid: 53dcfd257267446b2aeed41fb6708dca,
+    type: 2}
+  m_PrefabInternal: {fileID: 1372783651}
+  m_GameObject: {fileID: 1554769606}
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1554769611
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+  m_PrefabInternal: {fileID: 1372783651}
+  m_GameObject: {fileID: 1554769606}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.5, y: -2.5, z: 0}
+  m_LocalScale: {x: 4, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1482559380}
 --- !u!1001 &1566695789
 Prefab:
   m_ObjectHideFlags: 0
@@ -8864,7 +9306,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alerts:
   - 'verbal command; JANICE: "It looks online. Listen. We need you'
-  - '    to go outside the outpost and repair a leak.'
+  - '    to go outside the outpost and repair a leaking water tank.'
   - '    Our suits don''t carry enough oxygen."'
   nexts:
   - {fileID: 183898930}
@@ -8961,14 +9403,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mode: 0
   see:
-  - Seeing the area.
+  - The launch pad.
   indicators: []
   enter:
-  - Entering the area.
+  - Entering the launch pad.
   exit:
-  - Exiting the area.
+  - Exiting the launch pad.
   inside:
-  - Inside the area.
+  - Upon the launch pad.
   shake: 1
   touch: []
   touchDelay: 1
@@ -9416,14 +9858,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mode: 0
   see:
-  - Seeing the entity.
+  - The communications array.
   indicators: []
   enter: []
   exit: []
   inside: []
   shake: 1
   touch:
-  - Touching the obstacle.
+  - Touching the communications array.
   touchDelay: 1
   visible: 1
 --- !u!114 &1801754180
@@ -9749,17 +10191,29 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
       propertyPath: m_LocalScale.x
-      value: 7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
       propertyPath: m_LocalScale.y
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
       propertyPath: m_Name
       value: Command
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 11400002, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: see.Array.data[0]
+      value: Command.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: touch.Array.data[0]
+      value: Command is not accessible.
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 3300000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+    - {fileID: 2300000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+    - {fileID: 6100000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+    - {fileID: 11400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
   m_RootGameObject: {fileID: 502268550}
   m_IsPrefabParent: 0
@@ -10231,6 +10685,14 @@ Prefab:
       propertyPath: m_Name
       value: Rover
       objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: see.Array.data[0]
+      value: The rover.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: touch.Array.data[0]
+      value: Bumping into the rover.
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
   m_RootGameObject: {fileID: 100528257}
@@ -10340,6 +10802,26 @@ Prefab:
       propertyPath: m_Name
       value: Launch Pad
       objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: dd6a22393fd11440ea2c1079ece9a083, type: 2}
+      propertyPath: see.Array.data[0]
+      value: The launch pad.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: dd6a22393fd11440ea2c1079ece9a083, type: 2}
+      propertyPath: enter.Array.data[0]
+      value: Entering the launch pad.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: dd6a22393fd11440ea2c1079ece9a083, type: 2}
+      propertyPath: shake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: dd6a22393fd11440ea2c1079ece9a083, type: 2}
+      propertyPath: inside.Array.data[0]
+      value: Upon the launch pad.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: dd6a22393fd11440ea2c1079ece9a083, type: 2}
+      propertyPath: exit.Array.data[0]
+      value: Exiting the launch pad.
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dd6a22393fd11440ea2c1079ece9a083, type: 2}
   m_RootGameObject: {fileID: 1675057808}
@@ -10382,17 +10864,29 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
       propertyPath: m_LocalScale.x
-      value: 7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
       propertyPath: m_LocalScale.y
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
       propertyPath: m_Name
       value: Crew Quarters
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 11400002, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: see.Array.data[0]
+      value: The crew quarters.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+      propertyPath: touch.Array.data[0]
+      value: The crew quarters are currently sealed.
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 3300000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+    - {fileID: 2300000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+    - {fileID: 6100000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
+    - {fileID: 11400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
   m_RootGameObject: {fileID: 1482559374}
   m_IsPrefabParent: 0
@@ -10446,7 +10940,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
       propertyPath: m_LocalScale.x
-      value: 8
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 53dcfd257267446b2aeed41fb6708dca, type: 2}
       propertyPath: m_LocalScale.y
@@ -10912,14 +11406,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mode: 0
   see:
-  - Seeing the area.
+  - The landing pad.
   indicators: []
   enter:
-  - Entering the area.
+  - Entering the landing pad.
   exit:
-  - Exiting the area.
+  - Exiting the landing pad.
   inside:
-  - Inside the area.
+  - Upon the landing pad.
   shake: 1
   touch: []
   touchDelay: 1
@@ -11090,4 +11584,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26570544a49974de1b88a6dc2f94c752, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debug: 1
+  debug: 0

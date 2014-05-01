@@ -33,7 +33,7 @@ public class Entity : MonoBehaviour {
 
   public virtual void See() {
     seen = true;
-    TextConsole.PushIndicator(this, Utilities.Choose(see));
+    ViewConsole.PushIndicator(this, Utilities.Choose(see));
   }
 
   public Vector2 DirectionFrom(Vector2 playerPosition) {
@@ -65,7 +65,7 @@ public class Entity : MonoBehaviour {
 
   public virtual void Inside() {
     seen = true;
-    TextConsole.PushText(Utilities.Choose(inside));
+    ViewConsole.PushText(Utilities.Choose(inside));
   }
 
   public virtual bool IsOccupied() {

@@ -101,9 +101,10 @@ public class Player : MonoBehaviour {
     }
     if (Input.GetButtonDown("See")) {
     }
-    if (Input.GetButtonDown(SEE) && (ableToSee || IsMoreToSee())) {
+    // if ((ableToSee)) {// || IsMoreToSee())) {
+      ViewConsole.Clear();
       ableToSee = false;
-      TextConsole.PushText("");
+      ViewConsole.PushText("");
       for (var i = 0; i < occupiedAreas.Count; ++i) {
         occupiedAreas[i].GetComponent<Entity>().Inside();
       }
@@ -111,13 +112,13 @@ public class Player : MonoBehaviour {
         nearestEntities[i].GetComponent<Entity>().See();
       }
       if (Inventory.Items().Count > 0) {
-        TextConsole.PushText("You carry:");
+        ViewConsole.PushText("You carry:");
         foreach (var item in Inventory.Items()) {
           item.ListInventory();
         }
       }
-      TextConsole.PushText("");
-    }
+      ViewConsole.PushText("");
+    // }
   }
 
   void UpdateAreasAndEntities() {
