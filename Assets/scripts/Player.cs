@@ -91,7 +91,7 @@ public class Player : MonoBehaviour {
   }
 
   float IsRunning() {
-    return System.Convert.ToSingle(Input.GetButton(RUN));
+    return 0.0f;
   }
 
   void MaybeSee() {
