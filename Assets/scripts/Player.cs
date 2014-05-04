@@ -12,6 +12,9 @@ public class Player : MonoBehaviour {
 
   public float arrowScale = 0.25f;
   public float eyeScale = 0.25f;
+  public AudioSource idleSound;
+  public AudioSource walkSound;
+  public GameObject targetPrefab;
   public GameObject arrow;
   public GameObject blockedArrow;
   public GameObject fieldArrow;
@@ -30,7 +33,7 @@ public class Player : MonoBehaviour {
 
   private List<Entity> occupiedAreas = new List<Entity>();
   private List<Entity> nearestEntities = new List<Entity>();
-  private bool ableToSee = true;
+  private Dictionary<Entity, GameObject> targets = new Dictionary<Entity, GameObject>();
   private bool orientation = false;
 	
 	void FixedUpdate () {
@@ -42,10 +45,16 @@ public class Player : MonoBehaviour {
     UpdateCameraPosition();
     UpdatePosition(input);
     UpdateRotation(input);
+    idleSound.volume = Mathf.Lerp(idleSound.volume, 0.1f * (1.0f - IsMoving()), 0.1f);
+    walkSound.volume = Mathf.Lerp(walkSound.volume, 0.2f * IsMoving(), 0.1f);
 	}
 
   void Update() {
     MaybeSee();
+  }
+
+  float IsMoving() {
+    return Mathf.Clamp01(2.0f * rigidbody2D.velocity.magnitude);
   }
 
   Vector2 GetInput() {
@@ -91,6 +100,7 @@ public class Player : MonoBehaviour {
   }
 
   float IsRunning() {
+    // return System.Convert.ToSingle(Input.GetButton(RUN));
     return 0.0f;
   }
 
@@ -103,34 +113,79 @@ public class Player : MonoBehaviour {
     }
     // if ((ableToSee)) {// || IsMoreToSee())) {
       ViewConsole.Clear();
-      ableToSee = false;
       ViewConsole.PushText("");
       for (var i = 0; i < occupiedAreas.Count; ++i) {
         occupiedAreas[i].GetComponent<Entity>().Inside();
       }
-      for (var i = 0; i < nearestEntities.Count; ++i) {
-        nearestEntities[i].GetComponent<Entity>().See();
+      // for (var i = 0; i < nearestEntities.Count; ++i) {
+      //   nearestEntities[i].GetComponent<Entity>().See();
+      // }
+      // Debug.Log(targets.Count);
+      var j = 0;
+      foreach (var entity in nearestEntities) {
+        var position = PositionOf(entity);
+        var rotation = RotationOf(entity);
+        if (!targets.ContainsKey(entity)) {
+          targets[entity] = Instantiate(targetPrefab, position, Quaternion.identity) as GameObject;
+          targets[entity].transform.GetChild(0).gameObject.SetActive(false);
+          targets[entity].transform.GetChild(0).GetComponent<TextMesh>().text = entity.see[0];
+          targets[entity].transform.GetChild(1).rotation = rotation;
+        }
+        targets[entity].transform.position = Vector2.Lerp(targets[entity].transform.position, position, 0.25f);
+        targets[entity].transform.GetChild(0).localPosition = Vector2.Lerp(
+            targets[entity].transform.GetChild(0).localPosition,
+            new Vector2(0.2f, 1.0f / 4.0f * (1 - j++)), 0.1f);
+        targets[entity].transform.GetChild(0).gameObject.SetActive(entity.touched);
+        targets[entity].transform.GetChild(1).rotation = Quaternion.Slerp(targets[entity].transform.GetChild(1).rotation, rotation, 0.25f);
+        var color0 = targets[entity].transform.GetChild(0).renderer.material.color;
+        color0.a = Mathf.Lerp(color0.a, 1.0f, 0.1f);
+        var color1 = targets[entity].transform.GetChild(1).renderer.material.color;
+        color1.a = color0.a;
+        targets[entity].transform.GetChild(0).renderer.material.color = color0;
+        targets[entity].transform.GetChild(1).renderer.material.color = color1;
       }
-      if (Inventory.Items().Count > 0) {
-        ViewConsole.PushText("You carry:");
-        foreach (var item in Inventory.Items()) {
-          item.ListInventory();
+      var missingEntities = targets.Keys.Where(key => !nearestEntities.Contains(key)).Cast<Entity>();
+      var removal = new List<Entity>();
+      foreach (var entity in missingEntities) {
+        var color0 = targets[entity].transform.GetChild(0).renderer.material.color;
+        color0.a = Mathf.Lerp(color0.a, 0.0f, 0.1f);
+        var color1 = targets[entity].transform.GetChild(1).renderer.material.color;
+        color1.a = color0.a;
+        targets[entity].transform.GetChild(0).renderer.material.color = color0;
+        targets[entity].transform.GetChild(1).renderer.material.color = color1;
+        if (color0.a <= 0.1f) {
+          removal.Add(entity);
         }
       }
-      ViewConsole.PushText("");
+      foreach (var entity in removal) {
+        Destroy(targets[entity]);
+        targets.Remove(entity);
+        entity.touched = false;
+      }
+      // if (Inventory.Items().Count > 0) {
+      //   ViewConsole.PushText("You carry:");
+      //   foreach (var item in Inventory.Items()) {
+      //     item.ListInventory();
+      //   }
+      // }
+      // ViewConsole.PushText("");
     // }
   }
 
+  private Vector2 PositionOf(Entity entity) {
+    Vector2 position = transform.position;
+    return position + entity.DistanceTo(transform.position) * entity.DirectionFrom(transform.position);
+  }
+
+  private Quaternion RotationOf(Entity entity) {
+    var direction = entity.DirectionFrom(transform.position);
+    var angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+    return Quaternion.AngleAxis(angle, Vector3.forward);
+  }
+
   void UpdateAreasAndEntities() {
-    var newlyOccupiedAreas = GetOccupiedAreas();
-    var newlyNearestEntities = GetNearestEntities(occupiedAreas);
-    foreach (var entity in newlyNearestEntities) {
-      if (!occupiedAreas.Contains(entity) && !nearestEntities.Contains(entity)) {
-        ableToSee = true;
-      }
-    }
-    occupiedAreas = newlyOccupiedAreas;
-    nearestEntities = newlyNearestEntities;
+    occupiedAreas = GetOccupiedAreas();
+    nearestEntities = GetNearestEntities(occupiedAreas);
   }
 
   void UpdateArrowRotationAndScale(Vector2 input) {
@@ -187,7 +242,7 @@ public class Player : MonoBehaviour {
 
   void UpdateCameraPosition() {
     Vector2 position = Vector2.Lerp(
-        mainCamera.transform.position, transform.position, cameraPositionAlpha);
+        mainCamera.transform.position, transform.position + 4.0f * Vector3.right, cameraPositionAlpha);
     mainCamera.transform.position = new Vector3(
         position.x, position.y, mainCamera.transform.position.z);
   }

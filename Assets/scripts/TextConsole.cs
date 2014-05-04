@@ -23,6 +23,8 @@ public class TextConsole : MonoBehaviour {
   }
 
   public static void PushText(string text) {
+    textConsole.audio.pitch = Random.Range(0.5f, 2.0f);
+    textConsole.audio.Play();
     if (null != textConsole && null != text) {
       textConsole.MaybeClearLines();
       var description = Object.Instantiate(textConsole.descriptionPrefab) as GameObject;

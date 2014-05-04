@@ -29,6 +29,8 @@ public class Entity : MonoBehaviour {
 
   protected float lastTouchTime = 0.0f;
   protected bool seen = false;
+  [HideInInspector]
+  public bool touched = false;
   protected bool wasOccupied = false;
 
   public virtual void See() {
@@ -88,6 +90,7 @@ public class Entity : MonoBehaviour {
   public virtual void OnEnter(string text) {
     if (IsOccupied() && !wasOccupied) {
       seen = true;
+      touched = true;
       wasOccupied = true;
       TextConsole.PushText(null != text ? text : Utilities.Choose(enter));
     }
@@ -96,6 +99,7 @@ public class Entity : MonoBehaviour {
   public virtual void OnExit(string text) {
     if (!IsOccupied() && wasOccupied) {
       seen = true;
+      touched = true;
       wasOccupied = false;
       TextConsole.PushText(null != text ? text : Utilities.Choose(exit));
     }
@@ -103,6 +107,7 @@ public class Entity : MonoBehaviour {
 
   public virtual void OnTouch(string text) {
     seen = true;
+    touched = true;
     if (Time.fixedTime - lastTouchTime > touchDelay) {
       lastTouchTime = Time.fixedTime;
       if (shake) {
