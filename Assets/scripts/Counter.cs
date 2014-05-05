@@ -1,29 +1,23 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Alert : MonoBehaviour {
+public class Counter : MonoBehaviour {
 
   public string[] alerts;
+  public string status;
   public GameObject[] nexts = { null };
   public GameObject[] disables = { null };
-  public bool screenShake = false;
-  public float time;
+  public int triggerCount = 1;
+  public bool destroy = false;
 
-  private float startTime;
-
-  void Start() {
-    OnEnable();
-  }
+  private int count = 0;
 
   void OnEnable() {
-    startTime = Time.time;
-  }
-
-  void Update() {
-    if (Time.time - startTime > time) {
-      if (screenShake) {
-        ScreenShake.Shake();
-      }
+    count += 1;
+    if (null != status) {
+      TextConsole.PushText(status.Contains("{0}") ? string.Format(status, count) : status);
+    }
+    if (count >= triggerCount) {
       foreach (var alert in alerts) {
         TextConsole.PushText(alert);
       }
@@ -37,7 +31,11 @@ public class Alert : MonoBehaviour {
           disable.SetActive(true);
         }
       }
-      gameObject.SetActive(false);
+      count = 0;
+      if (destroy) {
+        Destroy(gameObject);
+      }
     }
+    gameObject.SetActive(false);
   }
 }

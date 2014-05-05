@@ -25,7 +25,8 @@ public static class DistanceFields {
     var p = center - position;
     var q = Quaternion.Inverse(target.transform.rotation) * p;
     Vector2 halfExtent = target.transform.lossyScale / 2.0f;
-    return (Vector2.Max(Abs(q) - halfExtent, new Vector2())).magnitude;
+    var d = Abs(q) - halfExtent;
+    return Mathf.Min(Mathf.Max(d.x, d.y), 0.0f) + (Vector2.Max(d, Vector2.zero)).magnitude;
   }
 
   public static float DistanceTo(this CircleCollider2D target, Vector2 position) {

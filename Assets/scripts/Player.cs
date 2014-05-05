@@ -39,7 +39,6 @@ public class Player : MonoBehaviour {
 	void FixedUpdate () {
     UpdateAreasAndEntities();
     var input = GetInput();
-    UpdateArrowRotationAndScale(input);
     UpdateFieldArrowRotationAndScale();
     UpdateEyeScale();
     UpdateCameraPosition();
@@ -100,76 +99,58 @@ public class Player : MonoBehaviour {
   }
 
   float IsRunning() {
-    // return System.Convert.ToSingle(Input.GetButton(RUN));
     return 0.0f;
   }
 
   void MaybeSee() {
-    if (Input.GetButtonDown("Interact")) {
+    ViewConsole.Clear();
+    ViewConsole.PushText("");
+    for (var i = 0; i < occupiedAreas.Count; ++i) {
+      occupiedAreas[i].GetComponent<Entity>().Inside();
     }
-    if (Input.GetButtonDown("Examine")) {
+    var j = 0;
+    foreach (var entity in nearestEntities) {
+      var position = PositionOf(entity);
+      var rotation = RotationOf(entity);
+      if (!targets.ContainsKey(entity)) {
+        targets[entity] = Instantiate(targetPrefab, position, Quaternion.identity) as GameObject;
+        targets[entity].transform.GetChild(0).gameObject.SetActive(false);
+        targets[entity].transform.GetChild(0).GetComponent<TextMesh>().text = entity.see[0];
+        targets[entity].transform.GetChild(1).rotation = rotation;
+      }
+      targets[entity].transform.position = Vector2.Lerp(
+          targets[entity].transform.position, position, 0.25f);
+      targets[entity].transform.GetChild(0).localPosition = Vector2.Lerp(
+          targets[entity].transform.GetChild(0).localPosition,
+          new Vector2(0.2f, 1.0f / 4.0f * (1 - j++)), 0.1f);
+      targets[entity].transform.GetChild(0).gameObject.SetActive(entity.touched);
+      targets[entity].transform.GetChild(1).rotation = Quaternion.Slerp(
+          targets[entity].transform.GetChild(1).rotation, rotation, 0.25f);
+      var color0 = targets[entity].transform.GetChild(0).renderer.material.color;
+      color0.a = Mathf.Lerp(color0.a, 1.0f, 0.1f);
+      var color1 = targets[entity].transform.GetChild(1).renderer.material.color;
+      color1.a = color0.a;
+      targets[entity].transform.GetChild(0).renderer.material.color = color0;
+      targets[entity].transform.GetChild(1).renderer.material.color = color1;
     }
-    if (Input.GetButtonDown("See")) {
+    var missingEntities = targets.Keys.Where(key => !nearestEntities.Contains(key)).Cast<Entity>();
+    var removal = new List<Entity>();
+    foreach (var entity in missingEntities) {
+      var color0 = targets[entity].transform.GetChild(0).renderer.material.color;
+      color0.a = Mathf.Lerp(color0.a, 0.0f, 0.1f);
+      var color1 = targets[entity].transform.GetChild(1).renderer.material.color;
+      color1.a = color0.a;
+      targets[entity].transform.GetChild(0).renderer.material.color = color0;
+      targets[entity].transform.GetChild(1).renderer.material.color = color1;
+      if (color0.a <= 0.1f) {
+        removal.Add(entity);
+      }
     }
-    // if ((ableToSee)) {// || IsMoreToSee())) {
-      ViewConsole.Clear();
-      ViewConsole.PushText("");
-      for (var i = 0; i < occupiedAreas.Count; ++i) {
-        occupiedAreas[i].GetComponent<Entity>().Inside();
-      }
-      // for (var i = 0; i < nearestEntities.Count; ++i) {
-      //   nearestEntities[i].GetComponent<Entity>().See();
-      // }
-      // Debug.Log(targets.Count);
-      var j = 0;
-      foreach (var entity in nearestEntities) {
-        var position = PositionOf(entity);
-        var rotation = RotationOf(entity);
-        if (!targets.ContainsKey(entity)) {
-          targets[entity] = Instantiate(targetPrefab, position, Quaternion.identity) as GameObject;
-          targets[entity].transform.GetChild(0).gameObject.SetActive(false);
-          targets[entity].transform.GetChild(0).GetComponent<TextMesh>().text = entity.see[0];
-          targets[entity].transform.GetChild(1).rotation = rotation;
-        }
-        targets[entity].transform.position = Vector2.Lerp(targets[entity].transform.position, position, 0.25f);
-        targets[entity].transform.GetChild(0).localPosition = Vector2.Lerp(
-            targets[entity].transform.GetChild(0).localPosition,
-            new Vector2(0.2f, 1.0f / 4.0f * (1 - j++)), 0.1f);
-        targets[entity].transform.GetChild(0).gameObject.SetActive(entity.touched);
-        targets[entity].transform.GetChild(1).rotation = Quaternion.Slerp(targets[entity].transform.GetChild(1).rotation, rotation, 0.25f);
-        var color0 = targets[entity].transform.GetChild(0).renderer.material.color;
-        color0.a = Mathf.Lerp(color0.a, 1.0f, 0.1f);
-        var color1 = targets[entity].transform.GetChild(1).renderer.material.color;
-        color1.a = color0.a;
-        targets[entity].transform.GetChild(0).renderer.material.color = color0;
-        targets[entity].transform.GetChild(1).renderer.material.color = color1;
-      }
-      var missingEntities = targets.Keys.Where(key => !nearestEntities.Contains(key)).Cast<Entity>();
-      var removal = new List<Entity>();
-      foreach (var entity in missingEntities) {
-        var color0 = targets[entity].transform.GetChild(0).renderer.material.color;
-        color0.a = Mathf.Lerp(color0.a, 0.0f, 0.1f);
-        var color1 = targets[entity].transform.GetChild(1).renderer.material.color;
-        color1.a = color0.a;
-        targets[entity].transform.GetChild(0).renderer.material.color = color0;
-        targets[entity].transform.GetChild(1).renderer.material.color = color1;
-        if (color0.a <= 0.1f) {
-          removal.Add(entity);
-        }
-      }
-      foreach (var entity in removal) {
-        Destroy(targets[entity]);
-        targets.Remove(entity);
-        entity.touched = false;
-      }
-      // if (Inventory.Items().Count > 0) {
-      //   ViewConsole.PushText("You carry:");
-      //   foreach (var item in Inventory.Items()) {
-      //     item.ListInventory();
-      //   }
-      // }
-      // ViewConsole.PushText("");
-    // }
+    foreach (var entity in removal) {
+      Destroy(targets[entity]);
+      targets.Remove(entity);
+      entity.touched = false;
+    }
   }
 
   private Vector2 PositionOf(Entity entity) {
