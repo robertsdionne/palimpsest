@@ -6,6 +6,8 @@ public class Notice : MonoBehaviour {
   public string[] notices;
   public GameObject[] nexts = { null };
   public GameObject[] disables = { null };
+  public bool choose = false;
+  public bool recycle = false;
   public bool removable = false;
   public bool screenShake = false;
   public bool usable = false;
@@ -30,7 +32,7 @@ public class Notice : MonoBehaviour {
     if (!usable) {
       return;
     }
-    if (Input.GetButtonDown("Interact")) {
+    if (Input.GetButtonDown("Examine")) {
       Trigger();
     }
   }
@@ -39,23 +41,29 @@ public class Notice : MonoBehaviour {
     if (screenShake) {
       ScreenShake.Shake();
     }
-    foreach (var notice in notices) {
-      TextConsole.PushText(notice);
+    if (choose) {
+      TextConsole.PushText(Utilities.Choose(notices));
+    } else {
+      foreach (var notice in notices) {
+        TextConsole.PushText(notice);
+      }
+    }
+    foreach (var disable in disables) {
+      if (null != disable) {
+        disable.SetActive(false);
+      }
     }
     foreach (var next in nexts) {
       if (null != next) {
         next.SetActive(true);
       }
     }
-    foreach (var disable in disables) {
-      if (null != disable) {
-        disable.SetActive(true);
+    if (!recycle) {
+      if (removable) {
+        Destroy(gameObject);
+      } else {
+        gameObject.SetActive(false);
       }
-    }
-    if (removable) {
-      Destroy(gameObject);
-    } else {
-      gameObject.SetActive(false);
     }
   }
 }

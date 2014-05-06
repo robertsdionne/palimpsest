@@ -21,14 +21,14 @@ public class Counter : MonoBehaviour {
       foreach (var alert in alerts) {
         TextConsole.PushText(alert);
       }
-      foreach (var next in nexts) {
-        if (null != next) {
-          next.SetActive(true);
-        }
-      }
       foreach (var disable in disables) {
         if (null != disable) {
           disable.SetActive(true);
+        }
+      }
+      foreach (var next in nexts) {
+        if (null != next) {
+          next.SetActive(true);
         }
       }
       count = 0;

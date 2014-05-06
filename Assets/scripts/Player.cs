@@ -36,6 +36,17 @@ public class Player : MonoBehaviour {
   private Dictionary<Entity, GameObject> targets = new Dictionary<Entity, GameObject>();
   private bool orientation = false;
 	
+  void OnDisable() {
+    var removal = new List<Entity>();
+    removal.AddRange(targets.Keys);
+    foreach (var entity in removal) {
+      Destroy(targets[entity]);
+      targets.Remove(entity);
+      entity.touched = false;
+    }
+    targets.Clear();
+  }
+
 	void FixedUpdate () {
     UpdateAreasAndEntities();
     var input = GetInput();
@@ -95,7 +106,7 @@ public class Player : MonoBehaviour {
   }
 
   bool IsMoreToSee() {
-    return nearestEntities.Any(entity => !entity.IsSeen());
+    return false;//nearestEntities.Any(entity => !entity.IsSeen());
   }
 
   float IsRunning() {
@@ -117,6 +128,11 @@ public class Player : MonoBehaviour {
         targets[entity].transform.GetChild(0).gameObject.SetActive(false);
         targets[entity].transform.GetChild(0).GetComponent<TextMesh>().text = entity.see[0];
         targets[entity].transform.GetChild(1).rotation = rotation;
+        var color00 = targets[entity].transform.GetChild(0).renderer.material.color;
+        var color10 = targets[entity].transform.GetChild(1).renderer.material.color;
+        color00.a = color10.a = 0.0f;
+        targets[entity].transform.GetChild(0).renderer.material.color = color00;
+        targets[entity].transform.GetChild(1).renderer.material.color = color10;
       }
       targets[entity].transform.position = Vector2.Lerp(
           targets[entity].transform.position, position, 0.25f);
@@ -127,9 +143,8 @@ public class Player : MonoBehaviour {
       targets[entity].transform.GetChild(1).rotation = Quaternion.Slerp(
           targets[entity].transform.GetChild(1).rotation, rotation, 0.25f);
       var color0 = targets[entity].transform.GetChild(0).renderer.material.color;
-      color0.a = Mathf.Lerp(color0.a, 1.0f, 0.1f);
       var color1 = targets[entity].transform.GetChild(1).renderer.material.color;
-      color1.a = color0.a;
+      color0.a = color1.a =  Mathf.Lerp(color0.a, 1.0f, 0.1f);
       targets[entity].transform.GetChild(0).renderer.material.color = color0;
       targets[entity].transform.GetChild(1).renderer.material.color = color1;
     }
@@ -137,9 +152,8 @@ public class Player : MonoBehaviour {
     var removal = new List<Entity>();
     foreach (var entity in missingEntities) {
       var color0 = targets[entity].transform.GetChild(0).renderer.material.color;
-      color0.a = Mathf.Lerp(color0.a, 0.0f, 0.1f);
       var color1 = targets[entity].transform.GetChild(1).renderer.material.color;
-      color1.a = color0.a;
+      color0.a = color1.a = Mathf.Lerp(color0.a, 0.0f, 0.1f);
       targets[entity].transform.GetChild(0).renderer.material.color = color0;
       targets[entity].transform.GetChild(1).renderer.material.color = color1;
       if (color0.a <= 0.1f) {

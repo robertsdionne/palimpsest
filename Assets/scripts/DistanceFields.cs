@@ -12,11 +12,11 @@ public static class DistanceFields {
     return (pa - h * ba).magnitude;
   }
 
-  public static float DistanceTo(this Collider2D target, Vector2 position) {
-    if (target is BoxCollider2D) {
-      return ((BoxCollider2D) target).DistanceTo(position);
+  public static float DistanceTo(this Collidable target, Vector2 position) {
+    if (target.collider2D is BoxCollider2D) {
+      return ((BoxCollider2D) target.collider2D).DistanceTo(position);
     } else {
-      return ((CircleCollider2D) target).DistanceTo(position);
+      return ((CircleCollider2D) target.collider2D).DistanceTo(position);
     }
   }
 

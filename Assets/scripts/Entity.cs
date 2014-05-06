@@ -29,7 +29,7 @@ public class Entity : MonoBehaviour {
 
   protected float lastTouchTime = 0.0f;
   protected bool seen = false;
-  [HideInInspector]
+  
   public bool touched = false;
   protected bool wasOccupied = false;
 
@@ -48,7 +48,7 @@ public class Entity : MonoBehaviour {
   }
 
   public virtual float DistanceTo(Vector2 playerPosition) {
-    var colliders = GetComponentsInChildren<Collider2D>();
+    var colliders = GetComponentsInChildren<Collidable>();
     var extremum = Mode.Union == mode ? float.PositiveInfinity : float.NegativeInfinity;
     foreach (var collider in colliders) {
       var distance = collider.DistanceTo(playerPosition);
@@ -67,7 +67,7 @@ public class Entity : MonoBehaviour {
 
   public virtual void Inside() {
     seen = true;
-    ViewConsole.PushText(Utilities.Choose(inside));
+    ViewConsole.PushText(string.Format("({0})", Utilities.Choose(inside)));
   }
 
   public virtual bool IsOccupied() {

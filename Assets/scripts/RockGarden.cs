@@ -15,7 +15,7 @@ public class RockGarden : Path {
   }
 
   public override float DistanceTo(Vector2 playerPosition) {
-    var colliders = GetComponentsInChildren<Collider2D>();
+    var colliders = GetComponentsInChildren<Collidable>();
     var extremum = Mode.Union == mode ? float.PositiveInfinity : float.NegativeInfinity;
     foreach (var collider in colliders) {
       var distance = collider.DistanceTo(playerPosition);

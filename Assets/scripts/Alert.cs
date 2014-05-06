@@ -27,14 +27,14 @@ public class Alert : MonoBehaviour {
       foreach (var alert in alerts) {
         TextConsole.PushText(alert);
       }
+      foreach (var disable in disables) {
+        if (null != disable) {
+          disable.SetActive(false);
+        }
+      }
       foreach (var next in nexts) {
         if (null != next) {
           next.SetActive(true);
-        }
-      }
-      foreach (var disable in disables) {
-        if (null != disable) {
-          disable.SetActive(true);
         }
       }
       gameObject.SetActive(false);
