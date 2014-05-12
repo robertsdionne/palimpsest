@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Notice : MonoBehaviour {
 
+  public AudioSource audioSource;
   public string[] notices;
   public GameObject[] nexts = { null };
   public GameObject[] disables = { null };
@@ -40,6 +41,9 @@ public class Notice : MonoBehaviour {
   private void Trigger() {
     if (screenShake) {
       ScreenShake.Shake();
+    }
+    if (audioSource) {
+      Instantiate(audioSource);
     }
     if (choose) {
       TextConsole.PushText(Utilities.Choose(notices));
