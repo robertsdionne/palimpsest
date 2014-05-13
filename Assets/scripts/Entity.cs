@@ -104,7 +104,9 @@ public class Entity : MonoBehaviour {
       seen = true;
       touched = true;
       wasOccupied = false;
-      TextConsole.PushText(null != text ? text : Utilities.Choose(exit), position, Vector2.up);
+      text = null == text ? Utilities.Choose(exit) : text;
+      text = null == text ? null : string.Format("({0})", text);
+      TextConsole.PushText(text, position, Vector2.up);
     }
   }
 
