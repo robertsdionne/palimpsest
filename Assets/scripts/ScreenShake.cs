@@ -3,8 +3,8 @@ using System.Collections;
 
 public class ScreenShake : MonoBehaviour {
 
-  public static float SHAKE_ALPHA = 0.2f;
-  public static float SHAKE_THRESHOLD = 0.001f;
+  public const float SHAKE_ALPHA = 0.2f;
+  public const float SHAKE_THRESHOLD = 0.001f;
 
   private static ScreenShake screenShake;
 

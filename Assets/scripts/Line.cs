@@ -3,12 +3,12 @@ using System.Collections;
 
 public class Line : MonoBehaviour {
 
-  public static float DELAY_MARGIN = 1.0f; // seconds
-  public static float FADE_OFFSET_Z = 0.1f;
-  public static float IMPORTANT_DELAY = 10.0f; // seconds
+  public const float DELAY_MARGIN = 1.0f; // seconds
+  public const float FADE_OFFSET_Z = 0.1f;
+  public const float IMPORTANT_DELAY = 10.0f; // seconds
   public static Vector3 IMPORTANT_MESSAGE_MARGINS = new Vector3(0.2f, 0.2f, 0.0f); // meters
-  public static float NORMAL_DELAY = 5.0f; // seconds
-  public static float MAXIMUM_FADE_ALPHA = 192.0f / 255.0f;
+  public const float NORMAL_DELAY = 5.0f; // seconds
+  public const float MAXIMUM_FADE_ALPHA = 192.0f / 255.0f;
 
   public float height;
   public bool important = false;

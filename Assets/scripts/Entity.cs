@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Entity : MonoBehaviour {
 
-  public static float D = 1e-5f;
+  public const float D = 1e-5f;
 
   public enum Mode {Union, Intersection};
 

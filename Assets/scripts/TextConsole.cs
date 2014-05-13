@@ -5,10 +5,10 @@ using System.Linq;
 
 public class TextConsole : MonoBehaviour {
 
-  public static float PITCH_SHIFT_MINIMUM = 0.5f;
-  public static float PITCH_SHIFT_MAXIMUM = 2.0f;
-  public static float TEXT_DEFAULT_Z = -2.0f;
-  public static float TEXT_SHIFT_X = 0.2f;
+  public const float PITCH_SHIFT_MINIMUM = 0.5f;
+  public const float PITCH_SHIFT_MAXIMUM = 2.0f;
+  public const float TEXT_DEFAULT_Z = -2.0f;
+  public const float TEXT_SHIFT_X = 0.2f;
 
   public GameObject descriptionPrefab;
   public GameObject indicatorPrefab;
