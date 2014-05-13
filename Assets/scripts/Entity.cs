@@ -26,9 +26,11 @@ public class Entity : MonoBehaviour {
   public string[] touch = {
     "Touching the obstacle."
   };
+  public float shakeDelay = 1.0f;
   public float touchDelay = 5.0f;
   public bool visible = true;
 
+  protected float lastShakeTime = 0.0f;
   protected float lastTouchTime = 0.0f;
   protected bool seen = false;
 
@@ -117,10 +119,11 @@ public class Entity : MonoBehaviour {
     touched = true;
     if (Time.fixedTime - lastTouchTime > touchDelay) {
       lastTouchTime = Time.fixedTime;
-      if (shake) {
-        ScreenShake.Shake();
-      }
       TextConsole.PushText(null != text ? text : Utilities.Choose(touch), position, normal);
+    }
+    if (shake && Time.fixedTime - lastShakeTime > shakeDelay) {
+      lastShakeTime = Time.fixedTime;
+      ScreenShake.Shake();
     }
   }
 }

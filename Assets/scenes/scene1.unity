@@ -424,6 +424,7 @@ MonoBehaviour:
   - Bumping up against Steve.
   - Bumping up against Steve.
   - 'verbal command; STEVE: "Hey Q3, be careful."'
+  shakeDelay: 1
   touchDelay: 1
   visible: 1
   known: 1
@@ -1728,6 +1729,7 @@ MonoBehaviour:
   - Inside the greenhouse.
   shake: 1
   touch: []
+  shakeDelay: 1
   touchDelay: 1
   visible: 1
   known: 0
@@ -3894,6 +3896,7 @@ MonoBehaviour:
   touch:
   - sound; *Beep beep* The hatch is locked.
   - Robots cannot operate the hatch without authorization.
+  shakeDelay: 1
   touchDelay: 1
   visible: 1
   known: 0
@@ -4450,6 +4453,7 @@ MonoBehaviour:
   - This shelf houses raspberries.
   - This shelf grows blackberries.
   - This shelf grows blueberries.
+  shakeDelay: 1
   touchDelay: 1
   visible: 1
   known: 0
@@ -5203,6 +5207,7 @@ MonoBehaviour:
   - This shelf holds watermelon.
   - This shelf grows cantaloupe.
   - This shelf houses honeydew.
+  shakeDelay: 1
   touchDelay: 1
   visible: 1
   known: 0
@@ -5387,6 +5392,7 @@ MonoBehaviour:
   - This shelf houses roses.
   - This shelf grows orchids.
   - This shelf has tulips.
+  shakeDelay: 1
   touchDelay: 1
   visible: 1
   known: 0
@@ -7291,6 +7297,7 @@ MonoBehaviour:
   - This shelf holds carrots.
   - This shelf grows potatoes.
   - This shelf houses onions.
+  shakeDelay: 1
   touchDelay: 1
   visible: 1
   known: 0
@@ -8141,6 +8148,7 @@ MonoBehaviour:
   - This shelf carries lettuce.
   - This shelf grows cabbage.
   - This shelf holds brussel sprouts.
+  shakeDelay: 1
   touchDelay: 1
   visible: 1
   known: 0
@@ -8388,7 +8396,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: d4577e8a971b2498684fd44a8731980e, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d4577e8a971b2498684fd44a8731980e, type: 2}
       propertyPath: m_LocalPosition.y
@@ -8416,7 +8424,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d4577e8a971b2498684fd44a8731980e, type: 2}
       propertyPath: m_LocalScale.x
-      value: 6
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: d4577e8a971b2498684fd44a8731980e, type: 2}
       propertyPath: m_Name
@@ -8847,6 +8855,7 @@ MonoBehaviour:
   - Beneath the water pipe.
   shake: 1
   touch: []
+  shakeDelay: 1
   touchDelay: 1
   visible: 1
   known: 0
@@ -9639,7 +9648,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d4577e8a971b2498684fd44a8731980e, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d4577e8a971b2498684fd44a8731980e, type: 2}
       propertyPath: m_LocalPosition.y
@@ -9667,7 +9676,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d4577e8a971b2498684fd44a8731980e, type: 2}
       propertyPath: m_LocalScale.x
-      value: 6
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: d4577e8a971b2498684fd44a8731980e, type: 2}
       propertyPath: m_Name
@@ -9751,6 +9760,7 @@ MonoBehaviour:
   - Bumping up against Janice.
   - Bumping up against Janice.
   - 'verbal command; JANICE: "Please be careful, Q3."'
+  shakeDelay: 1
   touchDelay: 1
   visible: 1
   known: 1
@@ -11755,6 +11765,7 @@ MonoBehaviour:
   - This shelf grows mint.
   - This shelf holds cilantro.
   - This shelf houses peppers.
+  shakeDelay: 1
   touchDelay: 1
   visible: 1
   known: 0
@@ -13825,6 +13836,7 @@ MonoBehaviour:
   - This shelf holds turnips.
   - This shelf grows beets.
   - This shelf houses radishes.
+  shakeDelay: 1
   touchDelay: 1
   visible: 1
   known: 0
@@ -15442,8 +15454,8 @@ Transform:
   m_PrefabInternal: {fileID: 885177484}
   m_GameObject: {fileID: 1481061991}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -6, z: 0}
-  m_LocalScale: {x: 6, y: 3, z: 1}
+  m_LocalPosition: {x: -2, y: -6, z: 0}
+  m_LocalScale: {x: 10, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
 --- !u!1 &1497649144
@@ -15487,6 +15499,7 @@ MonoBehaviour:
   - Touching the glass wall of the greenhouse.
   - Bumping into the greenhouse wall.
   - Bumping the windows.
+  shakeDelay: 1
   touchDelay: 5
   visible: 1
   known: 0
@@ -15911,8 +15924,8 @@ Transform:
   m_PrefabInternal: {fileID: 994367092}
   m_GameObject: {fileID: 1525262834}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 6, z: 0}
-  m_LocalScale: {x: 6, y: 3, z: 1}
+  m_LocalPosition: {x: -2, y: 6, z: 0}
+  m_LocalScale: {x: 10, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
 --- !u!1 &1529894236
@@ -17639,6 +17652,7 @@ MonoBehaviour:
   shake: 1
   touch:
   - Touching the water pump.
+  shakeDelay: 1
   touchDelay: 3
   visible: 1
   known: 0
@@ -17764,6 +17778,7 @@ MonoBehaviour:
   - Beneath the rotating sprinkler.
   shake: 1
   touch: []
+  shakeDelay: 1
   touchDelay: 1
   visible: 1
   known: 0
@@ -21251,6 +21266,7 @@ MonoBehaviour:
   - This shelf holds bean sprouts.
   - This shelf grows black beans.
   - This shelf has kidney beans.
+  shakeDelay: 1
   touchDelay: 1
   visible: 1
   known: 0
@@ -23320,6 +23336,7 @@ MonoBehaviour:
   - Beneath the ventilation.
   shake: 1
   touch: []
+  shakeDelay: 1
   touchDelay: 1
   visible: 1
   known: 0

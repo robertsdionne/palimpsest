@@ -192,6 +192,7 @@ MonoBehaviour:
   - Bumping up against Steve.
   - Bumping up against Steve.
   - 'verbal command; STEVE: "Hey! Watch it, you stupid thing."'
+  shakeDelay: 1
   touchDelay: 1
   visible: 1
   known: 0
@@ -1069,6 +1070,7 @@ MonoBehaviour:
   shake: 1
   touch:
   - Touching the canyon wall.
+  shakeDelay: 1
   touchDelay: 1
   visible: 1
   known: 0
@@ -1418,6 +1420,7 @@ MonoBehaviour:
   shake: 1
   touch:
   - Touching the oxygen tank.
+  shakeDelay: 1
   touchDelay: 1
   visible: 1
   known: 0
@@ -1651,7 +1654,6 @@ GameObject:
   - 61: {fileID: 183898932}
   - 58: {fileID: 183898937}
   - 114: {fileID: 183898936}
-  - 114: {fileID: 183898938}
   - 96: {fileID: 183898939}
   m_Layer: 9
   m_Name: Player
@@ -1775,17 +1777,6 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_Radius: .25
   m_Center: {x: 0, y: 0}
---- !u!114 &183898938
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 183898930}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d17559bb967e49d18361bd4769444b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!96 &183898939
 TrailRenderer:
   m_ObjectHideFlags: 0
@@ -3159,6 +3150,7 @@ MonoBehaviour:
   shake: 1
   touch:
   - The southern airlock wall stops me.
+  shakeDelay: 1
   touchDelay: 1
   visible: 1
   known: 0
@@ -3440,6 +3432,7 @@ MonoBehaviour:
   - Inside the airlock.
   shake: 1
   touch: []
+  shakeDelay: 1
   touchDelay: 1
   visible: 1
   known: 0
@@ -3812,6 +3805,7 @@ MonoBehaviour:
   shake: 1
   touch:
   - Touching the launch vehicle.
+  shakeDelay: 1
   touchDelay: 1
   visible: 1
   known: 0
@@ -3930,6 +3924,7 @@ MonoBehaviour:
   shake: 1
   touch:
   - Command is not accessible.
+  shakeDelay: 1
   touchDelay: 1
   visible: 1
   known: 0
@@ -4896,6 +4891,7 @@ MonoBehaviour:
   shake: 1
   touch:
   - Opening the airlock.
+  shakeDelay: 1
   touchDelay: 1
   visible: 1
   known: 0
@@ -5040,6 +5036,7 @@ MonoBehaviour:
   shake: 1
   touch:
   - Touching the propellant tank.
+  shakeDelay: 1
   touchDelay: 1
   visible: 1
   known: 0
@@ -5087,6 +5084,7 @@ MonoBehaviour:
   - Inside the outpost equipment room.
   shake: 1
   touch: []
+  shakeDelay: 1
   touchDelay: 1
   visible: 1
   known: 0
@@ -6301,6 +6299,7 @@ MonoBehaviour:
   - Inside the crater.
   shake: 0
   touch: []
+  shakeDelay: 1
   touchDelay: 1
   visible: 1
   known: 0
@@ -6414,6 +6413,7 @@ MonoBehaviour:
   shake: 1
   touch:
   - Touching solar panel 730.
+  shakeDelay: 1
   touchDelay: 1
   visible: 1
   known: 0
@@ -6974,6 +6974,7 @@ MonoBehaviour:
   shake: 1
   touch:
   - Touching solar panel 1030.
+  shakeDelay: 1
   touchDelay: 1
   visible: 1
   known: 0
@@ -7503,6 +7504,7 @@ MonoBehaviour:
   shake: 1
   touch:
   - Touching solar panel 1000.
+  shakeDelay: 1
   touchDelay: 1
   visible: 1
   known: 0
@@ -7612,6 +7614,7 @@ MonoBehaviour:
   shake: 1
   touch:
   - Touching solar panel 930.
+  shakeDelay: 1
   touchDelay: 1
   visible: 1
   known: 0
@@ -7714,6 +7717,7 @@ MonoBehaviour:
   - Bumping up against Janice.
   - Bumping up against Janice.
   - 'verbal command; JANICE: "Watch out! Dumb robot."'
+  shakeDelay: 1
   touchDelay: 1
   visible: 1
   known: 0
@@ -8363,6 +8367,7 @@ MonoBehaviour:
   shake: 1
   touch:
   - Touching the water tank.
+  shakeDelay: 1
   touchDelay: 1
   visible: 1
   known: 0
@@ -9063,6 +9068,7 @@ MonoBehaviour:
   shake: 1
   touch:
   - Bumping into the rover.
+  shakeDelay: 1
   touchDelay: 1
   visible: 1
   known: 0
@@ -9703,6 +9709,7 @@ MonoBehaviour:
   shake: 1
   touch:
   - Touching solar panel 800.
+  shakeDelay: 1
   touchDelay: 1
   visible: 1
   known: 0
@@ -11369,6 +11376,7 @@ MonoBehaviour:
   shake: 1
   touch:
   - The northern airlock wall stops me.
+  shakeDelay: 1
   touchDelay: 1
   visible: 1
   known: 0
@@ -12030,6 +12038,7 @@ MonoBehaviour:
   shake: 1
   touch:
   - Touching solar panel 830.
+  shakeDelay: 1
   touchDelay: 1
   visible: 1
   known: 0
@@ -12299,6 +12308,7 @@ MonoBehaviour:
   shake: 1
   touch:
   - The crew quarters are currently sealed.
+  shakeDelay: 1
   touchDelay: 1
   visible: 1
   known: 0
@@ -12924,6 +12934,7 @@ MonoBehaviour:
   shake: 1
   touch:
   - The greenhouse is shut.
+  shakeDelay: 1
   touchDelay: 1
   visible: 1
   known: 0
@@ -13106,6 +13117,7 @@ MonoBehaviour:
   shake: 1
   touch:
   - Touching the storage warehouse
+  shakeDelay: 1
   touchDelay: 1
   visible: 1
   known: 0
@@ -14498,6 +14510,7 @@ MonoBehaviour:
   - Upon the launch pad.
   shake: 1
   touch: []
+  shakeDelay: 1
   touchDelay: 1
   visible: 1
   known: 0
@@ -15405,6 +15418,7 @@ MonoBehaviour:
   shake: 1
   touch:
   - Touching the communications array.
+  shakeDelay: 1
   touchDelay: 1
   visible: 1
   known: 0
@@ -16721,6 +16735,7 @@ MonoBehaviour:
   shake: 1
   touch:
   - Opening the exterior hatch.
+  shakeDelay: 1
   touchDelay: 1
   visible: 1
   known: 0
