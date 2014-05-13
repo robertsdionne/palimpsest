@@ -34,7 +34,6 @@ public class Player : MonoBehaviour {
   private List<Entity> occupiedAreas = new List<Entity>();
   private List<Entity> nearestEntities = new List<Entity>();
   private Dictionary<Entity, GameObject> targets = new Dictionary<Entity, GameObject>();
-  private bool orientation = false;
 
   void OnDisable() {
     var removal = new List<Entity>();
@@ -50,8 +49,6 @@ public class Player : MonoBehaviour {
 	void FixedUpdate () {
     UpdateAreasAndEntities();
     var input = GetInput();
-    /*UpdateFieldArrowRotationAndScale();*/
-    /*UpdateEyeScale();*/
     UpdateCameraPosition();
     UpdatePosition(input);
     UpdateRotation(input);
@@ -167,44 +164,6 @@ public class Player : MonoBehaviour {
     arrow.transform.rotation = gameObject.transform.rotation;
     arrow.transform.localScale = Vector2.Lerp(
         arrow.transform.localScale, new Vector2(scale, scale), 0.1f);
-  }
-
-  void UpdateFieldArrowRotationAndScale() {
-    var input = new Vector2();
-    if (null != fieldArrowTarget) {
-      input = fieldArrowTarget.DirectionFrom(transform.position);
-    }
-    var perpendicular = new Vector2(-input.y, input.x);
-    var dot = Vector2.Dot(transform.right, perpendicular);
-    if (orientation && dot < -0.25f) {
-      orientation = false;
-    }
-    if (!orientation && dot > 0.25f) {
-      orientation = true;
-    }
-    var direction = (orientation ? 1.0f : -1.0f) * perpendicular;
-    var scale = arrowScale * Mathf.Clamp01(5.0f * direction.magnitude);
-    var angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-    var rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-    fieldArrow.transform.rotation = Quaternion.Slerp(fieldArrow.transform.rotation, rotation, 0.1f);
-    fieldArrow.transform.localScale = Vector2.Lerp(
-        fieldArrow.transform.localScale, new Vector2(scale, scale), 0.1f);
-    var angle2 = Mathf.Atan2(input.y, input.x) * Mathf.Rad2Deg;
-    var rotation2 = Quaternion.AngleAxis(angle2, Vector3.forward);
-    nearArrow.transform.rotation = Quaternion.Slerp(nearArrow.transform.rotation, rotation2, 0.1f);
-    nearArrow.transform.localScale = Vector2.Lerp(
-        nearArrow.transform.localScale, new Vector2(scale, scale), 0.1f);
-  }
-
-  void OnCollisionStay2D() {
-    /*playerArrow.SetActive(false);*/
-    /*blockedArrow.SetActive(true);*/
-  }
-
-  void UpdateEyeScale() {
-    var scale = eyeScale * System.Convert.ToSingle(IsMoreToSee());
-    eye.transform.localScale = Vector2.Lerp(
-        eye.transform.localScale, new Vector2(eyeScale, scale), 0.1f);
   }
 
   void UpdateCameraPosition() {

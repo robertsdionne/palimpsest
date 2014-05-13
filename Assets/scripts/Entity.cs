@@ -3,6 +3,8 @@ using System.Collections;
 
 public class Entity : MonoBehaviour {
 
+  public static float D = 1e-5f;
+
   public enum Mode {Union, Intersection};
 
   public Mode mode = Mode.Union;
@@ -39,8 +41,8 @@ public class Entity : MonoBehaviour {
   }
 
   public Vector2 DirectionFrom(Vector2 playerPosition) {
-    var dx = 1e-5f * Vector2.right;
-    var dy = 1e-5f * Vector2.up;
+    var dx = D * Vector2.right;
+    var dy = D * Vector2.up;
     var direction = -new Vector2(
         DistanceTo(playerPosition + dx) - DistanceTo(playerPosition - dx),
         DistanceTo(playerPosition + dy) - DistanceTo(playerPosition - dy));
@@ -67,7 +69,8 @@ public class Entity : MonoBehaviour {
 
   public virtual void Inside() {
     seen = true;
-    TextConsole.PushText(string.Format("({0})", Utilities.Choose(inside)), transform.position, Vector2.up);
+    TextConsole.PushText(
+        string.Format("({0})", Utilities.Choose(inside)), transform.position, Vector2.up);
   }
 
   public virtual bool IsOccupied() {
