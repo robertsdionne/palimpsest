@@ -36,7 +36,6 @@ public class Entity : MonoBehaviour {
 
   public virtual void See() {
     seen = true;
-    ViewConsole.PushIndicator(this, Utilities.Choose(see));
   }
 
   public Vector2 DirectionFrom(Vector2 playerPosition) {

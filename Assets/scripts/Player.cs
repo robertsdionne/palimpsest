@@ -82,29 +82,6 @@ public class Player : MonoBehaviour {
         entity => entity.DistanceTo(gameObject.transform.position)).Take(numberToSee).ToList();
   }
 
-  public Vector2 DirectionToEverythingFrom(Vector2 playerPosition) {
-    var dx = 1e-5f * Vector2.right;
-    var dy = 1e-5f * Vector2.up;
-    var direction = -new Vector2(
-        DistanceToEverything(playerPosition + dx) - DistanceToEverything(playerPosition - dx),
-        DistanceToEverything(playerPosition + dy) - DistanceToEverything(playerPosition - dy));
-    return direction.magnitude > 0.0f ? direction.normalized : new Vector2();
-  }
-
-  float DistanceToEverything(Vector2 playerPosition) {
-    var paths = (GameObject.FindObjectsOfType(typeof(Path)) as Path[]);
-    var entities = (GameObject.FindObjectsOfType(typeof(Entity)) as Entity[]).Where(
-        entity => !occupiedAreas.Contains(entity) || paths.Contains(entity)).ToList();
-    var minimum = float.PositiveInfinity;
-    foreach (var entity in entities) {
-      var distance = entity.DistanceTo(playerPosition);
-      if (distance < minimum) {
-        minimum = distance;
-      }
-    }
-    return minimum;
-  }
-
   bool IsMoreToSee() {
     return false;//nearestEntities.Any(entity => !entity.IsSeen());
   }
