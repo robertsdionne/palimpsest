@@ -11,7 +11,7 @@ public class Ambience : MonoBehaviour {
       return;
     }
     if (Random.value < 1.0f / 60.0f / period) {
-      TextConsole.PushText(Utilities.Choose(alerts));
+      TextConsole.PushText(Utilities.Choose(alerts), transform.position, Vector2.up);
     }
   }
 }

@@ -20,17 +20,17 @@ public class Door : Entity {
     doorway.gameObject.SetActive(true);
   }
 
-  public override void OnExit(string text) {
+  public override void OnExit(string text, Vector2 position) {
     if (!IsClosed()) {
       Close();
     }
-    base.OnExit(text);
+    base.OnExit(text, position);
   }
 
-  public override void OnTouch(string text) {
+  public override void OnTouch(string text, Vector2 position, Vector2 normal) {
     if (IsClosed()) {
       Open();
     }
-    base.OnTouch(text);
+    base.OnTouch(text, position, normal);
   }
 }

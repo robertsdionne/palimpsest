@@ -12,7 +12,7 @@ public class LockedContainer : Entity {
   public Collidable closed;
   public Collidable open;
 
-  public override void OnTouch(string text) {
+  public override void OnTouch(string text, Vector2 position, Vector2 normal) {
     seen = true;
     if (Time.fixedTime - lastTouchTime > touchDelay) {
       if (shake) {
@@ -20,7 +20,7 @@ public class LockedContainer : Entity {
       }
       if (closed.gameObject.activeInHierarchy && Inventory.Contains(key)) {
         Inventory.Remove(key);
-        TextConsole.PushText(Utilities.Choose(opened));
+        TextConsole.PushText(Utilities.Choose(opened), position, normal);
         closed.gameObject.SetActive(false);
         contents.gameObject.SetActive(true);
         open.gameObject.SetActive(true);

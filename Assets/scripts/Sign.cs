@@ -12,7 +12,7 @@ public class Sign : Entity {
         Utilities.Choose(target.GetComponent<Entity>().see) + "\"");
   }
 
-  public override void OnTouch(string text) {
+  public override void OnTouch(string text, Vector2 position, Vector2 normal) {
     seen = true;
     if (Time.fixedTime - lastTouchTime > touchDelay) {
       lastTouchTime = Time.fixedTime;

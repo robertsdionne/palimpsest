@@ -46,11 +46,11 @@ public class Notice : MonoBehaviour {
       Instantiate(audioSource);
     }
     if (choose) {
-      TextConsole.PushText(Utilities.Choose(notices));
+      TextConsole.PushText(Utilities.Choose(notices), transform.position, Vector2.up, true);
     } else {
-      foreach (var notice in notices) {
-        TextConsole.PushText(notice);
-      }
+      /*foreach (var notice in notices) {*/
+        TextConsole.PushText(string.Join("\n", notices), transform.position, Vector2.up, true);
+      /*}*/
     }
     foreach (var disable in disables) {
       if (null != disable) {

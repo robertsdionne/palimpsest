@@ -65,14 +65,14 @@ public class Path : Entity {
     }
   }
 
-  public override void OnEnter(string text) {
+  public override void OnEnter(string text, Vector2 position) {
     if (!IsOccupied()) {
       seen = true;
       TextConsole.PushPathText(this, Utilities.Choose(enter));
     }
   }
 
-  public override void OnExit(string text) {
+  public override void OnExit(string text, Vector2 position) {
     if (!IsOccupied()) {
       seen = true;
       TextConsole.PushPathText(this, Utilities.Choose(exit));

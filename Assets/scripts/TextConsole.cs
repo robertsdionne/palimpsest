@@ -22,22 +22,18 @@ public class TextConsole : MonoBehaviour {
     textConsole = this;
   }
 
-  public static void PushText(string text) {
-    textConsole.audio.pitch = Random.Range(0.5f, 2.0f);
-    textConsole.audio.Play();
+  public static void PushText(
+      string text, Vector2 position, Vector2 normal, bool important = false) {
     if (null != textConsole && null != text) {
-      textConsole.MaybeClearLines();
-      var description = Object.Instantiate(textConsole.descriptionPrefab) as GameObject;
-      var line = description.GetComponent<Line>();
-      description.transform.parent = textConsole.gameObject.transform;
-      description.transform.localPosition = textConsole.NextPosition(line);
-      description.GetComponent<TextMesh>().text = text;
-      textConsole.lines.Add(line);
-      textConsole.viewConsoleLine.gameObject.transform.localPosition =
-          textConsole.NextPosition(textConsole.viewConsoleLine);
-      textConsole.playerArrowLine.gameObject.transform.localPosition =
-          textConsole.NextPosition(textConsole.playerArrowLine);
+      textConsole.audio.pitch = Random.Range(0.5f, 2.0f);
+      textConsole.audio.Play();
     }
+
+    var description = Object.Instantiate(textConsole.descriptionPrefab) as GameObject;
+    var line = description.GetComponent<Line>();
+    line.important = important;
+    line.SetText(text);
+    description.transform.position = new Vector3(position.x + 0.2f, position.y, -2.0f);
   }
 
   public static void PushPathText(Path target, string text) {
@@ -51,7 +47,7 @@ public class TextConsole : MonoBehaviour {
           target.transform.rotation;
       description.GetComponent<PathDescription>().description.GetComponent<TextMesh>().text = text;
       description.GetComponent<PathDescription>().arrow.transform.localPosition =
-          description.GetComponent<PathDescription>().description.transform.localPosition + 
+          description.GetComponent<PathDescription>().description.transform.localPosition +
               (2.0f * description.GetComponent<PathDescription>().description.renderer.bounds.extents.x + 0.25f) * Vector3.right;
       description.GetComponent<PathDescription>().player = textConsole.player;
       description.GetComponent<PathDescription>().target = target;
@@ -93,7 +89,7 @@ public class TextConsole : MonoBehaviour {
           target.transform.rotation;
       description.GetComponent<PathDescription>().description.GetComponent<TextMesh>().text = text;
       description.GetComponent<PathDescription>().arrow.transform.localPosition =
-          description.GetComponent<PathDescription>().description.transform.localPosition + 
+          description.GetComponent<PathDescription>().description.transform.localPosition +
               (2.0f * description.GetComponent<PathDescription>().description.renderer.bounds.extents.x + 0.25f) * Vector3.right;
       description.GetComponent<PathDescription>().player = textConsole.player;
       description.GetComponent<PathDescription>().target = target;
@@ -125,7 +121,7 @@ public class TextConsole : MonoBehaviour {
           textConsole.player.transform.rotation;
       description.GetComponent<Indicator>().description.GetComponent<TextMesh>().text = text;
       description.GetComponent<Indicator>().arrow.transform.localPosition =
-          description.GetComponent<Indicator>().description.transform.localPosition + 
+          description.GetComponent<Indicator>().description.transform.localPosition +
               (2.0f * description.GetComponent<Indicator>().description.renderer.bounds.extents.x + 0.25f) * Vector3.right;
       description.GetComponent<Indicator>().player = textConsole.player;
       description.GetComponent<Indicator>().target = signTarget;
@@ -156,25 +152,25 @@ public class TextConsole : MonoBehaviour {
         Object.Destroy(lines[0].gameObject);
         lines.RemoveAt(0);
       }
-      RespaceLines();
     }
+    RespaceLines();
   }
 
   void RespaceLines() {
     var oldLines = lines;
+    oldLines.Reverse();
     lines = new List<Line>();
     foreach (var line in oldLines) {
       line.transform.localPosition = NextPosition(line);
       lines.Add(line);
     }
+    lines.Reverse();
   }
 
   Vector2 NextPosition(Line line) {
-    Vector2 previousPosition = new Vector2();
-    if (lines.Count > 0) {
-      var previousLine = lines.Last();
-      previousPosition = previousLine.Bottom();
+    if (0 == lines.Count) {
+      return new Vector2();
     }
-    return previousPosition + new Vector2(0.0f, -line.height / 2.0f);
+    return lines.Last().Top() + new Vector2(0.0f, line.height / 2.0f);
   }
 }

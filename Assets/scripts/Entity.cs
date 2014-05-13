@@ -24,12 +24,13 @@ public class Entity : MonoBehaviour {
   public string[] touch = {
     "Touching the obstacle."
   };
-  public float touchDelay = 1.0f;
+  public float touchDelay = 5.0f;
   public bool visible = true;
 
   protected float lastTouchTime = 0.0f;
   protected bool seen = false;
-  
+
+  public bool known = false;
   public bool touched = false;
   protected bool wasOccupied = false;
 
@@ -67,7 +68,7 @@ public class Entity : MonoBehaviour {
 
   public virtual void Inside() {
     seen = true;
-    ViewConsole.PushText(string.Format("({0})", Utilities.Choose(inside)));
+    TextConsole.PushText(string.Format("({0})", Utilities.Choose(inside)), transform.position, Vector2.up);
   }
 
   public virtual bool IsOccupied() {
@@ -87,25 +88,27 @@ public class Entity : MonoBehaviour {
     return seen;
   }
 
-  public virtual void OnEnter(string text) {
+  public virtual void OnEnter(string text, Vector2 position) {
     if (IsOccupied() && !wasOccupied) {
       seen = true;
       touched = true;
       wasOccupied = true;
-      TextConsole.PushText(null != text ? text : Utilities.Choose(enter));
+      text = null == text ? Utilities.Choose(enter) : text;
+      text = null == text ? null : string.Format("({0})", text);
+      TextConsole.PushText(text, position, Vector2.up);
     }
   }
 
-  public virtual void OnExit(string text) {
+  public virtual void OnExit(string text, Vector2 position) {
     if (!IsOccupied() && wasOccupied) {
       seen = true;
       touched = true;
       wasOccupied = false;
-      TextConsole.PushText(null != text ? text : Utilities.Choose(exit));
+      TextConsole.PushText(null != text ? text : Utilities.Choose(exit), position, Vector2.up);
     }
   }
 
-  public virtual void OnTouch(string text) {
+  public virtual void OnTouch(string text, Vector2 position, Vector2 normal) {
     seen = true;
     touched = true;
     if (Time.fixedTime - lastTouchTime > touchDelay) {
@@ -113,7 +116,7 @@ public class Entity : MonoBehaviour {
       if (shake) {
         ScreenShake.Shake();
       }
-      TextConsole.PushText(null != text ? text : Utilities.Choose(touch));
+      TextConsole.PushText(null != text ? text : Utilities.Choose(touch), position, normal);
     }
   }
 }

@@ -10,7 +10,7 @@ public class Switch : Entity {
   private bool state = false;
   private float lastToggleTime = float.NegativeInfinity;
 
-  public override void OnEnter(string text) {
+  public override void OnEnter(string text, Vector2 position) {
     seen = true;
     if (Time.fixedTime - lastToggleTime > toggleDelay) {
       lastToggleTime = Time.fixedTime;
@@ -26,15 +26,15 @@ public class Switch : Entity {
         }
       }
       if (state) {
-        TextConsole.PushText(Utilities.Choose(enter));
+        TextConsole.PushText(Utilities.Choose(enter), position, Vector2.up);
       }
       if (!state) {
-        TextConsole.PushText(Utilities.Choose(exit));
+        TextConsole.PushText(Utilities.Choose(exit), position, Vector2.up);
       }
     }
   }
 
-  public override void OnExit(string text) {
+  public override void OnExit(string text, Vector2 position) {
     seen = true;
   }
 }

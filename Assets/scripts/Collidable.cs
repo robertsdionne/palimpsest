@@ -17,7 +17,7 @@ public class Collidable : MonoBehaviour {
     if (!Utilities.IsPlayer(collision.gameObject)) {
       return;
     }
-    transform.root.GetComponent<Entity>().OnTouch(Utilities.Choose(touch));
+    transform.root.GetComponent<Entity>().OnTouch(Utilities.Choose(touch), collision.contacts[0].point, collision.contacts[0].normal);
   }
 
   void OnTriggerEnter2D(Collider2D other) {
@@ -27,9 +27,9 @@ public class Collidable : MonoBehaviour {
     occupied = true;
     var choice = Utilities.Choose(enter);
     if (null != choice) {
-      TextConsole.PushText(choice);
+      TextConsole.PushText(choice, other.transform.position, Vector2.up);
     } else {
-      transform.root.GetComponent<Entity>().OnEnter(choice);
+      transform.root.GetComponent<Entity>().OnEnter(choice, other.transform.position);
     }
   }
 
@@ -40,9 +40,9 @@ public class Collidable : MonoBehaviour {
     occupied = false;
     var choice = Utilities.Choose(exit);
     if (null != choice) {
-      TextConsole.PushText(choice);
+      TextConsole.PushText(choice, other.transform.position, Vector2.up);
     } else {
-      transform.root.GetComponent<Entity>().OnExit(choice);
+      transform.root.GetComponent<Entity>().OnExit(choice, other.transform.position);
     }
   }
 }

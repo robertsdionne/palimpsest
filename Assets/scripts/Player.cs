@@ -35,7 +35,7 @@ public class Player : MonoBehaviour {
   private List<Entity> nearestEntities = new List<Entity>();
   private Dictionary<Entity, GameObject> targets = new Dictionary<Entity, GameObject>();
   private bool orientation = false;
-	
+
   void OnDisable() {
     var removal = new List<Entity>();
     removal.AddRange(targets.Keys);
@@ -50,8 +50,8 @@ public class Player : MonoBehaviour {
 	void FixedUpdate () {
     UpdateAreasAndEntities();
     var input = GetInput();
-    UpdateFieldArrowRotationAndScale();
-    UpdateEyeScale();
+    /*UpdateFieldArrowRotationAndScale();*/
+    /*UpdateEyeScale();*/
     UpdateCameraPosition();
     UpdatePosition(input);
     UpdateRotation(input);
@@ -114,11 +114,6 @@ public class Player : MonoBehaviour {
   }
 
   void MaybeSee() {
-    ViewConsole.Clear();
-    ViewConsole.PushText("");
-    for (var i = 0; i < occupiedAreas.Count; ++i) {
-      occupiedAreas[i].GetComponent<Entity>().Inside();
-    }
     var j = 0;
     foreach (var entity in nearestEntities) {
       var position = PositionOf(entity);
@@ -138,8 +133,8 @@ public class Player : MonoBehaviour {
           targets[entity].transform.position, position, 0.25f);
       targets[entity].transform.GetChild(0).localPosition = Vector2.Lerp(
           targets[entity].transform.GetChild(0).localPosition,
-          new Vector2(0.2f, 1.0f / 4.0f * (1 - j++)), 0.1f);
-      targets[entity].transform.GetChild(0).gameObject.SetActive(entity.touched);
+          new Vector2(-0.2f, 1.0f / 4.0f * (1 - j++)), 0.1f);
+      targets[entity].transform.GetChild(0).gameObject.SetActive(entity.touched || entity.known);
       targets[entity].transform.GetChild(1).rotation = Quaternion.Slerp(
           targets[entity].transform.GetChild(1).rotation, rotation, 0.25f);
       var color0 = targets[entity].transform.GetChild(0).renderer.material.color;
@@ -225,8 +220,8 @@ public class Player : MonoBehaviour {
   }
 
   void OnCollisionStay2D() {
-    playerArrow.SetActive(false);
-    blockedArrow.SetActive(true);
+    /*playerArrow.SetActive(false);*/
+    /*blockedArrow.SetActive(true);*/
   }
 
   void UpdateEyeScale() {
@@ -237,7 +232,7 @@ public class Player : MonoBehaviour {
 
   void UpdateCameraPosition() {
     Vector2 position = Vector2.Lerp(
-        mainCamera.transform.position, transform.position + 4.0f * Vector3.right, cameraPositionAlpha);
+        mainCamera.transform.position, transform.position + 0.0f * Vector3.right, cameraPositionAlpha);
     mainCamera.transform.position = new Vector3(
         position.x, position.y, mainCamera.transform.position.z);
   }

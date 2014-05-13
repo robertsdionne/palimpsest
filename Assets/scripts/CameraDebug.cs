@@ -9,7 +9,7 @@ public class CameraDebug : MonoBehaviour {
     if (debug) {
       camera.cullingMask = -1;
     } else {
-      camera.cullingMask = 256;
+      camera.cullingMask = 256 | 512;
     }
   }
 }

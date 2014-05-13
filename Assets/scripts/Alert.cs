@@ -4,6 +4,7 @@ using System.Collections;
 public class Alert : MonoBehaviour {
 
   public string[] alerts;
+  public GameObject at;
   public GameObject[] nexts = { null };
   public GameObject[] disables = { null };
   public bool screenShake = false;
@@ -24,9 +25,8 @@ public class Alert : MonoBehaviour {
       if (screenShake) {
         ScreenShake.Shake();
       }
-      foreach (var alert in alerts) {
-        TextConsole.PushText(alert);
-      }
+      TextConsole.PushText(string.Join("\n", alerts),
+          null == at ? gameObject.transform.position : at.transform.position, Vector2.up, true);
       foreach (var disable in disables) {
         if (null != disable) {
           disable.SetActive(false);

@@ -15,12 +15,12 @@ public class Counter : MonoBehaviour {
   void OnEnable() {
     count += 1;
     if (null != status) {
-      TextConsole.PushText(status.Contains("{0}") ? string.Format(status, count) : status);
+      TextConsole.PushText(status.Contains("{0}") ? string.Format(status, count) : status, transform.position, Vector2.up);
     }
     if (count >= triggerCount) {
-      foreach (var alert in alerts) {
-        TextConsole.PushText(alert);
-      }
+      /*foreach (var alert in alerts) {*/
+        TextConsole.PushText(string.Join("\n", alerts), transform.position, Vector2.up);
+      /*}*/
       foreach (var disable in disables) {
         if (null != disable) {
           disable.SetActive(true);

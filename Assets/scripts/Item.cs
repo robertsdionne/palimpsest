@@ -8,11 +8,11 @@ public class Item : Entity {
   };
 
   public void ListInventory() {
-    TextConsole.PushText(Utilities.Choose(inventoryListing));
+    TextConsole.PushText(Utilities.Choose(inventoryListing), transform.position, Vector2.up);
   }
 
-  public override void OnTouch(string text) {
-    base.OnTouch(text);
+  public override void OnTouch(string text, Vector2 position, Vector2 normal) {
+    base.OnTouch(text, position, normal);
     Inventory.Add(this);
   }
 }

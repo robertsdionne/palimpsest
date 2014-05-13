@@ -43,7 +43,7 @@ public class ViewConsole : MonoBehaviour {
           target.transform.rotation;
       description.GetComponent<PathDescription>().description.GetComponent<TextMesh>().text = text;
       description.GetComponent<PathDescription>().arrow.transform.localPosition =
-          description.GetComponent<PathDescription>().description.transform.localPosition + 
+          description.GetComponent<PathDescription>().description.transform.localPosition +
               (2.0f * description.GetComponent<PathDescription>().description.renderer.bounds.extents.x + 0.25f) * Vector3.right;
       description.GetComponent<PathDescription>().player = textConsole.player;
       description.GetComponent<PathDescription>().target = target;
@@ -78,7 +78,7 @@ public class ViewConsole : MonoBehaviour {
           target.transform.rotation;
       description.GetComponent<PathDescription>().description.GetComponent<TextMesh>().text = text;
       description.GetComponent<PathDescription>().arrow.transform.localPosition =
-          description.GetComponent<PathDescription>().description.transform.localPosition + 
+          description.GetComponent<PathDescription>().description.transform.localPosition +
               (2.0f * description.GetComponent<PathDescription>().description.renderer.bounds.extents.x + 0.25f) * Vector3.right;
       description.GetComponent<PathDescription>().player = textConsole.player;
       description.GetComponent<PathDescription>().target = target;
@@ -106,7 +106,7 @@ public class ViewConsole : MonoBehaviour {
           textConsole.player.transform.rotation;
       description.GetComponent<Indicator>().description.GetComponent<TextMesh>().text = text;
       description.GetComponent<Indicator>().arrow.transform.localPosition =
-          description.GetComponent<Indicator>().description.transform.localPosition + 
+          description.GetComponent<Indicator>().description.transform.localPosition +
               (2.0f * description.GetComponent<Indicator>().description.renderer.bounds.extents.x + 0.25f) * Vector3.right;
       description.GetComponent<Indicator>().player = textConsole.player;
       description.GetComponent<Indicator>().target = signTarget;
@@ -128,10 +128,10 @@ public class ViewConsole : MonoBehaviour {
   }
 
   public static void Clear() {
-    foreach (var line in textConsole.lines) {
+    /*foreach (var line in textConsole.lines) {
       Object.Destroy(line.gameObject);
     }
-    textConsole.lines.Clear();
+    textConsole.lines.Clear();*/
   }
 
   void MaybeClearLines() {
