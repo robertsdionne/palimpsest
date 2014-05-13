@@ -6,27 +6,21 @@ using System.Linq;
 public class Player : MonoBehaviour {
 
   private const string HORIZONTAL = "Horizontal";
+  private const float IDLE_SOUND_MAXIMUM_VOLUME = 0.1f;
   private const string RUN = "Run";
   private const string SEE = "See";
+  private const float VELOCITY_MOTION_SCALE = 2.0f;
   private const string VERTICAL = "Vertical";
+  private const float WALK_SOUND_ALPHA = 0.1f;
+  private const float WALK_SOUND_MAXIMUM_VOLUME = 0.2f;
 
-  public float arrowScale = 0.25f;
-  public float eyeScale = 0.25f;
   public AudioSource idleSound;
   public AudioSource walkSound;
   public GameObject targetPrefab;
-  public GameObject arrow;
-  public GameObject blockedArrow;
-  public GameObject fieldArrow;
-  public Entity fieldArrowTarget;
-  public GameObject nearArrow;
-  public GameObject playerArrow;
   public float cameraPositionAlpha = 0.032f;
-  public GameObject eye;
   public GameObject mainCamera;
   public float maximumAngularVelocity = 10.0f;
   public float maximumForce = 50.0f;
-  public float maximumRunningSpeed = 5.81f;
   public float maximumTorque = 10.0f;
   public float maximumWalkingSpeed = 1.38f;
   public int numberToSee = 3;
@@ -52,42 +46,33 @@ public class Player : MonoBehaviour {
     UpdateCameraPosition();
     UpdatePosition(input);
     UpdateRotation(input);
-    idleSound.volume = Mathf.Lerp(idleSound.volume, 0.1f * (1.0f - IsMoving()), 0.1f);
-    walkSound.volume = Mathf.Lerp(walkSound.volume, 0.2f * IsMoving(), 0.1f);
+    UpdateIdleAndWalkSoundVolumes();
 	}
 
   void Update() {
     MaybeSee();
   }
 
-  float IsMoving() {
-    return Mathf.Clamp01(2.0f * rigidbody2D.velocity.magnitude);
+  private float IsMoving() {
+    return Mathf.Clamp01(VELOCITY_MOTION_SCALE * rigidbody2D.velocity.magnitude);
   }
 
-  Vector2 GetInput() {
+  private Vector2 GetInput() {
     return new Vector2(Input.GetAxis(HORIZONTAL), Input.GetAxis(VERTICAL));
   }
 
-  List<Entity> GetOccupiedAreas() {
+  private List<Entity> GetOccupiedAreas() {
     return (GameObject.FindObjectsOfType(typeof(Entity)) as Entity[]).Where(
           entity => entity.IsOccupied() && entity.visible).ToList();
   }
 
-  List<Entity> GetNearestEntities(List<Entity> occupiedAreas) {
+  private List<Entity> GetNearestEntities(List<Entity> occupiedAreas) {
     var entities = GameObject.FindObjectsOfType(typeof(Entity)) as Entity[];
     return entities.Where(entity => !occupiedAreas.Contains(entity) && entity.visible).OrderBy(
         entity => entity.DistanceTo(gameObject.transform.position)).Take(numberToSee).ToList();
   }
 
-  bool IsMoreToSee() {
-    return false;//nearestEntities.Any(entity => !entity.IsSeen());
-  }
-
-  float IsRunning() {
-    return 0.0f;
-  }
-
-  void MaybeSee() {
+  private void MaybeSee() {
     var j = 0;
     foreach (var entity in nearestEntities) {
       var position = PositionOf(entity);
@@ -147,44 +132,36 @@ public class Player : MonoBehaviour {
     return Quaternion.AngleAxis(angle, Vector3.forward);
   }
 
-  void UpdateAreasAndEntities() {
+  private void UpdateAreasAndEntities() {
     occupiedAreas = GetOccupiedAreas();
     nearestEntities = GetNearestEntities(occupiedAreas);
   }
 
-  void UpdateArrowRotationAndScale(Vector2 input) {
-    playerArrow.SetActive(true);
-    blockedArrow.SetActive(false);
-    var moving = Mathf.Clamp01(rigidbody2D.velocity.magnitude);
-    var scale = arrowScale * Mathf.Clamp01(5.0f * input.magnitude);
-    var frequency = 4.0f + 4.0f * IsRunning();
-    arrow.transform.localPosition = (0.02f + 0.01f * IsRunning()) * moving * (
-        Mathf.Sin(frequency * Time.fixedTime) * Vector2.right +
-        Mathf.Sin(2.0f * frequency * Time.fixedTime) * Vector2.up);
-    arrow.transform.rotation = gameObject.transform.rotation;
-    arrow.transform.localScale = Vector2.Lerp(
-        arrow.transform.localScale, new Vector2(scale, scale), 0.1f);
-  }
-
-  void UpdateCameraPosition() {
+  private void UpdateCameraPosition() {
     Vector2 position = Vector2.Lerp(
         mainCamera.transform.position, transform.position + 0.0f * Vector3.right, cameraPositionAlpha);
     mainCamera.transform.position = new Vector3(
         position.x, position.y, mainCamera.transform.position.z);
   }
 
-  void UpdatePosition(Vector2 input) {
-    var maximumSpeed = Mathf.Lerp(maximumWalkingSpeed, maximumRunningSpeed, IsRunning());
+  private void UpdatePosition(Vector2 input) {
     rigidbody2D.AddForce(maximumForce * rigidbody2D.mass * input);
-    rigidbody2D.velocity = Vector3.ClampMagnitude(rigidbody2D.velocity, maximumSpeed);
+    rigidbody2D.velocity = Vector3.ClampMagnitude(rigidbody2D.velocity, maximumWalkingSpeed);
   }
 
-  void UpdateRotation(Vector2 input) {
+  private void UpdateRotation(Vector2 input) {
     rigidbody2D.angularVelocity = Mathf.Clamp(
         rigidbody2D.angularVelocity, -maximumAngularVelocity, maximumAngularVelocity);
     if (input.magnitude > 0.0f) {
       var torque = Vector3.Cross(rigidbody2D.transform.right, input.normalized).z;
       rigidbody2D.AddTorque(maximumTorque * rigidbody2D.mass * torque);
     }
+  }
+
+  private void UpdateIdleAndWalkSoundVolumes() {
+    idleSound.volume = Mathf.Lerp(
+        idleSound.volume, IDLE_SOUND_MAXIMUM_VOLUME * (1.0f - IsMoving()), WALK_SOUND_ALPHA);
+    walkSound.volume = Mathf.Lerp(
+        walkSound.volume, WALK_SOUND_MAXIMUM_VOLUME * IsMoving(), WALK_SOUND_ALPHA);
   }
 }

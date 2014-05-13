@@ -2147,23 +2147,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f5d4365835844f2ba323d188d974d21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arrowScale: .5
-  eyeScale: .25
   idleSound: {fileID: 249330836}
   walkSound: {fileID: 1337481498}
   targetPrefab: {fileID: 100002, guid: 18cedbfe7e879424dad16af8a7a61f7f, type: 2}
-  arrow: {fileID: 0}
-  blockedArrow: {fileID: 0}
-  fieldArrow: {fileID: 0}
-  fieldArrowTarget: {fileID: 0}
-  nearArrow: {fileID: 0}
-  playerArrow: {fileID: 0}
   cameraPositionAlpha: .0320000015
-  eye: {fileID: 0}
   mainCamera: {fileID: 828677672}
   maximumAngularVelocity: 10
   maximumForce: 50
-  maximumRunningSpeed: 3
   maximumTorque: 10
   maximumWalkingSpeed: .400000006
   numberToSee: 3
@@ -13242,6 +13232,10 @@ Prefab:
     - target: {fileID: 5000000, guid: 8083a83bf8c1641e798af82cc8c687f5, type: 2}
       propertyPath: m_FixedAngle
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 8083a83bf8c1641e798af82cc8c687f5, type: 2}
+      propertyPath: numberToSee
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8083a83bf8c1641e798af82cc8c687f5, type: 2}
