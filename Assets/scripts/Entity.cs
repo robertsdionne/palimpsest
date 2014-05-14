@@ -36,7 +36,7 @@ public class Entity : MonoBehaviour {
 
   public bool known = false;
   public bool touched = false;
-  protected bool wasOccupied = false;
+  public bool wasOccupied = false;
 
   public virtual void See() {
     seen = true;

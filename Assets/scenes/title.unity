@@ -37920,6 +37920,7 @@ MonoBehaviour:
   maximumTorque: 10
   maximumWalkingSpeed: .400000006
   numberToSee: 0
+  viewDistance: 1
 --- !u!58 &2115580458
 CircleCollider2D:
   m_ObjectHideFlags: 0
