@@ -9,17 +9,16 @@ public class Counter : MonoBehaviour {
   public GameObject[] disables = { null };
   public int triggerCount = 1;
   public bool destroy = false;
+  public bool long_duration = true;
+  public bool important = true;
+  public bool dialogue = false;
 
   private int count = 0;
 
   void OnEnable() {
     count += 1;
-    if (null != status) {
-      TextConsole.PushText(status.Contains("{0}") ?
-          string.Format(status, count) : status, transform.position, Vector2.up);
-    }
     if (count >= triggerCount) {
-      TextConsole.PushText(string.Join("\n", alerts), transform.position, Vector2.up);
+      TextConsole.PushText(string.Join("\n", alerts), transform.position, Vector2.up, important, dialogue, long_duration);
       foreach (var disable in disables) {
         if (null != disable) {
           disable.SetActive(true);
@@ -34,6 +33,9 @@ public class Counter : MonoBehaviour {
       if (destroy) {
         Destroy(gameObject);
       }
+    } else if (null != status) {
+      TextConsole.PushText(status.Contains("{0}") ?
+          string.Format(status, count) : status, transform.position, Vector2.up, important, dialogue, long_duration);
     }
     gameObject.SetActive(false);
   }

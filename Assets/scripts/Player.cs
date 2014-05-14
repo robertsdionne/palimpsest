@@ -24,6 +24,7 @@ public class Player : MonoBehaviour {
   public float maximumTorque = 10.0f;
   public float maximumWalkingSpeed = 1.38f;
   public int numberToSee = 3;
+  public float viewDistance = 2.0f;
 
   private List<Entity> occupiedAreas = new List<Entity>();
   private List<Entity> nearestEntities = new List<Entity>();
@@ -59,6 +60,10 @@ public class Player : MonoBehaviour {
 
   private Vector2 GetInput() {
     return new Vector2(Input.GetAxis(HORIZONTAL), Input.GetAxis(VERTICAL));
+  }
+
+  private Vector2 GetInput2() {
+    return new Vector2(Input.GetAxis("Horizontal2"), Input.GetAxis("Vertical2"));
   }
 
   private List<Entity> GetOccupiedAreas() {
@@ -123,7 +128,7 @@ public class Player : MonoBehaviour {
 
   private Vector2 PositionOf(Entity entity) {
     Vector2 position = transform.position;
-    return position + entity.DistanceTo(transform.position) * entity.DirectionFrom(transform.position);
+    return position + entity.DistanceTo(position) * entity.DirectionFrom(position);
   }
 
   private Quaternion RotationOf(Entity entity) {
@@ -139,8 +144,9 @@ public class Player : MonoBehaviour {
 
   private void UpdateCameraPosition() {
     if (null != mainCamera) {
+      Vector3 input2 = viewDistance * GetInput2();
       Vector2 position = Vector2.Lerp(
-          mainCamera.transform.position, transform.position + 0.0f * Vector3.right, cameraPositionAlpha);
+          mainCamera.transform.position, transform.position + input2, cameraPositionAlpha);
       mainCamera.transform.position = new Vector3(
           position.x, position.y, mainCamera.transform.position.z);
     }

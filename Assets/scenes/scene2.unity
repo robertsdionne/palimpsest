@@ -928,6 +928,9 @@ MonoBehaviour:
   removable: 0
   screenShake: 0
   usable: 1
+  long_duration: 1
+  important: 1
+  dialogue: 0
 --- !u!58 &82176199
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1075,6 +1078,9 @@ MonoBehaviour:
   - {fileID: 0}
   screenShake: 0
   time: .400000006
+  long_duration: 1
+  important: 1
+  dialogue: 0
 --- !u!61 &104629555
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1192,6 +1198,9 @@ MonoBehaviour:
   removable: 1
   screenShake: 0
   usable: 0
+  long_duration: 1
+  important: 1
+  dialogue: 0
 --- !u!23 &107905132
 Renderer:
   m_ObjectHideFlags: 0
@@ -1430,6 +1439,9 @@ MonoBehaviour:
   removable: 1
   screenShake: 0
   usable: 0
+  long_duration: 1
+  important: 1
+  dialogue: 0
 --- !u!23 &116584767
 Renderer:
   m_ObjectHideFlags: 0
@@ -1988,6 +2000,7 @@ MonoBehaviour:
   maximumTorque: 10
   maximumWalkingSpeed: .75
   numberToSee: 3
+  viewDistance: 4
 --- !u!58 &183898937
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2265,6 +2278,9 @@ MonoBehaviour:
   - {fileID: 0}
   screenShake: 0
   time: 2
+  long_duration: 1
+  important: 1
+  dialogue: 0
 --- !u!61 &218293044
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2954,6 +2970,9 @@ MonoBehaviour:
   removable: 1
   screenShake: 0
   usable: 0
+  long_duration: 1
+  important: 1
+  dialogue: 0
 --- !u!58 &308316053
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3071,6 +3090,9 @@ MonoBehaviour:
   removable: 1
   screenShake: 0
   usable: 0
+  long_duration: 1
+  important: 1
+  dialogue: 0
 --- !u!23 &319618788
 Renderer:
   m_ObjectHideFlags: 0
@@ -3682,6 +3704,9 @@ MonoBehaviour:
   - {fileID: 0}
   screenShake: 0
   time: .400000006
+  long_duration: 1
+  important: 1
+  dialogue: 0
 --- !u!61 &413660335
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4471,6 +4496,9 @@ MonoBehaviour:
   removable: 0
   screenShake: 0
   usable: 0
+  long_duration: 1
+  important: 1
+  dialogue: 0
 --- !u!61 &513562428
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5044,6 +5072,9 @@ MonoBehaviour:
   - {fileID: 0}
   screenShake: 0
   time: 2
+  long_duration: 1
+  important: 1
+  dialogue: 0
 --- !u!61 &567927341
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5624,6 +5655,9 @@ MonoBehaviour:
   removable: 0
   screenShake: 0
   usable: 0
+  long_duration: 1
+  important: 1
+  dialogue: 0
 --- !u!61 &661753689
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5908,6 +5942,9 @@ MonoBehaviour:
   - {fileID: 0}
   screenShake: 1
   time: .200000003
+  long_duration: 1
+  important: 1
+  dialogue: 0
 --- !u!61 &689234424
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7183,6 +7220,9 @@ MonoBehaviour:
   - {fileID: 0}
   screenShake: 0
   time: .600000024
+  long_duration: 1
+  important: 1
+  dialogue: 0
 --- !u!61 &887687902
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7681,6 +7721,9 @@ MonoBehaviour:
   - {fileID: 0}
   screenShake: 0
   time: 2
+  long_duration: 1
+  important: 1
+  dialogue: 0
 --- !u!61 &902559069
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7776,6 +7819,9 @@ MonoBehaviour:
   removable: 0
   screenShake: 0
   usable: 0
+  long_duration: 1
+  important: 1
+  dialogue: 0
 --- !u!61 &938274396
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7929,6 +7975,9 @@ MonoBehaviour:
   - {fileID: 0}
   screenShake: 0
   time: 0
+  long_duration: 1
+  important: 1
+  dialogue: 0
 --- !u!61 &954542102
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8826,6 +8875,9 @@ MonoBehaviour:
   removable: 0
   screenShake: 0
   usable: 1
+  long_duration: 1
+  important: 1
+  dialogue: 0
 --- !u!58 &1039802228
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -9010,6 +9062,9 @@ MonoBehaviour:
   - {fileID: 0}
   screenShake: 0
   time: .400000006
+  long_duration: 1
+  important: 1
+  dialogue: 0
 --- !u!61 &1090948032
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9245,6 +9300,9 @@ MonoBehaviour:
   - {fileID: 0}
   screenShake: 1
   time: 1
+  long_duration: 1
+  important: 1
+  dialogue: 0
 --- !u!61 &1140916808
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9476,6 +9534,9 @@ MonoBehaviour:
   - {fileID: 0}
   screenShake: 0
   time: 1
+  long_duration: 1
+  important: 1
+  dialogue: 0
 --- !u!61 &1172061637
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10573,6 +10634,9 @@ MonoBehaviour:
   - {fileID: 0}
   screenShake: 0
   time: .200000003
+  long_duration: 1
+  important: 1
+  dialogue: 0
 --- !u!61 &1242841187
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10957,6 +11021,10 @@ Prefab:
       propertyPath: numberToSee
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 8083a83bf8c1641e798af82cc8c687f5, type: 2}
+      propertyPath: viewDistance
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8083a83bf8c1641e798af82cc8c687f5, type: 2}
   m_RootGameObject: {fileID: 183898930}
@@ -11324,6 +11392,9 @@ MonoBehaviour:
   removable: 0
   screenShake: 0
   usable: 1
+  long_duration: 1
+  important: 1
+  dialogue: 0
 --- !u!58 &1330848295
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -11683,6 +11754,9 @@ MonoBehaviour:
   removable: 0
   screenShake: 0
   usable: 1
+  long_duration: 1
+  important: 1
+  dialogue: 0
 --- !u!58 &1358613076
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -11830,6 +11904,9 @@ MonoBehaviour:
   - {fileID: 0}
   screenShake: 0
   time: 2.4000001
+  long_duration: 1
+  important: 1
+  dialogue: 0
 --- !u!61 &1363971223
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12570,6 +12647,9 @@ MonoBehaviour:
   removable: 0
   screenShake: 0
   usable: 1
+  long_duration: 1
+  important: 1
+  dialogue: 0
 --- !u!58 &1444528263
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -14066,6 +14146,9 @@ MonoBehaviour:
   removable: 0
   screenShake: 0
   usable: 1
+  long_duration: 1
+  important: 1
+  dialogue: 0
 --- !u!58 &1520436422
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -14870,6 +14953,9 @@ MonoBehaviour:
   - {fileID: 0}
   screenShake: 0
   time: 2.20000005
+  long_duration: 1
+  important: 1
+  dialogue: 0
 --- !u!61 &1630136140
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15054,6 +15140,9 @@ MonoBehaviour:
   removable: 0
   screenShake: 0
   usable: 0
+  long_duration: 1
+  important: 1
+  dialogue: 0
 --- !u!61 &1659517542
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15151,6 +15240,9 @@ MonoBehaviour:
   - {fileID: 0}
   screenShake: 0
   time: .699999988
+  long_duration: 1
+  important: 1
+  dialogue: 0
 --- !u!61 &1671725061
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16069,6 +16161,9 @@ MonoBehaviour:
   removable: 0
   screenShake: 0
   usable: 0
+  long_duration: 1
+  important: 1
+  dialogue: 0
 --- !u!61 &1759406185
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16358,6 +16453,9 @@ MonoBehaviour:
   - {fileID: 0}
   triggerCount: 6
   destroy: 1
+  long_duration: 1
+  important: 1
+  dialogue: 0
 --- !u!23 &1796963276
 Renderer:
   m_ObjectHideFlags: 0
@@ -17176,6 +17274,9 @@ MonoBehaviour:
   removable: 0
   screenShake: 0
   usable: 0
+  long_duration: 1
+  important: 1
+  dialogue: 0
 --- !u!61 &1891374522
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17333,6 +17434,9 @@ MonoBehaviour:
   - {fileID: 0}
   screenShake: 0
   time: 1
+  long_duration: 1
+  important: 1
+  dialogue: 0
 --- !u!61 &1926330910
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17618,6 +17722,9 @@ MonoBehaviour:
   removable: 1
   screenShake: 0
   usable: 0
+  long_duration: 1
+  important: 1
+  dialogue: 0
 --- !u!23 &1965441385
 Renderer:
   m_ObjectHideFlags: 0
@@ -18048,6 +18155,9 @@ MonoBehaviour:
   - {fileID: 0}
   triggerCount: 6
   destroy: 1
+  long_duration: 1
+  important: 1
+  dialogue: 0
 --- !u!23 &1995436155
 Renderer:
   m_ObjectHideFlags: 0
@@ -18870,6 +18980,9 @@ MonoBehaviour:
   removable: 1
   screenShake: 0
   usable: 0
+  long_duration: 1
+  important: 1
+  dialogue: 0
 --- !u!23 &2111321154
 Renderer:
   m_ObjectHideFlags: 0
