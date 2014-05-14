@@ -28,8 +28,10 @@ public class Alert : MonoBehaviour {
       if (screenShake) {
         ScreenShake.Shake();
       }
-      TextConsole.PushText(string.Join("\n", alerts),
-          null == at ? gameObject.transform.position : at.transform.position, Vector2.up, important, dialogue, long_duration);
+      if (alerts.Length > 0) {
+        TextConsole.PushText(string.Join("\n", alerts),
+            null == at ? gameObject.transform.position : at.transform.position, Vector2.up, important, dialogue, long_duration);
+      }
       foreach (var disable in disables) {
         if (null != disable) {
           disable.SetActive(false);

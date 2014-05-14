@@ -48,10 +48,12 @@ public class Notice : MonoBehaviour {
     if (audioSource) {
       Instantiate(audioSource);
     }
-    if (choose) {
-      TextConsole.PushText(Utilities.Choose(notices), transform.position, Vector2.up, important, dialogue, long_duration);
-    } else {
-      TextConsole.PushText(string.Join("\n", notices), transform.position, Vector2.up, important, dialogue, long_duration);
+    if (notices.Length > 0) {
+      if (choose) {
+        TextConsole.PushText(Utilities.Choose(notices), transform.position, Vector2.up, important, dialogue, long_duration);
+      } else {
+        TextConsole.PushText(string.Join("\n", notices), transform.position, Vector2.up, important, dialogue, long_duration);
+      }
     }
     foreach (var disable in disables) {
       if (null != disable) {

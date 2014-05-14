@@ -18,7 +18,9 @@ public class Counter : MonoBehaviour {
   void OnEnable() {
     count += 1;
     if (count >= triggerCount) {
-      TextConsole.PushText(string.Join("\n", alerts), transform.position, Vector2.up, important, dialogue, long_duration);
+      if (alerts.Length > 0) {
+        TextConsole.PushText(string.Join("\n", alerts), transform.position, Vector2.up, important, dialogue, long_duration);
+      }
       foreach (var disable in disables) {
         if (null != disable) {
           disable.SetActive(true);
