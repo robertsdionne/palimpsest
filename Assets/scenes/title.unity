@@ -21745,7 +21745,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 9600000, guid: 8083a83bf8c1641e798af82cc8c687f5, type: 2}
       propertyPath: m_Time
-      value: 120
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8083a83bf8c1641e798af82cc8c687f5, type: 2}
@@ -33257,7 +33257,7 @@ AudioSource:
   m_GameObject: {fileID: 1843172514}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: c64c8d5168c274db3a1081c6e7c6a499, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a42037f663f2d4d86a8ebf8686e2ee96, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -38020,7 +38020,7 @@ TrailRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortingLayerID: 0
-  m_Time: 120
+  m_Time: 30
   m_StartWidth: .100000001
   m_EndWidth: .0500000007
   m_Colors:
