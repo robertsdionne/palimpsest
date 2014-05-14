@@ -30,12 +30,12 @@ public class TextConsole : MonoBehaviour {
     if (null != textConsole && null != text) {
       textConsole.audio.pitch = Random.Range(PITCH_SHIFT_MINIMUM, PITCH_SHIFT_MAXIMUM);
       textConsole.audio.Play();
+      var description = Object.Instantiate(textConsole.descriptionPrefab) as GameObject;
+      var line = description.GetComponent<Line>();
+      line.important = important;
+      line.SetText(text);
+      description.transform.position = new Vector3(
+          position.x + TEXT_SHIFT_X, position.y, TEXT_DEFAULT_Z);
     }
-    var description = Object.Instantiate(textConsole.descriptionPrefab) as GameObject;
-    var line = description.GetComponent<Line>();
-    line.important = important;
-    line.SetText(text);
-    description.transform.position = new Vector3(
-        position.x + TEXT_SHIFT_X, position.y, TEXT_DEFAULT_Z);
   }
 }

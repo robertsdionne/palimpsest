@@ -105,8 +105,10 @@ MonoBehaviour:
   shake: 1
   touch:
   - Touching the obstacle.
+  shakeDelay: 1
   touchDelay: 1
   visible: 1
+  known: 0
   touched: 0
 --- !u!1001 &100100000
 Prefab:

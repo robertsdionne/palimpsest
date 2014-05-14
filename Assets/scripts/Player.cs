@@ -138,10 +138,12 @@ public class Player : MonoBehaviour {
   }
 
   private void UpdateCameraPosition() {
-    Vector2 position = Vector2.Lerp(
-        mainCamera.transform.position, transform.position + 0.0f * Vector3.right, cameraPositionAlpha);
-    mainCamera.transform.position = new Vector3(
-        position.x, position.y, mainCamera.transform.position.z);
+    if (null != mainCamera) {
+      Vector2 position = Vector2.Lerp(
+          mainCamera.transform.position, transform.position + 0.0f * Vector3.right, cameraPositionAlpha);
+      mainCamera.transform.position = new Vector3(
+          position.x, position.y, mainCamera.transform.position.z);
+    }
   }
 
   private void UpdatePosition(Vector2 input) {

@@ -7,10 +7,13 @@ public class Title : MonoBehaviour {
 
   public bool button = true;
   public string nextScene;
-	
+
 	void Update() {
     if (button) {
       if (Input.GetButtonDown(EXAMINE)) {
+        if (null != audio) {
+          audio.Play();
+        }
         Application.LoadLevel(nextScene);
       }
     } else {
