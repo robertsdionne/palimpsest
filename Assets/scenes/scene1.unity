@@ -928,6 +928,104 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 92166503}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &96285057
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+  m_PrefabInternal: {fileID: 1315635597}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 96285058}
+  - 33: {fileID: 96285062}
+  - 23: {fileID: 96285061}
+  - 61: {fileID: 96285060}
+  - 114: {fileID: 96285059}
+  m_Layer: 0
+  m_Name: Script 10 Steve
+  m_TagString: Entity
+  m_Icon: {fileID: 266726316, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 0
+--- !u!4 &96285058
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+  m_PrefabInternal: {fileID: 1315635597}
+  m_GameObject: {fileID: 96285057}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.39966774, y: -1.09482479, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 293339359}
+--- !u!114 &96285059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596,
+    type: 2}
+  m_PrefabInternal: {fileID: 1315635597}
+  m_GameObject: {fileID: 96285057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54d2b5cc913ba498ebcded6ac7cc1c48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alerts:
+  - 'verbal command; STEVE:'
+  - '    "We''d like you to do a simple task'
+  - '    while we monitor your sensors."'
+  at: {fileID: 24155603}
+  nexts:
+  - {fileID: 376434056}
+  disables:
+  - {fileID: 0}
+  screenShake: 1
+  time: 5
+  long_duration: 1
+  important: 1
+  dialogue: 1
+--- !u!61 &96285060
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6100000, guid: 975a1b01498b44bcc9f364e2af32c596,
+    type: 2}
+  m_PrefabInternal: {fileID: 1315635597}
+  m_GameObject: {fileID: 96285057}
+  m_Enabled: 1
+  m_Material: {fileID: 6200000, guid: 577c0f82b97fa4462ae7304aad0722e5, type: 2}
+  m_IsTrigger: 1
+  m_Size: {x: 1, y: 1}
+  m_Center: {x: 0, y: 0}
+--- !u!23 &96285061
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300000, guid: 975a1b01498b44bcc9f364e2af32c596,
+    type: 2}
+  m_PrefabInternal: {fileID: 1315635597}
+  m_GameObject: {fileID: 96285057}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 583a4a0b90e264b87a08e9952308ca05, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &96285062
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300000, guid: 975a1b01498b44bcc9f364e2af32c596,
+    type: 2}
+  m_PrefabInternal: {fileID: 1315635597}
+  m_GameObject: {fileID: 96285057}
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &103374036
 GameObject:
   m_ObjectHideFlags: 0
@@ -1635,6 +1733,90 @@ MeshFilter:
   m_PrefabInternal: {fileID: 2068218453}
   m_GameObject: {fileID: 140452468}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &162875836
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 293339359}
+    m_Modifications:
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: nexts.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: alerts.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 5.39966774
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -1.09482479
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: alerts.Array.data[0]
+      value: 'verbal command; STEVE:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: m_Name
+      value: Script 11 Steve
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: time
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: nexts.Array.data[0]
+      value: 
+      objectReference: {fileID: 645231974}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: screenShake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: at
+      value: 
+      objectReference: {fileID: 24155603}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: alerts.Array.data[1]
+      value: '    "This is the first time you''ve been powered on."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: dialogue
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+  m_RootGameObject: {fileID: 376434056}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
 --- !u!1 &162888026
 GameObject:
   m_ObjectHideFlags: 0
@@ -2761,6 +2943,103 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 183898934}
+--- !u!1 &252655645
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+  m_PrefabInternal: {fileID: 2102553070}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 252655646}
+  - 33: {fileID: 252655650}
+  - 23: {fileID: 252655649}
+  - 61: {fileID: 252655648}
+  - 114: {fileID: 252655647}
+  m_Layer: 0
+  m_Name: Script 05 Janice
+  m_TagString: Entity
+  m_Icon: {fileID: 266726316, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 0
+--- !u!4 &252655646
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+  m_PrefabInternal: {fileID: 2102553070}
+  m_GameObject: {fileID: 252655645}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.39966774, y: -1.09482479, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 293339359}
+--- !u!114 &252655647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596,
+    type: 2}
+  m_PrefabInternal: {fileID: 2102553070}
+  m_GameObject: {fileID: 252655645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54d2b5cc913ba498ebcded6ac7cc1c48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alerts:
+  - 'verbal command; JANICE (to you):'
+  - '    "Welcome, Q3, to the Gale Crater Research Outpost, Mars."'
+  at: {fileID: 997239053}
+  nexts:
+  - {fileID: 1311263997}
+  disables:
+  - {fileID: 0}
+  screenShake: 1
+  time: 3
+  long_duration: 1
+  important: 1
+  dialogue: 1
+--- !u!61 &252655648
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6100000, guid: 975a1b01498b44bcc9f364e2af32c596,
+    type: 2}
+  m_PrefabInternal: {fileID: 2102553070}
+  m_GameObject: {fileID: 252655645}
+  m_Enabled: 1
+  m_Material: {fileID: 6200000, guid: 577c0f82b97fa4462ae7304aad0722e5, type: 2}
+  m_IsTrigger: 1
+  m_Size: {x: 1, y: 1}
+  m_Center: {x: 0, y: 0}
+--- !u!23 &252655649
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300000, guid: 975a1b01498b44bcc9f364e2af32c596,
+    type: 2}
+  m_PrefabInternal: {fileID: 2102553070}
+  m_GameObject: {fileID: 252655645}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 583a4a0b90e264b87a08e9952308ca05, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &252655650
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300000, guid: 975a1b01498b44bcc9f364e2af32c596,
+    type: 2}
+  m_PrefabInternal: {fileID: 2102553070}
+  m_GameObject: {fileID: 252655645}
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &258967679
 GameObject:
   m_ObjectHideFlags: 0
@@ -3043,13 +3322,21 @@ Transform:
   - {fileID: 238170921}
   - {fileID: 999596610}
   - {fileID: 140452469}
-  - {fileID: 1975221687}
   - {fileID: 916058826}
+  - {fileID: 1975221687}
   - {fileID: 2105814616}
-  - {fileID: 645231975}
   - {fileID: 2000984244}
-  - {fileID: 684860512}
   - {fileID: 931264497}
+  - {fileID: 684860512}
+  - {fileID: 1635528902}
+  - {fileID: 252655646}
+  - {fileID: 1311263998}
+  - {fileID: 2035609165}
+  - {fileID: 373879867}
+  - {fileID: 1636354371}
+  - {fileID: 96285058}
+  - {fileID: 376434057}
+  - {fileID: 645231975}
   - {fileID: 1854322075}
   - {fileID: 1476326840}
   - {fileID: 177505143}
@@ -3331,7 +3618,7 @@ Prefab:
       objectReference: {fileID: 916058825}
     - target: {fileID: 100000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
       propertyPath: m_Name
-      value: Command 1
+      value: Command 3
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
       propertyPath: m_IsActive
@@ -3655,6 +3942,200 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 371130979}
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &373879866
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+  m_PrefabInternal: {fileID: 1606432354}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 373879867}
+  - 33: {fileID: 373879871}
+  - 23: {fileID: 373879870}
+  - 61: {fileID: 373879869}
+  - 114: {fileID: 373879868}
+  m_Layer: 0
+  m_Name: Script 08 Janice
+  m_TagString: Entity
+  m_Icon: {fileID: 266726316, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 0
+--- !u!4 &373879867
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+  m_PrefabInternal: {fileID: 1606432354}
+  m_GameObject: {fileID: 373879866}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.39966774, y: -1.09482479, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 293339359}
+--- !u!114 &373879868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596,
+    type: 2}
+  m_PrefabInternal: {fileID: 1606432354}
+  m_GameObject: {fileID: 373879866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54d2b5cc913ba498ebcded6ac7cc1c48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alerts:
+  - 'verbal command; JANICE (to Steve):'
+  - '    "Come on, be polite so it will obey."'
+  at: {fileID: 997239053}
+  nexts:
+  - {fileID: 1636354370}
+  disables:
+  - {fileID: 0}
+  screenShake: 1
+  time: 3
+  long_duration: 0
+  important: 1
+  dialogue: 1
+--- !u!61 &373879869
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6100000, guid: 975a1b01498b44bcc9f364e2af32c596,
+    type: 2}
+  m_PrefabInternal: {fileID: 1606432354}
+  m_GameObject: {fileID: 373879866}
+  m_Enabled: 1
+  m_Material: {fileID: 6200000, guid: 577c0f82b97fa4462ae7304aad0722e5, type: 2}
+  m_IsTrigger: 1
+  m_Size: {x: 1, y: 1}
+  m_Center: {x: 0, y: 0}
+--- !u!23 &373879870
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300000, guid: 975a1b01498b44bcc9f364e2af32c596,
+    type: 2}
+  m_PrefabInternal: {fileID: 1606432354}
+  m_GameObject: {fileID: 373879866}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 583a4a0b90e264b87a08e9952308ca05, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &373879871
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300000, guid: 975a1b01498b44bcc9f364e2af32c596,
+    type: 2}
+  m_PrefabInternal: {fileID: 1606432354}
+  m_GameObject: {fileID: 373879866}
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &376434056
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+  m_PrefabInternal: {fileID: 162875836}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 376434057}
+  - 33: {fileID: 376434061}
+  - 23: {fileID: 376434060}
+  - 61: {fileID: 376434059}
+  - 114: {fileID: 376434058}
+  m_Layer: 0
+  m_Name: Script 11 Steve
+  m_TagString: Entity
+  m_Icon: {fileID: 266726316, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 0
+--- !u!4 &376434057
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+  m_PrefabInternal: {fileID: 162875836}
+  m_GameObject: {fileID: 376434056}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.39966774, y: -1.09482479, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 293339359}
+--- !u!114 &376434058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596,
+    type: 2}
+  m_PrefabInternal: {fileID: 162875836}
+  m_GameObject: {fileID: 376434056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54d2b5cc913ba498ebcded6ac7cc1c48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alerts:
+  - 'verbal command; STEVE:'
+  - '    "This is the first time you''ve been powered on."'
+  at: {fileID: 24155603}
+  nexts:
+  - {fileID: 645231974}
+  disables:
+  - {fileID: 0}
+  screenShake: 1
+  time: 7
+  long_duration: 1
+  important: 1
+  dialogue: 1
+--- !u!61 &376434059
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6100000, guid: 975a1b01498b44bcc9f364e2af32c596,
+    type: 2}
+  m_PrefabInternal: {fileID: 162875836}
+  m_GameObject: {fileID: 376434056}
+  m_Enabled: 1
+  m_Material: {fileID: 6200000, guid: 577c0f82b97fa4462ae7304aad0722e5, type: 2}
+  m_IsTrigger: 1
+  m_Size: {x: 1, y: 1}
+  m_Center: {x: 0, y: 0}
+--- !u!23 &376434060
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300000, guid: 975a1b01498b44bcc9f364e2af32c596,
+    type: 2}
+  m_PrefabInternal: {fileID: 162875836}
+  m_GameObject: {fileID: 376434056}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 583a4a0b90e264b87a08e9952308ca05, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &376434061
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300000, guid: 975a1b01498b44bcc9f364e2af32c596,
+    type: 2}
+  m_PrefabInternal: {fileID: 162875836}
+  m_GameObject: {fileID: 376434056}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &379653781
 GameObject:
@@ -4356,6 +4837,90 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 445148930}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &446302299
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 293339359}
+    m_Modifications:
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: nexts.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: alerts.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 5.39966774
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -1.09482479
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: alerts.Array.data[0]
+      value: 'verbal command; JANICE (to you):'
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: m_Name
+      value: Script 09 Janice
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: time
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: nexts.Array.data[0]
+      value: 
+      objectReference: {fileID: 96285057}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: screenShake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: at
+      value: 
+      objectReference: {fileID: 997239053}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: alerts.Array.data[1]
+      value: '    "Okay, Q3. We need to perform some calibrations on you."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: dialogue
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+  m_RootGameObject: {fileID: 1636354370}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
 --- !u!1 &446801060
 GameObject:
   m_ObjectHideFlags: 0
@@ -5442,7 +6007,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
       propertyPath: m_Name
-      value: Command 8
+      value: Script 13 Objective
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
       propertyPath: m_IsActive
@@ -6234,7 +6799,7 @@ GameObject:
   - 61: {fileID: 645231977}
   - 114: {fileID: 645231976}
   m_Layer: 0
-  m_Name: Command 4
+  m_Name: Script 12 Janice
   m_TagString: Entity
   m_Icon: {fileID: 266726316, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -6690,7 +7255,7 @@ GameObject:
   - 61: {fileID: 684860514}
   - 114: {fileID: 684860513}
   m_Layer: 0
-  m_Name: Command 6
+  m_Name: Script 03 Steve
   m_TagString: Entity
   m_Icon: {fileID: 266726316, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -6720,17 +7285,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alerts:
-  - sound; *thunk*
-  at: {fileID: 183898930}
+  - 'verbal command; STEVE (to Janice):'
+  - '    "Hopefully they perform better than those old Q2s."'
+  at: {fileID: 24155603}
   nexts:
-  - {fileID: 931264496}
+  - {fileID: 1635528901}
+  - {fileID: 183898930}
   disables:
   - {fileID: 0}
   screenShake: 1
-  time: .200000003
-  long_duration: 1
+  time: 3
+  long_duration: 0
   important: 1
-  dialogue: 0
+  dialogue: 1
 --- !u!61 &684860514
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7329,7 +7896,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
       propertyPath: m_Name
-      value: Command 5
+      value: Script 01 Sound
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
       propertyPath: m_IsActive
@@ -7337,7 +7904,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
       propertyPath: time
-      value: 2
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
       propertyPath: nexts.Array.data[0]
@@ -9238,7 +9805,7 @@ GameObject:
   - 61: {fileID: 931264499}
   - 114: {fileID: 931264498}
   m_Layer: 0
-  m_Name: Command 7
+  m_Name: Script 02 Steve
   m_TagString: Entity
   m_Icon: {fileID: 266726316, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -9272,12 +9839,12 @@ MonoBehaviour:
   - '    "These new models are a beauty."'
   at: {fileID: 24155603}
   nexts:
-  - {fileID: 1975221686}
+  - {fileID: 684860511}
   disables:
   - {fileID: 0}
   screenShake: 0
   time: .600000024
-  long_duration: 1
+  long_duration: 0
   important: 1
   dialogue: 1
 --- !u!61 &931264499
@@ -10745,6 +11312,94 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1039574455}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1071327579
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 293339359}
+    m_Modifications:
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: nexts.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: alerts.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 5.39966774
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -1.09482479
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: alerts.Array.data[0]
+      value: 'verbal command; STEVE (to Janice):'
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: m_Name
+      value: Script 07 Steve
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: time
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: nexts.Array.data[0]
+      value: 
+      objectReference: {fileID: 373879866}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: screenShake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: at
+      value: 
+      objectReference: {fileID: 24155603}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: alerts.Array.data[1]
+      value: '    "More like ''masters,'' am I right?"'
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: dialogue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: long_duration
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+  m_RootGameObject: {fileID: 2035609164}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
 --- !u!1 &1073193010
 GameObject:
   m_ObjectHideFlags: 0
@@ -12802,7 +13457,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
       propertyPath: m_Name
-      value: Command 4
+      value: Script 12 Janice
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
       propertyPath: m_IsActive
@@ -13060,6 +13715,90 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1778535633}
+--- !u!1001 &1271699187
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 293339359}
+    m_Modifications:
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: nexts.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: alerts.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 5.39966774
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -1.09482479
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: alerts.Array.data[0]
+      value: 'verbal command; JANICE:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: m_Name
+      value: Script 06 Janice
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: time
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: nexts.Array.data[0]
+      value: 
+      objectReference: {fileID: 2035609164}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: screenShake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: at
+      value: 
+      objectReference: {fileID: 997239053}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: alerts.Array.data[1]
+      value: '    "We are your handlers, Janice and Steve."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: dialogue
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+  m_RootGameObject: {fileID: 1311263997}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
 --- !u!1 &1271847744
 GameObject:
   m_ObjectHideFlags: 0
@@ -13645,6 +14384,103 @@ Transform:
   m_LocalScale: {x: 3, y: .5, z: 1}
   m_Children: []
   m_Father: {fileID: 923927681}
+--- !u!1 &1311263997
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+  m_PrefabInternal: {fileID: 1271699187}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1311263998}
+  - 33: {fileID: 1311264002}
+  - 23: {fileID: 1311264001}
+  - 61: {fileID: 1311264000}
+  - 114: {fileID: 1311263999}
+  m_Layer: 0
+  m_Name: Script 06 Janice
+  m_TagString: Entity
+  m_Icon: {fileID: 266726316, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 0
+--- !u!4 &1311263998
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+  m_PrefabInternal: {fileID: 1271699187}
+  m_GameObject: {fileID: 1311263997}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.39966774, y: -1.09482479, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 293339359}
+--- !u!114 &1311263999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596,
+    type: 2}
+  m_PrefabInternal: {fileID: 1271699187}
+  m_GameObject: {fileID: 1311263997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54d2b5cc913ba498ebcded6ac7cc1c48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alerts:
+  - 'verbal command; JANICE:'
+  - '    "We are your handlers, Janice and Steve."'
+  at: {fileID: 997239053}
+  nexts:
+  - {fileID: 2035609164}
+  disables:
+  - {fileID: 0}
+  screenShake: 1
+  time: 5
+  long_duration: 1
+  important: 1
+  dialogue: 1
+--- !u!61 &1311264000
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6100000, guid: 975a1b01498b44bcc9f364e2af32c596,
+    type: 2}
+  m_PrefabInternal: {fileID: 1271699187}
+  m_GameObject: {fileID: 1311263997}
+  m_Enabled: 1
+  m_Material: {fileID: 6200000, guid: 577c0f82b97fa4462ae7304aad0722e5, type: 2}
+  m_IsTrigger: 1
+  m_Size: {x: 1, y: 1}
+  m_Center: {x: 0, y: 0}
+--- !u!23 &1311264001
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300000, guid: 975a1b01498b44bcc9f364e2af32c596,
+    type: 2}
+  m_PrefabInternal: {fileID: 1271699187}
+  m_GameObject: {fileID: 1311263997}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 583a4a0b90e264b87a08e9952308ca05, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &1311264002
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300000, guid: 975a1b01498b44bcc9f364e2af32c596,
+    type: 2}
+  m_PrefabInternal: {fileID: 1271699187}
+  m_GameObject: {fileID: 1311263997}
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1313683284
 GameObject:
   m_ObjectHideFlags: 0
@@ -13728,6 +14564,94 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1313683284}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1315635597
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 293339359}
+    m_Modifications:
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: nexts.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: alerts.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 5.39966774
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -1.09482479
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: alerts.Array.data[0]
+      value: 'verbal command; STEVE:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: m_Name
+      value: Script 10 Steve
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: time
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: nexts.Array.data[0]
+      value: 
+      objectReference: {fileID: 376434056}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: screenShake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: at
+      value: 
+      objectReference: {fileID: 24155603}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: alerts.Array.data[1]
+      value: '    "We''d like you to do a simple task'
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: dialogue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: alerts.Array.data[2]
+      value: '    while we monitor your sensors."'
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+  m_RootGameObject: {fileID: 96285057}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
 --- !u!1 &1318894383
 GameObject:
   m_ObjectHideFlags: 0
@@ -16883,6 +17807,94 @@ Prefab:
   m_RootGameObject: {fileID: 24155603}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1001 &1606432354
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 293339359}
+    m_Modifications:
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: nexts.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: alerts.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 5.39966774
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -1.09482479
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: alerts.Array.data[0]
+      value: 'verbal command; JANICE (to Steve):'
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: m_Name
+      value: Script 08 Janice
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: time
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: nexts.Array.data[0]
+      value: 
+      objectReference: {fileID: 1636354370}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: screenShake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: at
+      value: 
+      objectReference: {fileID: 997239053}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: alerts.Array.data[1]
+      value: '    "Come on, be polite so it will obey."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: dialogue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: long_duration
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+  m_RootGameObject: {fileID: 373879866}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
 --- !u!1 &1610768555
 GameObject:
   m_ObjectHideFlags: 0
@@ -17048,6 +18060,200 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1630818791}
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1635528901
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+  m_PrefabInternal: {fileID: 1772311142}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1635528902}
+  - 33: {fileID: 1635528906}
+  - 23: {fileID: 1635528905}
+  - 61: {fileID: 1635528904}
+  - 114: {fileID: 1635528903}
+  m_Layer: 0
+  m_Name: Script 04 Janice
+  m_TagString: Entity
+  m_Icon: {fileID: 266726316, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 0
+--- !u!4 &1635528902
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+  m_PrefabInternal: {fileID: 1772311142}
+  m_GameObject: {fileID: 1635528901}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.39966774, y: -1.09482479, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 293339359}
+--- !u!114 &1635528903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596,
+    type: 2}
+  m_PrefabInternal: {fileID: 1772311142}
+  m_GameObject: {fileID: 1635528901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54d2b5cc913ba498ebcded6ac7cc1c48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alerts:
+  - 'verbal command; JANICE (to Steve):'
+  - '    "Shhh. We don''t want to alarm it."'
+  at: {fileID: 997239053}
+  nexts:
+  - {fileID: 252655645}
+  disables:
+  - {fileID: 0}
+  screenShake: 1
+  time: 3
+  long_duration: 0
+  important: 1
+  dialogue: 1
+--- !u!61 &1635528904
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6100000, guid: 975a1b01498b44bcc9f364e2af32c596,
+    type: 2}
+  m_PrefabInternal: {fileID: 1772311142}
+  m_GameObject: {fileID: 1635528901}
+  m_Enabled: 1
+  m_Material: {fileID: 6200000, guid: 577c0f82b97fa4462ae7304aad0722e5, type: 2}
+  m_IsTrigger: 1
+  m_Size: {x: 1, y: 1}
+  m_Center: {x: 0, y: 0}
+--- !u!23 &1635528905
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300000, guid: 975a1b01498b44bcc9f364e2af32c596,
+    type: 2}
+  m_PrefabInternal: {fileID: 1772311142}
+  m_GameObject: {fileID: 1635528901}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 583a4a0b90e264b87a08e9952308ca05, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &1635528906
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300000, guid: 975a1b01498b44bcc9f364e2af32c596,
+    type: 2}
+  m_PrefabInternal: {fileID: 1772311142}
+  m_GameObject: {fileID: 1635528901}
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1636354370
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+  m_PrefabInternal: {fileID: 446302299}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1636354371}
+  - 33: {fileID: 1636354375}
+  - 23: {fileID: 1636354374}
+  - 61: {fileID: 1636354373}
+  - 114: {fileID: 1636354372}
+  m_Layer: 0
+  m_Name: Script 09 Janice
+  m_TagString: Entity
+  m_Icon: {fileID: 266726316, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 0
+--- !u!4 &1636354371
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+  m_PrefabInternal: {fileID: 446302299}
+  m_GameObject: {fileID: 1636354370}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.39966774, y: -1.09482479, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 293339359}
+--- !u!114 &1636354372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596,
+    type: 2}
+  m_PrefabInternal: {fileID: 446302299}
+  m_GameObject: {fileID: 1636354370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54d2b5cc913ba498ebcded6ac7cc1c48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alerts:
+  - 'verbal command; JANICE (to you):'
+  - '    "Okay, Q3. We need to perform some calibrations on you."'
+  at: {fileID: 997239053}
+  nexts:
+  - {fileID: 96285057}
+  disables:
+  - {fileID: 0}
+  screenShake: 1
+  time: 2
+  long_duration: 1
+  important: 1
+  dialogue: 1
+--- !u!61 &1636354373
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6100000, guid: 975a1b01498b44bcc9f364e2af32c596,
+    type: 2}
+  m_PrefabInternal: {fileID: 446302299}
+  m_GameObject: {fileID: 1636354370}
+  m_Enabled: 1
+  m_Material: {fileID: 6200000, guid: 577c0f82b97fa4462ae7304aad0722e5, type: 2}
+  m_IsTrigger: 1
+  m_Size: {x: 1, y: 1}
+  m_Center: {x: 0, y: 0}
+--- !u!23 &1636354374
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300000, guid: 975a1b01498b44bcc9f364e2af32c596,
+    type: 2}
+  m_PrefabInternal: {fileID: 446302299}
+  m_GameObject: {fileID: 1636354370}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 583a4a0b90e264b87a08e9952308ca05, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &1636354375
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300000, guid: 975a1b01498b44bcc9f364e2af32c596,
+    type: 2}
+  m_PrefabInternal: {fileID: 446302299}
+  m_GameObject: {fileID: 1636354370}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1638076264
 GameObject:
@@ -18921,7 +20127,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
       propertyPath: nexts.Array.size
-      value: 1
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: alerts.Array.size
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
       propertyPath: m_LocalPosition.x
@@ -18953,11 +20163,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
       propertyPath: alerts.Array.data[0]
-      value: sound; *thunk*
+      value: 'verbal command; STEVE (to Janice):'
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
       propertyPath: m_Name
-      value: Command 6
+      value: Script 03 Steve
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
       propertyPath: m_IsActive
@@ -18965,12 +20175,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
       propertyPath: time
-      value: .200000003
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
       propertyPath: nexts.Array.data[0]
       value: 
-      objectReference: {fileID: 931264496}
+      objectReference: {fileID: 1635528901}
     - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
       propertyPath: screenShake
       value: 1
@@ -18978,7 +20188,23 @@ Prefab:
     - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
       propertyPath: at
       value: 
+      objectReference: {fileID: 24155603}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: alerts.Array.data[1]
+      value: '    "Hopefully they perform better than those old Q2s."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: dialogue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: nexts.Array.data[1]
+      value: 
       objectReference: {fileID: 183898930}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: long_duration
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
   m_RootGameObject: {fileID: 684860511}
@@ -19399,6 +20625,94 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1768058847}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1772311142
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 293339359}
+    m_Modifications:
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: nexts.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: alerts.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 5.39966774
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -1.09482479
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: alerts.Array.data[0]
+      value: 'verbal command; JANICE (to Steve):'
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: m_Name
+      value: Script 04 Janice
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: time
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: nexts.Array.data[0]
+      value: 
+      objectReference: {fileID: 252655645}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: screenShake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: at
+      value: 
+      objectReference: {fileID: 997239053}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: alerts.Array.data[1]
+      value: '    "Shhh. We don''t want to alarm it."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: dialogue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: long_duration
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+  m_RootGameObject: {fileID: 1635528901}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
 --- !u!1 &1772334081
 GameObject:
   m_ObjectHideFlags: 0
@@ -20321,7 +21635,7 @@ GameObject:
   - 61: {fileID: 1854322077}
   - 114: {fileID: 1854322076}
   m_Layer: 0
-  m_Name: Command 8
+  m_Name: Script 13 Objective
   m_TagString: Entity
   m_Icon: {fileID: 266726316, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -21879,7 +23193,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
       propertyPath: m_Name
-      value: Command 7
+      value: Script 02 Steve
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
       propertyPath: m_IsActive
@@ -21892,7 +23206,7 @@ Prefab:
     - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
       propertyPath: nexts.Array.data[0]
       value: 
-      objectReference: {fileID: 1975221686}
+      objectReference: {fileID: 684860511}
     - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
       propertyPath: nexts.Array.data[1]
       value: 
@@ -21916,6 +23230,10 @@ Prefab:
     - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
       propertyPath: dialogue
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: long_duration
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
@@ -22256,7 +23574,7 @@ GameObject:
   - 61: {fileID: 1975221689}
   - 114: {fileID: 1975221688}
   m_Layer: 0
-  m_Name: Command 1
+  m_Name: Command 3
   m_TagString: Entity
   m_Icon: {fileID: 266726316, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -22520,7 +23838,7 @@ GameObject:
   - 61: {fileID: 2000984246}
   - 114: {fileID: 2000984245}
   m_Layer: 0
-  m_Name: Command 5
+  m_Name: Script 01 Sound
   m_TagString: Entity
   m_Icon: {fileID: 266726316, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -22559,7 +23877,7 @@ MonoBehaviour:
   disables:
   - {fileID: 0}
   screenShake: 1
-  time: 2
+  time: 2.5
   long_duration: 1
   important: 1
   dialogue: 0
@@ -23020,6 +24338,103 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2029342407}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &2035609164
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+  m_PrefabInternal: {fileID: 1071327579}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2035609165}
+  - 33: {fileID: 2035609169}
+  - 23: {fileID: 2035609168}
+  - 61: {fileID: 2035609167}
+  - 114: {fileID: 2035609166}
+  m_Layer: 0
+  m_Name: Script 07 Steve
+  m_TagString: Entity
+  m_Icon: {fileID: 266726316, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 0
+--- !u!4 &2035609165
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+  m_PrefabInternal: {fileID: 1071327579}
+  m_GameObject: {fileID: 2035609164}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.39966774, y: -1.09482479, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 293339359}
+--- !u!114 &2035609166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596,
+    type: 2}
+  m_PrefabInternal: {fileID: 1071327579}
+  m_GameObject: {fileID: 2035609164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54d2b5cc913ba498ebcded6ac7cc1c48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alerts:
+  - 'verbal command; STEVE (to Janice):'
+  - '    "More like ''masters,'' am I right?"'
+  at: {fileID: 24155603}
+  nexts:
+  - {fileID: 373879866}
+  disables:
+  - {fileID: 0}
+  screenShake: 1
+  time: 5
+  long_duration: 0
+  important: 1
+  dialogue: 1
+--- !u!61 &2035609167
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6100000, guid: 975a1b01498b44bcc9f364e2af32c596,
+    type: 2}
+  m_PrefabInternal: {fileID: 1071327579}
+  m_GameObject: {fileID: 2035609164}
+  m_Enabled: 1
+  m_Material: {fileID: 6200000, guid: 577c0f82b97fa4462ae7304aad0722e5, type: 2}
+  m_IsTrigger: 1
+  m_Size: {x: 1, y: 1}
+  m_Center: {x: 0, y: 0}
+--- !u!23 &2035609168
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300000, guid: 975a1b01498b44bcc9f364e2af32c596,
+    type: 2}
+  m_PrefabInternal: {fileID: 1071327579}
+  m_GameObject: {fileID: 2035609164}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 583a4a0b90e264b87a08e9952308ca05, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &2035609169
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300000, guid: 975a1b01498b44bcc9f364e2af32c596,
+    type: 2}
+  m_PrefabInternal: {fileID: 1071327579}
+  m_GameObject: {fileID: 2035609164}
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &2051521513
 Prefab:
   m_ObjectHideFlags: 0
@@ -23397,6 +24812,94 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2099377031}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &2102553070
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 293339359}
+    m_Modifications:
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: nexts.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: alerts.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 5.39966774
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -1.09482479
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: alerts.Array.data[0]
+      value: 'verbal command; JANICE (to you):'
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: m_Name
+      value: Script 05 Janice
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: time
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: nexts.Array.data[0]
+      value: 
+      objectReference: {fileID: 1311263997}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: screenShake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: at
+      value: 
+      objectReference: {fileID: 997239053}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: alerts.Array.data[1]
+      value: '    "Welcome, Q3, to the Gale Crater Research Outpost, Mars."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: dialogue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: nexts.Array.data[1]
+      value: 
+      objectReference: {fileID: 183898930}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+  m_RootGameObject: {fileID: 252655645}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
 --- !u!1 &2102616718
 GameObject:
   m_ObjectHideFlags: 0
