@@ -35,6 +35,7 @@ public class TextConsole : MonoBehaviour {
       var description = Object.Instantiate(textConsole.descriptionPrefab) as GameObject;
       var line = description.GetComponent<Line>();
       line.important = important;
+      line.long_duration = long_duration;
       line.SetText(text);
       line.transform.position = new Vector3(
           position.x + TEXT_SHIFT_X, position.y, TEXT_DEFAULT_Z);
