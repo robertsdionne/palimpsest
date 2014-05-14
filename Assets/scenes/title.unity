@@ -21747,6 +21747,10 @@ Prefab:
       propertyPath: m_Time
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 8083a83bf8c1641e798af82cc8c687f5, type: 2}
+      propertyPath: idleSoundMaximumVolume
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8083a83bf8c1641e798af82cc8c687f5, type: 2}
   m_RootGameObject: {fileID: 2115580456}
@@ -37906,6 +37910,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   idleSound: {fileID: 217143403}
+  idleSoundMaximumVolume: 0
   walkSound: {fileID: 557118716}
   targetPrefab: {fileID: 100002, guid: 18cedbfe7e879424dad16af8a7a61f7f, type: 2}
   cameraPositionAlpha: .0320000015

@@ -12,6 +12,9 @@ public class Notice : MonoBehaviour {
   public bool removable = false;
   public bool screenShake = false;
   public bool usable = false;
+  public bool long_duration = true;
+  public bool important = true;
+  public bool dialogue = false;
 
   void OnTriggerEnter2D(Collider2D other) {
     if (!Utilities.IsPlayer(other.gameObject)) {
@@ -46,9 +49,9 @@ public class Notice : MonoBehaviour {
       Instantiate(audioSource);
     }
     if (choose) {
-      TextConsole.PushText(Utilities.Choose(notices), transform.position, Vector2.up, true);
+      TextConsole.PushText(Utilities.Choose(notices), transform.position, Vector2.up, important, dialogue, long_duration);
     } else {
-      TextConsole.PushText(string.Join("\n", notices), transform.position, Vector2.up, true);
+      TextConsole.PushText(string.Join("\n", notices), transform.position, Vector2.up, important, dialogue, long_duration);
     }
     foreach (var disable in disables) {
       if (null != disable) {

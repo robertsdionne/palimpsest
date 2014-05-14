@@ -1503,6 +1503,20 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 183898930}
+    - target: {fileID: 11400004, guid: 660c38ee3f1a242efa30d65490be8ea4, type: 2}
+      propertyPath: regular
+      value: 
+      objectReference: {fileID: 12800000, guid: 1118a96db990e4b1893c054f1b16b986,
+        type: 3}
+    - target: {fileID: 11400004, guid: 660c38ee3f1a242efa30d65490be8ea4, type: 2}
+      propertyPath: bold
+      value: 
+      objectReference: {fileID: 12800000, guid: f10a4587970624ebb8bfb23fcba30499,
+        type: 3}
+    - target: {fileID: 11400004, guid: 660c38ee3f1a242efa30d65490be8ea4, type: 2}
+      propertyPath: descriptionPrefab
+      value: 
+      objectReference: {fileID: 100004, guid: f16346b1ff5f54ff48408aed6e0587a3, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 660c38ee3f1a242efa30d65490be8ea4, type: 2}
   m_RootGameObject: {fileID: 379956543}
@@ -1964,6 +1978,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   idleSound: {fileID: 249330836}
+  idleSoundMaximumVolume: .100000001
   walkSound: {fileID: 1337481498}
   targetPrefab: {fileID: 100002, guid: 18cedbfe7e879424dad16af8a7a61f7f, type: 2}
   cameraPositionAlpha: .0320000015
@@ -1971,7 +1986,6 @@ MonoBehaviour:
   maximumAngularVelocity: 10
   maximumForce: 50
   maximumTorque: 10
-  maximumRunningSpeed: 10
   maximumWalkingSpeed: .75
   numberToSee: 3
 --- !u!58 &183898937
@@ -10624,7 +10638,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15569c269e2df49aeae10137511e7cf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  descriptionPrefab: {fileID: 100000, guid: f16346b1ff5f54ff48408aed6e0587a3, type: 2}
+  descriptionPrefab: {fileID: 100004, guid: f16346b1ff5f54ff48408aed6e0587a3, type: 2}
   indicatorPrefab: {fileID: 100004, guid: 780e7d004a2964419814033229cd4ce0, type: 2}
   pathDescriptionPrefab: {fileID: 100004, guid: 96035fa0ed1d140a9b6f43cd5a52803f,
     type: 2}

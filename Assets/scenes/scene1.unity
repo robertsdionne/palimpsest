@@ -1062,6 +1062,9 @@ MonoBehaviour:
   - {fileID: 0}
   screenShake: 0
   time: 0
+  long_duration: 1
+  important: 1
+  dialogue: 0
 --- !u!61 &108611213
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1151,6 +1154,9 @@ MonoBehaviour:
   removable: 0
   screenShake: 0
   usable: 0
+  long_duration: 1
+  important: 1
+  dialogue: 0
 --- !u!61 &119425675
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1490,6 +1496,9 @@ MonoBehaviour:
   - {fileID: 0}
   screenShake: 0
   time: 1
+  long_duration: 1
+  important: 1
+  dialogue: 0
 --- !u!61 &140452471
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2148,6 +2157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   idleSound: {fileID: 249330836}
+  idleSoundMaximumVolume: .100000001
   walkSound: {fileID: 1337481498}
   targetPrefab: {fileID: 100002, guid: 18cedbfe7e879424dad16af8a7a61f7f, type: 2}
   cameraPositionAlpha: .0320000015
@@ -2418,6 +2428,9 @@ MonoBehaviour:
   - {fileID: 0}
   screenShake: 0
   time: 7.80000019
+  long_duration: 1
+  important: 1
+  dialogue: 0
 --- !u!61 &218293044
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2522,6 +2535,9 @@ MonoBehaviour:
   - {fileID: 0}
   screenShake: 0
   time: .400000006
+  long_duration: 1
+  important: 1
+  dialogue: 0
 --- !u!61 &238170923
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3254,6 +3270,10 @@ Prefab:
       propertyPath: at
       value: 
       objectReference: {fileID: 24155603}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: dialogue
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
   m_RootGameObject: {fileID: 1975221686}
@@ -3319,6 +3339,9 @@ MonoBehaviour:
   removable: 0
   screenShake: 0
   usable: 0
+  long_duration: 0
+  important: 1
+  dialogue: 1
 --- !u!58 &361987223
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3933,6 +3956,9 @@ MonoBehaviour:
   - {fileID: 0}
   screenShake: 0
   time: 5
+  long_duration: 1
+  important: 1
+  dialogue: 0
 --- !u!61 &413660335
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5567,6 +5593,9 @@ MonoBehaviour:
   disables: []
   screenShake: 0
   time: 2
+  long_duration: 1
+  important: 1
+  dialogue: 0
 --- !u!61 &567927341
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6088,6 +6117,9 @@ MonoBehaviour:
   - {fileID: 0}
   screenShake: 0
   time: 5
+  long_duration: 1
+  important: 1
+  dialogue: 1
 --- !u!61 &645231977
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6264,6 +6296,9 @@ MonoBehaviour:
   - {fileID: 0}
   screenShake: 0
   time: .400000006
+  long_duration: 1
+  important: 1
+  dialogue: 0
 --- !u!61 &671205620
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6357,6 +6392,9 @@ MonoBehaviour:
   - {fileID: 0}
   screenShake: 0
   time: 2.20000005
+  long_duration: 1
+  important: 1
+  dialogue: 0
 --- !u!61 &674576734
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6533,6 +6571,9 @@ MonoBehaviour:
   - {fileID: 0}
   screenShake: 1
   time: .200000003
+  long_duration: 1
+  important: 1
+  dialogue: 0
 --- !u!61 &684860514
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6699,6 +6740,9 @@ MonoBehaviour:
   - {fileID: 183898930}
   screenShake: 0
   time: 4
+  long_duration: 1
+  important: 1
+  dialogue: 0
 --- !u!61 &689234424
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8696,6 +8740,10 @@ Prefab:
       propertyPath: at
       value: 
       objectReference: {fileID: 997239053}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: dialogue
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
   m_RootGameObject: {fileID: 916058825}
@@ -8753,6 +8801,9 @@ MonoBehaviour:
   - {fileID: 0}
   screenShake: 0
   time: 5
+  long_duration: 1
+  important: 1
+  dialogue: 1
 --- !u!61 &916058828
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8904,6 +8955,9 @@ MonoBehaviour:
   - {fileID: 0}
   screenShake: 0
   time: .600000024
+  long_duration: 1
+  important: 1
+  dialogue: 1
 --- !u!61 &931264499
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9123,6 +9177,18 @@ Prefab:
     - target: {fileID: 11400000, guid: f7d229f766388421580800e438ebf115, type: 2}
       propertyPath: disables.Array.data[2]
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: f7d229f766388421580800e438ebf115, type: 2}
+      propertyPath: dialogue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: f7d229f766388421580800e438ebf115, type: 2}
+      propertyPath: important
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: f7d229f766388421580800e438ebf115, type: 2}
+      propertyPath: long_duration
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f7d229f766388421580800e438ebf115, type: 2}
@@ -9892,6 +9958,9 @@ MonoBehaviour:
   - {fileID: 0}
   screenShake: 0
   time: 2.4000001
+  long_duration: 1
+  important: 1
+  dialogue: 0
 --- !u!61 &999596612
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10562,6 +10631,9 @@ MonoBehaviour:
   - {fileID: 0}
   screenShake: 0
   time: 3
+  long_duration: 0
+  important: 1
+  dialogue: 1
 --- !u!61 &1140916808
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10737,6 +10809,20 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 183898930}
+    - target: {fileID: 11400004, guid: 660c38ee3f1a242efa30d65490be8ea4, type: 2}
+      propertyPath: regular
+      value: 
+      objectReference: {fileID: 12800000, guid: 1118a96db990e4b1893c054f1b16b986,
+        type: 3}
+    - target: {fileID: 11400004, guid: 660c38ee3f1a242efa30d65490be8ea4, type: 2}
+      propertyPath: bold
+      value: 
+      objectReference: {fileID: 12800000, guid: f10a4587970624ebb8bfb23fcba30499,
+        type: 3}
+    - target: {fileID: 11400004, guid: 660c38ee3f1a242efa30d65490be8ea4, type: 2}
+      propertyPath: descriptionPrefab
+      value: 
+      objectReference: {fileID: 100004, guid: f16346b1ff5f54ff48408aed6e0587a3, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 660c38ee3f1a242efa30d65490be8ea4, type: 2}
   m_RootGameObject: {fileID: 828677672}
@@ -12040,6 +12126,9 @@ MonoBehaviour:
   disables: []
   screenShake: 0
   time: 2.20000005
+  long_duration: 1
+  important: 1
+  dialogue: 0
 --- !u!61 &1242841187
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12184,6 +12273,18 @@ Prefab:
       propertyPath: notices.Array.data[4]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: f7d229f766388421580800e438ebf115, type: 2}
+      propertyPath: dialogue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: f7d229f766388421580800e438ebf115, type: 2}
+      propertyPath: important
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: f7d229f766388421580800e438ebf115, type: 2}
+      propertyPath: long_duration
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f7d229f766388421580800e438ebf115, type: 2}
   m_RootGameObject: {fileID: 361987220}
@@ -12319,6 +12420,9 @@ MonoBehaviour:
   removable: 0
   screenShake: 0
   usable: 0
+  long_duration: 0
+  important: 1
+  dialogue: 1
 --- !u!58 &1248340747
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -12476,6 +12580,10 @@ Prefab:
       propertyPath: at
       value: 
       objectReference: {fileID: 997239053}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: dialogue
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
   m_RootGameObject: {fileID: 645231974}
@@ -12510,7 +12618,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15569c269e2df49aeae10137511e7cf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  descriptionPrefab: {fileID: 100000, guid: f16346b1ff5f54ff48408aed6e0587a3, type: 2}
+  descriptionPrefab: {fileID: 100004, guid: f16346b1ff5f54ff48408aed6e0587a3, type: 2}
   indicatorPrefab: {fileID: 100004, guid: 780e7d004a2964419814033229cd4ce0, type: 2}
   pathDescriptionPrefab: {fileID: 100004, guid: 96035fa0ed1d140a9b6f43cd5a52803f,
     type: 2}
@@ -12644,6 +12752,9 @@ MonoBehaviour:
   removable: 1
   screenShake: 0
   usable: 0
+  long_duration: 1
+  important: 1
+  dialogue: 0
 --- !u!23 &1268425632
 Renderer:
   m_ObjectHideFlags: 0
@@ -14670,6 +14781,9 @@ MonoBehaviour:
   - {fileID: 0}
   screenShake: 0
   time: 2
+  long_duration: 1
+  important: 1
+  dialogue: 0
 --- !u!61 &1442898384
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15258,6 +15372,9 @@ MonoBehaviour:
   removable: 0
   screenShake: 0
   usable: 0
+  long_duration: 1
+  important: 1
+  dialogue: 0
 --- !u!61 &1481061993
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15728,6 +15845,9 @@ MonoBehaviour:
   removable: 0
   screenShake: 0
   usable: 0
+  long_duration: 1
+  important: 1
+  dialogue: 0
 --- !u!61 &1525262836
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15951,6 +16071,10 @@ Prefab:
       propertyPath: at
       value: 
       objectReference: {fileID: 24155603}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: dialogue
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
   m_RootGameObject: {fileID: 2105814615}
@@ -17082,6 +17206,9 @@ MonoBehaviour:
   - {fileID: 0}
   screenShake: 0
   time: 2
+  long_duration: 1
+  important: 1
+  dialogue: 0
 --- !u!61 &1671725061
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17421,6 +17548,9 @@ MonoBehaviour:
   - {fileID: 0}
   screenShake: 0
   time: .600000024
+  long_duration: 1
+  important: 1
+  dialogue: 0
 --- !u!61 &1691581148
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -19157,6 +19287,9 @@ MonoBehaviour:
   removable: 0
   screenShake: 0
   usable: 1
+  long_duration: 1
+  important: 1
+  dialogue: 0
 --- !u!58 &1778535635
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -19889,6 +20022,9 @@ MonoBehaviour:
   - {fileID: 0}
   screenShake: 0
   time: 1
+  long_duration: 1
+  important: 1
+  dialogue: 0
 --- !u!61 &1854322077
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -21441,6 +21577,10 @@ Prefab:
       propertyPath: at
       value: 
       objectReference: {fileID: 24155603}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: dialogue
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
   m_RootGameObject: {fileID: 931264496}
@@ -21820,6 +21960,9 @@ MonoBehaviour:
   - {fileID: 0}
   screenShake: 0
   time: 2
+  long_duration: 1
+  important: 1
+  dialogue: 1
 --- !u!61 &1975221689
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -22081,6 +22224,9 @@ MonoBehaviour:
   - {fileID: 0}
   screenShake: 1
   time: 2
+  long_duration: 1
+  important: 1
+  dialogue: 0
 --- !u!61 &2000984246
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -23081,6 +23227,18 @@ Prefab:
       propertyPath: at
       value: 
       objectReference: {fileID: 997239053}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: dialogue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: important
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
+      propertyPath: long_duration
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
   m_RootGameObject: {fileID: 1140916806}
@@ -23139,6 +23297,9 @@ MonoBehaviour:
   - {fileID: 0}
   screenShake: 0
   time: 4
+  long_duration: 1
+  important: 1
+  dialogue: 1
 --- !u!61 &2105814618
 BoxCollider2D:
   m_ObjectHideFlags: 0

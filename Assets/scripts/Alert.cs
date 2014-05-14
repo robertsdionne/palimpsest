@@ -9,6 +9,9 @@ public class Alert : MonoBehaviour {
   public GameObject[] disables = { null };
   public bool screenShake = false;
   public float time;
+  public bool long_duration = true;
+  public bool important = true;
+  public bool dialogue = false;
 
   private float startTime;
 
@@ -26,7 +29,7 @@ public class Alert : MonoBehaviour {
         ScreenShake.Shake();
       }
       TextConsole.PushText(string.Join("\n", alerts),
-          null == at ? gameObject.transform.position : at.transform.position, Vector2.up, true);
+          null == at ? gameObject.transform.position : at.transform.position, Vector2.up, important, dialogue, long_duration);
       foreach (var disable in disables) {
         if (null != disable) {
           disable.SetActive(false);

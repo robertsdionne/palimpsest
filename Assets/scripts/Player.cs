@@ -6,7 +6,6 @@ using System.Linq;
 public class Player : MonoBehaviour {
 
   private const string HORIZONTAL = "Horizontal";
-  private const float IDLE_SOUND_MAXIMUM_VOLUME = 0.1f;
   private const string RUN = "Run";
   private const string SEE = "See";
   private const float VELOCITY_MOTION_SCALE = 2.0f;
@@ -15,6 +14,7 @@ public class Player : MonoBehaviour {
   private const float WALK_SOUND_MAXIMUM_VOLUME = 0.2f;
 
   public AudioSource idleSound;
+  public float idleSoundMaximumVolume = 0.1f;
   public AudioSource walkSound;
   public GameObject targetPrefab;
   public float cameraPositionAlpha = 0.032f;
@@ -162,7 +162,7 @@ public class Player : MonoBehaviour {
 
   private void UpdateIdleAndWalkSoundVolumes() {
     idleSound.volume = Mathf.Lerp(
-        idleSound.volume, IDLE_SOUND_MAXIMUM_VOLUME * (1.0f - IsMoving()), WALK_SOUND_ALPHA);
+        idleSound.volume, idleSoundMaximumVolume * (1.0f - IsMoving()), WALK_SOUND_ALPHA);
     walkSound.volume = Mathf.Lerp(
         walkSound.volume, WALK_SOUND_MAXIMUM_VOLUME * IsMoving(), WALK_SOUND_ALPHA);
   }
