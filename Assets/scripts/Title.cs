@@ -7,8 +7,13 @@ public class Title : MonoBehaviour {
 
   public bool button = true;
   public string nextScene;
+  public bool exit;
 
 	void Update() {
+    if (exit) {
+      Application.Quit();
+      return;
+    }
     if (button) {
       if (Input.GetButtonDown(EXAMINE)) {
         if (null != audio) {
