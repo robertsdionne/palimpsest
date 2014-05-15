@@ -14,21 +14,21 @@ public class ScreenShake : MonoBehaviour {
   private float alpha = SHAKE_ALPHA;
 
   public static void Shake() {
-    if (null != screenShake) {
+    if (null != screenShake && screenShake.shake < SHAKE_THRESHOLD) {
       screenShake.alpha = SHAKE_ALPHA;
       screenShake.shake = 0.05f;
     }
   }
 
   public static void ShakeMedium() {
-    if (null != screenShake) {
+    if (null != screenShake && screenShake.shake < SHAKE_THRESHOLD) {
       screenShake.alpha = MEDIUM_SHAKE_ALPHA;
       screenShake.shake = 2.0f;
     }
   }
 
   public static void ShakeBig() {
-    if (null != screenShake) {
+    if (null != screenShake && screenShake.shake < SHAKE_THRESHOLD) {
       screenShake.alpha = BIG_SHAKE_ALPHA;
       screenShake.shake = 5.0f;
     }

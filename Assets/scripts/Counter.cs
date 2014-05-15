@@ -23,7 +23,7 @@ public class Counter : MonoBehaviour {
       }
       foreach (var disable in disables) {
         if (null != disable) {
-          disable.SetActive(true);
+          disable.SetActive(false);
         }
       }
       foreach (var next in nexts) {
