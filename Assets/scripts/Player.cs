@@ -30,6 +30,10 @@ public class Player : MonoBehaviour {
   private List<Entity> nearestEntities = new List<Entity>();
   private Dictionary<Entity, GameObject> targets = new Dictionary<Entity, GameObject>();
 
+  void Start() {
+    Screen.showCursor = false;
+  }
+
   void OnDisable() {
     var removal = new List<Entity>();
     removal.AddRange(targets.Keys);
