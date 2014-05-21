@@ -14406,7 +14406,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
       propertyPath: alerts.Array.size
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 975a1b01498b44bcc9f364e2af32c596, type: 2}
       propertyPath: disables.Array.size
@@ -16181,8 +16181,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: 0
-  nextScene: 
-  exit: 1
+  nextScene: title
+  exit: 0
 --- !u!1 &655470753
 GameObject:
   m_ObjectHideFlags: 0
@@ -31522,12 +31522,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54d2b5cc913ba498ebcded6ac7cc1c48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alerts:
-  - 'radio command; STEVE:'
-  - '    "Ahhhhhhrrgghhghh!!"'
-  - 
-  - 'radio command; JANICE:'
-  - '    "Oh no!! Ugh! ggggghhhhhhhhhlll..."'
+  alerts: []
   at: {fileID: 183898930}
   nexts:
   - {fileID: 1749804896}
