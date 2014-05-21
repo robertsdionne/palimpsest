@@ -5290,6 +5290,10 @@ Prefab:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 10200000, guid: 660c38ee3f1a242efa30d65490be8ea4, type: 2}
+      propertyPath: m_Color.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 660c38ee3f1a242efa30d65490be8ea4, type: 2}
   m_RootGameObject: {fileID: 379956543}
@@ -47468,7 +47472,7 @@ TextMesh:
   m_Font: {fileID: 12800000, guid: ac5c2d3438d0a4e2cb584bf5d753fdec, type: 3}
   m_Color:
     serializedVersion: 2
-    rgba: 4278190080
+    rgba: 4294967295
 --- !u!23 &1836960752
 Renderer:
   m_ObjectHideFlags: 0
@@ -51856,6 +51860,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debug: 0
+  targetFrameRate: 60
 --- !u!1 &2075883004
 GameObject:
   m_ObjectHideFlags: 0
@@ -52585,7 +52590,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 2121319023}
   - 33: {fileID: 2121319026}
-  - 64: {fileID: 2121319025}
   - 23: {fileID: 2121319024}
   m_Layer: 8
   m_Name: Blackout
@@ -52627,20 +52631,6 @@ Renderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortingLayerID: 0
---- !u!64 &2121319025
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 660c38ee3f1a242efa30d65490be8ea4,
-    type: 2}
-  m_PrefabInternal: {fileID: 129049266}
-  m_GameObject: {fileID: 2121319022}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &2121319026
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -52780,7 +52770,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 1, g: 1, b: 1, a: .0196078438}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: .0196078438}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0

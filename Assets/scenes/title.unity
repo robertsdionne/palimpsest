@@ -17052,7 +17052,7 @@ TextMesh:
   m_Font: {fileID: 12800000, guid: db14384892e6c4a1f89a0eed584ed612, type: 3}
   m_Color:
     serializedVersion: 2
-    rgba: 4278190080
+    rgba: 4294967295
 --- !u!23 &958062031
 Renderer:
   m_ObjectHideFlags: 0
@@ -37756,7 +37756,7 @@ TextMesh:
   m_Font: {fileID: 12800000, guid: c6deb91fb47544b99861be03813190a7, type: 3}
   m_Color:
     serializedVersion: 2
-    rgba: 4278190080
+    rgba: 4294967295
 --- !u!23 &2091406727
 Renderer:
   m_ObjectHideFlags: 0
@@ -38503,7 +38503,7 @@ TextMesh:
   m_Font: {fileID: 12800000, guid: c6deb91fb47544b99861be03813190a7, type: 3}
   m_Color:
     serializedVersion: 2
-    rgba: 4278190080
+    rgba: 4294967295
 --- !u!23 &2128196879
 Renderer:
   m_ObjectHideFlags: 0
@@ -38903,6 +38903,7 @@ GameObject:
   - 92: {fileID: 2141980582}
   - 124: {fileID: 2141980581}
   - 81: {fileID: 2141980580}
+  - 114: {fileID: 2141980585}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -38944,7 +38945,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 1, g: 1, b: 1, a: .0196078438}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: .0196078438}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -38975,3 +38976,16 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2042212533}
+--- !u!114 &2141980585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2141980579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26570544a49974de1b88a6dc2f94c752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  targetFrameRate: 60
