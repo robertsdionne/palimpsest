@@ -6243,6 +6243,7 @@ GameObject:
   - 114: {fileID: 183898936}
   - 96: {fileID: 183898938}
   - 96: {fileID: 183898939}
+  - 114: {fileID: 183898940}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -6444,6 +6445,18 @@ TrailRenderer:
       rgba: 2164260863
   m_MinVertexDistance: .100000001
   m_Autodestruct: 0
+--- !u!114 &183898940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 183898930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b46698966c2ea417e820014adb4f2804, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeout: 90
 --- !u!1001 &183953191
 Prefab:
   m_ObjectHideFlags: 0
