@@ -38,6 +38,7 @@ public class Notice : MonoBehaviour {
       return;
     }
     if (Input.GetButtonDown("Examine")) {
+      RestartTimeout.Interact();
       Trigger();
     }
   }

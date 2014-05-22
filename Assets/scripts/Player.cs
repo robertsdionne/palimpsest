@@ -63,11 +63,19 @@ public class Player : MonoBehaviour {
   }
 
   private Vector2 GetInput() {
-    return new Vector2(Input.GetAxis(HORIZONTAL), Input.GetAxis(VERTICAL));
+    var input = new Vector2(Input.GetAxis(HORIZONTAL), Input.GetAxis(VERTICAL));
+    if (input.magnitude > 0.1f) {
+      RestartTimeout.Interact();
+    }
+    return input;
   }
 
   private Vector2 GetInput2() {
-    return new Vector2(Input.GetAxis("Horizontal2"), Input.GetAxis("Vertical2"));
+    var input = new Vector2(Input.GetAxis("Horizontal2"), Input.GetAxis("Vertical2"));
+    if (input.magnitude > 0.1f) {
+      RestartTimeout.Interact();
+    }
+    return input;
   }
 
   private List<Entity> GetOccupiedAreas() {
